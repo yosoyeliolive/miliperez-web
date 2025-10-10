@@ -37,7 +37,11 @@
             --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
         }
         
-        /* NAVIGATION - TRAVEL WORLD */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* NAVIGATION */
         .nav {
             position: fixed;
             top: 0;
@@ -74,6 +78,10 @@
         
         .nav-logo:hover svg {
             transform: rotate(-10deg);
+        }
+        
+        .nav-logo svg {
+            transition: transform 0.3s;
         }
         
         .nav-menu {
@@ -129,9 +137,44 @@
         
         .nav-cta:hover {
             background: var(--mp-blue);
-            transform: translateY(-2px);  
-        }       
-        /* HERO - TRAVEL */
+            transform: translateY(-2px);
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--mp-black);
+            transition: all 0.3s;
+        }
+        
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            padding: 20px 40px;
+            background: white;
+            border-top: 1px solid var(--mp-gray-100);
+        }
+        
+        .mobile-menu.active {
+            display: flex;
+        }
+        
+        .mobile-menu a {
+            padding: 15px 0;
+            color: var(--mp-black);
+            text-decoration: none;
+            font-size: 14px;
+            border-bottom: 1px solid var(--mp-gray-100);
+        }
+        
+        /* HERO */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -270,9 +313,12 @@
             opacity: 0.7;
         }
         
-        /* EXPEDITIONS */
-        .expeditions {
+        /* SECTIONS */
+        .expeditions, .calendar, .philosophy, .faq, .contact {
             padding: 120px 40px;
+        }
+        
+        .expeditions {
             background: var(--mp-white);
         }
         
@@ -399,337 +445,26 @@
             font-size: 11px;
             color: var(--mp-gray-500);
             text-transform: uppercase;
-            letter-spacing: 0.05em;        
-        }
-        
-        /* TOOLS */
-        .tools {
-            padding: 120px 40px;
-            background: var(--mp-black);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .tools::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(90deg, transparent, rgba(0,141,203,0.03), transparent),
-                linear-gradient(0deg, transparent, rgba(0,141,203,0.03), transparent);
-            background-size: 100px 100px;
-            animation: grid-move 10s linear infinite;
-        }
-        
-        .tools-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 40px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .tool-card {
-            background: var(--mp-gray-900);
-            border: 1px solid var(--mp-gray-800);
-            padding: 40px 20px;
-            text-align: center;
-            transition: all 0.3s var(--ease-out);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .tool-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--mp-blue);
-            transform: translateX(-100%);
-            transition: transform 0.5s;
-        }
-        
-        .tool-card:hover::before {
-            transform: translateX(0);
-        }
-        
-        .tool-card:hover {
-            transform: translateY(-10px) scale(1.05);
-            border-color: var(--mp-blue);
-            background: var(--mp-gray-800);
-            box-shadow: 0 20px 40px rgba(0,141,203,0.2);
-        }
-        
-        .tool-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 20px;
-            filter: grayscale(100%);
-            transition: filter 0.3s;
-        }
-        
-        .tool-card:hover .tool-icon {
-            filter: grayscale(0%);
-        }
-        
-        .tool-name {
-            font-size: 1.1rem;
-            font-weight: 300;
-            color: var(--mp-white);
-            margin-bottom: 10px;
-        }
-        
-        .tool-category {
-            font-size: 10px;
-            color: var(--mp-gray-500);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-        
-        /* PRICING */
-        .pricing {
-            padding: 120px 40px;
-            background: var(--mp-gray-900);
-        }
-        
-        .pricing-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-        
-        .pricing-card {
-            background: var(--mp-gray-800);
-            border: 1px solid var(--mp-gray-700);
-            padding: 50px 40px;
-            text-align: center;
-            position: relative;
-            transition: all 0.3s var(--ease-out);
-        }
-        
-        .pricing-card.featured {
-            border-color: var(--mp-blue);
-            transform: scale(1.05);
-        }
-        
-        .pricing-card.featured::before {
-            content: 'POPULAR';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--mp-blue);
-            color: var(--mp-black);
-            padding: 5px 20px;
-            font-size: 10px;
-            font-weight: 600;
-            letter-spacing: 0.2em;
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--mp-blue);
-            box-shadow: 0 20px 40px rgba(0,141,203,0.2);
-        }
-        
-        .pricing-card.featured:hover {
-            transform: scale(1.05) translateY(-10px);
-        }
-        
-        .pricing-title {
-            font-size: 1.8rem;
-            font-weight: 200;
-            margin-bottom: 20px;
-            color: var(--mp-white);
-        }
-        
-        .pricing-price {
-            font-size: 3.5rem;
-            font-weight: 100;
-            color: var(--mp-blue);
-            margin-bottom: 10px;
-        }
-        
-        .pricing-price sup {
-            font-size: 1.5rem;
-        }
-        
-        .pricing-period {
-            font-size: 14px;
-            color: var(--mp-gray-400);
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-        
-        .pricing-features {
-            list-style: none;
-            margin-bottom: 40px;
-        }
-        
-        .pricing-features li {
-            padding: 15px 0;
-            color: var(--mp-gray-300);
-            font-size: 15px;
-            border-bottom: 1px solid var(--mp-gray-700);
-        }
-        
-        .pricing-features li:last-child {
-            border-bottom: none;
-        }
-        
-        .pricing-cta {
-            width: 100%;
-            padding: 18px;
-            background: transparent;
-            color: var(--mp-blue);
-            border: 1px solid var(--mp-blue);
-            font-size: 12px;
-            font-weight: 500;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .pricing-cta:hover {
-            background: var(--mp-blue);
-            color: var(--mp-black);
-            transform: translateY(-2px);
-        }
-        
-        /* CASES */
-        .cases {
-            padding: 120px 40px;
-            background: linear-gradient(180deg, var(--mp-gray-900) 0%, var(--mp-black) 100%);
-        }
-        
-        .cases-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 50px;
-        }
-        
-        .case-card {
-            background: var(--mp-gray-900);
-            border: 1px solid var(--mp-gray-800);
-            padding: 50px;
-            position: relative;
-            transition: all 0.3s var(--ease-out);
-        }
-        
-        .case-card:hover {
-            transform: translateY(-10px) rotate(-1deg);
-            border-color: var(--mp-blue);
-            box-shadow: 0 30px 60px rgba(0,141,203,0.15);
-        }
-        
-        .case-number {
-            position: absolute;
-            top: -20px;
-            left: 30px;
-            font-size: 5rem;
-            font-weight: 900;
-            color: var(--mp-blue);
-            opacity: 0.1;
-        }
-        
-        .case-title {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 30px;
-            color: var(--mp-white);
-        }
-        
-        .case-stat {
-            margin: 25px 0;
-            padding: 25px 0;
-            border-top: 1px solid var(--mp-gray-800);
-            border-bottom: 1px solid var(--mp-gray-800);
-        }
-        
-        .stat-label {
-            font-size: 10px;
-            color: var(--mp-gray-500);
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            margin-bottom: 10px;
-        }
-        
-        .stat-value {
-            font-size: 1.2rem;
-            color: var(--mp-gray-300);
-            line-height: 1.4;
-        }
-        
-        .case-result {
-            font-size: 2.5rem;
-            font-weight: 100;
-            color: var(--mp-blue);
-            margin-top: 30px;
-            text-align: center;
+            letter-spacing: 0.05em;
         }
         
         /* CALENDAR */
         .calendar {
-            padding: 120px 40px;
             background: var(--mp-gray-50);
-        }
-        
-        .calendar-timeline {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .timeline-line {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--mp-gray-200);
-            display: none;
-        }
-        
-        .calendar-year {
-            margin-bottom: 80px;
-        }
-        
-        .year-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .year-title {
-            font-size: 2rem;
-            font-weight: 200;
-            color: var(--mp-black);
-            margin-bottom: 10px;
         }
         
         .calendar-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .month-card {
             background: white;
             border: 1px solid var(--mp-gray-100);
             padding: 30px;
-            position: relative;
             transition: all 0.3s var(--ease-out);
         }
         
@@ -771,9 +506,23 @@
             line-height: 1.8;
         }
         
+        .year-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .year-title {
+            font-size: 2rem;
+            font-weight: 200;
+            color: var(--mp-black);
+        }
+        
+        .calendar-year {
+            margin-bottom: 80px;
+        }
+        
         /* PHILOSOPHY */
         .philosophy {
-            padding: 120px 40px;
             background: var(--mp-white);
         }
         
@@ -861,6 +610,212 @@
             font-style: normal;
         }
         
+        /* FAQ */
+        .faq {
+            background: var(--mp-gray-50);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            border: 1px solid var(--mp-gray-100);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .faq-question:hover {
+            background: var(--mp-gray-50);
+        }
+        
+        .faq-icon {
+            font-size: 24px;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        .faq-answer p {
+            padding: 0 30px 25px;
+            color: var(--mp-gray-600);
+            line-height: 1.8;
+        }
+        
+        /* CONTACT */
+        .contact {
+            background: var(--mp-white);
+        }
+        
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-form {
+            margin-top: 60px;
+        }
+        
+        .form-group {
+            margin-bottom: 30px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--mp-gray-200);
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+        }
+        
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--mp-blue);
+        }
+        
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 18px;
+            background: var(--mp-black);
+            color: white;
+            border: none;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .form-submit:hover {
+            background: var(--mp-blue);
+            transform: translateY(-2px);
+        }
+        
+        /* FOOTER */
+        footer {
+            background: var(--mp-black);
+            color: white;
+            padding: 80px 40px 40px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            font-weight: 200;
+            margin-bottom: 20px;
+        }
+        
+        .footer-brand p {
+            color: var(--mp-gray-400);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .social-link {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--mp-gray-700);
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background: var(--mp-blue);
+            border-color: var(--mp-blue);
+        }
+        
+        .footer-column h4 {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: var(--mp-gray-400);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--mp-blue);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--mp-gray-800);
+            color: var(--mp-gray-500);
+            font-size: 13px;
+        }
+        
         /* ANIMATIONS */
         @keyframes fadeInUp {
             from {
@@ -884,40 +839,10 @@
             }
         }
         
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        @keyframes grid-move {
-            0% { background-position: 0 0, 0 0; }
-            100% { background-position: 100px 100px, 100px 100px; }
-        }
-        
         /* RESPONSIVE */
         @media (max-width: 1024px) {
             .expeditions-grid {
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
             }
             
             .philosophy-grid {
@@ -927,10 +852,6 @@
             
             .footer-content {
                 grid-template-columns: 1fr 1fr;
-            }
-            
-            .tools-grid {
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             }
         }
         
@@ -943,16 +864,8 @@
                 display: none;
             }
             
-            .mobile-menu {
-                display: block;
-            }
-            
             .hero-title {
                 font-size: 3rem;
-            }
-            
-            .hero-title-line {
-                margin: 20px 0 !important;
             }
             
             .expeditions-grid,
@@ -964,25 +877,12 @@
                 grid-template-columns: 1fr 1fr;
             }
             
-            .manifesto-rules {
-                padding: 40px 30px;
-            }
-            
-            .cases-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .footer-content {
                 grid-template-columns: 1fr;
             }
             
             .nav-cta.desktop {
                 display: none;
-            }
-            
-            .footer-links {
-                flex-direction: column;
-                gap: 20px;
             }
         }
         
@@ -1003,14 +903,6 @@
             .btn {
                 width: 100%;
             }
-            
-            .section-title {
-                font-size: 2.5rem;
-            }
-            
-            .service-card {
-                padding: 40px 25px;
-            }
         }
     </style>
 </head>
@@ -1018,7 +910,7 @@
     <!-- NAVIGATION -->
     <nav class="nav" id="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
+            <a href="#" class="nav-logo">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <path d="M20 8 L12 24 L28 24 Z" stroke="#008DCB" stroke-width="1.5" fill="none"/>
                     <circle cx="20" cy="26" r="10" stroke="black" stroke-width="1" fill="none"/>
@@ -1030,26 +922,25 @@
             <ul class="nav-menu desktop">
                 <li><a href="#expediciones" class="nav-link">Expediciones</a></li>
                 <li><a href="#calendario" class="nav-link">Calendario 2026</a></li>
-                <li><a href="#blog" class="nav-link">Blog</a></li>
                 <li><a href="#filosofia" class="nav-link">Filosofía</a></li>
                 <li><a href="#faq" class="nav-link">FAQ</a></li>
             </ul>
             
             <a href="#reservar" class="nav-cta desktop">Reservar plaza</a>
             
-            <div class="menu-toggle" onclick="toggleMobileMenu('travel')">
+            <div class="menu-toggle" onclick="toggleMobileMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </div>
         
-        <div class="mobile-menu" id="mobileMenu-travel">
-            <a href="#expediciones" onclick="toggleMobileMenu('travel')">Expediciones</a>
-            <a href="#calendario" onclick="toggleMobileMenu('travel')">Calendario</a>
-            <a href="#blog" onclick="toggleMobileMenu('travel')">Blog</a>
-            <a href="#filosofia" onclick="toggleMobileMenu('travel')">Filosofía</a>
-            <a href="#reservar" onclick="toggleMobileMenu('travel')">Reservar plaza</a>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#expediciones" onclick="toggleMobileMenu()">Expediciones</a>
+            <a href="#calendario" onclick="toggleMobileMenu()">Calendario</a>
+            <a href="#filosofia" onclick="toggleMobileMenu()">Filosofía</a>
+            <a href="#faq" onclick="toggleMobileMenu()">FAQ</a>
+            <a href="#reservar" onclick="toggleMobileMenu()">Reservar plaza</a>
         </div>
     </nav>
     
@@ -1219,105 +1110,6 @@
                 </div>
             </div>
             
-            <!-- GRECIA -->
-            <div class="expedition-card">
-                <div class="expedition-header" style="background: linear-gradient(135deg, #1565C0 0%, #0D47A1 100%);">
-                    <span class="expedition-date">ABRIL 2026</span>
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                        <circle cx="40" cy="40" r="30" stroke="white" stroke-width="2" fill="none" opacity="0.9"/>
-                        <path d="M40 20 L35 35 L50 35 L30 45 L45 45 Z" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
-                    </svg>
-                </div>
-                <div class="expedition-body">
-                    <h3 class="expedition-location">Montañas de los Dioses</h3>
-                    <p class="expedition-country">GRECIA • OLIMPO</p>
-                    <p class="expedition-description">
-                        Monte Olimpo, Meteora salvaje, gargantas de Vikos. 2.917 metros donde Zeus 
-                        lanzaba rayos. Entenderás por qué los griegos pusieron dioses en las montañas.
-                    </p>
-                    <div class="expedition-meta">
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">10</div>
-                            <div class="meta-label">días</div>
-                        </div>
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">2.917m</div>
-                            <div class="meta-label">altura</div>
-                        </div>
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">Media</div>
-                            <div class="meta-label">dificultad</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- GEORGIA -->
-            <div class="expedition-card">
-                <div class="expedition-header" style="background: linear-gradient(135deg, #5E35B1 0%, #4527A0 100%);">
-                    <span class="expedition-date">JULIO 2026</span>
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                        <rect x="25" y="25" width="30" height="30" stroke="white" stroke-width="2" fill="none" opacity="0.9"/>
-                        <rect x="30" y="30" width="20" height="20" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
-                    </svg>
-                </div>
-                <div class="expedition-body">
-                    <h3 class="expedition-location">Svaneti</h3>
-                    <p class="expedition-country">GEORGIA • CÁUCASO</p>
-                    <p class="expedition-description">
-                        Torres medievales, glaciares imposibles, el Ushba. Donde las familias guardan 
-                        tesoros en piedra y el idioma svan sobrevive sin alfabeto. Llegarás extranjero, te irás familia.
-                    </p>
-                    <div class="expedition-meta">
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">12</div>
-                            <div class="meta-label">días</div>
-                        </div>
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">Ushba</div>
-                            <div class="meta-label">objetivo</div>
-                        </div>
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">Alta</div>
-                            <div class="meta-label">dificultad</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- ARARAT -->
-            <div class="expedition-card">
-                <div class="expedition-header" style="background: linear-gradient(135deg, #6A1B9A 0%, #4A148C 100%);">
-                    <span class="expedition-date">AGOSTO 2026</span>
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                        <path d="M40 20 L30 50 L50 50 Z" stroke="white" stroke-width="2" fill="none" opacity="0.9"/>
-                        <path d="M35 25 L45 25 L50 50 L30 50 Z" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
-                    </svg>
-                </div>
-                <div class="expedition-body">
-                    <h3 class="expedition-location">Ararat</h3>
-                    <p class="expedition-country">TURQUÍA • MONTAÑA DEL ARCA</p>
-                    <p class="expedition-description">
-                        5.137 metros donde supuestamente encalló el Arca. Montaña sagrada de Armenia 
-                        en territorio turco. Algunas montañas no se suben: se peregrinan.
-                    </p>
-                    <div class="expedition-meta">
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">8</div>
-                            <div class="meta-label">días</div>
-                        </div>
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">5.137m</div>
-                            <div class="meta-label">altura</div>
-                        </div>
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">Alta</div>
-                            <div class="meta-label">dificultad</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
             <!-- MANASLU -->
             <div class="expedition-card">
                 <div class="expedition-header" style="background: linear-gradient(135deg, #00695C 0%, #004D40 100%);">
@@ -1351,39 +1143,6 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- KILIMANJARO 2.0 -->
-            <div class="expedition-card">
-                <div class="expedition-header" style="background: linear-gradient(135deg, #388E3C 0%, #2E7D32 100%);">
-                    <span class="expedition-date">SEP 2026</span>
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                        <path d="M40 15 L25 45 L55 45 Z" stroke="white" stroke-width="2" fill="none" opacity="0.9"/>
-                        <text x="40" y="55" fill="white" text-anchor="middle" font-size="14" font-weight="bold">2.0</text>
-                    </svg>
-                </div>
-                <div class="expedition-body">
-                    <h3 class="expedition-location">Kilimanjaro 2.0</h3>
-                    <p class="expedition-country">TANZANIA • LA REVANCHA</p>
-                    <p class="expedition-description">
-                        Segunda oportunidad para los que el Kili llamó de nuevo. Ruta diferente, 
-                        estrategia mejorada. La transformación real necesita tiempo.
-                    </p>
-                    <div class="expedition-meta">
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">7</div>
-                            <div class="meta-label">días</div>
-                        </div>
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">5.895m</div>
-                            <div class="meta-label">altura</div>
-                        </div>
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">Alta</div>
-                            <div class="meta-label">dificultad</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
     
@@ -1397,133 +1156,49 @@
             </p>
         </div>
         
-        <div class="calendar-timeline">
-            <div class="timeline-line"></div>
-            
-            <!-- 2025 → 2026 -->
-            <div class="calendar-year">
-                <div class="year-header">
-                    <h3 class="year-title">2026</h3>
-                </div>
-                
-                <div class="calendar-grid">
-                    <div class="month-card">
-                        <p class="month-name">NOVIEMBRE 2025</p>
-                        <h4 class="month-destination">Mgoun</h4>
-                        <p class="month-country">Marruecos • Alto Atlas</p>
-                        <div class="month-details">
-                            <p>8 días • 4.071m</p>
-                            <p>Dificultad: Media</p>
-                        </div>
-                    </div>
-                    
-                    <div class="month-card featured">
-                        <p class="month-name">DICIEMBRE-ENERO</p>
-                        <h4 class="month-destination">Kilimanjaro</h4>
-                        <p class="month-country">Tanzania • África</p>
-                        <div class="month-details">
-                            <p>7 días • 5.895m</p>
-                            <p><strong>3 plazas disponibles</strong></p>
-                        </div>
-                    </div>
-                    
-                    <div class="month-card">
-                        <p class="month-name">FEBRERO-MARZO</p>
-                        <h4 class="month-destination">Egipto Auténtico</h4>
-                        <p class="month-country">Egipto • Desierto</p>
-                        <div class="month-details">
-                            <p>12 días • Oasis</p>
-                            <p>Dificultad: Media</p>
-                        </div>
-                    </div>
-                    
-                    <div class="month-card">
-                        <p class="month-name">ABRIL</p>
-                        <h4 class="month-destination">Grecia</h4>
-                        <p class="month-country">Monte Olimpo</p>
-                        <div class="month-details">
-                            <p>10 días • 2.917m</p>
-                            <p>Semana Santa</p>
-                        </div>
-                    </div>
-                    
-                    <div class="month-card">
-                        <p class="month-name">JULIO</p>
-                        <h4 class="month-destination">Svaneti</h4>
-                        <p class="month-country">Georgia • Cáucaso</p>
-                        <div class="month-details">
-                            <p>12 días • Ushba</p>
-                            <p>Dificultad: Alta</p>
-                        </div>
-                    </div>
-                    
-                    <div class="month-card">
-                        <p class="month-name">AGOSTO</p>
-                        <h4 class="month-destination">Ararat</h4>
-                        <p class="month-country">Turquía • 5.137m</p>
-                        <div class="month-details">
-                            <p>8 días • Montaña del Arca</p>
-                            <p>Dificultad: Alta</p>
-                        </div>
-                    </div>
-                    
-                    <div class="month-card">
-                        <p class="month-name">SEPTIEMBRE</p>
-                        <h4 class="month-destination">Kilimanjaro 2.0</h4>
-                        <p class="month-country">Tanzania • Revancha</p>
-                        <div class="month-details">
-                            <p>7 días • 5.895m</p>
-                            <p>Segunda oportunidad</p>
-                        </div>
-                    </div>
-                    
-                    <div class="month-card featured">
-                        <p class="month-name">OCTUBRE-NOVIEMBRE</p>
-                        <h4 class="month-destination">Manaslu</h4>
-                        <p class="month-country">Nepal • Himalaya</p>
-                        <div class="month-details">
-                            <p>18 días • Paso 5.160m</p>
-                            <p><strong>2 plazas disponibles</strong></p>
-                        </div>
-                    </div>
-                </div>
+        <div class="calendar-year">
+            <div class="year-header">
+                <h3 class="year-title">2026</h3>
             </div>
             
-            <!-- 2027 Preview -->
-            <div class="calendar-year">
-                <div class="year-header">
-                    <h3 class="year-title">2027 Preview</h3>
+            <div class="calendar-grid">
+                <div class="month-card">
+                    <p class="month-name">NOVIEMBRE 2025</p>
+                    <h4 class="month-destination">Mgoun</h4>
+                    <p class="month-country">Marruecos • Alto Atlas</p>
+                    <div class="month-details">
+                        <p>8 días • 4.071m</p>
+                        <p>Dificultad: Media</p>
+                    </div>
                 </div>
                 
-                <div class="calendar-grid">
-                    <div class="month-card">
-                        <p class="month-name">ENERO-FEBRERO</p>
-                        <h4 class="month-destination">Cordillera Blanca</h4>
-                        <p class="month-country">Perú • Andes</p>
-                        <div class="month-details">
-                            <p>14 días • Huascarán</p>
-                            <p>Apertura de reservas: Julio 2026</p>
-                        </div>
+                <div class="month-card featured">
+                    <p class="month-name">DICIEMBRE-ENERO</p>
+                    <h4 class="month-destination">Kilimanjaro</h4>
+                    <p class="month-country">Tanzania • África</p>
+                    <div class="month-details">
+                        <p>7 días • 5.895m</p>
+                        <p><strong>3 plazas disponibles</strong></p>
                     </div>
-                    
-                    <div class="month-card">
-                        <p class="month-name">POR DEFINIR</p>
-                        <h4 class="month-destination">Ecuador</h4>
-                        <p class="month-country">Avenida de los Volcanes</p>
-                        <div class="month-details">
-                            <p>Cotopaxi • Chimborazo</p>
-                            <p>Fechas próximamente</p>
-                        </div>
+                </div>
+                
+                <div class="month-card">
+                    <p class="month-name">FEBRERO-MARZO</p>
+                    <h4 class="month-destination">Egipto Auténtico</h4>
+                    <p class="month-country">Egipto • Desierto</p>
+                    <div class="month-details">
+                        <p>12 días • Oasis</p>
+                        <p>Dificultad: Media</p>
                     </div>
-                    
-                    <div class="month-card">
-                        <p class="month-name">POR DEFINIR</p>
-                        <h4 class="month-destination">Chile</h4>
-                        <p class="month-country">Atacama a Patagonia</p>
-                        <div class="month-details">
-                            <p>Desierto y Hielo</p>
-                            <p>Fechas próximamente</p>
-                        </div>
+                </div>
+                
+                <div class="month-card featured">
+                    <p class="month-name">OCTUBRE-NOVIEMBRE</p>
+                    <h4 class="month-destination">Manaslu</h4>
+                    <p class="month-country">Nepal • Himalaya</p>
+                    <div class="month-details">
+                        <p>18 días • Paso 5.160m</p>
+                        <p><strong>2 plazas disponibles</strong></p>
                     </div>
                 </div>
             </div>
@@ -1551,7 +1226,6 @@
                         <li class="philosophy-item">Tu mayor miedo es quedarte sin batería</li>
                         <li class="philosophy-item">Necesitas subir stories cada 5 minutos</li>
                         <li class="philosophy-item">No puedes vivir sin Netflix antes de dormir</li>
-                        <li class="philosophy-item">Piensas que "roughing it" es un hotel de 3 estrellas</li>
                         <li class="philosophy-item">Prefieres la comodidad a la experiencia</li>
                     </ul>
                 </div>
@@ -1564,7 +1238,6 @@
                         <li class="philosophy-item">Entiendes que lo mejor sucede cuando el plan cambia</li>
                         <li class="philosophy-item">El papel higiénico es opcional, la aventura obligatoria</li>
                         <li class="philosophy-item">Quieres volver siendo otra persona</li>
-                        <li class="philosophy-item">Sabes que las mejores conversaciones suceden sin WhatsApp</li>
                         <li class="philosophy-item">Entiendes que perderte es la única forma de encontrarte</li>
                     </ul>
                 </div>
@@ -1621,89 +1294,6 @@
             
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>¿Cómo llego al punto de inicio?</span>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>
-                        Te doy toda la info detallada: vuelos recomendados, transfers, puntos de encuentro. 
-                        Coordino con el grupo para que nadie llegue solo si no quiere. 
-                        Los vuelos van por tu cuenta.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>No puedo llegar el día exacto. ¿Puedo ir igualmente?</span>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>
-                        Depende de la expedición y el punto donde estemos. Hablamos y vemos opciones. 
-                        A veces se puede, a veces no. La montaña no espera.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>¿Información sobre alojamiento?</span>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>
-                        Tiendas en montaña, refugios cuando hay, casas locales cuando se puede. 
-                        Habitaciones compartidas la norma. Si necesitas tu habitación individual, 
-                        no es tu viaje. Aquí venimos a compartir.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Si he pagado y no puedo ir... ¿devoluciones?</span>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>
-                        El 50% de reserva no se devuelve nunca. El otro 50% solo si cancelas 
-                        con más de 60 días de antelación. Es duro pero justo. 
-                        Recomiendo seguro de cancelación.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>¿Hay límite de edad?</span>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>
-                        18 años mínimo. Máximo no hay si aguantas el ritmo. 
-                        He tenido gente de 70 años que daba mil vueltas a los de 30. 
-                        La edad es mental.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Tengo una discapacidad ¿Puedo ir?</span>
-                    <span class="faq-icon">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>
-                        Escríbeme y lo hablamos. Cada caso es único. 
-                        Si hay voluntad, buscamos la manera. 
-                        La montaña es para todos los que la respetan.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
                     <span>¿Necesito experiencia previa?</span>
                     <span class="faq-icon">+</span>
                 </div>
@@ -1718,14 +1308,14 @@
             
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>¿Incluyen seguro de viaje?</span>
+                    <span>¿Hay límite de edad?</span>
                     <span class="faq-icon">+</span>
                 </div>
                 <div class="faq-answer">
                     <p>
-                        Seguro básico de accidentes incluido. Recomiendo encarecidamente 
-                        que traigas uno completo con evacuación, cancelación y repatriación. 
-                        Te paso recomendaciones.
+                        18 años mínimo. Máximo no hay si aguantas el ritmo. 
+                        He tenido gente de 70 años que daba mil vueltas a los de 30. 
+                        La edad es mental.
                     </p>
                 </div>
             </div>
@@ -1767,12 +1357,7 @@
                         <option value="mgoun">Mgoun - Marruecos (Nov 2025)</option>
                         <option value="kilimanjaro">Kilimanjaro (Dic 2025-Ene 2026)</option>
                         <option value="egipto">Egipto Auténtico (Feb-Mar 2026)</option>
-                        <option value="grecia">Grecia - Olimpo (Abril 2026)</option>
-                        <option value="georgia">Georgia - Svaneti (Julio 2026)</option>
-                        <option value="ararat">Ararat (Agosto 2026)</option>
-                        <option value="kilimanjaro2">Kilimanjaro 2.0 (Sep 2026)</option>
                         <option value="manaslu">Manaslu - Nepal (Oct-Nov 2026)</option>
-                        <option value="2027">Expediciones 2027 (info)</option>
                     </select>
                 </div>
                 
@@ -1810,7 +1395,7 @@
                     <li><a href="#calendario">Calendario 2026</a></li>
                     <li><a href="#expediciones">Próximas salidas</a></li>
                     <li><a href="#filosofia">Filosofía</a></li>
-                    <li><a href="#faq">Preguntas frecuentes</a></li>
+                    <li><a href="#faq">FAQ</a></li>
                 </ul>
             </div>
             
@@ -1829,7 +1414,6 @@
                 <ul class="footer-links">
                     <li><a href="#">Aviso legal</a></li>
                     <li><a href="#">Política de privacidad</a></li>
-                    <li><a href="#">Política de cookies</a></li>
                     <li><a href="#">Condiciones</a></li>
                 </ul>
             </div>
@@ -1840,4 +1424,49 @@
         </div>
     </footer>
     
-    </div> <!-- Cierre de travel-world -->
+    <script>
+        // Scroll effect for navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+        
+        // FAQ toggle
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+        
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('¡Gracias por tu interés! Te contactaremos pronto para confirmar tu reserva.');
+            event.target.reset();
+        }
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
