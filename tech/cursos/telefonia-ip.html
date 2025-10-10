@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telefonía IP con Mili Pérez | Deja de perder llamadas. Empieza a ganar dinero.</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --mp-black: #000000;
+            --mp-white: #ffffff;
+            --mp-blue: #008DCB;
+            --mp-gray-900: #111111;
+            --mp-gray-800: #1a1a1a;
+            --mp-gray-700: #2a2a2a;
+            --mp-gray-600: #3a3a3a;
+            --mp-gray-500: #4a4a4a;
+            --mp-gray-400: #6a6a6a;
+            --mp-gray-300: #8a8a8a;
+            --mp-gray-200: #aaaaaa;
+            --mp-gray-100: #cacaca;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--mp-black);
+            color: var(--mp-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* NAVIGATION */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100vh;
+            background: var(--mp-gray-900);
+            border-right: 1px solid var(--mp-gray-800);
+            padding: 40px 30px;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .nav-logo {
+            margin-bottom: 40px;
+        }
+        
+        .nav-logo svg {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+        }
+        
+        .nav-logo h1 {
+            font-size: 18px;
+            font-weight: 200;
+            letter-spacing: 0.2em;
+            color: var(--mp-white);
+            margin-bottom: 5px;
+        }
+        
+        .nav-logo p {
+            font-size: 10px;
+            color: var(--mp-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            font-weight: 500;
+        }
+        
+        .nav-menu {
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-bottom: 15px;
+        }
+        
+        .nav-menu a {
+            color: var(--mp-gray-300);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            transition: all 0.3s;
+            display: block;
+            padding: 8px 0;
+            border-left: 2px solid transparent;
+            padding-left: 15px;
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--mp-blue);
+            border-left-color: var(--mp-blue);
+        }
+        
+        /* CONTENT */
+        .content {
+            margin-left: 280px;
+            padding: 0;
+        }
+        
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(ellipse at center, var(--mp-gray-900) 0%, var(--mp-black) 70%);
+            padding: 80px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0,141,203,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(0,141,203,0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+        
+        .hero-tag {
+            font-size: 11px;
+            letter-spacing: 0.4em;
+            color: var(--mp-blue);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 100;
+            line-height: 0.9;
+            margin-bottom: 30px;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--mp-blue);
+            font-weight: 300;
+            margin-bottom: 40px;
+            letter-spacing: 0.1em;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--mp-gray-300);
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 60px;
+        }
+        
+        .hero-meta {
+            display: flex;
+            gap: 60px;
+            justify-content: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--mp-gray-800);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .hero-meta-item {
+            text-align: center;
+        }
+        
+        .hero-meta-label {
+            font-size: 10px;
+            color: var(--mp-gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 10px;
+        }
+        
+        .hero-meta-value {
+            font-size: 14px;
+            color: var(--mp-white);
+            font-weight: 400;
+        }
+        
+        /* SECTIONS */
+        .section {
+            padding: 120px 80px;
+            border-bottom: 1px solid var(--mp-gray-900);
+        }
+        
+        .section-number {
+            font-size: 12px;
+            color: var(--mp-gray-500);
+            letter-spacing: 0.3em;
+            margin-bottom: 20px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            font-weight: 100;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            color: var(--mp-white);
+        }
+        
+        .section-intro {
+            font-size: 1.1rem;
+            color: var(--mp-gray-400);
+            font-weight: 300;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-bottom: 80px;
+        }
+        
+        /* GRID SYSTEM */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        /* CARDS */
+        .card {
+            background: var(--mp-gray-900);
+            border: 1px solid var(--mp-gray-800);
+            padding: 40px;
+            transition: all 0.3s;
+        }
+        
+        .card:hover {
+            border-color: var(--mp-blue);
+            transform: translateY(-5px);
+        }
+        
+        .card-label {
+            font-size: 10px;
+            color: var(--mp-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+            color: var(--mp-white);
+            line-height: 1.3;
+        }
+        
+        .card-text {
+            font-size: 15px;
+            color: var(--mp-gray-300);
+            line-height: 1.7;
+        }
+        
+        /* LISTS */
+        .feature-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+        
+        .feature-item {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--mp-gray-800);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-icon {
+            width: 8px;
+            height: 8px;
+            background: var(--mp-blue);
+            border-radius: 50%;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+        
+        .feature-content {
+            flex: 1;
+        }
+        
+        .feature-title {
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 8px;
+            color: var(--mp-white);
+        }
+        
+        .feature-text {
+            font-size: 14px;
+            color: var(--mp-gray-400);
+            line-height: 1.6;
+        }
+        
+        /* HIGHLIGHT BOX */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--mp-gray-900) 0%, var(--mp-gray-800) 100%);
+            border-left: 3px solid var(--mp-blue);
+            padding: 60px;
+            margin: 60px 0;
+            position: relative;
+        }
+        
+        .highlight-box h3 {
+            font-size: 1.5rem;
+            font-weight: 200;
+            margin-bottom: 20px;
+            color: var(--mp-white);
+        }
+        
+        .highlight-box p {
+            font-size: 1rem;
+            color: var(--mp-gray-300);
+            line-height: 1.8;
+        }
+        
+        /* STATS */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--mp-gray-900);
+            border: 1px solid var(--mp-gray-800);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 100;
+            color: var(--mp-blue);
+            margin-bottom: 10px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: var(--mp-gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+        
+        /* PRICING */
+        .pricing-table {
+            background: var(--mp-gray-900);
+            border: 1px solid var(--mp-gray-800);
+            padding: 40px;
+            margin: 40px 0;
+        }
+        
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--mp-gray-800);
+        }
+        
+        .pricing-title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--mp-white);
+            margin-bottom: 10px;
+        }
+        
+        .pricing-subtitle {
+            font-size: 14px;
+            color: var(--mp-gray-400);
+        }
+        
+        .pricing-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--mp-gray-800);
+            align-items: center;
+        }
+        
+        .pricing-row:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-scenario {
+            font-size: 14px;
+            color: var(--mp-white);
+            font-weight: 400;
+        }
+        
+        .pricing-usage {
+            font-size: 12px;
+            color: var(--mp-gray-400);
+            margin-top: 5px;
+        }
+        
+        .pricing-cost {
+            font-size: 16px;
+            color: var(--mp-blue);
+            font-family: 'JetBrains Mono', monospace;
+            text-align: right;
+        }
+        
+        /* CTA */
+        .cta-section {
+            background: var(--mp-gray-900);
+            padding: 80px;
+            text-align: center;
+            border-top: 1px solid var(--mp-gray-800);
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 100;
+            margin-bottom: 30px;
+            color: var(--mp-white);
+        }
+        
+        .cta-text {
+            font-size: 1.1rem;
+            color: var(--mp-gray-300);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-signature {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--mp-gray-800);
+        }
+        
+        .cta-quote {
+            font-size: 1.2rem;
+            font-weight: 200;
+            color: var(--mp-blue);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .cta-author {
+            font-size: 14px;
+            color: var(--mp-gray-400);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .nav {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid var(--mp-gray-800);
+                padding: 30px 20px;
+            }
+            
+            .content {
+                margin-left: 0;
+            }
+            
+            .hero,
+            .section {
+                padding: 60px 40px;
+            }
+            
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-meta {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero,
+            .section {
+                padding: 40px 20px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .pricing-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .pricing-cost {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- NAVIGATION -->
+    <nav class="nav">
+        <div class="nav-logo">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                <rect x="10" y="10" width="30" height="30" stroke="#008DCB" stroke-width="2" fill="none"/>
+                <rect x="15" y="15" width="20" height="20" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
+                <circle cx="25" cy="25" r="4" fill="#008DCB"/>
+            </svg>
+            <h1>MILI PÉREZ</h1>
+            <p>TELEFONÍA IP</p>
+        </div>
+        
+        <ul class="nav-menu">
+            <li><a href="#hero" class="active">Inicio</a></li>
+            <li><a href="#introduccion">Introducción</a></li>
+            <li><a href="#modulo1">Módulo 1: Diagnóstico</a></li>
+            <li><a href="#modulo2">Módulo 2: Centralita Virtual</a></li>
+            <li><a href="#modulo3">Módulo 3: Números Virtuales</a></li>
+            <li><a href="#modulo4">Módulo 4: SIP Trunk vs Línea SIP</a></li>
+            <li><a href="#modulo5">Módulo 5: Tarifas Reales</a></li>
+            <li><a href="#cta">Empezar</a></li>
+        </ul>
+    </nav>
+    
+    <!-- CONTENT -->
+    <div class="content">
+        
+        <!-- HERO -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <div class="hero-tag">CURSO PRÁCTICO DE TELEFONÍA IP</div>
+                
+                <h1 class="hero-title">
+                    Deja de perder llamadas.<br>
+                    Empieza a ganar dinero.
+                </h1>
+                
+                <p class="hero-subtitle">
+                    El único curso que resuelve los problemas reales que te cuestan dinero cada día.
+                </p>
+                
+                <p class="hero-description">
+                    14 años resolviendo problemas reales en netelip. No teoría. Casos específicos. 
+                    Configuraciones que funcionan. ROI demostrable en 90 días.
+                </p>
+                
+                <div class="hero-meta">
+                    <div class="hero-meta-item">
+                        <div class="hero-meta-label">Instructor</div>
+                        <div class="hero-meta-value">Mili Pérez</div>
+                    </div>
+                    <div class="hero-meta-item">
+                        <div class="hero-meta-label">Experiencia</div>
+                        <div class="hero-meta-value">14 años</div>
+                    </div>
+                    <div class="hero-meta-item">
+                        <div class="hero-meta-label">Módulos</div>
+                        <div class="hero-meta-value">5 + casos reales</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- INTRODUCCIÓN -->
+        <section id="introduccion" class="section">
+            <div class="section-number">INTRO</div>
+            <h2 class="section-title">Por qué este curso existe</h2>
+            <p class="section-intro">
+                El problema que nadie quiere admitir: cada día, mientras lees esto, 
+                tu empresa está perdiendo dinero por algo tan simple como que tu teléfono no funciona como debería.
+            </p>
+            
+            <div class="highlight-box">
+                <h3>La realidad incómoda</h3>
+                <p>
+                    El 73% de las empresas en España usa telefonía que les cuesta más dinero del que genera. 
+                    No porque sea cara, sino porque está mal configurada, mal optimizada y mal automatizada.
+                </p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">73%</div>
+                    <div class="stat-label">Empresas con telefonía mal optimizada</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">€2K</div>
+                    <div class="stat-label">Reserva perdida a las 19:30h</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">45seg</div>
+                    <div class="stat-label">Tiempo antes de que cuelguen</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">20</div>
+                    <div class="stat-label">Años de netelip en el mercado</div>
+                </div>
+            </div>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-label">PROBLEMAS REALES</div>
+                    <h3 class="card-title">Lo que te está costando dinero ahora mismo</h3>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-content">
+                                <div class="feature-title">Cliente que llama a las 19:30h</div>
+                                <div class="feature-text">Reserva de €2.000. Nadie responde. Se va a la competencia.</div>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-content">
+                                <div class="feature-title">Lead cualificado que cuelga</div>
+                                <div class="feature-text">45 segundos esperando. Nunca volverá a llamar.</div>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-content">
+                                <div class="feature-title">Llamada comercial cortada</div>
+                                <div class="feature-text">Durante la transferencia. Cliente molesto que compra en otro lado.</div>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-content">
+                                <div class="feature-title">50 respuestas repetidas diarias</div>
+                                <div class="feature-text">"¿Cuál es vuestro horario?" "¿Dónde estáis?" "¿Tenéis parking?"</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">SOLUCIONES QUE FUNCIONAN</div>
+                    <h3 class="card-title">Lo que vas a conseguir aquí</h3>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-content">
+                                <div class="feature-title">Capturar cada lead</div>
+                                <div class="feature-text">En lugar de perder llamadas importantes.</div>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-content">
+                                <div class="feature-title">Automatizar respuestas inteligentes</div>
+                                <div class="feature-text">En lugar de repetir FAQs 50 veces al día.</div>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-content">
+                                <div class="feature-title">Optimizar el personal que tienes</div>
+                                <div class="feature-text">En lugar de contratar 10 personas más.</div>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-content">
+                                <div class="feature-title">Saber exactamente quién llamó</div>
+                                <div class="feature-text">Y por qué. En lugar de esperar que llamen.</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- MÓDULO 1 -->
+        <section id="modulo1" class="section">
+            <div class="section-number">MÓDULO 01</div>
+            <h2 class="section-title">Por qué tu teléfono no funciona como debería</h2>
+            <p class="section-intro">
+                Identifica exactamente dónde estás perdiendo dinero. 
+                Sin diagnóstico correcto, cualquier solución es una tirita.
+            </p>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-label">1.1 PROBLEMAS OCULTOS</div>
+                    <h3 class="card-title">Los problemas que nadie te cuenta</h3>
+                    <div class="card-text">
+                        Llamada perdida = cliente que se va a la competencia. Por qué la telefonía tradicional está matando tu rentabilidad. El coste real de cada "no hay nadie disponible".
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">1.2 NETELIP 20 AÑOS</div>
+                    <h3 class="card-title">20 años resolviendo lo que otros no pueden</h3>
+                    <div class="card-text">
+                        Casos reales donde otros operadores fallaron. Por qué el 90% de las empresas usa mal su telefonía. El panel netelip Cloud: donde controlas todo sin depender de nadie.
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">1.3 CASOS REALES</div>
+                    <h3 class="card-title">Empresas que lo cambiaron todo</h3>
+                    <div class="card-text">
+                        La empresa de Zaragoza que pasó de perder llamadas a cerrar ventas. Consultora que unificó 3 países en un solo sistema. Call center que redujo costes 60% sin perder calidad.
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- MÓDULO 2 -->
+        <section id="modulo2" class="section">
+            <div class="section-number">MÓDULO 02</div>
+            <h2 class="section-title">Centralita Virtual</h2>
+            <p class="section-intro">
+                Deja de perder llamadas importantes. Convierte cada llamada en una oportunidad de negocio.
+                Setup que funciona desde el minuto 1.
+            </p>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-label">2.1 SETUP INICIAL</div>
+                    <h3 class="card-title">Setup que funciona desde el minuto 1</h3>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-content">
+                                <div class="feature-title">Activación de prueba gratuita</div>
+                                <div class="feature-text">Sin trucos ni letra pequeña</div>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-content">
+                                <div class="feature-title">Configuración correcta</div>
+                                <div class="feature-text">Evita los errores que comete el 80% de usuarios</div>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-content">
+                                <div class="feature-title">Detección de fallos</div>
+                                <div class="feature-text">Cómo detectar y corregir lo que no funciona</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">2.2 EXTENSIONES</div>
+                    <h3 class="card-title">Extensiones que organizan tu caos</h3>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-content">
+                                <div class="feature-title">Deja de gritar nombres</div>
+                                <div class="feature-text">Por la oficina para transferir llamadas</div>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-content">
+                                <div class="feature-title">Departamentos que funcionan</div>
+                                <div class="feature-text">Extensiones organizadas realmente</div>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-content">
+                                <div class="feature-title">Transferencias sin cortes</div>
+                                <div class="feature-text">Que no pierden llamadas importantes</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-label">2.3 FUNCIONALIDADES</div>
+                    <h3 class="card-title">Funcionalidades que tus clientes notan</h3>
+                    <div class="card-text">
+                        IVR: Menús que no frustran a quien llama. Colas de llamadas: Nadie cuelga esperando. 
+                        Grabaciones: Compliance real, no paranoia legal. Estadísticas: Números que importan, no métricas vanidosas.
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">2.4 PERSONALIZACIÓN</div>
+                    <h3 class="card-title">Personalización que marca diferencias</h3>
+                    <div class="card-text">
+                        Locuciones que no suenan a robot barato. Música de espera que no molesta. 
+                        Horarios inteligentes que capturan leads fuera de oficina. API DTMF: conecta con lo que ya tienes funcionando.
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- MÓDULO 3 -->
+        <section id="modulo3" class="section">
+            <div class="section-number">MÓDULO 03</div>
+            <h2 class="section-title">Números virtuales</h2>
+            <p class="section-intro">
+                Haz presencia donde no estás. Vende en Madrid estando en Barcelona. 
+                Cobra en México viviendo en España. 58 países disponibles.
+            </p>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-label">3.1 ESTRATEGIA</div>
+                    <h3 class="card-title">¿Nuevo número o portabilidad?</h3>
+                    <div class="card-text">
+                        La decisión que puede costarte clientes. Números geográficos: presencia local sin alquiler. 
+                        58 países disponibles: el mundo como mercado.
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">3.2 PORTABILIDAD</div>
+                    <h3 class="card-title">Portabilidad en 24h sin dramas</h3>
+                    <div class="card-text">
+                        Cómo no perder ni una sola llamada en el cambio. Documentos que necesitas por país. 
+                        Desvíos temporales que funcionan.
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">3.3 CASOS REALES</div>
+                    <h3 class="card-title">Casos reales que funcionan</h3>
+                    <div class="card-text">
+                        Expandirse internacionalmente sin oficinas. Un número por campaña: trackea qué funciona. 
+                        A/B testing con numeración: datos reales de conversión.
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- MÓDULO 4 -->
+        <section id="modulo4" class="section">
+            <div class="section-number">MÓDULO 04</div>
+            <h2 class="section-title">SIP Trunk vs Línea SIP</h2>
+            <p class="section-intro">
+                Elige bien o paga las consecuencias. La decisión técnica que puede hacer 
+                o deshacer tu infraestructura. Sin tecnicismos innecesarios.
+            </p>
+            
+            <div class="highlight-box">
+                <h3>La regla simple</h3>
+                <p>
+                    ¿Tienes centralita física? SIP Trunk. ¿Empiezas de cero? Línea SIP. 
+                    Esta decisión te ahorrará meses de configuraciones y miles de euros en errores.
+                </p>
+            </div>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-label">4.1 LÍNEA SIP</div>
+                    <h3 class="card-title">Flexibilidad total</h3>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-content">
+                                <div class="feature-title">Softphones que funcionan</div>
+                                <div class="feature-text">Zoiper, Bria - configurados correctamente</div>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-content">
+                                <div class="feature-title">Apps móviles sin cortes</div>
+                                <div class="feature-text">Llamadas estables desde cualquier lugar</div>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-content">
+                                <div class="feature-title">WebPhone universal</div>
+                                <div class="feature-text">Desde cualquier navegador, sin instalaciones</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">4.2 SIP TRUNK</div>
+                    <h3 class="card-title">Potencia empresarial</h3>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-content">
+                                <div class="feature-title">Centralitas físicas</div>
+                                <div class="feature-text">3CX, Asterisk conectadas en minutos</div>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-content">
+                                <div class="feature-title">IP fija configurada</div>
+                                <div class="feature-text">Correctamente desde el primer intento</div>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon"></div>
+                            <div class="feature-content">
+                                <div class="feature-title">Escalabilidad real</div>
+                                <div class="feature-text">Para cuando crezca tu negocio</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- MÓDULO 5 -->
+        <section id="modulo5" class="section">
+            <div class="section-number">MÓDULO 05</div>
+            <h2 class="section-title">Tarifas reales</h2>
+            <p class="section-intro">
+                Deja de pagar de más. Cómo no caer en las trampas de los operadores tradicionales. 
+                Tarifas sin letra pequeña. Números reales de empresas reales.
+            </p>
+            
+            <div class="pricing-table">
+                <div class="pricing-header">
+                    <div class="pricing-title">Tarifas sin letra pequeña</div>
+                    <div class="pricing-subtitle">1,0 cent/min fijos • 2,9 cent/min móviles • Sin sorpresas</div>
+                </div>
+                
+                <div class="pricing-row">
+                    <div>
+                        <div class="pricing-scenario">Pyme que mueve volumen</div>
+                        <div class="pricing-usage">100K-500K min/mes • 70% fijos/30% móviles</div>
+                    </div>
+                    <div class="pricing-cost">€1.570-€7.850/mes</div>
+                </div>
+                
+                <div class="pricing-row">
+                    <div>
+                        <div class="pricing-scenario">Pyme equilibrada</div>
+                        <div class="pricing-usage">100K-500K min/mes • 50% fijos/50% móviles</div>
+                    </div>
+                    <div class="pricing-cost">€1.950-€9.750/mes</div>
+                </div>
+                
+                <div class="pricing-row">
+                    <div>
+                        <div class="pricing-scenario">Call Center serio</div>
+                        <div class="pricing-usage">500K-2M min/mes • Estrategias optimizadas</div>
+                    </div>
+                    <div class="pricing-cost">Consultar</div>
+                </div>
+                
+                <div class="pricing-row">
+                    <div>
+                        <div class="pricing-scenario">Grandes cuentas</div>
+                        <div class="pricing-usage">+2M min/mes • Descuentos progresivos</div>
+                    </div>
+                    <div class="pricing-cost">Consultar</div>
+                </div>
+            </div>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-label">SIN TRUCOS</div>
+                    <h3 class="card-title">Facturación transparente</h3>
+                    <div class="card-text">
+                        Facturación por segundos reales, no por minutos inventados. Sin "establecimiento de llamada" para engordar factura. 
+                        Tarifas internacionales competitivas.
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">OPTIMIZACIÓN</div>
+                    <h3 class="card-title">Estrategias de ahorro</h3>
+                    <div class="card-text">
+                        Distribución inteligente de tráfico. Predicción de consumo basada en históricos. 
+                        Horarios optimizados para bajar costes.
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">EMPRESARIAL</div>
+                    <h3 class="card-title">Soporte que funciona</h3>
+                    <div class="card-text">
+                        SLA que funciona con soporte real. Planes personalizados para volúmenes altos. 
+                        Integración con tu sistema de facturación.
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA -->
+        <section id="cta" class="cta-section">
+            <h2 class="cta-title">¿Empezamos?</h2>
+            <p class="cta-text">
+                Al finalizar este curso, tu empresa va a atender el teléfono de forma radicalmente diferente. 
+                Vas a dejar de perder dinero por llamadas mal gestionadas. Y lo más importante: 
+                vas a tener un sistema que escala contigo, no que te limita.
+            </p>
+            
+            <div class="cta-signature">
+                <div class="cta-quote">
+                    "Deja de perder llamadas. Deja de perder dinero. Empieza a ganar."
+                </div>
+                <div class="cta-author">
+                    Mili Pérez - 14 años resolviendo problemas reales que otros no pueden
+                </div>
+            </div>
+        </section>
+        
+    </div>
+    
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('.nav-menu a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('.nav-menu a').forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Scroll to section
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Update active nav on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    document.querySelectorAll('.nav-menu a').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+        
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
