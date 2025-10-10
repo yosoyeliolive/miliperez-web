@@ -25,9 +25,10 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             overflow: hidden;
+            margin: 0;
+            padding: 0;
         }
         
-        /* PORTAL STYLES */
         .portal {
             height: 100vh;
             display: flex;
@@ -46,6 +47,7 @@
             transition: flex 0.8s var(--ease-out);
             cursor: pointer;
             overflow: hidden;
+            text-decoration: none;
         }
         
         .portal-side:hover {
@@ -148,7 +150,6 @@
             z-index: 10;
         }
         
-        /* RESPONSIVE */
         @media (max-width: 768px) {
             .portal {
                 flex-direction: column;
@@ -172,9 +173,7 @@
     </style>
 </head>
 <body>
-    <!-- PORTAL DUAL -->
     <div class="portal">
-        <!-- TRAVEL SIDE -->
         <a href="travel.html" class="portal-side portal-travel">
             <div class="portal-content">
                 <div class="portal-icon">
@@ -199,10 +198,8 @@
             </div>
         </a>
         
-        <!-- DIVIDER -->
         <div class="portal-divider"></div>
         
-        <!-- TECH SIDE -->
         <a href="tech.html" class="portal-side portal-tech">
             <div class="portal-content">
                 <div class="portal-icon">
