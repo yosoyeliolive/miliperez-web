@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MILI PÉREZ - Cruzando fronteras. Expediciones sin WiFi. Sistemas sin límites.">
-    <title>MILI PÉREZ | Cruzando fronteras con la tecnología correcta</title>
+    <meta name="description" content="MILI PÉREZ - Expediciones sin ataduras. 53 países pisados. Donde los mapas se acaban y tú empiezas.">
+    <title>MILI PÉREZ | Expediciones sin ataduras</title>
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
         
         * {
             margin: 0;
@@ -18,27 +17,29 @@
         
         :root {
             --mp-black: #000000;
-            --mp-dark: #0a0a0a;
             --mp-white: #ffffff;
             --mp-blue: #008DCB;
             --mp-blue-light: #e6f4fa;
-            --mp-blue-bright: #00a8ff;
-            --mp-blue-dark: #005580;
             --mp-gray-900: #1a1a1a;
             --mp-gray-800: #2a2a2a;
-            --mp-gray-700: #2a2a2a;
             --mp-gray-600: #4a4a4a;
-            --mp-gray-500: #4a4a4a;
             --mp-gray-400: #8a8a8a;
-            --mp-gray-300: #8a8a8a;
             --mp-gray-200: #d4d4d4;
             --mp-gray-100: #e8e8e8;
             --mp-gray-50: #f5f5f5;
             --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--mp-white);
+            color: var(--mp-black);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
         
         /* NAVIGATION */
@@ -73,15 +74,10 @@
             gap: 15px;
             text-decoration: none;
             color: var(--mp-black);
-            cursor: pointer;
         }
         
         .nav-logo:hover svg {
             transform: rotate(-10deg);
-        }
-        
-        .nav-logo svg {
-            transition: transform 0.3s;
         }
         
         .nav-menu {
@@ -140,11 +136,13 @@
             transform: translateY(-2px);
         }
         
+        /* MOBILE MENU */
         .menu-toggle {
             display: none;
             flex-direction: column;
-            gap: 5px;
+            gap: 4px;
             cursor: pointer;
+            z-index: 1001;
         }
         
         .menu-toggle span {
@@ -154,25 +152,50 @@
             transition: all 0.3s;
         }
         
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        
         .mobile-menu {
             display: none;
-            flex-direction: column;
-            padding: 20px 40px;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
             background: white;
-            border-top: 1px solid var(--mp-gray-100);
+            padding: 100px 40px;
+            transition: right 0.3s var(--ease-out);
         }
         
         .mobile-menu.active {
-            display: flex;
+            right: 0;
         }
         
         .mobile-menu a {
-            padding: 15px 0;
+            display: block;
+            font-size: 24px;
+            font-weight: 300;
             color: var(--mp-black);
             text-decoration: none;
-            font-size: 14px;
-            border-bottom: 1px solid var(--mp-gray-100);
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeInRight 0.5s forwards;
         }
+        
+        .mobile-menu a:nth-child(1) { animation-delay: 0.1s; }
+        .mobile-menu a:nth-child(2) { animation-delay: 0.2s; }
+        .mobile-menu a:nth-child(3) { animation-delay: 0.3s; }
+        .mobile-menu a:nth-child(4) { animation-delay: 0.4s; }
+        .mobile-menu a:nth-child(5) { animation-delay: 0.5s; }
         
         /* HERO */
         .hero {
@@ -313,12 +336,9 @@
             opacity: 0.7;
         }
         
-        /* SECTIONS */
-        .expeditions, .calendar, .philosophy, .faq, .contact {
-            padding: 120px 40px;
-        }
-        
+        /* EXPEDITIONS */
         .expeditions {
+            padding: 120px 40px;
             background: var(--mp-white);
         }
         
@@ -448,81 +468,46 @@
             letter-spacing: 0.05em;
         }
         
-        /* CALENDAR */
-        .calendar {
-            background: var(--mp-gray-50);
-        }
-        
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
+        /* TITULARES */
+        .titulares-grid {
+            max-width: 1400px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
         }
         
-        .month-card {
+        .titular-card {
             background: white;
-            border: 1px solid var(--mp-gray-100);
-            padding: 30px;
+            border: 2px solid var(--mp-gray-100);
+            padding: 40px;
             transition: all 0.3s var(--ease-out);
         }
         
-        .month-card:hover {
+        .titular-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             border-color: var(--mp-blue);
         }
         
-        .month-card.featured {
-            border-color: var(--mp-blue);
-            background: var(--mp-blue-light);
-        }
-        
-        .month-name {
-            font-size: 11px;
-            color: var(--mp-gray-500);
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
+        .titular-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            line-height: 1.3;
             margin-bottom: 15px;
-        }
-        
-        .month-destination {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 10px;
             color: var(--mp-black);
         }
         
-        .month-country {
-            font-size: 13px;
-            color: var(--mp-blue);
-            margin-bottom: 20px;
-        }
-        
-        .month-details {
-            font-size: 13px;
+        .titular-sub {
+            font-size: 0.95rem;
             color: var(--mp-gray-600);
-            line-height: 1.8;
-        }
-        
-        .year-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .year-title {
-            font-size: 2rem;
-            font-weight: 200;
-            color: var(--mp-black);
-        }
-        
-        .calendar-year {
-            margin-bottom: 80px;
+            font-weight: 300;
+            line-height: 1.6;
         }
         
         /* PHILOSOPHY */
         .philosophy {
+            padding: 120px 40px;
             background: var(--mp-white);
         }
         
@@ -610,8 +595,82 @@
             font-style: normal;
         }
         
+        /* COUNTRIES */
+        .countries-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+        
+        .country-card {
+            background: white;
+            border: 1px solid var(--mp-gray-100);
+            padding: 40px;
+            transition: all 0.3s;
+        }
+        
+        .country-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-color: var(--mp-blue);
+        }
+        
+        .country-header {
+            margin-bottom: 25px;
+        }
+        
+        .country-name {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        
+        .country-location {
+            font-size: 0.85rem;
+            color: var(--mp-blue);
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        
+        .country-tagline {
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--mp-gray-600);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .country-story {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--mp-gray-600);
+            margin-bottom: 25px;
+        }
+        
+        .country-lessons {
+            background: var(--mp-gray-50);
+            padding: 20px;
+            border-left: 3px solid var(--mp-blue);
+        }
+        
+        .country-lessons p {
+            font-size: 0.85rem;
+            margin: 8px 0;
+            line-height: 1.6;
+            color: var(--mp-gray-600);
+        }
+        
+        .country-lessons strong {
+            color: var(--mp-blue);
+            font-weight: 600;
+        }
+        
         /* FAQ */
         .faq {
+            padding: 120px 40px;
             background: var(--mp-gray-50);
         }
         
@@ -622,58 +681,62 @@
         
         .faq-item {
             background: white;
-            border: 1px solid var(--mp-gray-100);
             margin-bottom: 20px;
-            overflow: hidden;
+            border: 1px solid var(--mp-gray-100);
+            transition: all 0.3s;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
         
         .faq-question {
-            padding: 25px 30px;
+            padding: 30px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-        
-        .faq-question:hover {
-            background: var(--mp-gray-50);
+            font-size: 1.1rem;
+            font-weight: 400;
         }
         
         .faq-icon {
             font-size: 24px;
+            color: var(--mp-blue);
             transition: transform 0.3s;
+        }
+        
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 30px 30px;
+            max-height: 500px;
         }
         
         .faq-item.active .faq-icon {
             transform: rotate(45deg);
         }
         
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-        }
-        
         .faq-answer p {
-            padding: 0 30px 25px;
             color: var(--mp-gray-600);
             line-height: 1.8;
         }
         
         /* CONTACT */
         .contact {
+            padding: 120px 40px;
             background: var(--mp-white);
         }
         
         .contact-content {
             max-width: 600px;
             margin: 0 auto;
+            text-align: center;
         }
         
         .contact-form {
@@ -682,43 +745,49 @@
         
         .form-group {
             margin-bottom: 30px;
+            text-align: left;
         }
         
         .form-label {
             display: block;
-            margin-bottom: 10px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 500;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
+            margin-bottom: 10px;
+            color: var(--mp-gray-600);
         }
         
-        .form-input, .form-select, .form-textarea {
+        .form-input,
+        .form-select,
+        .form-textarea {
             width: 100%;
             padding: 15px;
             border: 1px solid var(--mp-gray-200);
-            font-size: 15px;
-            font-family: 'Inter', sans-serif;
-            transition: border-color 0.3s;
+            font-family: inherit;
+            font-size: 16px;
+            transition: all 0.3s;
         }
         
-        .form-input:focus, .form-select:focus, .form-textarea:focus {
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
             outline: none;
             border-color: var(--mp-blue);
         }
         
         .form-textarea {
-            min-height: 150px;
             resize: vertical;
+            min-height: 120px;
         }
         
         .form-submit {
             width: 100%;
-            padding: 18px;
+            padding: 20px;
             background: var(--mp-black);
             color: white;
             border: none;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 500;
             letter-spacing: 0.1em;
             text-transform: uppercase;
@@ -755,6 +824,7 @@
         
         .footer-brand p {
             color: var(--mp-gray-400);
+            font-size: 14px;
             line-height: 1.8;
             margin-bottom: 30px;
         }
@@ -765,29 +835,28 @@
         }
         
         .social-link {
-            display: inline-block;
             width: 40px;
             height: 40px;
-            border: 1px solid var(--mp-gray-700);
-            color: white;
-            text-decoration: none;
+            border: 1px solid var(--mp-gray-600);
             display: flex;
             align-items: center;
             justify-content: center;
+            color: white;
+            text-decoration: none;
             transition: all 0.3s;
         }
         
         .social-link:hover {
-            background: var(--mp-blue);
             border-color: var(--mp-blue);
+            background: var(--mp-blue);
         }
         
         .footer-column h4 {
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 600;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         
         .footer-links {
@@ -795,12 +864,13 @@
         }
         
         .footer-links li {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         
         .footer-links a {
             color: var(--mp-gray-400);
             text-decoration: none;
+            font-size: 14px;
             transition: color 0.3s;
         }
         
@@ -809,9 +879,12 @@
         }
         
         .footer-bottom {
-            text-align: center;
             padding-top: 40px;
             border-top: 1px solid var(--mp-gray-800);
+            text-align: center;
+        }
+        
+        .footer-bottom p {
             color: var(--mp-gray-500);
             font-size: 13px;
         }
@@ -839,9 +912,20 @@
             }
         }
         
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
         /* RESPONSIVE */
         @media (max-width: 1024px) {
-            .expeditions-grid {
+            .expeditions-grid, .titulares-grid, .countries-grid {
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             }
             
@@ -864,12 +948,17 @@
                 display: none;
             }
             
+            .mobile-menu {
+                display: block;
+            }
+            
             .hero-title {
                 font-size: 3rem;
             }
             
             .expeditions-grid,
-            .calendar-grid {
+            .titulares-grid,
+            .countries-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -920,8 +1009,9 @@
             </a>
             
             <ul class="nav-menu desktop">
+                <li><a href="#propuesta" class="nav-link">Propuesta</a></li>
+                <li><a href="#visitado" class="nav-link">Donde He Estado</a></li>
                 <li><a href="#expediciones" class="nav-link">Expediciones</a></li>
-                <li><a href="#calendario" class="nav-link">Calendario 2026</a></li>
                 <li><a href="#filosofia" class="nav-link">Filosofía</a></li>
                 <li><a href="#faq" class="nav-link">FAQ</a></li>
             </ul>
@@ -936,10 +1026,10 @@
         </div>
         
         <div class="mobile-menu" id="mobileMenu">
+            <a href="#propuesta" onclick="toggleMobileMenu()">Propuesta</a>
+            <a href="#visitado" onclick="toggleMobileMenu()">Donde He Estado</a>
             <a href="#expediciones" onclick="toggleMobileMenu()">Expediciones</a>
-            <a href="#calendario" onclick="toggleMobileMenu()">Calendario</a>
             <a href="#filosofia" onclick="toggleMobileMenu()">Filosofía</a>
-            <a href="#faq" onclick="toggleMobileMenu()">FAQ</a>
             <a href="#reservar" onclick="toggleMobileMenu()">Reservar plaza</a>
         </div>
     </nav>
@@ -957,17 +1047,16 @@
         </div>
         
         <div class="hero-content">
-            <div class="hero-badge">53 PAÍSES • HISTORIAS REALES • CERO WIFI</div>
+            <div class="hero-badge">EXPEDICIONES SIN ATADURAS • FUERA DE COBERTURA</div>
             
             <h1 class="hero-title">
-                NO HAY WIFI<br>
-                <span>DONDE VAMOS</span>
+                DONDE TU GPS<br>
+                <span>NO LLEGA</span>
             </h1>
             
             <p class="hero-subtitle">
-                Expediciones para gente que ya lo ha visto todo y no ha visto nada.
-                Grupos reducidos. Destinos que no salen en Instagram. 
-                Vuelves diferente o te devolvemos tu ego.
+                Expediciones para gente que ya lo ha visto todo y no ha visto nada. 
+                Tu vida. Tus reglas. Cero notificaciones.
             </p>
             
             <div class="hero-buttons">
@@ -986,249 +1075,204 @@
             </div>
             <div class="stat">
                 <div class="stat-number">20</div>
-                <div class="stat-label">Años explorando</div>
+                <div class="stat-label">Años viajando</div>
             </div>
             <div class="stat">
                 <div class="stat-number">10</div>
                 <div class="stat-label">Max por grupo</div>
             </div>
             <div class="stat">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Transformación</div>
+                <div class="stat-number">1%</div>
+                <div class="stat-label">Último planeta sin contaminar</div>
             </div>
         </div>
     </section>
     
-    <!-- EXPEDITIONS 2026 -->
+    <!-- TITULARES PRINCIPALES -->
+    <section class="expeditions" id="propuesta">
+        <div class="section-header">
+            <p class="section-tag">Propuesta de Valor</p>
+            <h2 class="section-title">Esto No Sale En TripAdvisor</h2>
+            <p class="section-subtitle">
+                No vendemos paquetes turísticos. Vendemos incomodidad a precio de lujo. Y tenemos lista de espera.
+            </p>
+        </div>
+        
+        <div class="titulares-grid">
+            <div class="titular-card">
+                <p class="titular-text">"DONDE TU TARJETA BLACK NO VALE NADA"</p>
+                <p class="titular-sub">Expediciones para quien puede pagarlo todo pero necesita no poder nada</p>
+            </div>
+            
+            <div class="titular-card">
+                <p class="titular-text">"SI PUEDES GOOGLEAR EL SITIO, NO VAMOS"</p>
+                <p class="titular-sub">Expediciones al último 1% del planeta sin contaminar</p>
+            </div>
+            
+            <div class="titular-card">
+                <p class="titular-text">"DESINTOXICACIÓN DIGITAL EXTREMA"</p>
+                <p class="titular-sub">No es un detox. Es un reset completo.</p>
+            </div>
+            
+            <div class="titular-card">
+                <p class="titular-text">"PARA GENTE QUE YA LO TIENE TODO EXCEPTO HISTORIAS REALES"</p>
+                <p class="titular-sub">Expediciones donde tu dinero no te salvará</p>
+            </div>
+            
+            <div class="titular-card">
+                <p class="titular-text">"DEJA EL TRAJE. COGE LA MOCHILA. DESAPARECE."</p>
+                <p class="titular-sub">15 días sin emails para gente al borde del colapso</p>
+            </div>
+            
+            <div class="titular-card">
+                <p class="titular-text">"BUSCAMOS 10 VALIENTES, NO 100 TURISTAS"</p>
+                <p class="titular-sub">Expediciones con proceso de selección</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- DONDE HE ESTADO -->
+    <section class="expeditions" style="background: var(--mp-gray-50);" id="visitado">
+        <div class="section-header">
+            <p class="section-tag">Y Sobreviví Para Contarlo</p>
+            <h2 class="section-title">Donde He Estado</h2>
+            <p class="section-subtitle">
+                53 países después, sé dónde están los sitios que no salen en TripAdvisor. Algunos los he pisado. Otros los recorreremos juntos.
+            </p>
+        </div>
+        
+        <div class="countries-grid">
+            <div class="country-card">
+                <div class="country-header">
+                    <h3 class="country-name">Nepal</h3>
+                    <p class="country-location">CAMPO BASE ANNAPURNA</p>
+                </div>
+                <p class="country-tagline">14 días que me cambiaron para siempre</p>
+                <p class="country-story">
+                    Subí hasta 4.130 metros con las piernas temblando y el corazón a punto de explotar. 
+                    Lloré cuando llegué. No de tristeza ni de alegría, sino porque el cuerpo entiende 
+                    cosas que la mente no puede procesar.
+                </p>
+                <div class="country-lessons">
+                    <p><strong>Lo que aprendí:</strong> Que siempre puedes dar un paso más</p>
+                    <p><strong>Lo que no esperaba:</strong> Que bajar es más duro que subir</p>
+                    <p><strong>Lo que nunca olvidaré:</strong> El silencio a 4.000 metros es diferente</p>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <div class="country-header">
+                    <h3 class="country-name">Yemen</h3>
+                    <p class="country-location">ISLA DE SOCOTRA</p>
+                </div>
+                <p class="country-tagline">10 días en otro planeta</p>
+                <p class="country-story">
+                    Con Pako Crestas y su equipo descubrí la isla más rara del mundo. Árboles que parecen 
+                    paraguas sangrando, playas donde no ha pisado nadie, dunas que se encuentran con el mar.
+                </p>
+                <div class="country-lessons">
+                    <p><strong>Lo que aprendí:</strong> Que hay lugares que no deberían existir pero existen</p>
+                    <p><strong>Lo que no esperaba:</strong> Que Yemen tiene una isla paradisíaca</p>
+                    <p><strong>Lo que nunca olvidaré:</strong> Dormir bajo árboles de 500 años</p>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <div class="country-header">
+                    <h3 class="country-name">Marruecos</h3>
+                    <p class="country-location">DEL ATLAS AL SÁHARA</p>
+                </div>
+                <p class="country-tagline">Coronaciones, desiertos y el Gordito que resucita coches</p>
+                <p class="country-story">
+                    Coroné el Toubkal a 4.167 metros. Crucé todo el desierto en jeep sin rueda de repuesto. 
+                    Nos encañonaron en la frontera de Mauritania. Conocí al "Gordito" que arregla coches 
+                    en medio del desierto.
+                </p>
+                <div class="country-lessons">
+                    <p><strong>Lo que aprendí:</strong> Que Marruecos empieza donde terminan los riads</p>
+                    <p><strong>Lo que no esperaba:</strong> Que te encañonen y sigas queriendo volver</p>
+                    <p><strong>Lo que nunca olvidaré:</strong> Cada baile, cada sonrisa</p>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <div class="country-header">
+                    <h3 class="country-name">Myanmar</h3>
+                    <p class="country-location">CRUZANDO UN PAÍS EN GUERRA</p>
+                </div>
+                <p class="country-tagline">Cuando el tren era la única opción</p>
+                <p class="country-story">
+                    Myanmar estaba en guerra. Todo el mundo decía "no vayas". Fui. Crucé el país entero 
+                    en tren. Durmiendo en monasterios budistas donde los monjes te acogen sin preguntar.
+                </p>
+                <div class="country-lessons">
+                    <p><strong>Lo que aprendí:</strong> Que la guerra está en las noticias, no en las calles</p>
+                    <p><strong>Lo que no esperaba:</strong> Que la hospitalidad budista es real</p>
+                    <p><strong>Lo que nunca olvidaré:</strong> Los amaneceres desde el tren</p>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <div class="country-header">
+                    <h3 class="country-name">Vietnam</h3>
+                    <p class="country-location">NORTE PROFUNDO</p>
+                </div>
+                <p class="country-tagline">Sapa, Hanoi y etnias en moto con mi hermano</p>
+                <p class="country-story">
+                    Recorrimos el norte de Vietnam en moto. Sin prisas, sin rutas marcadas. Hanoi me volvió 
+                    totalmente loca. Su caos organizado, la comida en cada esquina.
+                </p>
+                <div class="country-lessons">
+                    <p><strong>Lo que aprendí:</strong> Que viajar con tu hermano es volver a ser niños</p>
+                    <p><strong>Lo que no esperaba:</strong> Que el norte es más auténtico que el sur</p>
+                    <p><strong>Lo que nunca olvidaré:</strong> Las conversaciones sin WiFi</p>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <div class="country-header">
+                    <h3 class="country-name">Islandia</h3>
+                    <p class="country-location">F-ROADS</p>
+                </div>
+                <p class="country-tagline">Cuando los vikingos bomberos te salvan</p>
+                <p class="country-story">
+                    Vadeando ríos sin puentes en un 4x4. El coche atascado, el río creciendo, y de la nada 
+                    aparecen los bomberos islandeses que nos sacan como si nada.
+                </p>
+                <div class="country-lessons">
+                    <p><strong>Lo que aprendí:</strong> Que Islandia no es solo la Ring Road</p>
+                    <p><strong>Lo que no esperaba:</strong> Que vadear ríos es normal allí</p>
+                    <p><strong>Lo que nunca olvidaré:</strong> La solidaridad vikinga no es un mito</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- EXPEDICIONES 2026 -->
     <section class="expeditions" id="expediciones">
         <div class="section-header">
-            <p class="section-tag">Expediciones 2026</p>
-            <h2 class="section-title">Donde el mundo todavía guarda secretos</h2>
+            <p class="section-tag">Expediciones 2026-2027</p>
+            <h2 class="section-title">Donde Vamos A Ir</h2>
             <p class="section-subtitle">
-                No son vacaciones. Son iniciaciones. Llegas de una forma, vuelves diferente.
-                Grupos máximo 10 personas. Sin excepciones.
+                Porque la vida es corta. Grupos máximo 10 personas. Sin excepciones.
             </p>
         </div>
         
         <div class="expeditions-grid">
-            <!-- MGOUN -->
-            <div class="expedition-card">
-                <div class="expedition-header" style="background: linear-gradient(135deg, #C17767 0%, #8B4513 100%);">
-                    <span class="expedition-date">NOV 2025</span>
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                        <path d="M40 20 L30 40 L50 40 Z" stroke="white" stroke-width="2" fill="none" opacity="0.9"/>
-                        <path d="M35 40 L25 55 L55 55 Z" stroke="white" stroke-width="1.5" fill="none" opacity="0.6"/>
-                    </svg>
-                </div>
-                <div class="expedition-body">
-                    <h3 class="expedition-location">Mgoun</h3>
-                    <p class="expedition-country">MARRUECOS • ALTO ATLAS</p>
-                    <p class="expedition-description">
-                        El Atlas que no sale en Instagram. 4.071 metros donde los nómadas Ait Atta 
-                        siguen moviendo sus rebaños como hace siglos. El silencio aquí es diferente.
-                    </p>
-                    <div class="expedition-meta">
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">8</div>
-                            <div class="meta-label">días</div>
-                        </div>
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">4.071m</div>
-                            <div class="meta-label">altura</div>
-                        </div>
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">Media</div>
-                            <div class="meta-label">dificultad</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- KILIMANJARO -->
-            <div class="expedition-card">
-                <div class="expedition-header" style="background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);">
-                    <span class="expedition-date">DIC 2025 - ENE 2026</span>
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                        <path d="M40 15 L25 45 L55 45 Z" stroke="white" stroke-width="2" fill="none" opacity="0.9"/>
-                        <circle cx="40" cy="50" r="20" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
-                    </svg>
-                </div>
-                <div class="expedition-body">
-                    <h3 class="expedition-location">Kilimanjaro</h3>
-                    <p class="expedition-country">TANZANIA • ÁFRICA</p>
-                    <p class="expedition-description">
-                        5.895 metros que atraviesan cinco ecosistemas. Desde la sabana hasta glaciares 
-                        que no deberían existir en el ecuador. África no te cambia: te revela quién eres.
-                    </p>
-                    <div class="expedition-meta">
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">7</div>
-                            <div class="meta-label">días</div>
-                        </div>
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">5.895m</div>
-                            <div class="meta-label">altura</div>
-                        </div>
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">Alta</div>
-                            <div class="meta-label">dificultad</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- EGIPTO -->
-            <div class="expedition-card">
-                <div class="expedition-header" style="background: linear-gradient(135deg, #F57C00 0%, #E65100 100%);">
-                    <span class="expedition-date">FEB-MAR 2026</span>
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                        <polygon points="40,20 60,50 20,50" stroke="white" stroke-width="2" fill="none" opacity="0.9"/>
-                        <line x1="20" y1="55" x2="60" y2="55" stroke="white" stroke-width="1" opacity="0.5"/>
-                    </svg>
-                </div>
-                <div class="expedition-body">
-                    <h3 class="expedition-location">Egipto Auténtico</h3>
-                    <p class="expedition-country">EGIPTO • DESIERTO</p>
-                    <p class="expedition-description">
-                        Olvida los tours. Desierto Blanco, oasis de Siwa, monasterios coptos. 
-                        Dormiremos donde los beduinos navegan por estrellas. El desierto transforma.
-                    </p>
-                    <div class="expedition-meta">
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">12</div>
-                            <div class="meta-label">días</div>
-                        </div>
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">Oasis</div>
-                            <div class="meta-label">ruta</div>
-                        </div>
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">Media</div>
-                            <div class="meta-label">dificultad</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- GRECIA -->
-            <div class="expedition-card">
-                <div class="expedition-header" style="background: linear-gradient(135deg, #1565C0 0%, #0D47A1 100%);">
-                    <span class="expedition-date">ABRIL 2026</span>
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                        <circle cx="40" cy="40" r="30" stroke="white" stroke-width="2" fill="none" opacity="0.9"/>
-                        <path d="M40 20 L35 35 L50 35 L30 45 L45 45 Z" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
-                    </svg>
-                </div>
-                <div class="expedition-body">
-                    <h3 class="expedition-location">Montañas de los Dioses</h3>
-                    <p class="expedition-country">GRECIA • OLIMPO</p>
-                    <p class="expedition-description">
-                        Monte Olimpo, Meteora salvaje, gargantas de Vikos. 2.917 metros donde Zeus 
-                        lanzaba rayos. Entenderás por qué los griegos pusieron dioses en las montañas.
-                    </p>
-                    <div class="expedition-meta">
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">10</div>
-                            <div class="meta-label">días</div>
-                        </div>
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">2.917m</div>
-                            <div class="meta-label">altura</div>
-                        </div>
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">Media</div>
-                            <div class="meta-label">dificultad</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- GEORGIA -->
-            <div class="expedition-card">
-                <div class="expedition-header" style="background: linear-gradient(135deg, #5E35B1 0%, #4527A0 100%);">
-                    <span class="expedition-date">JULIO 2026</span>
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                        <rect x="25" y="25" width="30" height="30" stroke="white" stroke-width="2" fill="none" opacity="0.9"/>
-                        <rect x="30" y="30" width="20" height="20" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
-                    </svg>
-                </div>
-                <div class="expedition-body">
-                    <h3 class="expedition-location">Svaneti</h3>
-                    <p class="expedition-country">GEORGIA • CÁUCASO</p>
-                    <p class="expedition-description">
-                        Torres medievales, glaciares imposibles, el Ushba. Donde las familias guardan 
-                        tesoros en piedra y el idioma svan sobrevive sin alfabeto. Llegarás extranjero, te irás familia.
-                    </p>
-                    <div class="expedition-meta">
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">12</div>
-                            <div class="meta-label">días</div>
-                        </div>
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">Ushba</div>
-                            <div class="meta-label">objetivo</div>
-                        </div>
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">Alta</div>
-                            <div class="meta-label">dificultad</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- ARARAT -->
-            <div class="expedition-card">
-                <div class="expedition-header" style="background: linear-gradient(135deg, #6A1B9A 0%, #4A148C 100%);">
-                    <span class="expedition-date">AGOSTO 2026</span>
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                        <path d="M40 20 L30 50 L50 50 Z" stroke="white" stroke-width="2" fill="none" opacity="0.9"/>
-                        <path d="M35 25 L45 25 L50 50 L30 50 Z" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
-                    </svg>
-                </div>
-                <div class="expedition-body">
-                    <h3 class="expedition-location">Ararat</h3>
-                    <p class="expedition-country">TURQUÍA • MONTAÑA DEL ARCA</p>
-                    <p class="expedition-description">
-                        5.137 metros donde supuestamente encalló el Arca. Montaña sagrada de Armenia 
-                        en territorio turco. Algunas montañas no se suben: se peregrinan.
-                    </p>
-                    <div class="expedition-meta">
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">8</div>
-                            <div class="meta-label">días</div>
-                        </div>
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">5.137m</div>
-                            <div class="meta-label">altura</div>
-                        </div>
-                        <div class="expedition-meta-item">
-                            <div class="meta-value">Alta</div>
-                            <div class="meta-label">dificultad</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- MANASLU -->
             <div class="expedition-card">
                 <div class="expedition-header" style="background: linear-gradient(135deg, #00695C 0%, #004D40 100%);">
                     <span class="expedition-date">OCT-NOV 2026</span>
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                        <path d="M40 15 L30 35 L50 35 Z" stroke="white" stroke-width="2" fill="none" opacity="0.9"/>
-                        <path d="M35 35 L25 50 L55 50 Z" stroke="white" stroke-width="1.5" fill="none" opacity="0.6"/>
-                        <path d="M30 50 L20 65 L60 65 Z" stroke="white" stroke-width="1" fill="none" opacity="0.3"/>
-                    </svg>
                 </div>
                 <div class="expedition-body">
                     <h3 class="expedition-location">Manaslu Circuit</h3>
-                    <p class="expedition-country">NEPAL • HIMALAYA</p>
+                    <p class="expedition-country">NEPAL • HIMALAYA SIN TURISTAS</p>
                     <p class="expedition-description">
-                        Olvida el Everest y sus colas. 8.163 metros vigilan el circuito más salvaje. 
-                        Paso Larkya a 5.160m. Budismo tibetano puro. Entrarás buscando montañas, encontrarás algo más.
+                        16 días rodeando el octavo gigante del mundo. Mientras 30.000 personas van al Everest 
+                        Base Camp cada año, en el Manaslu somos 30 al mes. El mismo Himalaya, sin colas.
                     </p>
                     <div class="expedition-meta">
                         <div class="expedition-meta-item">
-                            <div class="meta-value">18</div>
+                            <div class="meta-value">16</div>
                             <div class="meta-label">días</div>
                         </div>
                         <div class="expedition-meta-item">
@@ -1242,62 +1286,115 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- CALENDAR -->
-    <section class="calendar" id="calendario">
-        <div class="section-header">
-            <p class="section-tag">Calendario completo</p>
-            <h2 class="section-title">Tu próxima transformación</h2>
-            <p class="section-subtitle">
-                2025 → 2027. Tres años de expediciones únicas. Plazas limitadas sin excepciones.
-            </p>
-        </div>
-        
-        <div class="calendar-year">
-            <div class="year-header">
-                <h3 class="year-title">2026</h3>
+            
+            <div class="expedition-card">
+                <div class="expedition-header" style="background: linear-gradient(135deg, #6A1B9A 0%, #4A148C 100%);">
+                    <span class="expedition-date">JUN-SEP 2026</span>
+                </div>
+                <div class="expedition-body">
+                    <h3 class="expedition-location">Ladakh</h3>
+                    <p class="expedition-country">EL PEQUEÑO TÍBET</p>
+                    <p class="expedition-description">
+                        14 días donde India no parece India. Budismo puro, montañas brutales, lagos a 4.500m 
+                        que cambian de color. Lo más cerca del Tíbet sin problemas políticos.
+                    </p>
+                    <div class="expedition-meta">
+                        <div class="expedition-meta-item">
+                            <div class="meta-value">14</div>
+                            <div class="meta-label">días</div>
+                        </div>
+                        <div class="expedition-meta-item">
+                            <div class="meta-value">4.500m</div>
+                            <div class="meta-label">lagos</div>
+                        </div>
+                        <div class="expedition-meta-item">
+                            <div class="meta-value">Media</div>
+                            <div class="meta-label">dificultad</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             
-            <div class="calendar-grid">
-                <div class="month-card">
-                    <p class="month-name">NOVIEMBRE 2025</p>
-                    <h4 class="month-destination">Mgoun</h4>
-                    <p class="month-country">Marruecos • Alto Atlas</p>
-                    <div class="month-details">
-                        <p>8 días • 4.071m</p>
-                        <p>Dificultad: Media</p>
+            <div class="expedition-card">
+                <div class="expedition-header" style="background: linear-gradient(135deg, #5E35B1 0%, #4527A0 100%);">
+                    <span class="expedition-date">JUN-SEP 2026</span>
+                </div>
+                <div class="expedition-body">
+                    <h3 class="expedition-location">Georgia</h3>
+                    <p class="expedition-country">CÁUCASO SALVAJE</p>
+                    <p class="expedition-description">
+                        14 días entre Europa y Asia. Svaneti con sus torres medievales, Tusheti con sus 
+                        carreteras suicidas, vino de 8.000 años.
+                    </p>
+                    <div class="expedition-meta">
+                        <div class="expedition-meta-item">
+                            <div class="meta-value">14</div>
+                            <div class="meta-label">días</div>
+                        </div>
+                        <div class="expedition-meta-item">
+                            <div class="meta-value">Svaneti</div>
+                            <div class="meta-label">región</div>
+                        </div>
+                        <div class="expedition-meta-item">
+                            <div class="meta-value">Media</div>
+                            <div class="meta-label">dificultad</div>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="month-card featured">
-                    <p class="month-name">DICIEMBRE-ENERO</p>
-                    <h4 class="month-destination">Kilimanjaro</h4>
-                    <p class="month-country">Tanzania • África</p>
-                    <div class="month-details">
-                        <p>7 días • 5.895m</p>
-                        <p><strong>3 plazas disponibles</strong></p>
+            </div>
+            
+            <div class="expedition-card">
+                <div class="expedition-header" style="background: linear-gradient(135deg, #1565C0 0%, #0D47A1 100%);">
+                    <span class="expedition-date">MAY-OCT 2026</span>
+                </div>
+                <div class="expedition-body">
+                    <h3 class="expedition-location">Pakistán</h3>
+                    <p class="expedition-country">KARAKORUM HIGHWAY</p>
+                    <p class="expedition-description">
+                        18 días por la carretera más peligrosa y bella del mundo. Hunza Valley, Nanga Parbat. 
+                        Hospitalidad que supera todos los prejuicios.
+                    </p>
+                    <div class="expedition-meta">
+                        <div class="expedition-meta-item">
+                            <div class="meta-value">18</div>
+                            <div class="meta-label">días</div>
+                        </div>
+                        <div class="expedition-meta-item">
+                            <div class="meta-value">2.600€</div>
+                            <div class="meta-label">precio</div>
+                        </div>
+                        <div class="expedition-meta-item">
+                            <div class="meta-value">Alta</div>
+                            <div class="meta-label">dificultad</div>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="month-card">
-                    <p class="month-name">FEBRERO-MARZO</p>
-                    <h4 class="month-destination">Egipto Auténtico</h4>
-                    <p class="month-country">Egipto • Desierto</p>
-                    <div class="month-details">
-                        <p>12 días • Oasis</p>
-                        <p>Dificultad: Media</p>
-                    </div>
+            </div>
+            
+            <div class="expedition-card">
+                <div class="expedition-header" style="background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);">
+                    <span class="expedition-date">OCT-MAR 2026</span>
                 </div>
-                
-                <div class="month-card featured">
-                    <p class="month-name">OCTUBRE-NOVIEMBRE</p>
-                    <h4 class="month-destination">Manaslu</h4>
-                    <p class="month-country">Nepal • Himalaya</p>
-                    <div class="month-details">
-                        <p>18 días • Paso 5.160m</p>
-                        <p><strong>2 plazas disponibles</strong></p>
+                <div class="expedition-body">
+                    <h3 class="expedition-location">Etiopía</h3>
+                    <p class="expedition-country">VALLE DEL OMO SIN FILTROS</p>
+                    <p class="expedition-description">
+                        14 días con las últimas tribus intactas de África. Mursi, Hamer, Karo, Dassanech. 
+                        Ceremonias que no son para turistas.
+                    </p>
+                    <div class="expedition-meta">
+                        <div class="expedition-meta-item">
+                            <div class="meta-value">14</div>
+                            <div class="meta-label">días</div>
+                        </div>
+                        <div class="expedition-meta-item">
+                            <div class="meta-value">Tribus</div>
+                            <div class="meta-label">objetivo</div>
+                        </div>
+                        <div class="expedition-meta-item">
+                            <div class="meta-value">Media</div>
+                            <div class="meta-label">dificultad</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1308,11 +1405,10 @@
     <section class="philosophy" id="filosofia">
         <div class="philosophy-content">
             <div class="philosophy-intro">
-                <h2>Viajes que te cambian por dentro y por fuera</h2>
+                <h2>¿Esto Es Para Ti?</h2>
                 <p>
-                    No vendemos paquetes turísticos. Creamos experiencias que te sacan de tu zona 
-                    de confort y te devuelven siendo otra persona. Grupos pequeños, destinos únicos, 
-                    transformación garantizada.
+                    No todo el mundo encaja aquí. Y está bien. Si buscas comodidad, hay cruceros. 
+                    Si buscas seguridad, quédate en casa. Si buscas transformación, sigue leyendo.
                 </p>
             </div>
             
@@ -1320,12 +1416,13 @@
                 <div class="philosophy-column">
                     <h3>Esto NO es para ti si:</h3>
                     <ul class="philosophy-list">
-                        <li class="philosophy-item">Necesitas ducharte cada día</li>
+                        <li class="philosophy-item">Necesitas ducharte cada día en un hotel</li>
                         <li class="philosophy-item">Tu idea de aventura es un hotel sin room service</li>
+                        <li class="philosophy-item">Crees que el Dal Bhat es una marca de ropa</li>
                         <li class="philosophy-item">Tu mayor miedo es quedarte sin batería</li>
+                        <li class="philosophy-item">Piensas que "roughing it" es un hotel de 3 estrellas</li>
                         <li class="philosophy-item">Necesitas subir stories cada 5 minutos</li>
                         <li class="philosophy-item">No puedes vivir sin Netflix antes de dormir</li>
-                        <li class="philosophy-item">Prefieres la comodidad a la experiencia</li>
                     </ul>
                 </div>
                 
@@ -1337,6 +1434,7 @@
                         <li class="philosophy-item">Entiendes que lo mejor sucede cuando el plan cambia</li>
                         <li class="philosophy-item">El papel higiénico es opcional, la aventura obligatoria</li>
                         <li class="philosophy-item">Quieres volver siendo otra persona</li>
+                        <li class="philosophy-item">Las mejores conversaciones suceden sin WhatsApp</li>
                         <li class="philosophy-item">Entiendes que perderte es la única forma de encontrarte</li>
                     </ul>
                 </div>
@@ -1344,11 +1442,11 @@
             
             <div class="philosophy-quote">
                 <blockquote>
-                    "Te llevo donde tu GPS no llega, donde Google Maps se rinde, 
-                    donde solo los que buscan algo más se atreven. 
-                    Y te prometo que volverás con historias que nadie te va a creer."
+                    "He estado donde los mapas se acaban. He dormido donde nadie duerme. 
+                    He visto lo que pocos verán. La pregunta no es si estás listo. 
+                    La pregunta es si te atreves."
                 </blockquote>
-                <cite>MILI PÉREZ, Fundadora</cite>
+                <cite>MILI PÉREZ</cite>
             </div>
         </div>
     </section>
@@ -1357,64 +1455,86 @@
     <section class="faq" id="faq">
         <div class="section-header">
             <p class="section-tag">Preguntas frecuentes</p>
-            <h2 class="section-title">Todo lo que necesitas saber</h2>
+            <h2 class="section-title">Todo Lo Que Necesitas Saber</h2>
             <p class="section-subtitle">
-                Información práctica sin rodeos. Si tu pregunta no está aquí, escríbeme.
+                Sin rodeos. Si tu pregunta no está aquí, escríbeme.
             </p>
         </div>
         
         <div class="faq-container">
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>¿Cómo me apunto a la expedición?</span>
+                    <span>¿Es seguro ir a Pakistán/Irán/Etiopía?</span>
                     <span class="faq-icon">+</span>
                 </div>
                 <div class="faq-answer">
                     <p>
-                        Rellena el formulario de reserva. Te contactaré en 48h para confirmar disponibilidad. 
-                        Si hay plaza, te envío toda la info y el proceso de pago. Simple y directo.
+                        Más seguro que muchos barrios de Barcelona un sábado noche. Vamos con locales, 
+                        conocemos los protocolos, evitamos las zonas conflictivas. El mayor peligro es no querer volver.
                     </p>
                 </div>
             </div>
             
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>¿Cuándo y cómo tengo que pagar?</span>
+                    <span>¿Y si no puedo físicamente?</span>
                     <span class="faq-icon">+</span>
                 </div>
                 <div class="faq-answer">
                     <p>
-                        50% para reservar tu plaza (no reembolsable). 
-                        50% restante 30 días antes de la salida. 
-                        Transferencia bancaria o PayPal. Sin letra pequeña.
+                        Siempre hay plan B. Pero sé honesto contigo mismo antes de reservar. 
+                        Esto no es el Camino de Santiago.
                     </p>
                 </div>
             </div>
             
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>¿Necesito experiencia previa?</span>
+                    <span>¿Por qué no hay destinos "fáciles"?</span>
                     <span class="faq-icon">+</span>
                 </div>
                 <div class="faq-answer">
                     <p>
-                        Depende de la expedición. Lo marco en cada una (fácil, media, alta). 
-                        Necesitas buena forma física siempre. Experiencia técnica solo en las de 
-                        dificultad alta. Ganas de aventura, imprescindible.
+                        Porque para hacer el tour del Coliseo hay 200 agencias. 
+                        Para cruzar el Karakorum, estamos nosotros.
                     </p>
                 </div>
             </div>
             
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>¿Hay límite de edad?</span>
+                    <span>¿Puedo ir si soy vegetariano/vegano?</span>
                     <span class="faq-icon">+</span>
                 </div>
                 <div class="faq-answer">
                     <p>
-                        18 años mínimo. Máximo no hay si aguantas el ritmo. 
-                        He tenido gente de 70 años que daba mil vueltas a los de 30. 
-                        La edad es mental.
+                        Depende del destino. En India, perfecto. En Mongolia, vas a sufrir. 
+                        Te lo decimos claro antes de reservar.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>¿Y si no conozco a nadie del grupo?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>
+                        Mejor. Vienes solo, vuelves con amigos de por vida. El 70% viene solo.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>¿Por qué estos precios?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>
+                        Porque lo barato sale caro. Incluimos TODO para que no haya sorpresas. 
+                        Preferimos menos gente que pague justo a más gente que pague poco.
                     </p>
                 </div>
             </div>
@@ -1426,7 +1546,7 @@
         <div class="contact-content">
             <div class="section-header">
                 <p class="section-tag">Reserva tu plaza</p>
-                <h2 class="section-title">No todo el mundo entra</h2>
+                <h2 class="section-title">No Todo El Mundo Entra</h2>
                 <p class="section-subtitle">
                     Cuéntame por qué quieres venir. Qué buscas. Qué esperas encontrar.
                     Si encajas, te hago hueco. Si no, mejor que lo sepamos ahora.
@@ -1453,10 +1573,12 @@
                     <label class="form-label" for="expedition">Expedición que te interesa</label>
                     <select id="expedition" class="form-select" required>
                         <option value="">Selecciona una</option>
-                        <option value="mgoun">Mgoun - Marruecos (Nov 2025)</option>
-                        <option value="kilimanjaro">Kilimanjaro (Dic 2025-Ene 2026)</option>
-                        <option value="egipto">Egipto Auténtico (Feb-Mar 2026)</option>
-                        <option value="manaslu">Manaslu - Nepal (Oct-Nov 2026)</option>
+                        <option value="manaslu">Manaslu Circuit - Nepal</option>
+                        <option value="ladakh">Ladakh - Pequeño Tíbet</option>
+                        <option value="georgia">Georgia - Cáucaso</option>
+                        <option value="pakistan">Pakistán - Karakorum</option>
+                        <option value="etiopia">Etiopía - Valle del Omo</option>
+                        <option value="otra">Otra / Más información</option>
                     </select>
                 </div>
                 
@@ -1477,34 +1599,38 @@
             <div class="footer-brand">
                 <h3>MILI PÉREZ</h3>
                 <p>
-                    Expediciones sin WiFi. 53 países pisados, no visitados. 
+                    Expediciones sin ataduras. 53 países pisados, no visitados. 
                     Donde los mapas se acaban y las historias comienzan.
-                    Cruzando fronteras con la tecnología correcta.
+                </p>
+                <p style="margin-top: 20px;">
+                    <strong>Email:</strong> yosoy@miliperez.com<br>
+                    <strong>Instagram:</strong> @yosoymiliperez<br>
+                    <strong>Web:</strong> miliperez.com
                 </p>
                 <div class="footer-social">
-                    <a href="https://www.instagram.com/YOSOYMILIPEREZ/" class="social-link" target="_blank">IG</a>
-                    <a href="https://www.linkedin.com/in/miliperez/" class="social-link" target="_blank">LI</a>
-                    <a href="https://open.spotify.com/user/mili-pe?si=ad81be3d67df4950" class="social-link" target="_blank">SP</a>
+                    <a href="https://instagram.com/yosoymiliperez" class="social-link" target="_blank">IG</a>
+                    <a href="https://linkedin.com" class="social-link" target="_blank">LI</a>
+                    <a href="mailto:yosoy@miliperez.com" class="social-link" target="_blank">@</a>
                 </div>
             </div>
             
             <div class="footer-column">
                 <h4>Expediciones</h4>
                 <ul class="footer-links">
-                    <li><a href="#calendario">Calendario 2026</a></li>
-                    <li><a href="#expediciones">Próximas salidas</a></li>
-                    <li><a href="#filosofia">Filosofía</a></li>
-                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#expediciones">Himalaya</a></li>
+                    <li><a href="#expediciones">Ruta de la Seda</a></li>
+                    <li><a href="#expediciones">África Tribal</a></li>
+                    <li><a href="#visitado">Donde He Estado</a></li>
                 </ul>
             </div>
             
             <div class="footer-column">
                 <h4>Recursos</h4>
                 <ul class="footer-links">
-                    <li><a href="#">Blog de viajes</a></li>
-                    <li><a href="#">Guías prácticas</a></li>
-                    <li><a href="#">Equipamiento</a></li>
-                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#filosofia">Filosofía</a></li>
+                    <li><a href="#faq">Preguntas frecuentes</a></li>
+                    <li><a href="#propuesta">Propuesta de Valor</a></li>
+                    <li><a href="#reservar">Reservar Plaza</a></li>
                 </ul>
             </div>
             
@@ -1513,19 +1639,20 @@
                 <ul class="footer-links">
                     <li><a href="#">Aviso legal</a></li>
                     <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Política de cookies</a></li>
                     <li><a href="#">Condiciones</a></li>
                 </ul>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>© 2025 Mili Pérez. Todos los derechos reservados. | Desde mis raíces más profundas al mundo</p>
+            <p>© 2025 Mili Pérez. Todas las aventuras reservadas. | Málaga → Mundo</p>
         </div>
     </footer>
     
     <script>
-        // Scroll effect for navigation
-        window.addEventListener('scroll', function() {
+        // Navigation scroll effect
+        window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
                 nav.classList.add('scrolled');
@@ -1536,7 +1663,10 @@
         
         // Mobile menu toggle
         function toggleMobileMenu() {
+            const menuToggle = document.querySelector('.menu-toggle');
             const mobileMenu = document.getElementById('mobileMenu');
+            
+            menuToggle.classList.toggle('active');
             mobileMenu.classList.toggle('active');
         }
         
@@ -1549,11 +1679,11 @@
         // Form submission
         function handleSubmit(event) {
             event.preventDefault();
-            alert('¡Gracias por tu interés! Te contactaremos pronto para confirmar tu reserva.');
+            alert('Solicitud recibida. Te contactaré en 48h. Si encajas, hablamos. Si no, también te lo digo.');
             event.target.reset();
         }
         
-        // Smooth scrolling
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
