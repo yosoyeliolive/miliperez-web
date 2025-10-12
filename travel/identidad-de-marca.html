@@ -1,0 +1,2268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MILI PÉREZ | Brand Book Travel Extended</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --mp-black: #000000;
+            --mp-white: #ffffff;
+            --mp-blue: #008DCB;
+            --mp-blue-bright: #00a8ff;
+            --mp-blue-dark: #005580;
+            --mp-gray-900: #111111;
+            --mp-gray-800: #1a1a1a;
+            --mp-gray-700: #2a2a2a;
+            --mp-gray-600: #3a3a3a;
+            --mp-gray-500: #4a4a4a;
+            --mp-gray-400: #6a6a6a;
+            --mp-gray-300: #8a8a8a;
+            --mp-gray-200: #aaaaaa;
+            --mp-gray-100: #cacaca;
+            --mp-gray-50: #f5f5f5;
+            
+            /* PALETA EXPANDIDA TRAVEL */
+            --mp-blue-10: #E6F4FB;
+            --mp-blue-20: #CCE9F7;
+            --mp-blue-30: #99D3EF;
+            --mp-blue-40: #66BDE7;
+            --mp-blue-50: #33A7DF;
+            --mp-blue-60: #008DCB;
+            --mp-blue-70: #0071A2;
+            --mp-blue-80: #005579;
+            --mp-blue-90: #003951;
+            --mp-blue-100: #001C28;
+            
+            --mp-earth-brown: #8B4513;
+            --mp-forest-green: #2E7D32;
+            --mp-desert-orange: #F57C00;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--mp-white);
+            color: var(--mp-black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* NAVIGATION */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100vh;
+            background: var(--mp-gray-50);
+            border-right: 1px solid var(--mp-gray-200);
+            padding: 40px 30px;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .nav-logo {
+            margin-bottom: 60px;
+        }
+        
+        .nav-logo svg {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+        }
+        
+        .nav-logo h1 {
+            font-size: 18px;
+            font-weight: 200;
+            letter-spacing: 0.2em;
+            color: var(--mp-black);
+        }
+        
+        .nav-logo p {
+            font-size: 10px;
+            color: var(--mp-gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            margin-top: 5px;
+        }
+        
+        .nav-menu {
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-bottom: 20px;
+        }
+        
+        .nav-menu a {
+            color: var(--mp-gray-600);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            transition: all 0.3s;
+            display: block;
+            padding: 8px 0;
+            border-left: 2px solid transparent;
+            padding-left: 15px;
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--mp-blue);
+            border-left-color: var(--mp-blue);
+        }
+        
+        .nav-version {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            font-size: 10px;
+            color: var(--mp-gray-400);
+            letter-spacing: 0.1em;
+        }
+        
+        /* CONTENT */
+        .content {
+            margin-left: 250px;
+            padding: 80px;
+        }
+        
+        /* COVER */
+        .cover {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(180deg, var(--mp-white) 0%, var(--mp-gray-50) 100%);
+        }
+        
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0,141,203,0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(0,141,203,0.02) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .cover-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cover-icon {
+            margin-bottom: 60px;
+        }
+        
+        .cover-icon svg {
+            width: 120px;
+            height: 120px;
+        }
+        
+        .cover-tag {
+            font-size: 11px;
+            letter-spacing: 0.4em;
+            color: var(--mp-blue);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        
+        .cover-title {
+            font-size: 5rem;
+            font-weight: 100;
+            line-height: 0.9;
+            margin-bottom: 40px;
+            letter-spacing: -0.03em;
+            color: var(--mp-black);
+        }
+        
+        .cover-subtitle {
+            font-size: 1.3rem;
+            color: var(--mp-gray-600);
+            font-weight: 300;
+            max-width: 600px;
+            line-height: 1.8;
+            margin-bottom: 60px;
+        }
+        
+        .cover-meta {
+            display: flex;
+            gap: 60px;
+            justify-content: center;
+            padding-top: 60px;
+            border-top: 1px solid var(--mp-gray-200);
+        }
+        
+        .cover-meta-item {
+            text-align: center;
+        }
+        
+        .cover-meta-label {
+            font-size: 10px;
+            color: var(--mp-gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 10px;
+        }
+        
+        .cover-meta-value {
+            font-size: 14px;
+            color: var(--mp-black);
+            font-weight: 400;
+        }
+        
+        /* SECTIONS */
+        .section {
+            min-height: 100vh;
+            padding: 120px 0;
+            border-bottom: 1px solid var(--mp-gray-100);
+        }
+        
+        .section-number {
+            font-size: 12px;
+            color: var(--mp-gray-400);
+            letter-spacing: 0.3em;
+            margin-bottom: 20px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 100;
+            line-height: 1;
+            margin-bottom: 30px;
+            color: var(--mp-black);
+        }
+        
+        .section-intro {
+            font-size: 1.2rem;
+            color: var(--mp-gray-500);
+            font-weight: 300;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-bottom: 80px;
+        }
+        
+        /* GRID SYSTEM */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 80px;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        
+        /* CARDS */
+        .card {
+            background: var(--mp-gray-50);
+            border: 1px solid var(--mp-gray-200);
+            padding: 40px;
+            transition: all 0.3s;
+        }
+        
+        .card:hover {
+            border-color: var(--mp-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .card-label {
+            font-size: 10px;
+            color: var(--mp-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+            color: var(--mp-black);
+        }
+        
+        .card-text {
+            font-size: 15px;
+            color: var(--mp-gray-600);
+            line-height: 1.8;
+        }
+        
+        /* LISTS */
+        .principle-list {
+            list-style: none;
+        }
+        
+        .principle-item {
+            padding: 30px 0;
+            border-bottom: 1px solid var(--mp-gray-200);
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+        }
+        
+        .principle-item:last-child {
+            border-bottom: none;
+        }
+        
+        .principle-number {
+            font-size: 2rem;
+            font-weight: 100;
+            color: var(--mp-blue);
+            min-width: 60px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .principle-content h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+            color: var(--mp-black);
+        }
+        
+        .principle-content p {
+            font-size: 15px;
+            color: var(--mp-gray-500);
+            line-height: 1.8;
+        }
+        
+        /* COLOR SWATCHES */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        
+        .color-swatch {
+            aspect-ratio: 1;
+            border: 1px solid var(--mp-gray-200);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            background: white;
+        }
+        
+        .color-swatch-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        
+        .color-swatch-info {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .color-name {
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .color-code {
+            font-size: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            opacity: 0.7;
+        }
+        
+        .color-values {
+            margin-top: 10px;
+            font-size: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            opacity: 0.6;
+            line-height: 1.4;
+        }
+        
+        /* TYPOGRAPHY */
+        .type-specimen {
+            margin-bottom: 60px;
+        }
+        
+        .type-name {
+            font-size: 12px;
+            color: var(--mp-gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 30px;
+        }
+        
+        .type-display {
+            font-size: 4rem;
+            font-weight: 100;
+            line-height: 1;
+            margin-bottom: 20px;
+            color: var(--mp-black);
+        }
+        
+        .type-weights {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .type-weight {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .type-weight-label {
+            font-size: 11px;
+            color: var(--mp-gray-400);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .type-weight-sample {
+            font-size: 2rem;
+            color: var(--mp-black);
+        }
+        
+        /* VOICE SAMPLES */
+        .voice-samples {
+            background: var(--mp-gray-50);
+            border-left: 3px solid var(--mp-blue);
+            padding: 60px;
+            margin-bottom: 80px;
+        }
+        
+        .voice-sample {
+            margin-bottom: 40px;
+        }
+        
+        .voice-sample:last-child {
+            margin-bottom: 0;
+        }
+        
+        .voice-sample-label {
+            font-size: 11px;
+            color: var(--mp-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .voice-sample-text {
+            font-size: 1.5rem;
+            font-weight: 200;
+            line-height: 1.4;
+            color: var(--mp-black);
+        }
+        
+        /* DO/DON'T */
+        .do-dont {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        .do-column {
+            background: rgba(0,141,203,0.02);
+            border: 1px solid var(--mp-blue);
+            padding: 40px;
+        }
+        
+        .dont-column {
+            background: rgba(255,0,0,0.02);
+            border: 1px solid var(--mp-gray-300);
+            padding: 40px;
+        }
+        
+        .do-dont h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: var(--mp-black);
+        }
+        
+        .do-dont ul {
+            list-style: none;
+        }
+        
+        .do-dont li {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--mp-gray-200);
+            font-size: 15px;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .do-dont li:last-child {
+            border-bottom: none;
+        }
+        
+        .do-column li {
+            color: var(--mp-gray-700);
+        }
+        
+        .do-column li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: var(--mp-blue);
+            font-weight: 600;
+        }
+        
+        .dont-column li {
+            color: var(--mp-gray-500);
+        }
+        
+        .dont-column li::before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            color: var(--mp-gray-400);
+            font-weight: 600;
+        }
+        
+        /* HIGHLIGHT BOX */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--mp-gray-50) 0%, white 100%);
+            border-left: 3px solid var(--mp-blue);
+            padding: 60px;
+            margin: 80px 0;
+            position: relative;
+        }
+        
+        .highlight-box::before {
+            content: '🧭';
+            position: absolute;
+            top: -20px;
+            left: -17px;
+            font-size: 2rem;
+            background: var(--mp-white);
+            padding: 10px;
+        }
+        
+        .highlight-box h3 {
+            font-size: 2rem;
+            font-weight: 200;
+            margin-bottom: 30px;
+            color: var(--mp-black);
+        }
+        
+        .highlight-box p {
+            font-size: 1.1rem;
+            color: var(--mp-gray-600);
+            line-height: 1.8;
+        }
+        
+        /* ICON GRID */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+            padding: 40px;
+            background: var(--mp-gray-50);
+            border: 1px solid var(--mp-gray-200);
+        }
+        
+        .icon-item {
+            text-align: center;
+            padding: 20px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .icon-item:hover {
+            background: white;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .icon-item svg {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+        
+        .icon-name {
+            font-size: 10px;
+            color: var(--mp-gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        /* TEMPLATE BOX */
+        .template-box {
+            background: var(--mp-gray-50);
+            border: 1px solid var(--mp-gray-200);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .template-label {
+            font-size: 10px;
+            color: var(--mp-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .template-content {
+            background: white;
+            border: 1px solid var(--mp-gray-200);
+            padding: 30px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: var(--mp-gray-700);
+            line-height: 1.8;
+        }
+        
+        /* SOCIAL MEDIA PREVIEWS */
+        .social-preview {
+            background: var(--mp-gray-50);
+            border: 1px solid var(--mp-gray-200);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .social-platform {
+            font-size: 10px;
+            color: var(--mp-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .social-mockup {
+            background: white;
+            border: 1px solid var(--mp-gray-200);
+            padding: 30px;
+        }
+        
+        /* BUSINESS CARD */
+        .business-card {
+            background: var(--mp-white);
+            border: 1px solid var(--mp-blue);
+            padding: 60px;
+            margin-bottom: 40px;
+            position: relative;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .business-card-logo {
+            margin-bottom: auto;
+        }
+        
+        .business-card-info {
+            margin-top: auto;
+        }
+        
+        .business-card-name {
+            font-size: 24px;
+            font-weight: 100;
+            letter-spacing: 0.2em;
+            margin-bottom: 10px;
+            color: var(--mp-black);
+        }
+        
+        .business-card-title {
+            font-size: 11px;
+            color: var(--mp-blue);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+        
+        .business-card-contact {
+            font-size: 12px;
+            color: var(--mp-gray-600);
+            line-height: 2;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        /* EMAIL SIGNATURE */
+        .email-signature {
+            background: white;
+            color: black;
+            padding: 30px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            margin-bottom: 40px;
+            border: 1px solid var(--mp-gray-200);
+        }
+        
+        .email-sig-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: black;
+        }
+        
+        .email-sig-title {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .email-sig-contact {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .email-sig-contact a {
+            color: #008DCB;
+            text-decoration: none;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .nav {
+                width: 200px;
+            }
+            
+            .content {
+                margin-left: 200px;
+                padding: 60px;
+            }
+            
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            
+            .icon-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid var(--mp-gray-200);
+                padding: 30px 20px;
+            }
+            
+            .nav-version {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                margin-top: 30px;
+            }
+            
+            .content {
+                margin-left: 0;
+                padding: 40px 20px;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .cover-title {
+                font-size: 3rem;
+            }
+            
+            .do-dont {
+                grid-template-columns: 1fr;
+            }
+            
+            .icon-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- NAVIGATION -->
+    <nav class="nav">
+        <div class="nav-logo">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                <path d="M25 10 L15 30 L35 30 Z" stroke="#008DCB" stroke-width="2" fill="none"/>
+                <circle cx="25" cy="32" r="12" stroke="black" stroke-width="1" fill="none"/>
+                <circle cx="25" cy="32" r="3" fill="#008DCB"/>
+            </svg>
+            <h1>MILI PÉREZ</h1>
+            <p>TRAVEL BRAND BOOK EXT</p>
+        </div>
+        
+        <ul class="nav-menu">
+            <li><a href="#cover" class="active">Portada</a></li>
+            <li><a href="#fundamento">01. Fundamento</a></li>
+            <li><a href="#proposito">02. Propósito</a></li>
+            <li><a href="#valores">03. Valores</a></li>
+            <li><a href="#personalidad">04. Personalidad</a></li>
+            <li><a href="#naming">05. Naming</a></li>
+            <li><a href="#tono">06. Tono de Voz</a></li>
+            <li><a href="#mensajes">07. Mensajes Clave</a></li>
+            <li><a href="#colores">08. Paleta Expandida</a></li>
+            <li><a href="#tipografia">09. Tipografía</a></li>
+            <li><a href="#logos">10. Sistema de Logos</a></li>
+            <li><a href="#iconografia">11. Iconografía</a></li>
+            <li><a href="#aplicacion-visual">12. Guía Visual</a></li>
+            <li><a href="#templates">13. Templates</a></li>
+            <li><a href="#redes">14. Redes Sociales</a></li>
+            <li><a href="#tarjetas">15. Tarjetas</a></li>
+        </ul>
+        
+        <div class="nav-version">
+        </div>
+    </nav>
+    
+    <!-- CONTENT -->
+    <div class="content">
+        
+        <!-- COVER -->
+        <section id="cover" class="cover">
+            <div class="cover-content">
+                <div class="cover-icon">
+                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                        <path d="M60 30 L40 70 L80 70 Z" stroke="#008DCB" stroke-width="2" fill="none"/>
+                        <circle cx="60" cy="75" r="25" stroke="black" stroke-width="1" fill="none" opacity="0.8"/>
+                        <circle cx="60" cy="75" r="8" fill="#008DCB"/>
+                        <path d="M30 60 Q60 40 90 60" stroke="#008DCB" stroke-width="1" fill="none" opacity="0.5"/>
+                    </svg>
+                </div>
+                
+                <div class="cover-tag">IDENTIDAD CORPORATIVA EXTENDED</div>
+                
+                <h1 class="cover-title">
+                    MILI PÉREZ<br>
+                    TRAVEL
+                </h1>
+                
+                <p class="cover-subtitle">
+                    No hay WiFi donde vamos.<br>
+                    52 países pisados, no visitados.<br>
+                    Vuelves diferente o te devolvemos tu ego.
+                </p>
+                
+                <div class="cover-meta">
+                    <div class="cover-meta-item">
+                        <div class="cover-meta-label">Versión</div>
+                        <div class="cover-meta-value">2.0 Extended</div>
+                    </div>
+                    <div class="cover-meta-item">
+                        <div class="cover-meta-label">Fecha</div>
+                        <div class="cover-meta-value">Enero 2025</div>
+                    </div>
+                    <div class="cover-meta-item">
+                        <div class="cover-meta-label">Categoría</div>
+                        <div class="cover-meta-value">Travel / Expediciones</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 01. FUNDAMENTO ESTRATÉGICO -->
+        <section id="fundamento" class="section">
+            <div class="section-number">01</div>
+            <h2 class="section-title">Fundamento<br>Estratégico</h2>
+            <p class="section-intro">
+                El ADN de Mili Pérez Travel. Por qué existen estas expediciones, qué representan,
+                hacia dónde van. No es turismo. Es transformación a través del viaje.
+            </p>
+            
+            <div class="highlight-box">
+                <h3>El alma de la marca</h3>
+                <p>
+                    Mili Pérez Travel no existe para vender vacaciones. Existe para llevar a personas
+                    que ya lo han visto todo a lugares donde no han visto nada. Cada expedición es una
+                    iniciación diseñada para romper tu zona de confort. Sin WiFi. Sin excusas. Sin vuelta atrás.
+                </p>
+            </div>
+        </section>
+        
+        <!-- 02. PROPÓSITO -->
+        <section id="proposito" class="section">
+            <div class="section-number">02</div>
+            <h2 class="section-title">Propósito</h2>
+            <p class="section-intro">
+                El para qué existe Mili Pérez Travel más allá del negocio.
+                No es marketing. Es la razón de cada expedición.
+            </p>
+            
+            <div class="grid-2">
+                <div>
+                    <div class="card">
+                        <div class="card-label">PROPÓSITO</div>
+                        <h3 class="card-title">Cruzar fronteras físicas para romper las mentales</h3>
+                        <p class="card-text">
+                            Llevar a personas a lugares donde el mapa se acaba y las historias comienzan.
+                            Donde no hay cobertura pero sí conexión real. Donde lo único que importa
+                            es el próximo paso y la persona a tu lado.
+                        </p>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="card">
+                        <div class="card-label">VISIÓN 2030</div>
+                        <h3 class="card-title">La anti-agencia de viajes definitiva</h3>
+                        <p class="card-text">
+                            Ser conocida como quien lleva donde otros no llegan. 
+                            Que se hable de Mili Pérez Travel como la que transforma viajeros
+                            en exploradores y turistas en personas diferentes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-label">MISIÓN</div>
+                <h3 class="card-title">Crear expediciones que te cambian por dentro y por fuera</h3>
+                <p class="card-text">
+                    Selecciono destinos donde el GPS no llega. Organizo grupos pequeños de máximo 10 personas.
+                    Diseño rutas que rompen esquemas mentales. Te llevo al límite físico para que encuentres
+                    tu verdadero límite mental. Vuelves siendo otra persona o no has hecho el viaje completo.
+                </p>
+            </div>
+        </section>
+        
+        <!-- 03. VALORES -->
+        <section id="valores" class="section">
+            <div class="section-number">03</div>
+            <h2 class="section-title">Valores Core</h2>
+            <p class="section-intro">
+                5 principios no negociables que guían cada expedición, cada ruta, cada decisión.
+                No son palabras bonitas. Son compromisos reales.
+            </p>
+            
+            <ul class="principle-list">
+                <li class="principle-item">
+                    <div class="principle-number">01</div>
+                    <div class="principle-content">
+                        <h3>Autenticidad Sin Filtros</h3>
+                        <p>
+                            No hay photoshop en la montaña. No hay filtros en el desierto.
+                            Lo que ves es lo que hay. Lo que vives es lo que cuentas.
+                            Si buscas Instagram perfecto, busca otro viaje.
+                        </p>
+                    </div>
+                </li>
+                
+                <li class="principle-item">
+                    <div class="principle-number">02</div>
+                    <div class="principle-content">
+                        <h3>Desconexión Digital Total</h3>
+                        <p>
+                            No hay WiFi donde vamos y es a propósito. La mejor conexión
+                            es la humana. Las mejores historias no necesitan stories.
+                            Aprenderás que 10 días sin WhatsApp no te matan, te liberan.
+                        </p>
+                    </div>
+                </li>
+                
+                <li class="principle-item">
+                    <div class="principle-number">03</div>
+                    <div class="principle-content">
+                        <h3>Transformación sobre Turismo</h3>
+                        <p>
+                            No vendemos fotos para tu feed. Vendemos experiencias que te cambian.
+                            Si vuelves igual que te fuiste, hemos fracasado. La transformación
+                            no es opcional, es el objetivo.
+                        </p>
+                    </div>
+                </li>
+                
+                <li class="principle-item">
+                    <div class="principle-number">04</div>
+                    <div class="principle-content">
+                        <h3>Respeto Absoluto al Destino</h3>
+                        <p>
+                            Pisamos sin dejar huella. Observamos sin invadir. Aprendemos sin colonizar.
+                            Cada lugar tiene su ritmo, su cultura, su esencia. Nosotros somos invitados,
+                            no conquistadores.
+                        </p>
+                    </div>
+                </li>
+                
+                <li class="principle-item">
+                    <div class="principle-number">05</div>
+                    <div class="principle-content">
+                        <h3>Grupo sobre Individuo</h3>
+                        <p>
+                            Llegas solo, vuelves con familia elegida. El grupo es todo.
+                            Si alguien no puede, nadie puede. Si alguien llega, todos llegamos.
+                            Aprendes que el ego pesa más que la mochila.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        <!-- 04. PERSONALIDAD -->
+        <section id="personalidad" class="section">
+            <div class="section-number">04</div>
+            <h2 class="section-title">Personalidad<br>de Marca</h2>
+            <p class="section-intro">
+                Si Mili Pérez Travel fuera una persona, ¿cómo sería?
+                3 adjetivos que definen completamente la esencia expedicionaria.
+            </p>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-label">RASGO 01</div>
+                    <h3 class="card-title">Salvaje</h3>
+                    <p class="card-text">
+                        No domesticada por el turismo masivo. Va donde otros no van.
+                        Prefiere dormir bajo estrellas que bajo techos. Entiende que
+                        lo salvaje no está en el destino, está en el viajero.
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">RASGO 02</div>
+                    <h3 class="card-title">Honesta</h3>
+                    <p class="card-text">
+                        Dice las cosas como son. Si no vas a ducharte en 5 días, lo dice.
+                        Si el camino es duro, lo advierte. No vende paraísos falsos.
+                        Vende transformación real con sudor real.
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">RASGO 03</div>
+                    <h3 class="card-title">Transformadora</h3>
+                    <p class="card-text">
+                        52 países pisados dan perspectiva. Sabe que viajar no es moverte,
+                        es cambiar. Cada expedición está diseñada para romperte y
+                        reconstruirte. Sales diferente o no has viajado.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>Arquetipo de marca</h3>
+                <p>
+                    Mili Pérez Travel es la Exploradora Rebelde. La que rechaza los tours organizados
+                    para crear expediciones reales. No busca likes. Busca transformación.
+                    Como Shackleton pero con WhatsApp apagado.
+                </p>
+            </div>
+        </section>
+        
+        <!-- 05. NAMING -->
+        <section id="naming" class="section">
+            <div class="section-number">05</div>
+            <h2 class="section-title">Naming y<br>Arquitectura</h2>
+            <p class="section-intro">
+                Cómo se estructura la marca Travel. Qué nombres usar. Cómo conecta con Tech.
+            </p>
+            
+            <div class="grid-2">
+                <div>
+                    <div class="card">
+                        <div class="card-label">MARCA PRINCIPAL</div>
+                        <h3 class="card-title">MILI PÉREZ</h3>
+                        <p class="card-text">
+                            Marca personal paraguas. Abarca Tech y Travel.
+                            Siempre en mayúsculas. Siempre con tilde. Siempre completo.
+                            La persona detrás de las expediciones.
+                        </p>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="card">
+                        <div class="card-label">SUBMARCAS</div>
+                        <h3 class="card-title">MP Travel / MP Expeditions</h3>
+                        <p class="card-text">
+                            Para contextos específicos del mundo viajes.
+                            MP = iniciales. Travel/Expeditions = territorio.
+                            Claro, distinguible, memorable.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-label">TAGLINE MAESTRO</div>
+                <h3 class="card-title">"Cruzando fronteras con la tecnología correcta"</h3>
+                <p class="card-text">
+                    Une ambos mundos. Tech cruza fronteras digitales. Travel cruza fronteras físicas.
+                    La tecnología como herramienta, no como fin. GPS para llegar, brújula para explorar.
+                </p>
+            </div>
+            
+            <div class="grid-2">
+                <div>
+                    <div class="card">
+                        <div class="card-label">TAGLINE TRAVEL</div>
+                        <h3 class="card-title">"No hay WiFi donde vamos"</h3>
+                        <p class="card-text">
+                            Directo, provocador, diferenciador. Define inmediatamente
+                            qué tipo de viaje es. Filtra a los que no encajan.
+                        </p>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="card">
+                        <div class="card-label">VARIANTE SECUNDARIA</div>
+                        <h3 class="card-title">"52 países pisados, no visitados"</h3>
+                        <p class="card-text">
+                            Establece autoridad y filosofía. Pisados implica profundidad.
+                            No visitados rechaza el turismo superficial.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>Reglas de naming</h3>
+                <p>
+                    Nunca "viajes de Mili". Siempre "Expediciones Mili Pérez". Nunca minúsculas en comunicación oficial.
+                    Siempre MILI PÉREZ en logos. El nombre es statement, no decoración.
+                    "Travel" para lo comercial, "Expeditions" para lo épico.
+                </p>
+            </div>
+        </section>
+        
+        <!-- 06. TONO DE VOZ -->
+        <section id="tono" class="section">
+            <div class="section-number">06</div>
+            <h2 class="section-title">Tono de Voz</h2>
+            <p class="section-intro">
+                Cómo suena Mili Pérez Travel cuando habla. Directo, honesto, transformador.
+                Cada palabra cuenta una historia real.
+            </p>
+            
+            <div class="do-dont">
+                <div class="do-column">
+                    <h3>Lo que SÍ hacemos</h3>
+                    <ul>
+                        <li>Historias reales de transformación</li>
+                        <li>Datos concretos: "52 países", "máximo 10 personas", "5.895 metros"</li>
+                        <li>Advertencias honestas: "No te ducharás en 5 días"</li>
+                        <li>Verbos de acción: "Pisamos", "Cruzamos", "Rompemos"</li>
+                        <li>Preguntas que confrontan: "¿Cuándo fue la última vez que te perdiste?"</li>
+                        <li>Metáforas de transformación y naturaleza</li>
+                        <li>Referencias a la desconexión digital como liberación</li>
+                    </ul>
+                </div>
+                
+                <div class="dont-column">
+                    <h3>Lo que NO hacemos</h3>
+                    <ul>
+                        <li>"Descubre paraísos escondidos..."</li>
+                        <li>Promesas de comfort y lujo</li>
+                        <li>Lenguaje de folleto turístico</li>
+                        <li>"Experiencias inolvidables" y otros clichés</li>
+                        <li>Instagram captions motivacionales</li>
+                        <li>"Querido viajero" o formalidades vacías</li>
+                        <li>Minimizar las dificultades del viaje</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="voice-samples">
+                <div class="voice-sample">
+                    <div class="voice-sample-label">Ejemplo: Descripción expedición</div>
+                    <div class="voice-sample-text">
+                        "8 días. 4.071 metros. Sin duchas. Con historias que nadie te va a creer."
+                    </div>
+                </div>
+                
+                <div class="voice-sample">
+                    <div class="voice-sample-label">Ejemplo: Rechazo de solicitud</div>
+                    <div class="voice-sample-text">
+                        "No encajas en este viaje. Necesitas WiFi cada día y eso aquí no existe.
+                        Prueba con un crucero. Sin rencor."
+                    </div>
+                </div>
+                
+                <div class="voice-sample">
+                    <div class="voice-sample-label">Ejemplo: Call to action</div>
+                    <div class="voice-sample-text">
+                        "Rellena el formulario. Cuéntame por qué. Si encajas, hablamos.
+                        Si no, mejor saberlo ahora."
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 07. MENSAJES CLAVE -->
+        <section id="mensajes" class="section">
+            <div class="section-number">07</div>
+            <h2 class="section-title">Mensajes<br>Clave</h2>
+            <p class="section-intro">
+                Frases que definen la marca Travel. Para web, redes, conversaciones.
+                Memorables. Honestas. Transformadoras.
+            </p>
+            
+            <ul class="principle-list">
+                <li class="principle-item">
+                    <div class="principle-number">01</div>
+                    <div class="principle-content">
+                        <h3>Vuelves diferente o te devolvemos tu ego</h3>
+                        <p>
+                            Promesa central. Define expectativas. Si no hay transformación,
+                            no hay viaje completo. El ego se deja en casa o se pierde en el camino.
+                        </p>
+                    </div>
+                </li>
+                
+                <li class="principle-item">
+                    <div class="principle-number">02</div>
+                    <div class="principle-content">
+                        <h3>Donde los mapas se acaban y las historias comienzan</h3>
+                        <p>
+                            Define los destinos. No vamos donde Google Maps llega fácil.
+                            Vamos donde las historias reales esperan ser vividas.
+                        </p>
+                    </div>
+                </li>
+                
+                <li class="principle-item">
+                    <div class="principle-number">03</div>
+                    <div class="principle-content">
+                        <h3>10 personas máximo. Sin excepciones. Nunca.</h3>
+                        <p>
+                            Política clara. Grupos pequeños = experiencias profundas.
+                            No importa quién pida plaza extra. 10 es 10.
+                        </p>
+                    </div>
+                </li>
+                
+                <li class="principle-item">
+                    <div class="principle-number">04</div>
+                    <div class="principle-content">
+                        <h3>El WiFi es opcional. La transformación obligatoria.</h3>
+                        <p>
+                            Establece prioridades. La desconexión digital es parte del proceso.
+                            La transformación personal es el objetivo.
+                        </p>
+                    </div>
+                </li>
+                
+                <li class="principle-item">
+                    <div class="principle-number">05</div>
+                    <div class="principle-content">
+                        <h3>No son vacaciones. Son iniciaciones.</h3>
+                        <p>
+                            Redefine el concepto de viaje. No es descanso, es despertar.
+                            Cada expedición es un rito de paso hacia quien realmente eres.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        <!-- 08. PALETA CROMÁTICA EXPANDIDA -->
+        <section id="colores" class="section">
+            <div class="section-number">08</div>
+            <h2 class="section-title">Paleta Cromática<br>Expandida</h2>
+            <p class="section-intro">
+                Sistema de color para Travel. Blanco como base, azul como identidad,
+                colores tierra como complemento. Cada tono evoca naturaleza y aventura.
+            </p>
+            
+            <div class="card">
+                <div class="card-label">COLORES PRIMARIOS</div>
+                <h3 class="card-title">Blanco + Azul + Negro</h3>
+                <p class="card-text">
+                    La trinidad Travel. Blanco como base (vs negro en Tech). Azul #008DCB como identidad compartida.
+                    Negro para contraste y texto. La inversión del Tech representa el día vs la noche.
+                </p>
+            </div>
+            
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #ffffff;"></div>
+                    <div class="color-swatch-info" style="color: black;">
+                        <div class="color-name">Blanco Base</div>
+                        <div class="color-code">#FFFFFF</div>
+                        <div class="color-values">
+                            RGB: 255, 255, 255<br>
+                            CMYK: 0, 0, 0, 0<br>
+                            Base principal
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #008DCB;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Azul Mili</div>
+                        <div class="color-code">#008DCB</div>
+                        <div class="color-values">
+                            RGB: 0, 141, 203<br>
+                            CMYK: 100, 30, 0, 20<br>
+                            Identidad compartida
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #000000;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Negro Texto</div>
+                        <div class="color-code">#000000</div>
+                        <div class="color-values">
+                            RGB: 0, 0, 0<br>
+                            CMYK: 0, 0, 0, 100<br>
+                            Tipografía
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-label">COLORES TIERRA - EXPEDICIONES</div>
+                <h3 class="card-title">Paleta natural para contextos específicos</h3>
+                <p class="card-text">
+                    Colores que evocan los destinos. Usar con moderación, solo cuando añaden significado.
+                    Nunca más de uno adicional al azul en una composición.
+                </p>
+            </div>
+            
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #8B4513;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Tierra Atlas</div>
+                        <div class="color-code">#8B4513</div>
+                        <div class="color-values">
+                            Montaña · Desierto
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #2E7D32;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Verde Selva</div>
+                        <div class="color-code">#2E7D32</div>
+                        <div class="color-values">
+                            Bosque · Naturaleza
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #F57C00;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Ocaso Sahara</div>
+                        <div class="color-code">#F57C00</div>
+                        <div class="color-values">
+                            Desierto · Atardecer
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #5E35B1;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Altura Himalaya</div>
+                        <div class="color-code">#5E35B1</div>
+                        <div class="color-values">
+                            Alta montaña · Mística
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #00695C;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Profundo Mar</div>
+                        <div class="color-code">#00695C</div>
+                        <div class="color-values">
+                            Océano · Profundidad
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #6A1B9A;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Místico Ararat</div>
+                        <div class="color-code">#6A1B9A</div>
+                        <div class="color-values">
+                            Sagrado · Espiritual
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-label">ESCALA DE GRISES</div>
+                <h3 class="card-title">Jerarquía y estructura</h3>
+                <p class="card-text">
+                    Para crear profundidad sin perder la limpieza del blanco base.
+                    Usar para texto secundario, bordes, fondos sutiles.
+                </p>
+            </div>
+            
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #f5f5f5;"></div>
+                    <div class="color-swatch-info" style="color: black;">
+                        <div class="color-name">Gray 50</div>
+                        <div class="color-code">#F5F5F5</div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #e8e8e8;"></div>
+                    <div class="color-swatch-info" style="color: black;">
+                        <div class="color-name">Gray 100</div>
+                        <div class="color-code">#E8E8E8</div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #d4d4d4;"></div>
+                    <div class="color-swatch-info" style="color: black;">
+                        <div class="color-name">Gray 200</div>
+                        <div class="color-code">#D4D4D4</div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #8a8a8a;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Gray 400</div>
+                        <div class="color-code">#8A8A8A</div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #4a4a4a;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Gray 600</div>
+                        <div class="color-code">#4A4A4A</div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #1a1a1a;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Gray 800</div>
+                        <div class="color-code">#1A1A1A</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 09. TIPOGRAFÍA -->
+        <section id="tipografia" class="section">
+            <div class="section-number">09</div>
+            <h2 class="section-title">Tipografía</h2>
+            <p class="section-intro">
+                Inter como tipografía principal. JetBrains Mono para datos técnicos.
+                La misma familia que Tech, adaptada al mundo Travel.
+            </p>
+            
+            <div class="type-specimen">
+                <div class="type-name">INTER — PRINCIPAL</div>
+                <div class="type-display" style="font-family: 'Inter', sans-serif;">
+                    MILI PÉREZ TRAVEL
+                </div>
+                <div class="type-weights">
+                    <div class="type-weight">
+                        <div class="type-weight-label">Thin 100</div>
+                        <div class="type-weight-sample" style="font-family: 'Inter', sans-serif; font-weight: 100;">
+                            52 países pisados
+                        </div>
+                    </div>
+                    <div class="type-weight">
+                        <div class="type-weight-label">Light 300</div>
+                        <div class="type-weight-sample" style="font-family: 'Inter', sans-serif; font-weight: 300;">
+                            No hay WiFi
+                        </div>
+                    </div>
+                    <div class="type-weight">
+                        <div class="type-weight-label">Regular 400</div>
+                        <div class="type-weight-sample" style="font-family: 'Inter', sans-serif; font-weight: 400;">
+                            Expediciones
+                        </div>
+                    </div>
+                    <div class="type-weight">
+                        <div class="type-weight-label">Medium 500</div>
+                        <div class="type-weight-sample" style="font-family: 'Inter', sans-serif; font-weight: 500;">
+                            TRAVEL
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="type-specimen">
+                <div class="type-name">JETBRAINS MONO — DATOS</div>
+                <div class="type-display" style="font-family: 'JetBrains Mono', monospace; font-size: 2rem;">
+                    LAT: 27.9881° N | LONG: 86.9250° E | ALT: 8,849m
+                </div>
+                <p class="card-text" style="margin-top: 20px;">
+                    Solo para coordenadas, altitudes, fechas, códigos de reserva, datos técnicos de expedición.
+                </p>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>Reglas tipográficas Travel</h3>
+                <p>
+                    Inter 100-300 para títulos épicos. Inter 400 para texto corrido. JetBrains Mono solo para datos duros.
+                    Letter-spacing amplio en mayúsculas (0.2em mínimo). Line-height 1.8 para legibilidad en móvil.
+                    El blanco respira más que el negro. Aprovéchalo.
+                </p>
+            </div>
+        </section>
+        
+        <!-- 10. SISTEMA DE LOGOS -->
+        <section id="logos" class="section">
+            <div class="section-number">10</div>
+            <h2 class="section-title">Sistema de<br>Logos</h2>
+            <p class="section-intro">
+                Montaña + brújula = exploración con dirección. Flexible, escalable, memorable.
+            </p>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-label">LOGO PRINCIPAL</div>
+                    <div style="text-align: center; padding: 40px 0;">
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                            <path d="M50 20 L30 60 L70 60 Z" stroke="#008DCB" stroke-width="2" fill="none"/>
+                            <circle cx="50" cy="63" r="20" stroke="black" stroke-width="1" fill="none" opacity="0.8"/>
+                            <circle cx="50" cy="63" r="5" fill="#008DCB"/>
+                            <path d="M50 48 L50 58" stroke="#008DCB" stroke-width="1" opacity="0.5"/>
+                            <path d="M45 63 L55 63" stroke="#008DCB" stroke-width="1" opacity="0.5"/>
+                        </svg>
+                        <div style="margin-top: 20px; font-size: 18px; font-weight: 100; letter-spacing: 0.2em; color: black;">
+                            MILI PÉREZ
+                        </div>
+                    </div>
+                    <p class="card-text">
+                        Versión completa. Montaña + brújula integrada. Para uso general en web, documentos, material promocional.
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">ISOTIPO</div>
+                    <div style="text-align: center; padding: 40px 0;">
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                            <path d="M50 20 L30 60 L70 60 Z" stroke="#008DCB" stroke-width="2" fill="none"/>
+                            <circle cx="50" cy="63" r="20" stroke="black" stroke-width="1" fill="none" opacity="0.8"/>
+                            <circle cx="50" cy="63" r="5" fill="#008DCB"/>
+                        </svg>
+                    </div>
+                    <p class="card-text">
+                        Solo símbolo. Para avatares, favicons, marcas de agua, merchandising.
+                        La montaña representa el desafío, la brújula la guía.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>Área de respeto</h3>
+                <p>
+                    Mínimo 25% del alto del logo de espacio libre. La montaña necesita aire para respirar.
+                    Nunca rotar, deformar o cambiar proporciones. Si no cabe completo, usa el isotipo.
+                    El azul #008DCB es sagrado. No lo cambies.
+                </p>
+            </div>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-label">VERSIÓN AZUL</div>
+                    <div style="background: white; padding: 40px; text-align: center; border: 1px solid #f0f0f0;">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                            <path d="M40 16 L24 48 L56 48 Z" stroke="#008DCB" stroke-width="2" fill="none"/>
+                            <circle cx="40" cy="50" r="16" stroke="#008DCB" stroke-width="1" fill="none"/>
+                            <circle cx="40" cy="50" r="4" fill="#008DCB"/>
+                        </svg>
+                    </div>
+                    <p class="card-text">Principal sobre blanco</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">VERSIÓN NEGRA</div>
+                    <div style="background: white; padding: 40px; text-align: center; border: 1px solid #f0f0f0;">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                            <path d="M40 16 L24 48 L56 48 Z" stroke="black" stroke-width="2" fill="none"/>
+                            <circle cx="40" cy="50" r="16" stroke="black" stroke-width="1" fill="none"/>
+                            <circle cx="40" cy="50" r="4" fill="black"/>
+                        </svg>
+                    </div>
+                    <p class="card-text">Para impresiones B/N</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">VERSIÓN BLANCA</div>
+                    <div style="background: #008DCB; padding: 40px; text-align: center;">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                            <path d="M40 16 L24 48 L56 48 Z" stroke="white" stroke-width="2" fill="none"/>
+                            <circle cx="40" cy="50" r="16" stroke="white" stroke-width="1" fill="none"/>
+                            <circle cx="40" cy="50" r="4" fill="white"/>
+                        </svg>
+                    </div>
+                    <p class="card-text">Sobre fondos oscuros</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 11. ICONOGRAFÍA -->
+        <section id="iconografia" class="section">
+            <div class="section-number">11</div>
+            <h2 class="section-title">Sistema de<br>Iconografía</h2>
+            <p class="section-intro">
+                24 iconos esenciales para expediciones. Geometría simple. Líneas de 2px.
+                Cada icono cuenta una historia de viaje.
+            </p>
+            
+            <div class="icon-grid">
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path d="M20 10 L12 26 L28 26 Z" stroke="#008DCB" stroke-width="2" fill="none"/>
+                        <line x1="20" y1="10" x2="20" y2="26" stroke="#008DCB" stroke-width="1" opacity="0.5"/>
+                    </svg>
+                    <div class="icon-name">Montaña</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="10" stroke="#008DCB" stroke-width="2"/>
+                        <circle cx="20" cy="20" r="3" fill="#008DCB"/>
+                        <line x1="20" y1="10" x2="20" y2="17" stroke="#008DCB" stroke-width="2"/>
+                    </svg>
+                    <div class="icon-name">Brújula</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <rect x="10" y="12" width="20" height="16" stroke="#008DCB" stroke-width="2"/>
+                        <path d="M15 12 L15 8 M25 12 L25 8" stroke="#008DCB" stroke-width="2"/>
+                    </svg>
+                    <div class="icon-name">Mochila</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <polygon points="20,10 15,25 20,22 25,25" stroke="#008DCB" stroke-width="2" fill="none"/>
+                    </svg>
+                    <div class="icon-name">Tienda</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path d="M10 20 Q20 10 30 20 Q20 30 10 20" stroke="#008DCB" stroke-width="2" fill="none"/>
+                    </svg>
+                    <div class="icon-name">Ruta</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="10" stroke="#008DCB" stroke-width="2"/>
+                        <path d="M20 10 L20 30 M10 20 L30 20" stroke="#008DCB" stroke-width="1"/>
+                    </svg>
+                    <div class="icon-name">Mundo</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <rect x="12" y="10" width="16" height="20" stroke="#008DCB" stroke-width="2"/>
+                        <line x1="16" y1="15" x2="24" y2="15" stroke="#008DCB" stroke-width="1"/>
+                        <line x1="16" y1="20" x2="24" y2="20" stroke="#008DCB" stroke-width="1"/>
+                    </svg>
+                    <div class="icon-name">Pasaporte</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <circle cx="15" cy="18" r="5" stroke="#008DCB" stroke-width="2"/>
+                        <circle cx="25" cy="18" r="5" stroke="#008DCB" stroke-width="2"/>
+                        <path d="M15 23 L25 23" stroke="#008DCB" stroke-width="2"/>
+                    </svg>
+                    <div class="icon-name">Grupo</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path d="M20 10 L30 20 L20 30 L10 20 Z" stroke="#008DCB" stroke-width="2" fill="none"/>
+                        <circle cx="20" cy="20" r="3" fill="#008DCB"/>
+                    </svg>
+                    <div class="icon-name">Destino</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="15" r="3" stroke="#008DCB" stroke-width="2"/>
+                        <path d="M20 18 L20 30 M15 25 L25 25" stroke="#008DCB" stroke-width="2"/>
+                    </svg>
+                    <div class="icon-name">Viajero</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path d="M15 10 L15 30 M25 10 L25 30 M10 20 L30 20" stroke="#008DCB" stroke-width="2"/>
+                    </svg>
+                    <div class="icon-name">Mapa</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="10" stroke="#008DCB" stroke-width="2"/>
+                        <circle cx="20" cy="20" r="7" stroke="#008DCB" stroke-width="1" opacity="0.5"/>
+                        <circle cx="20" cy="20" r="4" stroke="#008DCB" stroke-width="1" opacity="0.3"/>
+                    </svg>
+                    <div class="icon-name">Altitud</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <rect x="10" y="15" width="8" height="10" stroke="#008DCB" stroke-width="2"/>
+                        <rect x="22" y="15" width="8" height="10" stroke="#008DCB" stroke-width="2"/>
+                        <line x1="14" y1="10" x2="14" y2="15" stroke="#008DCB" stroke-width="2"/>
+                        <line x1="26" y1="10" x2="26" y2="15" stroke="#008DCB" stroke-width="2"/>
+                    </svg>
+                    <div class="icon-name">Vista</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path d="M10 25 Q20 15 30 25" stroke="#008DCB" stroke-width="2" fill="none"/>
+                        <path d="M15 20 Q20 15 25 20" stroke="#008DCB" stroke-width="1" fill="none" opacity="0.5"/>
+                    </svg>
+                    <div class="icon-name">Horizonte</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <polygon points="20,10 25,20 35,20 27,27 30,37 20,30 10,37 13,27 5,20 15,20" stroke="#008DCB" stroke-width="2" fill="none"/>
+                    </svg>
+                    <div class="icon-name">Estrella</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="10" stroke="#008DCB" stroke-width="2"/>
+                        <path d="M20 15 L20 20 L25 25" stroke="#008DCB" stroke-width="2"/>
+                    </svg>
+                    <div class="icon-name">Duración</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path d="M20 30 L20 10" stroke="#008DCB" stroke-width="2"/>
+                        <path d="M15 15 L20 10 L25 15" stroke="#008DCB" stroke-width="2"/>
+                    </svg>
+                    <div class="icon-name">Subida</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path d="M10 15 L20 25 L30 15" stroke="#008DCB" stroke-width="2" fill="none"/>
+                    </svg>
+                    <div class="icon-name">Valle</div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>Reglas de iconografía Travel</h3>
+                <p>
+                    Grid de 40x40px. Stroke de 2px siempre. Color: #008DCB o negro sobre fondos claros.
+                    Los iconos evocan naturaleza y exploración. Si no comunica aventura, no existe.
+                    Simplicidad extrema. La montaña no necesita detalles.
+                </p>
+            </div>
+        </section>
+        
+        <!-- 12. GUÍA DE APLICACIÓN VISUAL -->
+        <section id="aplicacion-visual" class="section">
+            <div class="section-number">12</div>
+            <h2 class="section-title">Guía de<br>Aplicación Visual</h2>
+            <p class="section-intro">
+                Cómo aplicar la identidad Travel en cada contexto. Aire, espacio, naturaleza.
+            </p>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-label">FOTOGRAFÍA</div>
+                    <h3 class="card-title">Real, sin filtros, épica</h3>
+                    <p class="card-text">
+                        Paisajes vastos con personas pequeñas. Muestra la escala.
+                        Colores naturales, sin saturación artificial.
+                        Momentos reales, no poses. El sudor se ve, el esfuerzo también.
+                        Nunca stock photos. Siempre fotos de expediciones reales.
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">COMPOSICIÓN</div>
+                    <h3 class="card-title">Mucho aire, poco texto</h3>
+                    <p class="card-text">
+                        El blanco es protagonista. Úsalo sin miedo.
+                        Texto mínimo, impacto máximo.
+                        Una imagen > mil palabras motivacionales.
+                        Grid de 12 columnas, pero usa máximo 8.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-label">JERARQUÍA TIPOGRÁFICA</div>
+                    <h3 class="card-title">5 niveles, no más</h3>
+                    <p class="card-text">
+                        H1: 72px / weight 100 / line 0.9<br>
+                        H2: 48px / weight 200 / line 1.1<br>
+                        H3: 32px / weight 300 / line 1.2<br>
+                        Body: 18px / weight 400 / line 1.8<br>
+                        Small: 14px / weight 500 / line 1.6
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">USO DE COLOR</div>
+                    <h3 class="card-title">70/25/5 Rule</h3>
+                    <p class="card-text">
+                        70% Blanco (espacio, respiración)<br>
+                        25% Negro/Grises (texto, estructura)<br>
+                        5% Azul (acentos, CTAs, identidad)<br>
+                        Colores tierra solo en contextos específicos.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-label">APLICACIÓN EN WEB</div>
+                <h3 class="card-title">Scroll épico, carga rápida</h3>
+                <p class="card-text">
+                    Hero images a pantalla completa. Parallax sutil, no mareante.
+                    Transiciones suaves pero rápidas. Mobile first siempre.
+                    Formularios cortos y directos. Sin pop-ups molestos.
+                    El contenido es el rey, el espacio blanco su trono.
+                </p>
+            </div>
+        </section>
+        
+        <!-- 13. TEMPLATES DE COMUNICACIÓN -->
+        <section id="templates" class="section">
+            <div class="section-number">13</div>
+            <h2 class="section-title">Templates de<br>Comunicación</h2>
+            <p class="section-intro">
+                Mensajes listos para copiar y pegar. Directos, honestos, transformadores.
+            </p>
+            
+            <div class="template-box">
+                <div class="template-label">EMAIL - RESPUESTA A SOLICITUD</div>
+                <div class="template-content">
+Asunto: Re: Plaza para [Expedición]
+
+Hola [Nombre],
+
+Leí tu formulario. Tres preguntas antes de seguir:
+
+1. ¿Has dormido alguna vez sin techo?
+2. ¿Puedes vivir sin ducha 5 días?
+3. ¿Por qué este viaje y por qué ahora?
+
+Responde con honestidad. Si encajas, te guardo plaza.
+Si no, mejor saberlo ahora que a 4.000 metros.
+
+—
+Mili Pérez
+mili@miliperez.travel
+"No hay WiFi donde vamos"
+                </div>
+            </div>
+            
+            <div class="template-box">
+                <div class="template-label">WHATSAPP - CONFIRMACIÓN</div>
+                <div class="template-content">
+[Nombre], plaza confirmada ✓
+
+📍 [Destino] - [Fecha]
+👥 Grupo: [X]/10 plazas ocupadas
+💰 50% recibido. Resto 30 días antes.
+
+Próximos pasos:
+1. Te añado al grupo de WhatsApp
+2. Recibirás lista de equipo en 48h
+3. Videollamada grupal [fecha]
+
+Pregunta lo que necesites. Sin filtros.
+
+La transformación empieza ahora 🏔️
+                </div>
+            </div>
+            
+            <div class="template-box">
+                <div class="template-label">INSTAGRAM - POST EXPEDICIÓN</div>
+                <div class="template-content">
+[DESTINO] ✓
+
+Altura máxima: [X] metros
+Días sin ducha: [X]
+Momentos de querer abandonar: [X]
+Veces que valió la pena: Infinitas
+
+No es lo que subes. Es quién baja.
+
+10 personas subieron una montaña.
+10 personas diferentes bajaron.
+
+Próxima expedición: [Destino] - [Fecha]
+Quedan [X] plazas.
+
+Si no te da miedo, no es para ti.
+Link in bio.
+
+#MPTravel #NoHayWiFi #52PaísesPisados
+                </div>
+            </div>
+            
+            <div class="template-box">
+                <div class="template-label">EMAIL - POST-EXPEDICIÓN</div>
+                <div class="template-content">
+Asunto: Lo lograste
+
+[Nombre],
+
+Han pasado 48 horas desde que volviste.
+El mundo "normal" se siente raro, ¿verdad?
+
+Eso que sientes no es jet lag.
+Es la prueba de que ya no eres el mismo.
+
+Las fotos están aquí: [link]
+El grupo sigue activo para cuando necesites recordar.
+
+Cuando estés listo para la siguiente, aquí estoy.
+La montaña siempre espera.
+
+—
+Mili
+
+PD: Guarda el billete de avión. 
+Un día querrás recordar el día que todo cambió.
+                </div>
+            </div>
+        </section>
+        
+        <!-- 14. REDES SOCIALES -->
+        <section id="redes" class="section">
+            <div class="section-number">14</div>
+            <h2 class="section-title">Redes<br>Sociales</h2>
+            <p class="section-intro">
+                Instagram para inspirar. LinkedIn para educar. YouTube para documentar.
+                Sin motivación barata. Solo verdad cruda.
+            </p>
+            
+            <div class="social-preview">
+                <div class="social-platform">INSTAGRAM - FORMATO CARRUSEL</div>
+                <div class="social-mockup">
+                    <div style="aspect-ratio: 1; max-width: 400px; padding: 40px; text-align: center; background: linear-gradient(135deg, #f5f5f5, white);">
+                        <div style="font-size: 80px; font-weight: 100; color: #008DCB; margin-bottom: 20px;">52</div>
+                        <div style="font-size: 14px; color: black; letter-spacing: 0.3em; text-transform: uppercase;">PAÍSES PISADOS</div>
+                        <div style="font-size: 12px; color: #666; margin-top: 20px;">NO VISITADOS</div>
+                        <div style="position: absolute; bottom: 30px; right: 30px; font-size: 10px; color: #999;">
+                            1/10 →
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="social-preview">
+                <div class="social-platform">LINKEDIN - POST TRANSFORMACIÓN</div>
+                <div class="social-mockup">
+                    <div style="border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 20px;">
+                        <strong>Mili Pérez</strong><br>
+                        <span style="color: #666; font-size: 12px;">Cruzando fronteras físicas y mentales • 52 países</span>
+                    </div>
+                    <div style="color: #333; line-height: 1.8;">
+                        El 90% de los ejecutivos que conozco necesitan esto más que otro MBA:<br><br>
+                        
+                        8 días sin WiFi.<br>
+                        4.071 metros de altura.<br>
+                        10 desconocidos que se vuelven familia.<br>
+                        0 excusas.<br><br>
+                        
+                        La montaña no entiende de títulos, cargos o followers.<br>
+                        Solo entiende de dar el siguiente paso o rendirse.<br><br>
+                        
+                        Mgoun, Marruecos. Noviembre 2025.<br>
+                        7 plazas disponibles.<br><br>
+                        
+                        No es team building. Es demolición del ego y reconstrucción humana.<br><br>
+                        
+                        ¿Cuándo fue la última vez que hiciste algo por primera vez?
+                    </div>
+                    <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee;">
+                        <span style="color: #008DCB; font-size: 12px;">#Liderazgo #Transformación #NoHayWiFiDondeVamos</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-label">INSTAGRAM</div>
+                    <h3 class="card-title">Visual storytelling</h3>
+                    <p class="card-text">
+                        Feed: Paisajes épicos, grupos pequeños<br>
+                        Stories: Behind the scenes crudo<br>
+                        Reels: Momentos de transformación<br>
+                        IGTV: Mini documentales expedición
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">LINKEDIN</div>
+                    <h3 class="card-title">Liderazgo diferente</h3>
+                    <p class="card-text">
+                        Posts: Lecciones de liderazgo del camino<br>
+                        Artículos: Por qué el CEO necesita sudar<br>
+                        Vídeos: Testimonios transformación<br>
+                        Target: Ejecutivos quemados
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">YOUTUBE</div>
+                    <h3 class="card-title">Documentales reales</h3>
+                    <p class="card-text">
+                        Vlogs: Expediciones completas<br>
+                        Shorts: Momentos cumbre<br>
+                        Series: "10 días sin WiFi"<br>
+                        Sin música épica falsa
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 15. TARJETAS -->
+        <section id="tarjetas" class="section">
+            <div class="section-number">15</div>
+            <h2 class="section-title">Tarjetas<br>Business Cards</h2>
+            <p class="section-intro">
+                Papel reciclado con semillas. Digital en vCard. 
+                La tarjeta que plantas después del viaje.
+            </p>
+            
+            <div class="grid-2">
+                <div>
+                    <div class="card">
+                        <div class="card-label">TARJETA FÍSICA - FRENTE</div>
+                        <div class="business-card">
+                            <div class="business-card-logo">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <path d="M20 8 L12 24 L28 24 Z" stroke="#008DCB" stroke-width="2" fill="none"/>
+                                    <circle cx="20" cy="26" r="10" stroke="black" stroke-width="1" fill="none"/>
+                                    <circle cx="20" cy="26" r="2" fill="#008DCB"/>
+                                </svg>
+                            </div>
+                            <div class="business-card-info">
+                                <div class="business-card-name">MILI PÉREZ</div>
+                                <div class="business-card-title">EXPEDITION LEADER</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="card">
+                        <div class="card-label">TARJETA FÍSICA - REVERSO</div>
+                        <div class="business-card" style="justify-content: center; align-items: center;">
+                            <div style="text-align: center;">
+                                <div class="business-card-contact">
+                                    52 países pisados<br>
+                                    15 años explorando<br>
+                                    <br>
+                                    mili@miliperez.travel<br>
+                                    miliperez.travel<br>
+                                    <br>
+                                    <div style="margin-top: 20px; font-size: 11px; color: #008DCB;">
+                                        "No hay WiFi donde vamos"
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-label">ESPECIFICACIONES TÉCNICAS</div>
+                <h3 class="card-title">Papel con semillas de montaña</h3>
+                <p class="card-text">
+                    Dimensiones: 85 x 55 mm (estándar europeo)<br>
+                    Papel: Reciclado con semillas de flores silvestres<br>
+                    Impresión: Letterpress, tinta ecológica azul #008DCB y negra<br>
+                    Acabado: Bordes irregulares naturales<br>
+                    Extra: Instrucciones de plantado en el reverso en micro-texto<br>
+                    Mensaje: "Plántame después del viaje y mira crecer la transformación"
+                </p>
+            </div>
+            
+            <div class="template-box">
+                <div class="template-label">FIRMA EMAIL</div>
+                <div class="template-content">
+--
+MILI PÉREZ
+Expedition Leader | 52 países pisados
+
+📍 Próxima expedición: [Destino] - [Fecha]
+📧 mili@miliperez.travel
+🌐 miliperez.travel
+📱 WhatsApp: [después de primera expedición]
+
+"No hay WiFi donde vamos"
+"Vuelves diferente o te devolvemos tu ego"
+
+Tech: miliperez.tech | Travel: miliperez.travel
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>Protocolo de entrega</h3>
+                <p>
+                    La tarjeta se entrega solo después de compartir una historia de viaje real.
+                    "Esta tarjeta tiene semillas. Plántala cuando vuelvas de tu próxima aventura.
+                    Si crece, es señal de que estás listo para la siguiente expedición."
+                    Sin explicaciones largas. La metáfora habla sola.
+                </p>
+            </div>
+        </section>
+        
+        <!-- CIERRE -->
+        <section class="section">
+            <div class="section-number">FIN</div>
+            <h2 class="section-title">La aventura<br>comienza aquí</h2>
+            <p class="section-intro">
+                Manual completo de identidad Travel. Todo documentado, todo claro, todo listo.
+                Ahora solo falta salir y explorar. El mundo espera.
+            </p>
+            
+            <div class="highlight-box">
+                <h3>La regla final Travel</h3>
+                <p>
+                    Si no transforma, no es Mili Pérez Travel. Si no es real, no existe.
+                    Si necesita filtros, no lo hacemos. Si no da miedo, no vale la pena.
+                    La aventura real no necesita adornos. La transformación no necesita promesas.
+                    52 países pisados dan autoridad. 0 WiFi da libertad.
+                </p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 100px; padding-top: 60px; border-top: 1px solid var(--mp-gray-200);">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                    <path d="M40 16 L24 48 L56 48 Z" stroke="#008DCB" stroke-width="2" fill="none"/>
+                    <circle cx="40" cy="50" r="20" stroke="black" stroke-width="1" fill="none" opacity="0.8"/>
+                    <circle cx="40" cy="50" r="6" fill="#008DCB"/>
+                    <path d="M40 35 L40 45" stroke="#008DCB" stroke-width="1" opacity="0.5"/>
+                    <path d="M35 50 L45 50" stroke="#008DCB" stroke-width="1" opacity="0.5"/>
+                </svg>
+                
+                <div style="margin-top: 30px; font-size: 24px; font-weight: 100; letter-spacing: 0.2em; color: black;">
+                    MILI PÉREZ
+                </div>
+                <div style="margin-top: 10px; font-size: 12px; letter-spacing: 0.3em; color: var(--mp-gray-400);">
+                    TRAVEL BRAND BOOK 2025
+                </div>
+                <div style="margin-top: 20px; font-size: 14px; color: var(--mp-blue);">
+                    "No hay WiFi donde vamos"
+                </div>
+            </div>
+        </section>
+        
+    </div>
+    
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('.nav-menu a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('.nav-menu a').forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Scroll to section
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Update active nav on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    document.querySelectorAll('.nav-menu a').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+        
+        document.querySelectorAll('.section, .cover').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
