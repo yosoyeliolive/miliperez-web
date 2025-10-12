@@ -1,0 +1,2271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MILI PÉREZ | Brand Book Tech Extended</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --mp-black: #000000;
+            --mp-white: #ffffff;
+            --mp-blue: #008DCB;
+            --mp-blue-bright: #00a8ff;
+            --mp-blue-dark: #005580;
+            --mp-gray-900: #111111;
+            --mp-gray-800: #1a1a1a;
+            --mp-gray-700: #2a2a2a;
+            --mp-gray-600: #3a3a3a;
+            --mp-gray-500: #4a4a4a;
+            --mp-gray-400: #6a6a6a;
+            --mp-gray-300: #8a8a8a;
+            --mp-gray-200: #aaaaaa;
+            --mp-gray-100: #cacaca;
+            
+            /* PALETA EXPANDIDA */
+            --mp-blue-10: #E6F4FB;
+            --mp-blue-20: #CCE9F7;
+            --mp-blue-30: #99D3EF;
+            --mp-blue-40: #66BDE7;
+            --mp-blue-50: #33A7DF;
+            --mp-blue-60: #008DCB;
+            --mp-blue-70: #0071A2;
+            --mp-blue-80: #005579;
+            --mp-blue-90: #003951;
+            --mp-blue-100: #001C28;
+            
+            --mp-accent-green: #00D9A3;
+            --mp-accent-red: #CB0044;
+            --mp-accent-yellow: #FFC700;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--mp-black);
+            color: var(--mp-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* NAVIGATION */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100vh;
+            background: var(--mp-gray-900);
+            border-right: 1px solid var(--mp-gray-800);
+            padding: 40px 30px;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .nav-logo {
+            margin-bottom: 60px;
+        }
+        
+        .nav-logo svg {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+        }
+        
+        .nav-logo h1 {
+            font-size: 18px;
+            font-weight: 200;
+            letter-spacing: 0.2em;
+            color: var(--mp-white);
+        }
+        
+        .nav-logo p {
+            font-size: 10px;
+            color: var(--mp-gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            margin-top: 5px;
+        }
+        
+        .nav-menu {
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-bottom: 20px;
+        }
+        
+        .nav-menu a {
+            color: var(--mp-gray-300);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            transition: all 0.3s;
+            display: block;
+            padding: 8px 0;
+            border-left: 2px solid transparent;
+            padding-left: 15px;
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--mp-blue);
+            border-left-color: var(--mp-blue);
+        }
+        
+        .nav-version {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            font-size: 10px;
+            color: var(--mp-gray-500);
+            letter-spacing: 0.1em;
+        }
+        
+        /* CONTENT */
+        .content {
+            margin-left: 250px;
+            padding: 80px;
+        }
+        
+        /* COVER */
+        .cover {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(ellipse at center, var(--mp-gray-900) 0%, var(--mp-black) 70%);
+        }
+        
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0,141,203,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(0,141,203,0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .cover-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cover-icon {
+            margin-bottom: 60px;
+        }
+        
+        .cover-icon svg {
+            width: 120px;
+            height: 120px;
+        }
+        
+        .cover-tag {
+            font-size: 11px;
+            letter-spacing: 0.4em;
+            color: var(--mp-blue);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        
+        .cover-title {
+            font-size: 5rem;
+            font-weight: 100;
+            line-height: 0.9;
+            margin-bottom: 40px;
+            letter-spacing: -0.03em;
+        }
+        
+        .cover-subtitle {
+            font-size: 1.3rem;
+            color: var(--mp-gray-300);
+            font-weight: 300;
+            max-width: 600px;
+            line-height: 1.8;
+            margin-bottom: 60px;
+        }
+        
+        .cover-meta {
+            display: flex;
+            gap: 60px;
+            justify-content: center;
+            padding-top: 60px;
+            border-top: 1px solid var(--mp-gray-800);
+        }
+        
+        .cover-meta-item {
+            text-align: center;
+        }
+        
+        .cover-meta-label {
+            font-size: 10px;
+            color: var(--mp-gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 10px;
+        }
+        
+        .cover-meta-value {
+            font-size: 14px;
+            color: var(--mp-white);
+            font-weight: 400;
+        }
+        
+        /* SECTIONS */
+        .section {
+            min-height: 100vh;
+            padding: 120px 0;
+            border-bottom: 1px solid var(--mp-gray-900);
+        }
+        
+        .section-number {
+            font-size: 12px;
+            color: var(--mp-gray-500);
+            letter-spacing: 0.3em;
+            margin-bottom: 20px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 100;
+            line-height: 1;
+            margin-bottom: 30px;
+            color: var(--mp-white);
+        }
+        
+        .section-intro {
+            font-size: 1.2rem;
+            color: var(--mp-gray-400);
+            font-weight: 300;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-bottom: 80px;
+        }
+        
+        /* GRID SYSTEM */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 80px;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        
+        /* CARDS */
+        .card {
+            background: var(--mp-gray-900);
+            border: 1px solid var(--mp-gray-800);
+            padding: 40px;
+            transition: all 0.3s;
+        }
+        
+        .card:hover {
+            border-color: var(--mp-blue);
+            transform: translateY(-5px);
+        }
+        
+        .card-label {
+            font-size: 10px;
+            color: var(--mp-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+            color: var(--mp-white);
+        }
+        
+        .card-text {
+            font-size: 15px;
+            color: var(--mp-gray-300);
+            line-height: 1.8;
+        }
+        
+        /* LISTS */
+        .principle-list {
+            list-style: none;
+        }
+        
+        .principle-item {
+            padding: 30px 0;
+            border-bottom: 1px solid var(--mp-gray-800);
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+        }
+        
+        .principle-item:last-child {
+            border-bottom: none;
+        }
+        
+        .principle-number {
+            font-size: 2rem;
+            font-weight: 100;
+            color: var(--mp-blue);
+            min-width: 60px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .principle-content h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+            color: var(--mp-white);
+        }
+        
+        .principle-content p {
+            font-size: 15px;
+            color: var(--mp-gray-400);
+            line-height: 1.8;
+        }
+        
+        /* COLOR SWATCHES */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        
+        .color-swatch {
+            aspect-ratio: 1;
+            border: 1px solid var(--mp-gray-800);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .color-swatch-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        
+        .color-swatch-info {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .color-name {
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .color-code {
+            font-size: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            opacity: 0.7;
+        }
+        
+        .color-values {
+            margin-top: 10px;
+            font-size: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            opacity: 0.6;
+            line-height: 1.4;
+        }
+        
+        /* TYPOGRAPHY */
+        .type-specimen {
+            margin-bottom: 60px;
+        }
+        
+        .type-name {
+            font-size: 12px;
+            color: var(--mp-gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 30px;
+        }
+        
+        .type-display {
+            font-size: 4rem;
+            font-weight: 100;
+            line-height: 1;
+            margin-bottom: 20px;
+            color: var(--mp-white);
+        }
+        
+        .type-weights {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .type-weight {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .type-weight-label {
+            font-size: 11px;
+            color: var(--mp-gray-500);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .type-weight-sample {
+            font-size: 2rem;
+            color: var(--mp-white);
+        }
+        
+        /* VOICE SAMPLES */
+        .voice-samples {
+            background: var(--mp-gray-900);
+            border-left: 3px solid var(--mp-blue);
+            padding: 60px;
+            margin-bottom: 80px;
+        }
+        
+        .voice-sample {
+            margin-bottom: 40px;
+        }
+        
+        .voice-sample:last-child {
+            margin-bottom: 0;
+        }
+        
+        .voice-sample-label {
+            font-size: 11px;
+            color: var(--mp-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .voice-sample-text {
+            font-size: 1.5rem;
+            font-weight: 200;
+            line-height: 1.4;
+            color: var(--mp-white);
+        }
+        
+        /* DO/DON'T */
+        .do-dont {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        .do-column {
+            background: rgba(0,141,203,0.05);
+            border: 1px solid var(--mp-blue);
+            padding: 40px;
+        }
+        
+        .dont-column {
+            background: rgba(255,0,0,0.05);
+            border: 1px solid var(--mp-gray-700);
+            padding: 40px;
+        }
+        
+        .do-dont h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: var(--mp-white);
+        }
+        
+        .do-dont ul {
+            list-style: none;
+        }
+        
+        .do-dont li {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--mp-gray-800);
+            font-size: 15px;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .do-dont li:last-child {
+            border-bottom: none;
+        }
+        
+        .do-column li {
+            color: var(--mp-gray-200);
+        }
+        
+        .do-column li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: var(--mp-blue);
+            font-weight: 600;
+        }
+        
+        .dont-column li {
+            color: var(--mp-gray-400);
+        }
+        
+        .dont-column li::before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            color: var(--mp-gray-600);
+            font-weight: 600;
+        }
+        
+        /* HIGHLIGHT BOX */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--mp-gray-900) 0%, var(--mp-gray-800) 100%);
+            border-left: 3px solid var(--mp-blue);
+            padding: 60px;
+            margin: 80px 0;
+            position: relative;
+        }
+        
+        .highlight-box::before {
+            content: '⚡';
+            position: absolute;
+            top: -20px;
+            left: -17px;
+            font-size: 2rem;
+            background: var(--mp-black);
+            padding: 10px;
+        }
+        
+        .highlight-box h3 {
+            font-size: 2rem;
+            font-weight: 200;
+            margin-bottom: 30px;
+            color: var(--mp-white);
+        }
+        
+        .highlight-box p {
+            font-size: 1.1rem;
+            color: var(--mp-gray-300);
+            line-height: 1.8;
+        }
+        
+        /* ICON GRID */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+            padding: 40px;
+            background: var(--mp-gray-900);
+            border: 1px solid var(--mp-gray-800);
+        }
+        
+        .icon-item {
+            text-align: center;
+            padding: 20px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .icon-item:hover {
+            background: var(--mp-gray-800);
+            transform: translateY(-5px);
+        }
+        
+        .icon-item svg {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+        
+        .icon-name {
+            font-size: 10px;
+            color: var(--mp-gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        /* TEMPLATE BOX */
+        .template-box {
+            background: var(--mp-gray-900);
+            border: 1px solid var(--mp-gray-800);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .template-label {
+            font-size: 10px;
+            color: var(--mp-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .template-content {
+            background: var(--mp-black);
+            border: 1px solid var(--mp-gray-700);
+            padding: 30px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: var(--mp-gray-200);
+            line-height: 1.8;
+        }
+        
+        /* SOCIAL MEDIA PREVIEWS */
+        .social-preview {
+            background: var(--mp-gray-900);
+            border: 1px solid var(--mp-gray-800);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .social-platform {
+            font-size: 10px;
+            color: var(--mp-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .social-mockup {
+            background: var(--mp-black);
+            border: 1px solid var(--mp-gray-700);
+            padding: 30px;
+        }
+        
+        /* BUSINESS CARD */
+        .business-card {
+            background: var(--mp-black);
+            border: 1px solid var(--mp-blue);
+            padding: 60px;
+            margin-bottom: 40px;
+            position: relative;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .business-card-logo {
+            margin-bottom: auto;
+        }
+        
+        .business-card-info {
+            margin-top: auto;
+        }
+        
+        .business-card-name {
+            font-size: 24px;
+            font-weight: 100;
+            letter-spacing: 0.2em;
+            margin-bottom: 10px;
+        }
+        
+        .business-card-title {
+            font-size: 11px;
+            color: var(--mp-blue);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+        
+        .business-card-contact {
+            font-size: 12px;
+            color: var(--mp-gray-300);
+            line-height: 2;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        /* EMAIL SIGNATURE */
+        .email-signature {
+            background: white;
+            color: black;
+            padding: 30px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            margin-bottom: 40px;
+            border: 1px solid var(--mp-gray-800);
+        }
+        
+        .email-sig-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: black;
+        }
+        
+        .email-sig-title {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .email-sig-contact {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .email-sig-contact a {
+            color: #008DCB;
+            text-decoration: none;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .nav {
+                width: 200px;
+            }
+            
+            .content {
+                margin-left: 200px;
+                padding: 60px;
+            }
+            
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            
+            .icon-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid var(--mp-gray-800);
+                padding: 30px 20px;
+            }
+            
+            .nav-version {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                margin-top: 30px;
+            }
+            
+            .content {
+                margin-left: 0;
+                padding: 40px 20px;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .cover-title {
+                font-size: 3rem;
+            }
+            
+            .do-dont {
+                grid-template-columns: 1fr;
+            }
+            
+            .icon-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- NAVIGATION -->
+    <nav class="nav">
+        <div class="nav-logo">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                <rect x="10" y="10" width="30" height="30" stroke="#008DCB" stroke-width="2" fill="none"/>
+                <rect x="15" y="15" width="20" height="20" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
+                <circle cx="25" cy="25" r="4" fill="#008DCB"/>
+            </svg>
+            <h1>MILI PÉREZ</h1>
+            <p>TECH BRAND BOOK EXT</p>
+        </div>
+        
+        <ul class="nav-menu">
+            <li><a href="#cover" class="active">Portada</a></li>
+            <li><a href="#fundamento">01. Fundamento</a></li>
+            <li><a href="#proposito">02. Propósito</a></li>
+            <li><a href="#valores">03. Valores</a></li>
+            <li><a href="#personalidad">04. Personalidad</a></li>
+            <li><a href="#naming">05. Naming</a></li>
+            <li><a href="#tono">06. Tono de Voz</a></li>
+            <li><a href="#mensajes">07. Mensajes Clave</a></li>
+            <li><a href="#colores">08. Paleta Expandida</a></li>
+            <li><a href="#tipografia">09. Tipografía</a></li>
+            <li><a href="#logos">10. Sistema de Logos</a></li>
+            <li><a href="#iconografia">11. Iconografía</a></li>
+            <li><a href="#aplicacion-visual">12. Guía Visual</a></li>
+            <li><a href="#templates">13. Templates</a></li>
+            <li><a href="#redes">14. Redes Sociales</a></li>
+            <li><a href="#tarjetas">15. Tarjetas</a></li>
+        </ul>
+        
+        <div class="nav-version">
+            V2.0 • 2025
+        </div>
+    </nav>
+    
+    <!-- CONTENT -->
+    <div class="content">
+        
+        <!-- COVER -->
+        <section id="cover" class="cover">
+            <div class="cover-content">
+                <div class="cover-icon">
+                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                        <rect x="20" y="20" width="80" height="80" stroke="#008DCB" stroke-width="2" fill="none"/>
+                        <rect x="30" y="30" width="60" height="60" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
+                        <circle cx="60" cy="60" r="10" fill="#008DCB"/>
+                    </svg>
+                </div>
+                
+                <div class="cover-tag">IDENTIDAD CORPORATIVA EXTENDED</div>
+                
+                <h1 class="cover-title">
+                    MILI PÉREZ<br>
+                    TECH
+                </h1>
+                
+                <p class="cover-subtitle">
+                    Construyo máquinas de hacer dinero.<br>
+                    14 años resolviendo lo que otros no pueden.<br>
+                    Sin reuniones. Sin drama. Solo resultados.
+                </p>
+                
+                <div class="cover-meta">
+                    <div class="cover-meta-item">
+                        <div class="cover-meta-label">Versión</div>
+                        <div class="cover-meta-value">2.0 Extended</div>
+                    </div>
+                    <div class="cover-meta-item">
+                        <div class="cover-meta-label">Fecha</div>
+                        <div class="cover-meta-value">Enero 2025</div>
+                    </div>
+                    <div class="cover-meta-item">
+                        <div class="cover-meta-label">Categoría</div>
+                        <div class="cover-meta-value">Tech / Consultoría</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 01. FUNDAMENTO ESTRATÉGICO -->
+        <section id="fundamento" class="section">
+            <div class="section-number">01</div>
+            <h2 class="section-title">Fundamento<br>Estratégico</h2>
+            <p class="section-intro">
+                La base de todo. Si esto no está sólido, todo lo demás es maquillaje.
+                Aquí está el ADN de Mili Pérez Tech: por qué existe, qué defiende, a dónde va.
+            </p>
+            
+            <div class="highlight-box">
+                <h3>El cerebro de la marca</h3>
+                <p>
+                    Mili Pérez Tech no existe para vender servicios. Existe para resolver problemas
+                    que otros ni siquiera ven. Cada proyecto es una máquina diseñada para funcionar
+                    mientras tú vives. Sin drama. Sin reuniones. Sin excusas.
+                </p>
+            </div>
+        </section>
+        
+        <!-- 02. PROPÓSITO -->
+        <section id="proposito" class="section">
+            <div class="section-number">02</div>
+            <h2 class="section-title">Propósito</h2>
+            <p class="section-intro">
+                El para qué existe Mili Pérez Tech más allá de ganar dinero.
+                No es un claim bonito. Es el motor que mueve cada decisión.
+            </p>
+            
+            <div class="grid-2">
+                <div>
+                    <div class="card">
+                        <div class="card-label">PROPÓSITO</div>
+                        <h3 class="card-title">Cruzar fronteras digitales donde otros se detienen</h3>
+                        <p class="card-text">
+                            Construir sistemas que funcionan mientras tú duermes.
+                            Automatizar lo tedioso. Liberar tiempo. Multiplicar resultados.
+                            Sin reuniones innecesarias, sin drama corporativo, sin procesos vacíos.
+                        </p>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="card">
+                        <div class="card-label">VISIÓN 2030</div>
+                        <h3 class="card-title">Referente en automatización brutal y honesta</h3>
+                        <p class="card-text">
+                            Ser la primera opción para empresas que quieren transformación real,
+                            no PowerPoints bonitos. Que se hable de Mili Pérez como quien resuelve
+                            lo imposible sin hacer ruido.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-label">MISIÓN</div>
+                <h3 class="card-title">Construir sistemas que multiplican capacidad sin multiplicar headcount</h3>
+                <p class="card-text">
+                    Identifico dónde tu negocio pierde dinero sin saberlo. Diseño la solución.
+                    La construyo usando herramientas no-code, IA conversacional, APIs y automatización.
+                    Te entrego las llaves. Tú solo cobras. Simple, directo, efectivo.
+                </p>
+            </div>
+        </section>
+        
+        <!-- 03. VALORES -->
+        <section id="valores" class="section">
+            <div class="section-number">03</div>
+            <h2 class="section-title">Valores Core</h2>
+            <p class="section-intro">
+                5 principios no negociables que guían cada proyecto, cada email, cada decisión.
+                No están aquí para sonar bien. Traicionarlos sería traicionar la marca.
+            </p>
+            
+            <ul class="principle-list">
+                <li class="principle-item">
+                    <div class="principle-number">01</div>
+                    <div class="principle-content">
+                        <h3>Honestidad Brutal</h3>
+                        <p>
+                            Si algo no funciona, se dice. Si un proyecto no es viable, se dice.
+                            Si hay una forma mejor, se dice. Sin reuniones para justificar horas.
+                            Sin informes para parecer ocupado. Tiempo es dinero. El tuyo y el mío.
+                        </p>
+                    </div>
+                </li>
+                
+                <li class="principle-item">
+                    <div class="principle-number">02</div>
+                    <div class="principle-content">
+                        <h3>Autonomía Radical</h3>
+                        <p>
+                            No trabajo en oficinas. No hago reuniones si un email resuelve el tema.
+                            No explico dónde estoy. Trabajo a las 3AM si ahí llegan las mejores ideas.
+                            Lo que importa no es cuándo o dónde, sino que el sistema funcione.
+                        </p>
+                    </div>
+                </li>
+                
+                <li class="principle-item">
+                    <div class="principle-number">03</div>
+                    <div class="principle-content">
+                        <h3>Resultados sobre Procesos</h3>
+                        <p>
+                            No me importa cómo se haga mientras funcione. No sigo metodologías
+                            porque están de moda. Si algo funciona, se queda. Si no, se tira.
+                            El resultado es lo único que cuenta.
+                        </p>
+                    </div>
+                </li>
+                
+                <li class="principle-item">
+                    <div class="principle-number">04</div>
+                    <div class="principle-content">
+                        <h3>Autenticidad sin Postureo</h3>
+                        <p>
+                            Cero teatro. Cero frases motivacionales vacías. Cero fotos en coworking
+                            con Mac y café. El trabajo habla. Los resultados gritan. Todo lo demás
+                            es ruido.
+                        </p>
+                    </div>
+                </li>
+                
+                <li class="principle-item">
+                    <div class="principle-number">05</div>
+                    <div class="principle-content">
+                        <h3>Transformación Real</h3>
+                        <p>
+                            No vendo consultorías para tener consultorías eternas. Te enseño a pescar.
+                            Mi objetivo es hacerme innecesaria. Si tu equipo vuela solo después de
+                            trabajar conmigo, he hecho bien mi trabajo.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        <!-- 04. PERSONALIDAD -->
+        <section id="personalidad" class="section">
+            <div class="section-number">04</div>
+            <h2 class="section-title">Personalidad<br>de Marca</h2>
+            <p class="section-intro">
+                Si Mili Pérez Tech fuera una persona, ¿cómo sería?
+                3 adjetivos que definen completamente la esencia.
+            </p>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-label">RASGO 01</div>
+                    <h3 class="card-title">Directa</h3>
+                    <p class="card-text">
+                        Dice las cosas como son. Sin rodeos, sin eufemismos, sin suavizar.
+                        Si hay un problema, lo nombra. Si hay una solución, la ejecuta.
+                        Respeta tu tiempo no mareándote.
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">RASGO 02</div>
+                    <h3 class="card-title">Rebelde</h3>
+                    <p class="card-text">
+                        No sigue el manual corporativo. Cuestiona procesos inútiles.
+                        Desafía lo establecido cuando no tiene sentido. Trabaja a su manera
+                        porque así da mejores resultados.
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">RASGO 03</div>
+                    <h3 class="card-title">Competente</h3>
+                    <p class="card-text">
+                        14 años resolviendo lo imposible. Conoce las herramientas.
+                        Entiende los problemas. Entrega resultados. No hace promesas que
+                        no puede cumplir. Cuando dice que funciona, funciona.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>Arquetipo de marca</h3>
+                <p>
+                    Mili Pérez Tech es la Rebelde Competente. La que rompe las reglas del juego
+                    corporativo para crear algo mejor. No busca aprobación. Busca resultados.
+                    Como Tyler Durden pero con sistemas automatizados.
+                </p>
+            </div>
+        </section>
+        
+        <!-- 05. NAMING -->
+        <section id="naming" class="section">
+            <div class="section-number">05</div>
+            <h2 class="section-title">Naming y<br>Arquitectura</h2>
+            <p class="section-intro">
+                Cómo se estructura la marca. Qué nombres usar. Cómo se relacionan entre sí.
+            </p>
+            
+            <div class="grid-2">
+                <div>
+                    <div class="card">
+                        <div class="card-label">MARCA PRINCIPAL</div>
+                        <h3 class="card-title">MILI PÉREZ</h3>
+                        <p class="card-text">
+                            Marca personal paraguas. Abarca todo: Tech y Travel.
+                            Siempre en mayúsculas. Siempre con tilde. Siempre junto.
+                            No es "Mili" a secas. Es el nombre completo.
+                        </p>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="card">
+                        <div class="card-label">SUBMARCAS</div>
+                        <h3 class="card-title">MP Tech / MP Travel</h3>
+                        <p class="card-text">
+                            Para contextos donde se necesita diferenciar rápido.
+                            MP = iniciales. Tech/Travel = mundos. Siempre claro,
+                            siempre distinguible, nunca confuso.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-label">TAGLINE MAESTRO</div>
+                <h3 class="card-title">"Cruzando fronteras con la tecnología correcta"</h3>
+                <p class="card-text">
+                    Une ambos mundos. Travel cruza fronteras físicas. Tech cruza fronteras digitales.
+                    La tecnología es el puente. Simple, memorable, verdadero.
+                </p>
+            </div>
+            
+            <div class="grid-2">
+                <div>
+                    <div class="card">
+                        <div class="card-label">TAGLINE TECH</div>
+                        <h3 class="card-title">"Construyo máquinas de hacer dinero"</h3>
+                        <p class="card-text">
+                            Directo, provocador, honesto. No vende humo.
+                            Promete resultados tangibles. Capta atención inmediata.
+                        </p>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="card">
+                        <div class="card-label">VARIANTE SECUNDARIA</div>
+                        <h3 class="card-title">"Sin reuniones. Sin drama. Solo resultados."</h3>
+                        <p class="card-text">
+                            Para contextos donde se necesita claridad total sobre la forma
+                            de trabajo. Elimina dudas. Define expectativas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>Reglas de naming</h3>
+                <p>
+                    Nunca "Mili" a secas. Nunca sin tilde en PÉREZ. Nunca minúsculas en logos.
+                    Siempre tipografía Inter weight 100-300. Siempre espaciado amplio (0.2em mínimo).
+                    El nombre es arquitectura, no decoración.
+                </p>
+            </div>
+        </section>
+        
+        <!-- 06. TONO DE VOZ -->
+        <section id="tono" class="section">
+            <div class="section-number">06</div>
+            <h2 class="section-title">Tono de Voz</h2>
+            <p class="section-intro">
+                Cómo suena Mili Pérez Tech cuando habla. El cómo es tan importante como el qué.
+                Cada palabra cuenta. Cada frase define.
+            </p>
+            
+            <div class="do-dont">
+                <div class="do-column">
+                    <h3>Lo que SÍ hacemos</h3>
+                    <ul>
+                        <li>Frases cortas. Puntos. Sin relleno.</li>
+                        <li>Tú/Tus. Cercanía con autoridad.</li>
+                        <li>Verbos de acción en presente: "Construyo", "Resuelvo", "Entrego"</li>
+                        <li>Datos concretos: "14 años", "50% de anticipo", "48h de respuesta"</li>
+                        <li>Verdades incómodas dichas con gracia</li>
+                        <li>Preguntas directas que obligan a pensar</li>
+                        <li>"Si X, entonces Y" - lógica clara</li>
+                    </ul>
+                </div>
+                
+                <div class="dont-column">
+                    <h3>Lo que NO hacemos</h3>
+                    <ul>
+                        <li>"Explorar infinitas posibilidades de transformación digital..."</li>
+                        <li>Frases subordinadas kilométricas que no dicen nada</li>
+                        <li>Corporativismo vacío: "sinergias", "stakeholders", "KPIs"</li>
+                        <li>Promesas genéricas sin números</li>
+                        <li>Motivación barata de LinkedIn</li>
+                        <li>"Querido cliente" o "Estimado señor"</li>
+                        <li>Eufemismos para suavizar malas noticias</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="voice-samples">
+                <div class="voice-sample">
+                    <div class="voice-sample-label">Ejemplo: Inicio de email</div>
+                    <div class="voice-sample-text">
+                        "Hola, David. Vi tu formulario. Tres cosas antes de seguir..."
+                    </div>
+                </div>
+                
+                <div class="voice-sample">
+                    <div class="voice-sample-label">Ejemplo: Rechazo de proyecto</div>
+                    <div class="voice-sample-text">
+                        "No puedo ayudarte con esto. No es mi especialidad y te haría perder tiempo.
+                        Te recomiendo hablar con X, que sí lo hace bien."
+                    </div>
+                </div>
+                
+                <div class="voice-sample">
+                    <div class="voice-sample-label">Ejemplo: Propuesta de valor</div>
+                    <div class="voice-sample-text">
+                        "Identifico dónde pierdes dinero. Construyo la solución. Te entrego las llaves.
+                        Tú solo cobras."
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 07. MENSAJES CLAVE -->
+        <section id="mensajes" class="section">
+            <div class="section-number">07</div>
+            <h2 class="section-title">Mensajes<br>Clave</h2>
+            <p class="section-intro">
+                Frases que definen la marca. Para usar en web, redes, conversaciones, presentaciones.
+                Memorables. Repetibles. Verdaderas.
+            </p>
+            
+            <ul class="principle-list">
+                <li class="principle-item">
+                    <div class="principle-number">01</div>
+                    <div class="principle-content">
+                        <h3>Mientras otros duermen, tus sistemas venden</h3>
+                        <p>
+                            Automatización 24/7. El negocio no para cuando tú paras.
+                            Beneficio claro: más ingresos sin más horas.
+                        </p>
+                    </div>
+                </li>
+                
+                <li class="principle-item">
+                    <div class="principle-number">02</div>
+                    <div class="principle-content">
+                        <h3>Pagas 50%. Trabajo. Entrego. Pagas resto. Simple.</h3>
+                        <p>
+                            Proceso de trabajo clarísimo. Sin letra pequeña.
+                            Sin sorpresas. Todo transparente desde el minuto cero.
+                        </p>
+                    </div>
+                </li>
+                
+                <li class="principle-item">
+                    <div class="principle-number">03</div>
+                    <div class="principle-content">
+                        <h3>No hago reuniones. Mi mejor trabajo es sin interrupciones.</h3>
+                        <p>
+                            Define expectativas. Filtra clientes. Atrae a los que valoran
+                            resultados sobre procesos corporativos.
+                        </p>
+                    </div>
+                </li>
+                
+                <li class="principle-item">
+                    <div class="principle-number">04</div>
+                    <div class="principle-content">
+                        <h3>Mis mejores ideas llegan a las 3AM</h3>
+                        <p>
+                            Muestra autenticidad. Explica la forma de trabajo no convencional.
+                            Humaniza sin perder autoridad.
+                        </p>
+                    </div>
+                </li>
+                
+                <li class="principle-item">
+                    <div class="principle-number">05</div>
+                    <div class="principle-content">
+                        <h3>No soy tu empleada. Soy tu arma secreta.</h3>
+                        <p>
+                            Posicionamiento claro. No es un recurso. Es un activo estratégico.
+                            Relación de igual a igual basada en resultados.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        <!-- 08. PALETA CROMÁTICA EXPANDIDA -->
+        <section id="colores" class="section">
+            <div class="section-number">08</div>
+            <h2 class="section-title">Paleta Cromática<br>Expandida</h2>
+            <p class="section-intro">
+                Sistema completo de color. Cada tono, cada código, cada aplicación.
+                No es decoración. Es arquitectura visual.
+            </p>
+            
+            <div class="card">
+                <div class="card-label">COLORES PRIMARIOS</div>
+                <h3 class="card-title">Negro + Azul + Blanco</h3>
+                <p class="card-text">
+                    La trinidad sagrada. Negro como base absoluta. Azul #008DCB como identidad.
+                    Blanco como contraste máximo. Punto. Sin excepciones.
+                </p>
+            </div>
+            
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #000000;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Negro Principal</div>
+                        <div class="color-code">#000000</div>
+                        <div class="color-values">
+                            RGB: 0, 0, 0<br>
+                            CMYK: 0, 0, 0, 100<br>
+                            Pantone: Black C
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #008DCB;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Azul Mili</div>
+                        <div class="color-code">#008DCB</div>
+                        <div class="color-values">
+                            RGB: 0, 141, 203<br>
+                            CMYK: 100, 30, 0, 20<br>
+                            Pantone: 3135 C
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #ffffff;"></div>
+                    <div class="color-swatch-info" style="color: black;">
+                        <div class="color-name">Blanco</div>
+                        <div class="color-code">#FFFFFF</div>
+                        <div class="color-values">
+                            RGB: 255, 255, 255<br>
+                            CMYK: 0, 0, 0, 0<br>
+                            Pantone: White
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-label">ESCALA DE AZULES</div>
+                <h3 class="card-title">10 niveles de intensidad</h3>
+                <p class="card-text">
+                    Del casi blanco al casi negro. Para crear profundidad sin salir del ADN cromático.
+                </p>
+            </div>
+            
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #E6F4FB;"></div>
+                    <div class="color-swatch-info" style="color: black;">
+                        <div class="color-name">Blue 10</div>
+                        <div class="color-code">#E6F4FB</div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #99D3EF;"></div>
+                    <div class="color-swatch-info" style="color: black;">
+                        <div class="color-name">Blue 30</div>
+                        <div class="color-code">#99D3EF</div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #33A7DF;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Blue 50</div>
+                        <div class="color-code">#33A7DF</div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #008DCB;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Blue 60 (Principal)</div>
+                        <div class="color-code">#008DCB</div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #005580;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Blue 80</div>
+                        <div class="color-code">#005580</div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #001C28;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Blue 100</div>
+                        <div class="color-code">#001C28</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-label">ESCALA DE GRISES</div>
+                <h3 class="card-title">Estructura y jerarquía</h3>
+                <p class="card-text">
+                    9 niveles de gris. Para crear profundidad, separar contenido, jerarquizar información.
+                </p>
+            </div>
+            
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #111111;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Gray 900</div>
+                        <div class="color-code">#111111</div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #1a1a1a;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Gray 800</div>
+                        <div class="color-code">#1A1A1A</div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #2a2a2a;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Gray 700</div>
+                        <div class="color-code">#2A2A2A</div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #4a4a4a;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Gray 500</div>
+                        <div class="color-code">#4A4A4A</div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #8a8a8a;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Gray 300</div>
+                        <div class="color-code">#8A8A8A</div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #cacaca;"></div>
+                    <div class="color-swatch-info" style="color: black;">
+                        <div class="color-name">Gray 100</div>
+                        <div class="color-code">#CACACA</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-label">COLORES DE SISTEMA</div>
+                <h3 class="card-title">Solo para estados críticos</h3>
+                <p class="card-text">
+                    Verde para éxito. Rojo para error. Amarillo para alerta.
+                    Usar con extrema moderación. No son decoración.
+                </p>
+            </div>
+            
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #00D9A3;"></div>
+                    <div class="color-swatch-info" style="color: black;">
+                        <div class="color-name">Success Green</div>
+                        <div class="color-code">#00D9A3</div>
+                        <div class="color-values">
+                            Solo para confirmaciones
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #CB0044;"></div>
+                    <div class="color-swatch-info" style="color: white;">
+                        <div class="color-name">Error Red</div>
+                        <div class="color-code">#CB0044</div>
+                        <div class="color-values">
+                            Solo para errores críticos
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-swatch-fill" style="background: #FFC700;"></div>
+                    <div class="color-swatch-info" style="color: black;">
+                        <div class="color-name">Warning Yellow</div>
+                        <div class="color-code">#FFC700</div>
+                        <div class="color-values">
+                            Solo para alertas
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 09. TIPOGRAFÍA -->
+        <section id="tipografia" class="section">
+            <div class="section-number">09</div>
+            <h2 class="section-title">Tipografía</h2>
+            <p class="section-intro">
+                Inter como tipografía principal. JetBrains Mono para código. Nada más.
+                La simplicidad es autoridad.
+            </p>
+            
+            <div class="type-specimen">
+                <div class="type-name">INTER — PRINCIPAL</div>
+                <div class="type-display" style="font-family: 'Inter', sans-serif;">
+                    MILI PÉREZ TECH
+                </div>
+                <div class="type-weights">
+                    <div class="type-weight">
+                        <div class="type-weight-label">Thin 100</div>
+                        <div class="type-weight-sample" style="font-family: 'Inter', sans-serif; font-weight: 100;">
+                            Títulos principales
+                        </div>
+                    </div>
+                    <div class="type-weight">
+                        <div class="type-weight-label">Light 300</div>
+                        <div class="type-weight-sample" style="font-family: 'Inter', sans-serif; font-weight: 300;">
+                            Subtítulos y leads
+                        </div>
+                    </div>
+                    <div class="type-weight">
+                        <div class="type-weight-label">Regular 400</div>
+                        <div class="type-weight-sample" style="font-family: 'Inter', sans-serif; font-weight: 400;">
+                            Texto principal
+                        </div>
+                    </div>
+                    <div class="type-weight">
+                        <div class="type-weight-label">Medium 500</div>
+                        <div class="type-weight-sample" style="font-family: 'Inter', sans-serif; font-weight: 500;">
+                            Labels y tags
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="type-specimen">
+                <div class="type-name">JETBRAINS MONO — CÓDIGO</div>
+                <div class="type-display" style="font-family: 'JetBrains Mono', monospace; font-size: 2rem;">
+                    function resolve() { return true; }
+                </div>
+                <p class="card-text" style="margin-top: 20px;">
+                    Solo para elementos técnicos: códigos, números de versión, datos técnicos, referencias a herramientas.
+                </p>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>Reglas tipográficas</h3>
+                <p>
+                    Inter 100-300 para títulos grandes. Inter 400-500 para texto. JetBrains Mono solo para código.
+                    Letter-spacing amplio en mayúsculas (0.2em mínimo). Line-height 1.6-1.8 para legibilidad.
+                    Nunca usar Comic Sans, Papyrus, o fuentes manuscritas. Nunca.
+                </p>
+            </div>
+        </section>
+        
+        <!-- 10. SISTEMA DE LOGOS -->
+        <section id="logos" class="section">
+            <div class="section-number">10</div>
+            <h2 class="section-title">Sistema de<br>Logos</h2>
+            <p class="section-intro">
+                Símbolo geométrico + tipografía. Flexible, escalable, reconocible.
+            </p>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-label">LOGO PRINCIPAL</div>
+                    <div style="text-align: center; padding: 40px 0;">
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                            <rect x="20" y="20" width="60" height="60" stroke="#008DCB" stroke-width="2" fill="none"/>
+                            <rect x="27" y="27" width="46" height="46" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
+                            <circle cx="50" cy="50" r="8" fill="#008DCB"/>
+                        </svg>
+                        <div style="margin-top: 20px; font-size: 18px; font-weight: 100; letter-spacing: 0.2em;">
+                            MILI PÉREZ
+                        </div>
+                    </div>
+                    <p class="card-text">
+                        Versión completa. Símbolo + texto. Para uso general en web, documentos, presentaciones.
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">ISOTIPO</div>
+                    <div style="text-align: center; padding: 40px 0;">
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                            <rect x="20" y="20" width="60" height="60" stroke="#008DCB" stroke-width="2" fill="none"/>
+                            <rect x="27" y="27" width="46" height="46" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
+                            <circle cx="50" cy="50" r="8" fill="#008DCB"/>
+                        </svg>
+                    </div>
+                    <p class="card-text">
+                        Solo símbolo. Para favicons, avatares, aplicaciones pequeñas donde el texto no es legible.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>Área de respeto</h3>
+                <p>
+                    Mínimo 20% del alto del logo de espacio libre alrededor. Nunca deformar. Nunca rotar.
+                    Nunca cambiar colores fuera de las versiones aprobadas. Si el logo no cabe, usa el isotipo.
+                </p>
+            </div>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-label">VERSIÓN BLANCA</div>
+                    <div style="background: black; padding: 40px; text-align: center;">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                            <rect x="16" y="16" width="48" height="48" stroke="white" stroke-width="2" fill="none"/>
+                            <circle cx="40" cy="40" r="6" fill="white"/>
+                        </svg>
+                    </div>
+                    <p class="card-text">Sobre fondos oscuros</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">VERSIÓN AZUL</div>
+                    <div style="background: white; padding: 40px; text-align: center;">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                            <rect x="16" y="16" width="48" height="48" stroke="#008DCB" stroke-width="2" fill="none"/>
+                            <circle cx="40" cy="40" r="6" fill="#008DCB"/>
+                        </svg>
+                    </div>
+                    <p class="card-text">Sobre fondos claros</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">VERSIÓN NEGRA</div>
+                    <div style="background: white; padding: 40px; text-align: center;">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                            <rect x="16" y="16" width="48" height="48" stroke="black" stroke-width="2" fill="none"/>
+                            <circle cx="40" cy="40" r="6" fill="black"/>
+                        </svg>
+                    </div>
+                    <p class="card-text">Para impresiones B/N</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 11. ICONOGRAFÍA -->
+        <section id="iconografia" class="section">
+            <div class="section-number">11</div>
+            <h2 class="section-title">Sistema de<br>Iconografía</h2>
+            <p class="section-intro">
+                24 iconos esenciales. Geometría pura. Líneas de 2px. Sin rellenos.
+                Cada icono es funcional, no decorativo.
+            </p>
+            
+            <div class="icon-grid">
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <rect x="10" y="10" width="20" height="20" stroke="#008DCB" stroke-width="2"/>
+                        <line x1="15" y1="20" x2="25" y2="20" stroke="#008DCB" stroke-width="2"/>
+                    </svg>
+                    <div class="icon-name">Código</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="10" stroke="#008DCB" stroke-width="2"/>
+                        <circle cx="20" cy="20" r="3" fill="#008DCB"/>
+                    </svg>
+                    <div class="icon-name">Target</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path d="M10 15 L20 10 L30 15 L30 25 L20 30 L10 25 Z" stroke="#008DCB" stroke-width="2"/>
+                    </svg>
+                    <div class="icon-name">Sistema</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <rect x="10" y="15" width="20" height="10" stroke="#008DCB" stroke-width="2"/>
+                        <line x1="20" y1="10" x2="20" y2="15" stroke="#008DCB" stroke-width="2"/>
+                        <line x1="20" y1="25" x2="20" y2="30" stroke="#008DCB" stroke-width="2"/>
+                    </svg>
+                    <div class="icon-name">API</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path d="M10 20 L15 15 L20 25 L25 18 L30 20" stroke="#008DCB" stroke-width="2" fill="none"/>
+                    </svg>
+                    <div class="icon-name">Métrica</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="15" r="5" stroke="#008DCB" stroke-width="2"/>
+                        <circle cx="15" cy="25" r="5" stroke="#008DCB" stroke-width="2"/>
+                        <circle cx="25" cy="25" r="5" stroke="#008DCB" stroke-width="2"/>
+                    </svg>
+                    <div class="icon-name">Conexión</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <rect x="10" y="10" width="8" height="8" stroke="#008DCB" stroke-width="2"/>
+                        <rect x="22" y="10" width="8" height="8" stroke="#008DCB" stroke-width="2"/>
+                        <rect x="10" y="22" width="8" height="8" stroke="#008DCB" stroke-width="2"/>
+                        <rect x="22" y="22" width="8" height="8" stroke="#008DCB" stroke-width="2"/>
+                    </svg>
+                    <div class="icon-name">Módulos</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path d="M20 10 L30 20 L20 30 L10 20 Z" stroke="#008DCB" stroke-width="2"/>
+                    </svg>
+                    <div class="icon-name">Decisión</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="10" stroke="#008DCB" stroke-width="2"/>
+                        <path d="M20 15 L20 20 L25 25" stroke="#008DCB" stroke-width="2"/>
+                    </svg>
+                    <div class="icon-name">Tiempo</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <rect x="10" y="12" width="20" height="16" stroke="#008DCB" stroke-width="2"/>
+                        <polyline points="14,22 18,26 26,18" stroke="#008DCB" stroke-width="2" fill="none"/>
+                    </svg>
+                    <div class="icon-name">Check</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <rect x="10" y="10" width="20" height="20" stroke="#008DCB" stroke-width="2"/>
+                        <line x1="10" y1="20" x2="30" y2="20" stroke="#008DCB" stroke-width="2"/>
+                        <line x1="20" y1="10" x2="20" y2="30" stroke="#008DCB" stroke-width="2"/>
+                    </svg>
+                    <div class="icon-name">Grid</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <polygon points="20,10 30,25 10,25" stroke="#008DCB" stroke-width="2" fill="none"/>
+                    </svg>
+                    <div class="icon-name">Play</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path d="M15 10 L25 10 L30 15 L30 30 L10 30 L10 15 Z" stroke="#008DCB" stroke-width="2"/>
+                    </svg>
+                    <div class="icon-name">Archivo</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path d="M10 20 C10 14 14 10 20 10 C26 10 30 14 30 20 C30 26 26 30 20 30" stroke="#008DCB" stroke-width="2" fill="none"/>
+                        <polyline points="15,20 10,20 10,15" stroke="#008DCB" stroke-width="2" fill="none"/>
+                    </svg>
+                    <div class="icon-name">Sync</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <rect x="12" y="10" width="16" height="20" stroke="#008DCB" stroke-width="2"/>
+                        <rect x="16" y="14" width="8" height="2" fill="#008DCB"/>
+                        <rect x="16" y="18" width="8" height="2" fill="#008DCB"/>
+                        <rect x="16" y="22" width="8" height="2" fill="#008DCB"/>
+                    </svg>
+                    <div class="icon-name">Datos</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path d="M20 10 L20 30 M10 20 L30 20" stroke="#008DCB" stroke-width="2"/>
+                    </svg>
+                    <div class="icon-name">Más</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path d="M14 14 L26 26 M26 14 L14 26" stroke="#008DCB" stroke-width="2"/>
+                    </svg>
+                    <div class="icon-name">Cerrar</div>
+                </div>
+                
+                <div class="icon-item">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <polyline points="15,18 20,23 25,18" stroke="#008DCB" stroke-width="2" fill="none"/>
+                    </svg>
+                    <div class="icon-name">Abajo</div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>Reglas de iconografía</h3>
+                <p>
+                    Grid de 40x40px. Stroke de 2px siempre. Color: #008DCB o blanco sobre fondos oscuros.
+                    Sin rellenos excepto para detalles pequeños. Sin gradientes. Sin efectos.
+                    Si no comunica función, no existe.
+                </p>
+            </div>
+        </section>
+        
+        <!-- 12. GUÍA DE APLICACIÓN VISUAL -->
+        <section id="aplicacion-visual" class="section">
+            <div class="section-number">12</div>
+            <h2 class="section-title">Guía de<br>Aplicación Visual</h2>
+            <p class="section-intro">
+                Cómo aplicar la identidad en cada contexto. Reglas claras, resultados consistentes.
+            </p>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-label">ESPACIADO Y MÁRGENES</div>
+                    <h3 class="card-title">Sistema 8px</h3>
+                    <p class="card-text">
+                        Todo se basa en múltiplos de 8: 8, 16, 24, 32, 40, 48, 56, 64, 80px.
+                        Padding mínimo: 24px. Separación entre elementos: 40px.
+                        Margen de respiración: 80px en desktop, 40px en mobile.
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">JERARQUÍA TIPOGRÁFICA</div>
+                    <h3 class="card-title">5 niveles máximo</h3>
+                    <p class="card-text">
+                        H1: 64px / weight 100 / line 1<br>
+                        H2: 40px / weight 200 / line 1.1<br>
+                        H3: 24px / weight 300 / line 1.2<br>
+                        Body: 16px / weight 400 / line 1.6<br>
+                        Small: 12px / weight 500 / line 1.4
+                    </p>
+                </div>
+            </div>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-label">USO DE COLOR</div>
+                    <h3 class="card-title">80/15/5 Rule</h3>
+                    <p class="card-text">
+                        80% Negro (fondos, espacios)<br>
+                        15% Blanco/Grises (texto, elementos)<br>
+                        5% Azul (CTAs, acentos, focus)<br>
+                        Nunca más de 3 colores en una composición.
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">IMÁGENES Y GRÁFICOS</div>
+                    <h3 class="card-title">Alto contraste, sin personas</h3>
+                    <p class="card-text">
+                        Fotografía: B/N con tinte azul sutil. Contraste alto.
+                        Gráficos: Líneas, no rellenos. Geometría simple.
+                        Nunca stock photos. Nunca fotos de equipo.
+                        Si necesitas humanos, usa siluetas abstractas.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-label">COMPOSICIÓN</div>
+                <h3 class="card-title">Grid de 12 columnas con mucho aire</h3>
+                <p class="card-text">
+                    Desktop: 12 columnas, gutter 32px. Contenido máximo 1200px centrado.
+                    Tablet: 8 columnas, gutter 24px. Mobile: 4 columnas, gutter 16px.
+                    Nunca llenar todo el espacio. El vacío es poder. El negro es espacio.
+                </p>
+            </div>
+        </section>
+        
+        <!-- 13. TEMPLATES DE COMUNICACIÓN -->
+        <section id="templates" class="section">
+            <div class="section-number">13</div>
+            <h2 class="section-title">Templates de<br>Comunicación</h2>
+            <p class="section-intro">
+                Copy & paste. Listo para usar. Sin inventar cada vez.
+            </p>
+            
+            <div class="template-box">
+                <div class="template-label">EMAIL - PRIMER CONTACTO</div>
+                <div class="template-content">
+Asunto: Re: [Tema del cliente]
+
+Hola [Nombre],
+
+Vi tu consulta sobre [tema específico]. 
+
+Tres cosas rápidas:
+
+1. [Punto clave sobre su problema]
+2. [Cómo lo resuelvo específicamente]  
+3. [Siguiente paso concreto]
+
+Si esto tiene sentido para ti, aquí está mi disponibilidad: [link calendario]
+
+Si no, no pasa nada. Te deseo éxito con el proyecto.
+
+—
+Mili Pérez
+mili@miliperez.tech
+"Construyo máquinas de hacer dinero"
+                </div>
+            </div>
+            
+            <div class="template-box">
+                <div class="template-label">EMAIL - PROPUESTA</div>
+                <div class="template-content">
+Asunto: Propuesta: [Nombre del proyecto]
+
+[Nombre],
+
+Después de analizar tu situación, aquí está mi propuesta:
+
+PROBLEMA IDENTIFICADO:
+[1-2 líneas máximo]
+
+SOLUCIÓN:
+[Descripción técnica en 3-4 líneas]
+
+ENTREGABLES:
+• [Entregable 1]
+• [Entregable 2]
+• [Entregable 3]
+
+INVERSIÓN: €[cantidad]
+• 50% para comenzar
+• 50% al entregar
+
+TIEMPO: [X] semanas
+
+Si estás listo: [link de pago]
+Si tienes dudas: responde este email
+
+—
+Mili
+                </div>
+            </div>
+            
+            <div class="template-box">
+                <div class="template-label">MENSAJE LINKEDIN</div>
+                <div class="template-content">
+[Nombre], vi tu post sobre [tema].
+
+Un dato: [insight relevante con número concreto].
+
+En [empresa anterior] logré [resultado específico] haciendo [acción concreta].
+
+Si te interesa explorar cómo aplicarlo a tu caso, aquí hay más info: [link]
+
+Si no, ignora este mensaje. Sé que el tiempo vale.
+
+—
+Mili Pérez | Automatización sin drama
+                </div>
+            </div>
+            
+            <div class="template-box">
+                <div class="template-label">RESPUESTA A "NECESITO PENSAR"</div>
+                <div class="template-content">
+Perfecto, [Nombre].
+
+Tómate el tiempo que necesites. Las mejores decisiones no se toman con prisa.
+
+Si decides seguir adelante, aquí estaré. Si decides otro camino, te deseo éxito.
+
+Un último dato para tu análisis: [dato relevante que refuerza la propuesta].
+
+—
+Mili
+                </div>
+            </div>
+        </section>
+        
+        <!-- 14. REDES SOCIALES -->
+        <section id="redes" class="section">
+            <div class="section-number">14</div>
+            <h2 class="section-title">Redes<br>Sociales</h2>
+            <p class="section-intro">
+                LinkedIn para B2B. Instagram para mostrar resultados. Twitter para insights técnicos.
+                Sin selfies. Sin motivación barata. Solo valor.
+            </p>
+            
+            <div class="social-preview">
+                <div class="social-platform">LINKEDIN - FORMATO POST</div>
+                <div class="social-mockup">
+                    <div style="border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 20px;">
+                        <strong style="color: white;">Mili Pérez</strong><br>
+                        <span style="color: #888; font-size: 12px;">Construyo máquinas de hacer dinero • 14 años en Tech</span>
+                    </div>
+                    <div style="color: #ccc; line-height: 1.8;">
+                        El 87% de las empresas pierden €50K/año en procesos manuales que se pueden automatizar en 2 semanas.<br><br>
+                        
+                        Caso real de esta semana:<br>
+                        • Cliente: SaaS B2B, 50 empleados<br>
+                        • Problema: 3 personas full-time haciendo reporting<br>
+                        • Solución: Sistema automatizado con Make + Airtable<br>
+                        • Resultado: 120 horas/mes liberadas<br>
+                        • ROI: 238% en 3 meses<br><br>
+                        
+                        La automatización no es el futuro. Es dinero que estás perdiendo hoy.<br><br>
+                        
+                        ¿Cuántas horas pierdes en tareas repetitivas?
+                    </div>
+                    <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #333;">
+                        <span style="color: #008DCB; font-size: 12px;">#Automatización #NoCode #Resultados</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="social-preview">
+                <div class="social-platform">INSTAGRAM - CARRUSEL TÉCNICO</div>
+                <div class="social-mockup" style="aspect-ratio: 1; max-width: 400px;">
+                    <div style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                        <div style="font-size: 60px; font-weight: 100; color: white; margin-bottom: 20px;">€50K</div>
+                        <div style="font-size: 16px; color: #008DCB; letter-spacing: 0.2em;">PERDIDOS AL AÑO</div>
+                        <div style="font-size: 14px; color: #888; margin-top: 40px;">
+                            Por no automatizar<br>
+                            procesos básicos
+                        </div>
+                        <div style="position: absolute; bottom: 30px; font-size: 10px; color: #666;">
+                            SWIPE →
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-label">LINKEDIN</div>
+                    <h3 class="card-title">B2B Technical</h3>
+                    <p class="card-text">
+                        Posts: 3/semana<br>
+                        Formato: Datos + Caso real + Pregunta<br>
+                        Carruseles: Procesos técnicos<br>
+                        Sin fotos personales
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">INSTAGRAM</div>
+                    <h3 class="card-title">Visual Results</h3>
+                    <p class="card-text">
+                        Stories: Behind the scenes código<br>
+                        Posts: Infografías minimalistas<br>
+                        Reels: Timelapses de automatización<br>
+                        Paleta: Negro + Azul siempre
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-label">TWITTER/X</div>
+                    <h3 class="card-title">Tech Insights</h3>
+                    <p class="card-text">
+                        Threads: Breakdowns técnicos<br>
+                        Tweets: One-liners provocadores<br>
+                        Respuestas: Soluciones directas<br>
+                        Sin hilos motivacionales
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 15. TARJETAS -->
+        <section id="tarjetas" class="section">
+            <div class="section-number">15</div>
+            <h2 class="section-title">Tarjetas<br>Business Cards</h2>
+            <p class="section-intro">
+                Física en Fedrigoni Sirio Black. Digital en vCard NFC.
+                Minimalista, premium, memorable.
+            </p>
+            
+            <div class="grid-2">
+                <div>
+                    <div class="card">
+                        <div class="card-label">TARJETA FÍSICA - FRENTE</div>
+                        <div class="business-card" style="background: #000;">
+                            <div class="business-card-logo">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <rect x="8" y="8" width="24" height="24" stroke="#008DCB" stroke-width="2"/>
+                                    <circle cx="20" cy="20" r="4" fill="#008DCB"/>
+                                </svg>
+                            </div>
+                            <div class="business-card-info">
+                                <div class="business-card-name" style="color: white;">MILI PÉREZ</div>
+                                <div class="business-card-title">TECH AUTOMATION ARCHITECT</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="card">
+                        <div class="card-label">TARJETA FÍSICA - REVERSO</div>
+                        <div class="business-card" style="background: #000; justify-content: center; align-items: center;">
+                            <div style="text-align: center;">
+                                <div class="business-card-contact">
+                                    mili@miliperez.tech<br>
+                                    miliperez.tech<br>
+                                    <br>
+                                    <div style="margin-top: 20px; padding: 15px; border: 1px solid #008DCB;">
+                                        <div style="font-size: 10px; color: #008DCB; margin-bottom: 10px;">SCAN FOR VCARD</div>
+                                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                            <!-- QR Code simplificado -->
+                                            <rect x="10" y="10" width="40" height="40" fill="white"/>
+                                            <rect x="15" y="15" width="10" height="10" fill="black"/>
+                                            <rect x="35" y="15" width="10" height="10" fill="black"/>
+                                            <rect x="15" y="35" width="10" height="10" fill="black"/>
+                                            <rect x="25" y="25" width="10" height="10" fill="black"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-label">ESPECIFICACIONES TÉCNICAS</div>
+                <h3 class="card-title">Papel Fedrigoni Sirio Color Black 400g</h3>
+                <p class="card-text">
+                    Dimensiones: 85 x 55 mm (estándar europeo)<br>
+                    Papel: Fedrigoni Sirio Color Black 400gsm<br>
+                    Impresión: Serigrafía azul Pantone 3135 C + Blanco + Barniz UV selectivo en logo<br>
+                    Acabado: Cantos pintados en azul #008DCB<br>
+                    Extra: Chip NFC integrado para vCard digital
+                </p>
+            </div>
+            
+            <div class="template-box">
+                <div class="template-label">VCARD DIGITAL - CÓDIGO</div>
+                <div class="template-content">
+BEGIN:VCARD
+VERSION:3.0
+FN:Mili Pérez
+ORG:Mili Pérez Tech
+TITLE:Tech Automation Architect
+TEL;TYPE=WORK:+34 XXX XXX XXX
+EMAIL:mili@miliperez.tech
+URL:https://miliperez.tech
+NOTE:Construyo máquinas de hacer dinero. 14 años resolviendo lo imposible.
+X-SOCIALPROFILE;TYPE=linkedin:https://linkedin.com/in/miliperez
+END:VCARD
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>Protocolo de entrega</h3>
+                <p>
+                    Nunca dar la tarjeta sin contexto. Siempre después de crear valor en la conversación.
+                    "Te dejo mi tarjeta. Tiene un chip NFC - acércala a tu móvil y tendrás todo mi contacto."
+                    Sin explicaciones largas. Sin vender. La tarjeta habla sola.
+                </p>
+            </div>
+        </section>
+        
+        <!-- CIERRE -->
+        <section class="section">
+            <div class="section-number">FIN</div>
+            <h2 class="section-title">Todo está<br>aquí</h2>
+            <p class="section-intro">
+                Manual completo. Sin excusas para inconsistencias. Sin "no sabía cómo hacerlo".
+                Cada elemento, cada aplicación, cada contexto. Definido. Documentado. Listo.
+            </p>
+            
+            <div class="highlight-box">
+                <h3>La regla final</h3>
+                <p>
+                    En la duda, menos. Siempre menos. Si puedes quitar algo sin perder el mensaje, quítalo.
+                    Si puedes decirlo más corto, dilo más corto. Si puedes usar menos colores, usa menos colores.
+                    La sofisticación no es añadir hasta que no quede nada por añadir.
+                    Es quitar hasta que no quede nada por quitar.
+                </p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 100px; padding-top: 60px; border-top: 1px solid var(--mp-gray-800);">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                    <rect x="16" y="16" width="48" height="48" stroke="#008DCB" stroke-width="2" fill="none"/>
+                    <rect x="22" y="22" width="36" height="36" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
+                    <circle cx="40" cy="40" r="6" fill="#008DCB"/>
+                </svg>
+                
+                <div style="margin-top: 30px; font-size: 24px; font-weight: 100; letter-spacing: 0.2em; color: white;">
+                    MILI PÉREZ
+                </div>
+                <div style="margin-top: 10px; font-size: 12px; letter-spacing: 0.3em; color: var(--mp-gray-500);">
+                    TECH BRAND BOOK EXTENDED V2.0 • 2025
+                </div>
+                <div style="margin-top: 20px; font-size: 14px; color: var(--mp-blue);">
+                    "Construyo máquinas de hacer dinero"
+                </div>
+            </div>
+        </section>
+        
+    </div>
+    
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('.nav-menu a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('.nav-menu a').forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Scroll to section
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Update active nav on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    document.querySelectorAll('.nav-menu a').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+        
+        document.querySelectorAll('.section, .cover').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
