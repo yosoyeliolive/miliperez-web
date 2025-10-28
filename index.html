@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MILI PÉREZ - Cruzando fronteras. Expediciones sin WiFi. Sistemas sin límites.">
-    <title>MILI PÉREZ | Cruzando fronteras con la tecnología correcta</title>
-    
+   <meta name="description" content="MILI PÉREZ - Cruzando fronteras con la tecnología correcta. Dos universos que cambian vidas y transforman negocios.">
+   <title>MILI PÉREZ | Expediciones y Tecnología - Travel + Tech - Página en construcción</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;900&display=swap');
         
@@ -22,13 +21,22 @@
             --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
         }
         
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        html, body {
+            height: 100vh;
+            width: 100vw;
             overflow: hidden;
-            margin: 0;
-            padding: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
         }
         
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--mp-white);
+            color: var(--mp-black);
+        }
+        
+        /* PORTAL WEB */
         .portal {
             height: 100vh;
             display: flex;
@@ -36,6 +44,7 @@
             width: 100%;
             top: 0;
             left: 0;
+            z-index: 1;
         }
         
         .portal-side {
@@ -47,7 +56,6 @@
             transition: flex 0.8s var(--ease-out);
             cursor: pointer;
             overflow: hidden;
-            text-decoration: none;
         }
         
         .portal-side:hover {
@@ -150,32 +158,67 @@
             z-index: 10;
         }
         
+        /* SOLO AÑADIR BADGE DE CONSTRUCCIÓN */
+        .construction-badge {
+            display: inline-block;
+            padding: 10px 25px;
+            background: rgba(0, 141, 203, 0.1);
+            color: var(--mp-blue);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+        
+        .portal-tech .construction-badge {
+            background: transparent;
+            border: 1px solid var(--mp-blue);
+        }
+        
+        /* FOOTER */
+        .footer {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 0.75rem;
+            color: rgba(0, 0, 0, 0.4);
+            z-index: 101;
+            letter-spacing: 0.05em;
+            line-height: 1.4;
+        }
+        
+        /* RESPONSIVE EXACTO */
         @media (max-width: 768px) {
             .portal {
                 flex-direction: column;
             }
             
-            .portal-title {
-                font-size: 2rem;
+            .portal-divider {
+                height: 1px;
+                width: 60%;
+                background: linear-gradient(to right, transparent, #666, transparent);
             }
             
             .portal-content {
                 padding: 0 30px;
             }
             
-            .portal-divider {
-                width: 60%;
-                height: 1px;
-                top: 50%;
-                left: 50%;
+            .portal-title {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="portal">
-        <a href="travel.html" class="portal-side portal-travel">
+        <!-- TRAVEL SIDE EXACTO -->
+        <div class="portal-side portal-travel">
             <div class="portal-content">
+                <div class="construction-badge">Sitio en construcción</div>
+                
                 <div class="portal-icon">
                     <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
                         <circle cx="40" cy="40" r="30" stroke="#000" stroke-width="1.5" fill="none"/>
@@ -185,23 +228,26 @@
                 </div>
                 
                 <h2 class="portal-title">MUNDO TRAVEL</h2>
-                <p class="portal-subtitle">53 países pisados</p>
+                <p class="portal-subtitle">53 países recorridos</p>
                 <p class="portal-description">
                     Expediciones sin WiFi.<br>
                     Grupos reducidos.<br>
                     Transformación garantizada.
                 </p>
                 <div class="portal-cta">
-                    <span>Explorar expediciones</span>
-                    <span>→</span>
+                    <span>Próximamente</span>
                 </div>
             </div>
-        </a>
+        </div>
         
+        <!-- DIVIDER EXACTO -->
         <div class="portal-divider"></div>
         
-        <a href="tech.html" class="portal-side portal-tech">
+        <!-- TECH SIDE EXACTO -->
+        <div class="portal-side portal-tech">
             <div class="portal-content">
+                <div class="construction-badge">Sitio en construcción</div>
+                
                 <div class="portal-icon">
                     <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
                         <rect x="20" y="20" width="40" height="40" stroke="#fff" stroke-width="2" fill="none"/>
@@ -218,11 +264,10 @@
                     Solo resultados.
                 </p>
                 <div class="portal-cta">
-                    <span>Ver servicios</span>
-                    <span>→</span>
+                    <span>Próximamente</span>
                 </div>
             </div>
-        </a>
+        </div>
     </div>
 </body>
 </html>
