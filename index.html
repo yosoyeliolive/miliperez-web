@@ -3,8 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="description" content="MILI PÉREZ - Cruzando fronteras con la tecnología correcta. Dos universos que cambian vidas y transforman negocios.">
-   <title>MILI PÉREZ | Expediciones y Tecnología - Travel + Tech - Página en construcción</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>MILI PÉREZ | Expediciones sin Ataduras + Soluciones Tech</title>
+    <meta name="description" content="53 países recorridos. 14 años resolviendo sistemas tech. Dos mundos que transforman: expediciones extremas sin WiFi y tecnología sin drama. Solo resultados.">
+    <meta name="keywords" content="Mili Pérez, expediciones extremas, viajes aventura, consultoría tech, sistemas tecnológicos, transformación digital, viajes sin filtros">
+    <meta name="author" content="Mili Pérez">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://miliperez.com">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://miliperez.com">
+    <meta property="og:title" content="MILI PÉREZ | Expediciones + Tech">
+    <meta property="og:description" content="53 países recorridos. 14 años resolviendo tech. Dos mundos que transforman vidas y negocios.">
+    <meta property="og:locale" content="es_ES">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://miliperez.com">
+    <meta name="twitter:title" content="MILI PÉREZ | Expediciones + Tech">
+    <meta name="twitter:description" content="53 países recorridos. 14 años resolviendo tech. Transformación garantizada.">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mili Pérez",
+      "url": "https://miliperez.com",
+      "sameAs": [
+        "https://instagram.com/yosoymiliperez"
+      ],
+      "jobTitle": "Tech Consultant & Expedition Leader",
+      "description": "Arquitecta de sistemas tecnológicos y líder de expediciones extremas",
+      "knowsAbout": ["Tecnología", "Expediciones", "Transformación Digital", "Viajes Extremos"]
+    }
+    </script>
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;900&display=swap');
         
@@ -87,6 +123,21 @@
         .portal-icon {
             margin-bottom: 40px;
             opacity: 0.9;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .portal-side:hover .portal-icon {
+            animation-play-state: paused;
+        }
+        
+        .portal-side:hover .portal-icon svg {
+            transform: rotate(-10deg) scale(1.1);
+            transition: transform 0.3s var(--ease-out);
         }
         
         .portal-title {
@@ -158,7 +209,6 @@
             z-index: 10;
         }
         
-        /* SOLO AÑADIR BADGE DE CONSTRUCCIÓN */
         .construction-badge {
             display: inline-block;
             padding: 10px 25px;
@@ -214,7 +264,7 @@
 </head>
 <body>
     <div class="portal">
-        <!-- TRAVEL SIDE EXACTO -->
+        <!-- TRAVEL SIDE -->
         <div class="portal-side portal-travel">
             <div class="portal-content">
                 <div class="construction-badge">Sitio en construcción</div>
@@ -240,13 +290,13 @@
             </div>
         </div>
         
-        <!-- DIVIDER EXACTO -->
+        <!-- DIVIDER -->
         <div class="portal-divider"></div>
         
-        <!-- TECH SIDE EXACTO -->
-        <div class="portal-side portal-tech">
+        <!-- TECH SIDE CON LINK -->
+        <div class="portal-side portal-tech" onclick="window.location.href='tech.html'">
             <div class="portal-content">
-                <div class="construction-badge">Sitio en construcción</div>
+                <div class="construction-badge">Disponible ahora</div>
                 
                 <div class="portal-icon">
                     <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
@@ -263,9 +313,9 @@
                     Sin reuniones. Sin drama.<br>
                     Solo resultados.
                 </p>
-                <div class="portal-cta">
-                    <span>Próximamente</span>
-                </div>
+                <a href="tech.html" class="portal-cta">
+                    <span>Entrar</span>
+                </a>
             </div>
         </div>
     </div>
