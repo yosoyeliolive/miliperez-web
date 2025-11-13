@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIGA - Propuesta de Identidad de Marca</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            padding: 60px 0;
+        }
+
+        .hero-logo-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 120px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #FF8C5A 0%, #00D4E8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 25px;
+            position: relative;
+            display: inline-block;
+            animation: heroGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes heroGlow {
+            0%, 100% { 
+                filter: drop-shadow(0 0 40px rgba(255, 140, 90, 0.6));
+            }
+            50% { 
+                filter: drop-shadow(0 0 80px rgba(0, 212, 232, 0.9));
+            }
+        }
+
+        .hero h1::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #FF8C5A 0%, #00D4E8 100%);
+            border-radius: 3px;
+            animation: heroWaveFlow 2.5s ease-in-out infinite;
+        }
+
+        @keyframes heroWaveFlow {
+            0%, 100% { 
+                transform: scaleX(1);
+                opacity: 1;
+            }
+            50% { 
+                transform: scaleX(0.7);
+                opacity: 0.7;
+            }
+        }
+
+        .hero-wave-bars {
+            position: absolute;
+            bottom: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: -1;
+        }
+
+        .hero-wave-bar {
+            width: 6px;
+            background: linear-gradient(180deg, #FF8C5A 0%, #00D4E8 100%);
+            border-radius: 3px;
+            animation: heroWavePulse 1.2s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(255, 140, 90, 0.5);
+        }
+
+        .hero-wave-bar:nth-child(1) { height: 60px; animation-delay: 0s; }
+        .hero-wave-bar:nth-child(2) { height: 80px; animation-delay: 0.1s; }
+        .hero-wave-bar:nth-child(3) { height: 100px; animation-delay: 0.2s; }
+        .hero-wave-bar:nth-child(4) { height: 120px; animation-delay: 0.3s; }
+        .hero-wave-bar:nth-child(5) { height: 140px; animation-delay: 0.4s; }
+        .hero-wave-bar:nth-child(6) { height: 160px; animation-delay: 0.5s; }
+        .hero-wave-bar:nth-child(7) { height: 140px; animation-delay: 0.6s; }
+        .hero-wave-bar:nth-child(8) { height: 120px; animation-delay: 0.5s; }
+        .hero-wave-bar:nth-child(9) { height: 100px; animation-delay: 0.4s; }
+        .hero-wave-bar:nth-child(10) { height: 80px; animation-delay: 0.3s; }
+        .hero-wave-bar:nth-child(11) { height: 60px; animation-delay: 0.2s; }
+
+        @keyframes heroWavePulse {
+            0%, 100% { 
+                transform: scaleY(1);
+                opacity: 1;
+            }
+            50% { 
+                transform: scaleY(1.5);
+                opacity: 0.8;
+            }
+        }
+
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .hero-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #FF8C5A;
+            border-radius: 50%;
+            opacity: 0;
+            animation: particleFloat 4s ease-in-out infinite;
+        }
+
+        .hero-particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .hero-particle:nth-child(2) { left: 30%; animation-delay: 0.5s; }
+        .hero-particle:nth-child(3) { left: 50%; animation-delay: 1s; }
+        .hero-particle:nth-child(4) { left: 70%; animation-delay: 1.5s; }
+        .hero-particle:nth-child(5) { left: 90%; animation-delay: 2s; }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+        }
+
+        .hero p {
+            font-size: 22px;
+            color: #888;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .story-section {
+            margin: 120px 0;
+            padding: 80px 60px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 140, 90, 0.1);
+        }
+
+        .story-section h2 {
+            font-size: 42px;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #FF8C5A 0%, #00D4E8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            text-align: left;
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 50px;
+            margin-top: 60px;
+        }
+
+        .story-card {
+            padding: 40px;
+            background: rgba(255, 140, 90, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 140, 90, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .story-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 140, 90, 0.4);
+            background: rgba(255, 140, 90, 0.08);
+            box-shadow: 0 10px 30px rgba(255, 140, 90, 0.15);
+        }
+
+        .story-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #FF8C5A;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .story-card p {
+            font-size: 16px;
+            color: #aaa;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .story-card ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .story-card ul li {
+            font-size: 16px;
+            color: #999;
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .story-card ul li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: #FF8C5A;
+            font-weight: 700;
+        }
+
+        .manifesto {
+            text-align: left;
+            font-size: 26px;
+            color: #bbb;
+            font-weight: 300;
+            max-width: 1000px;
+            margin: 60px 0;
+            font-style: italic;
+            line-height: 2;
+            padding: 0;
+        }
+
+        .manifesto strong {
+            color: #FF8C5A;
+            font-weight: 600;
+        }
+
+        .divider {
+            margin: 100px 0;
+            padding: 40px 0;
+        }
+
+        .divider h2 {
+            font-size: 52px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #FF8C5A 0%, #00D4E8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .divider p {
+            font-size: 20px;
+            color: #888;
+            text-align: left;
+        }
+
+        .proposals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+            gap: 60px;
+            margin-bottom: 100px;
+        }
+
+        .proposal-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border-radius: 30px;
+            padding: 60px;
+            position: relative;
+            border: 1px solid rgba(255, 140, 90, 0.2);
+            transition: all 0.4s ease;
+            overflow: visible;
+            min-height: 600px;
+        }
+
+        .proposal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 140, 90, 0.08) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+            border-radius: 30px;
+        }
+
+        .proposal-card:hover::before {
+            opacity: 1;
+        }
+
+        .proposal-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 140, 90, 0.6);
+            box-shadow: 0 20px 60px rgba(255, 140, 90, 0.3);
+        }
+
+        .proposal-number {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 140px;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.04);
+        }
+
+        .proposal-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #FF8C5A;
+        }
+
+        .proposal-subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .logo-showcase {
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 60px;
+            position: relative;
+            overflow: visible;
+        }
+
+        .logo-text {
+            font-size: 86px;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: 10px;
+        }
+
+        /* ANIMACIONES DE LOGOS */
+        .logo-wave {
+            position: relative;
+        }
+
+        .logo-wave::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #FF8C5A 0%, #00D4E8 100%);
+            animation: waveFlow 2s ease-in-out infinite;
+        }
+
+        @keyframes waveFlow {
+            0%, 100% { transform: scaleX(1); }
+            50% { transform: scaleX(0.8); }
+        }
+
+        .wave-bars {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .wave-bar {
+            width: 4px;
+            height: 40px;
+            background: linear-gradient(180deg, #FF8C5A 0%, #00D4E8 100%);
+            border-radius: 2px;
+            animation: wavePulse 1s ease-in-out infinite;
+        }
+
+        .wave-bar:nth-child(1) { animation-delay: 0s; }
+        .wave-bar:nth-child(2) { animation-delay: 0.1s; }
+        .wave-bar:nth-child(3) { animation-delay: 0.2s; }
+        .wave-bar:nth-child(4) { animation-delay: 0.3s; }
+        .wave-bar:nth-child(5) { animation-delay: 0.4s; }
+        .wave-bar:nth-child(6) { animation-delay: 0.3s; }
+        .wave-bar:nth-child(7) { animation-delay: 0.2s; }
+        .wave-bar:nth-child(8) { animation-delay: 0.1s; }
+
+        @keyframes wavePulse {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(1.8); }
+        }
+
+        /* Voice Protocol - Círculos */
+        .protocol-circles {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 350px;
+            height: 350px;
+            pointer-events: none;
+        }
+
+        .protocol-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid rgba(255, 140, 90, 0.3);
+            border-radius: 50%;
+            animation: expandCircle 3s ease-in-out infinite;
+        }
+
+        .protocol-circle:nth-child(1) {
+            width: 120px;
+            height: 120px;
+            animation-delay: 0s;
+        }
+
+        .protocol-circle:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            animation-delay: 0.5s;
+        }
+
+        .protocol-circle:nth-child(3) {
+            width: 280px;
+            height: 280px;
+            animation-delay: 1s;
+        }
+
+        @keyframes expandCircle {
+            0% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Cinematic Dialogue - Comillas */
+        .logo-dialogue {
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo-dialogue .quote-left,
+        .logo-dialogue .quote-right {
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.3;
+            background: linear-gradient(135deg, #FF8C5A 0%, #00D4E8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: floatQuote 3s ease-in-out infinite;
+        }
+
+        .logo-dialogue .quote-left {
+            top: -20px;
+            left: -50px;
+        }
+
+        .logo-dialogue .quote-right {
+            bottom: -20px;
+            right: -50px;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes floatQuote {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-5px, -5px); }
+        }
+
+        .logo-dialogue .text {
+            background: linear-gradient(135deg, #ffffff 0%, #888888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Voice Signature - Línea */
+        .logo-signature {
+            position: relative;
+        }
+
+        .signature-line {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #FF8C5A 50%, transparent 100%);
+            animation: signatureDraw 3s ease-in-out infinite;
+        }
+
+        @keyframes signatureDraw {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Minimal Tech - Cursor */
+        .logo-minimal {
+            position: relative;
+        }
+
+        .logo-minimal::after {
+            content: '_';
+            animation: blink 1s step-end infinite;
+            color: #FF8C5A;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .tech-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 140, 90, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 140, 90, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .logo-wave {
+            position: relative;
+        }
+
+        .logo-wave::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #FF8C5A 0%, #00D4E8 100%);
+            animation: waveFlow 2s ease-in-out infinite;
+        }
+
+        @keyframes waveFlow {
+            0%, 100% { transform: scaleX(1); }
+            50% { transform: scaleX(0.8); }
+        }
+
+        .wave-bars {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .wave-bar {
+            width: 4px;
+            height: 40px;
+            background: linear-gradient(180deg, #FF8C5A 0%, #00D4E8 100%);
+            border-radius: 2px;
+            animation: wavePulse 1s ease-in-out infinite;
+        }
+
+        .wave-bar:nth-child(1) { animation-delay: 0s; }
+        .wave-bar:nth-child(2) { animation-delay: 0.1s; }
+        .wave-bar:nth-child(3) { animation-delay: 0.2s; }
+        .wave-bar:nth-child(4) { animation-delay: 0.3s; }
+        .wave-bar:nth-child(5) { animation-delay: 0.4s; }
+        .wave-bar:nth-child(6) { animation-delay: 0.3s; }
+        .wave-bar:nth-child(7) { animation-delay: 0.2s; }
+        .wave-bar:nth-child(8) { animation-delay: 0.1s; }
+
+        @keyframes wavePulse {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(1.8); }
+        }
+
+        .protocol-circles {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 350px;
+            height: 350px;
+            pointer-events: none;
+        }
+
+        .protocol-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid rgba(255, 140, 90, 0.3);
+            border-radius: 50%;
+            animation: expandCircle 3s ease-in-out infinite;
+        }
+
+        .protocol-circle:nth-child(1) {
+            width: 120px;
+            height: 120px;
+            animation-delay: 0s;
+        }
+
+        .protocol-circle:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            animation-delay: 0.5s;
+        }
+
+        .protocol-circle:nth-child(3) {
+            width: 280px;
+            height: 280px;
+            animation-delay: 1s;
+        }
+
+        @keyframes expandCircle {
+            0% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        .logo-dialogue {
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo-dialogue .quote-left,
+        .logo-dialogue .quote-right {
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.3;
+            background: linear-gradient(135deg, #FF8C5A 0%, #00D4E8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: floatQuote 3s ease-in-out infinite;
+        }
+
+        .logo-dialogue .quote-left {
+            top: -20px;
+            left: -50px;
+        }
+
+        .logo-dialogue .quote-right {
+            bottom: -20px;
+            right: -50px;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes floatQuote {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-5px, -5px); }
+        }
+
+        .logo-dialogue .text {
+            background: linear-gradient(135deg, #ffffff 0%, #888888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-signature {
+            position: relative;
+        }
+
+        .signature-line {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #FF8C5A 50%, transparent 100%);
+            animation: signatureDraw 3s ease-in-out infinite;
+        }
+
+        @keyframes signatureDraw {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .logo-minimal {
+            position: relative;
+        }
+
+        .logo-minimal::after {
+            content: '_';
+            animation: blink 1s step-end infinite;
+            color: #FF8C5A;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .tech-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 140, 90, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 140, 90, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .features {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .feature-tag {
+            padding: 10px 20px;
+            background: rgba(255, 140, 90, 0.15);
+            border: 1px solid rgba(255, 140, 90, 0.4);
+            border-radius: 50px;
+            font-size: 14px;
+            color: #FF8C5A;
+            font-weight: 500;
+        }
+
+        .feature-tag.favorite {
+            background: rgba(255, 140, 90, 0.25);
+            border-color: rgba(255, 140, 90, 0.6);
+            font-weight: 700;
+        }
+
+        .cta-section {
+            padding: 100px 60px;
+            background: #1a1a1a;
+            border-radius: 30px;
+            margin-top: 100px;
+        }
+
+        .cta-section h2 {
+            font-size: 48px;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #FF8C5A 0%, #00D4E8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: left;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            color: #888;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .team-names {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+
+        .team-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            padding: 15px 30px;
+            background: rgba(255, 140, 90, 0.15);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 140, 90, 0.4);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 60px 0;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .footer strong {
+            color: #FF8C5A;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+            .proposals-grid {
+                grid-template-columns: 1fr;
+            }
+            .logo-text {
+                font-size: 48px;
+            }
+            .proposal-card {
+                padding: 40px;
+            }
+            .story-content {
+                grid-template-columns: 1fr;
+            }
+            .story-section {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HERO -->
+        <div class="hero">
+            <div class="hero-logo-container">
+                <div class="hero-particles">
+                    <div class="hero-particle"></div>
+                    <div class="hero-particle"></div>
+                    <div class="hero-particle"></div>
+                    <div class="hero-particle"></div>
+                    <div class="hero-particle"></div>
+                </div>
+                <h1>DIGA</h1>
+                <div class="hero-wave-bars">
+                    <div class="hero-wave-bar"></div>
+                    <div class="hero-wave-bar"></div>
+                    <div class="hero-wave-bar"></div>
+                    <div class="hero-wave-bar"></div>
+                    <div class="hero-wave-bar"></div>
+                    <div class="hero-wave-bar"></div>
+                    <div class="hero-wave-bar"></div>
+                    <div class="hero-wave-bar"></div>
+                    <div class="hero-wave-bar"></div>
+                    <div class="hero-wave-bar"></div>
+                    <div class="hero-wave-bar"></div>
+                </div>
+            </div>
+            <p>En Málaga, tres desarrolladores están construyendo la infraestructura de voz con IA que las empresas han estado esperando. Con la mentoría de Benjamín Amezcua, DIGA redefine lo que significa llevar agentes de voz a producción.</p>
+        </div>
+
+        <!-- STORYTELLING: QUIENES SON -->
+        <div class="story-section">
+            <h2>El problema real</h2>
+            <div class="manifesto">
+                La mayoría sigue creando <strong>agentes que impresionan en demo</strong>, no sistemas que aguantan producción. El reto no es "hablar como un humano", sino <strong>operar como un sistema fiable</strong>. Lo difícil no es que responda, es que responda igual mañana, con otro contexto, y en escala.
+            </div>
+            
+            <div class="story-content">
+                <div class="story-card">
+                    <h3>IA funcional vs. IA decorativa</h3>
+                    <ul>
+                        <li>La mayoría sigue creando agentes que impresionan en demo, no sistemas que aguantan producción</li>
+                        <li>El reto no es "hablar como un humano", sino operar como un sistema fiable</li>
+                        <li>Lo difícil no es que responda, es que responda igual mañana, con otro contexto, y en escala</li>
+                        <li>Un asistente de IA no debe ser carismático, debe ser determinista, rastreable y gobernable</li>
+                    </ul>
+                </div>
+
+                <div class="story-card">
+                    <h3>La mentalidad DIGA</h3>
+                    <ul>
+                        <li>Menos "prompt engineering", más system design</li>
+                        <li>No se trata de usar la IA, sino de diseñar sistemas que sobrevivan al cambio de modelo</li>
+                        <li>No hay innovación real si no hay control, coherencia y continuidad</li>
+                        <li>Los "agentes con carisma" venden en LinkedIn; los "sistemas que no fallan" venden en producción</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ARQUITECTURA TECNICA -->
+        <div class="story-section">
+            <h2>Arquitectura técnica</h2>
+            <p class="manifesto">
+                El esqueleto real de un sistema estable
+            </p>
+            
+            <div class="story-content">
+                <div class="story-card">
+                    <h3>Modelo KPU</h3>
+                    <p>(Knowledge-Processing-Understanding): separa conocimiento, procesamiento y comprensión para evitar que el modelo mezcle lógica y contexto.</p>
+                </div>
+
+                <div class="story-card">
+                    <h3>MCPs</h3>
+                    <p>(Model Control Protocols): nodos de control que actuan como capa intermedia entre el LLM y la infraestructura, garantizando trazabilidad y seguridad.</p>
+                </div>
+
+                <div class="story-card">
+                    <h3>RAG modular</h3>
+                    <p>En n8n o Make: evita centralizar el conocimiento en el prompt, conectando repositorios vectoriales y webhooks inteligentes.</p>
+                </div>
+
+                <div class="story-card">
+                    <h3>Sistemas deterministas</h3>
+                    <p>Cada decisión debe poder explicarse. Si no puedes trazarla, no es IA, es una ruleta.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- GOBERNANZA -->
+        <div class="story-section">
+            <h2>Gobernanza y seguridad</h2>
+            
+            <div class="story-content">
+                <div class="story-card">
+                    <h3>Algoritmos cerrados</h3>
+                    <p>Para eliminar variabilidad en decisiónes críticas (compliance, pricing, soporte técnico).</p>
+                </div>
+
+                <div class="story-card">
+                    <h3>Auditoría de prompts</h3>
+                    <p>Toda interacción deberia tener versión, fuente y contexto.</p>
+                </div>
+
+                <div class="story-card">
+                    <h3>Control del drift</h3>
+                    <p>Lo que hoy funciona, mañana puede degradarse. Monitorizar y entrenar de forma incremental es clave.</p>
+                </div>
+
+                <div class="story-card">
+                    <h3>Defensa robusta</h3>
+                    <p>Contra ataques de prompt injection y jailbreaks, con validaciones MCP antes de ejecutar acciones.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- APLICACION PRACTICA -->
+        <div class="story-section">
+            <h2>IA aplicada a productividad</h2>
+            
+            <div class="story-content">
+                <div class="story-card">
+                    <h3>Conectividad total</h3>
+                    <p>LLMs vía APIs o Node dentro del stack técnico de la empresa: CRM, BBDD, sistemas VoIP, dashboards...</p>
+                </div>
+
+                <div class="story-card">
+                    <h3>Automatizaciones híbridas</h3>
+                    <p>IA + reglas duras (por ejemplo, RAG para contexto, funciones deterministas para decisión).</p>
+                </div>
+
+                <div class="story-card">
+                    <h3>Infraestructura escalable</h3>
+                    <p>Arquitecturas en clusters que permiten procesos paralelos y redundancia de resultados.</p>
+                </div>
+
+                <div class="story-card">
+                    <h3>Objetivo claro</h3>
+                    <p>No es responder rápido, es responder igual, siempre, con contexto y precisión.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIVIDER -->
+        <div class="divider">
+            <h2>Propuestas de identidad visual</h2>
+            <p>5 conceptos para una marca técnica, sofisticada y memorable</p>
+        </div>
+
+        <!-- PROPOSALS GRID -->
+        <div class="proposals-grid">
+            <!-- PROPUESTA 1 -->
+            <div class="proposal-card">
+                <div class="proposal-number">01</div>
+                <div class="proposal-title">SOUND WAVE MINIMAL</div>
+                <div class="proposal-subtitle">La voz como onda pura</div>
+                
+                <div class="logo-showcase">
+                    <div class="logo-text logo-wave">DIGA</div>
+                    <div class="wave-bars">
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                    </div>
+                </div>
+
+                <div class="features">
+                    <span class="feature-tag">Minimalista</span>
+                    <span class="feature-tag">Línea de onda</span>
+                    <span class="feature-tag">Gradiente dinamico</span>
+                    <span class="feature-tag">Ultra moderno</span>
+                </div>
+            </div>
+
+            <!-- PROPUESTA 2 -->
+            <div class="proposal-card">
+                <div class="proposal-number">02</div>
+                <div class="proposal-title">VOICE PROTOCOL</div>
+                <div class="proposal-subtitle">Sistema de comunicación inteligente</div>
+                
+                <div class="logo-showcase">
+                    <div class="protocol-circles">
+                        <div class="protocol-circle"></div>
+                        <div class="protocol-circle"></div>
+                        <div class="protocol-circle"></div>
+                    </div>
+                    <div class="logo-text">DIGA</div>
+                </div>
+
+                <div class="features">
+                    <span class="feature-tag">Círculos expansivos</span>
+                    <span class="feature-tag">Efecto radar</span>
+                    <span class="feature-tag">Tecnología visible</span>
+                    <span class="feature-tag">Profesional</span>
+                </div>
+            </div>
+
+            <!-- PROPUESTA 3 -->
+            <div class="proposal-card">
+                <div class="proposal-number">03</div>
+                <div class="proposal-title">CINEMATIC DIALOGUE</div>
+                <div class="proposal-subtitle">El inicio de toda conversación</div>
+                
+                <div class="logo-showcase">
+                    <div class="logo-text logo-dialogue">
+                        <span class="quote-left">«</span>
+                        <span class="text">DIGA</span>
+                        <span class="quote-right">»</span>
+                    </div>
+                </div>
+
+                <div class="features">
+                    <span class="feature-tag favorite">[FAVORITO]</span>
+                    <span class="feature-tag">Comillas flotantes</span>
+                    <span class="feature-tag">Efecto shimmer</span>
+                    <span class="feature-tag">Elegante</span>
+                </div>
+            </div>
+
+            <!-- PROPUESTA 4 -->
+            <div class="proposal-card">
+                <div class="proposal-number">04</div>
+                <div class="proposal-title">VOICE SIGNATURE</div>
+                <div class="proposal-subtitle">La firma digital de la voz</div>
+                
+                <div class="logo-showcase">
+                    <div class="logo-text logo-signature">
+                        DIGA
+                        <div class="signature-line"></div>
+                    </div>
+                </div>
+
+                <div class="features">
+                    <span class="feature-tag">Línea animada</span>
+                    <span class="feature-tag">Efecto firma</span>
+                    <span class="feature-tag">Sofisticado</span>
+                    <span class="feature-tag">Memorable</span>
+                </div>
+            </div>
+
+            <!-- PROPUESTA 5 -->
+            <div class="proposal-card">
+                <div class="proposal-number">05</div>
+                <div class="proposal-title">MINIMAL TECH</div>
+                <div class="proposal-subtitle">Terminal de comando + cursor vivo</div>
+                
+                <div class="logo-showcase">
+                    <div class="tech-grid"></div>
+                    <div class="logo-text logo-minimal" style="font-family: 'Courier New', monospace; font-weight: 300; letter-spacing: 30px;">DIGA</div>
+                </div>
+
+                <div class="features">
+                    <span class="feature-tag">Monospace</span>
+                    <span class="feature-tag">Cursor parpadeante</span>
+                    <span class="feature-tag">Grid técnico</span>
+                    <span class="feature-tag">Developer-friendly</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA SECTION -->
+        <div class="cta-section">
+            <h2>Para el equipo de DIGA</h2>
+            <p>5 direcciones creativas. Múltiples posibilidades. Una sola misión: revolucionar el mercado.</p>
+            
+            <div class="team-names">
+                <div class="team-name">Gabi</div>
+                <div class="team-name">Jesús</div>
+                <div class="team-name">Antonio</div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            Creado por <strong>Mili</strong> - Marca disruptiva para agentes de voz con IA<br>
+            Málaga, 2025 - Spinoff comprada por Benjamín
+        </div>
+    </div>
+</body>
+</html>
