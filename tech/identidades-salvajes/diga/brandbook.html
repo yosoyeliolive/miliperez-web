@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIGA - Manual de Identidad de Marca</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        /* PORTADA */
+        .cover {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-bottom: 100px;
+        }
+
+        .cover-logo {
+            font-size: 140px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #FF8C5A 0%, #00D4E8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 30px;
+            margin-bottom: 40px;
+            animation: coverGlow 3s ease-in-out infinite;
+            position: relative;
+        }
+
+        .cover-logo::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #FF8C5A 0%, #00D4E8 100%);
+            animation: waveFlow 2s ease-in-out infinite;
+        }
+
+        @keyframes coverGlow {
+            0%, 100% { filter: drop-shadow(0 0 40px rgba(255, 140, 90, 0.6)); }
+            50% { filter: drop-shadow(0 0 80px rgba(0, 212, 232, 0.9)); }
+        }
+
+        @keyframes waveFlow {
+            0%, 100% { transform: scaleX(1); }
+            50% { transform: scaleX(0.7); }
+        }
+
+        .cover-title {
+            font-size: 32px;
+            font-weight: 300;
+            color: #888;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+        }
+
+        .cover-wave-bars {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 80px;
+        }
+
+        .cover-wave-bar {
+            width: 8px;
+            background: linear-gradient(180deg, #FF8C5A 0%, #00D4E8 100%);
+            border-radius: 4px;
+            animation: wavePulse 1.2s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(255, 140, 90, 0.5);
+        }
+
+        .cover-wave-bar:nth-child(1) { height: 60px; animation-delay: 0s; }
+        .cover-wave-bar:nth-child(2) { height: 90px; animation-delay: 0.1s; }
+        .cover-wave-bar:nth-child(3) { height: 120px; animation-delay: 0.2s; }
+        .cover-wave-bar:nth-child(4) { height: 150px; animation-delay: 0.3s; }
+        .cover-wave-bar:nth-child(5) { height: 180px; animation-delay: 0.4s; }
+        .cover-wave-bar:nth-child(6) { height: 150px; animation-delay: 0.3s; }
+        .cover-wave-bar:nth-child(7) { height: 120px; animation-delay: 0.2s; }
+        .cover-wave-bar:nth-child(8) { height: 90px; animation-delay: 0.1s; }
+        .cover-wave-bar:nth-child(9) { height: 60px; animation-delay: 0s; }
+
+        @keyframes wavePulse {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(1.4); }
+        }
+
+        .cover-info {
+            text-align: center;
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* SECCIONES */
+        .section {
+            margin: 120px 0;
+            padding: 80px 60px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 140, 90, 0.1);
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #FF8C5A 0%, #00D4E8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 60px;
+            font-weight: 300;
+        }
+
+        /* GRID DE LOGOS */
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .logo-variant {
+            padding: 60px;
+            background: #000;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 140, 90, 0.2);
+            text-align: center;
+            position: relative;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-variant.white-bg {
+            background: #ffffff;
+        }
+
+        .logo-variant.gray-bg {
+            background: #333333;
+        }
+
+        .variant-label {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #FF8C5A;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo-variant.white-bg .variant-label {
+            color: #000;
+        }
+
+        .logo-display {
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: 15px;
+        }
+
+        .logo-display.gradient {
+            background: linear-gradient(135deg, #FF8C5A 0%, #00D4E8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-display.white {
+            color: #ffffff;
+        }
+
+        .logo-display.black {
+            color: #000000;
+        }
+
+        .logo-display.orange {
+            color: #FF8C5A;
+        }
+
+        .logo-wave-small {
+            position: relative;
+        }
+
+        .logo-wave-small::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #FF8C5A 0%, #00D4E8 100%);
+        }
+
+        .logo-wave-small.white::after {
+            background: #000;
+        }
+
+        .mini-bars {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .mini-bar {
+            width: 4px;
+            background: linear-gradient(180deg, #FF8C5A 0%, #00D4E8 100%);
+            border-radius: 2px;
+        }
+
+        .mini-bar:nth-child(1) { height: 30px; }
+        .mini-bar:nth-child(2) { height: 45px; }
+        .mini-bar:nth-child(3) { height: 60px; }
+        .mini-bar:nth-child(4) { height: 45px; }
+        .mini-bar:nth-child(5) { height: 30px; }
+
+        .logo-variant.white-bg .mini-bar {
+            background: #000;
+        }
+
+        /* PALETA DE COLORES */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .color-card {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 140, 90, 0.2);
+        }
+
+        .color-swatch {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 900;
+            position: relative;
+        }
+
+        .color-info {
+            padding: 25px;
+            background: #1a1a1a;
+        }
+
+        .color-name {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .color-codes {
+            font-size: 14px;
+            color: #888;
+            font-family: 'Courier New', monospace;
+        }
+
+        .color-codes div {
+            margin: 8px 0;
+        }
+
+        /* TIPOGRAFÍA */
+        .type-sample {
+            padding: 40px;
+            background: #1a1a1a;
+            border-radius: 20px;
+            margin: 30px 0;
+            border: 1px solid rgba(255, 140, 90, 0.2);
+        }
+
+        .type-name {
+            font-size: 16px;
+            color: #FF8C5A;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .type-display {
+            font-size: 64px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .type-alphabet {
+            font-size: 24px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        /* CONSTRUCCIÓN */
+        .construction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .construction-card {
+            padding: 50px;
+            background: #1a1a1a;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 140, 90, 0.2);
+            text-align: center;
+        }
+
+        .construction-title {
+            font-size: 18px;
+            color: #FF8C5A;
+            margin-bottom: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .construction-visual {
+            position: relative;
+            display: inline-block;
+        }
+
+        .grid-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 140, 90, 0.2) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 140, 90, 0.2) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+        }
+
+        .spacing-guide {
+            color: #FF8C5A;
+            font-size: 14px;
+            margin-top: 30px;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* USOS INCORRECTOS */
+        .usage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .usage-card {
+            padding: 40px;
+            background: #1a1a1a;
+            border-radius: 20px;
+            border: 2px solid #FF3B3B;
+            text-align: center;
+            position: relative;
+        }
+
+        .usage-card.correct {
+            border-color: #10B981;
+        }
+
+        .usage-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .usage-card .usage-badge {
+            background: #FF3B3B;
+            color: #fff;
+        }
+
+        .usage-card.correct .usage-badge {
+            background: #10B981;
+            color: #fff;
+        }
+
+        .usage-example {
+            margin: 20px 0;
+            font-size: 48px;
+            font-weight: 900;
+        }
+
+        .usage-description {
+            font-size: 14px;
+            color: #888;
+            margin-top: 20px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .cover-logo {
+                font-size: 72px;
+            }
+            .logo-grid,
+            .construction-grid,
+            .usage-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- PORTADA -->
+    <div class="cover">
+        <div class="cover-logo">DIGA</div>
+        <div class="cover-title">Manual de Identidad</div>
+        <div class="cover-wave-bars">
+            <div class="cover-wave-bar"></div>
+            <div class="cover-wave-bar"></div>
+            <div class="cover-wave-bar"></div>
+            <div class="cover-wave-bar"></div>
+            <div class="cover-wave-bar"></div>
+            <div class="cover-wave-bar"></div>
+            <div class="cover-wave-bar"></div>
+            <div class="cover-wave-bar"></div>
+            <div class="cover-wave-bar"></div>
+        </div>
+        <div class="cover-info">
+            Sound Wave Minimal · Versión 1.0<br>
+            Málaga, 2025
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- SECCIÓN: CONCEPTO -->
+        <div class="section">
+            <h2 class="section-title">Concepto</h2>
+            <p class="section-subtitle">La voz como onda pura</p>
+            <p style="font-size: 18px; line-height: 1.8; color: #aaa; max-width: 900px;">
+                El logotipo DIGA representa la esencia de la comunicación por voz: <strong style="color: #FF8C5A;">ondas de sonido en movimiento</strong>. 
+                La tipografía limpia y bold transmite confianza y tecnología, mientras que las barras animadas visualizan 
+                la actividad de voz en tiempo real. El gradiente naranja-cyan simboliza la calidez humana fusionada 
+                con la precisión técnica.
+            </p>
+        </div>
+
+        <!-- SECCIÓN: VERSIONES DEL LOGO -->
+        <div class="section">
+            <h2 class="section-title">Versiones del logotipo</h2>
+            <p class="section-subtitle">Adaptaciones para diferentes contextos</p>
+            
+            <div class="logo-grid">
+                <!-- Versión principal -->
+                <div class="logo-variant">
+                    <span class="variant-label">Principal</span>
+                    <div class="logo-display gradient logo-wave-small">DIGA</div>
+                    <div class="mini-bars">
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                    </div>
+                </div>
+
+                <!-- Versión blanco -->
+                <div class="logo-variant">
+                    <span class="variant-label">Sobre fondo oscuro</span>
+                    <div class="logo-display white logo-wave-small">DIGA</div>
+                    <div class="mini-bars">
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                    </div>
+                </div>
+
+                <!-- Versión negro -->
+                <div class="logo-variant white-bg">
+                    <span class="variant-label">Sobre fondo claro</span>
+                    <div class="logo-display black logo-wave-small white">DIGA</div>
+                    <div class="mini-bars">
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                    </div>
+                </div>
+
+                <!-- Versión monocromo naranja -->
+                <div class="logo-variant gray-bg">
+                    <span class="variant-label">Monocromo</span>
+                    <div class="logo-display orange">DIGA</div>
+                    <div class="mini-bars">
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                    </div>
+                </div>
+
+                <!-- Versión sin barras -->
+                <div class="logo-variant">
+                    <span class="variant-label">Simplificada</span>
+                    <div class="logo-display gradient logo-wave-small">DIGA</div>
+                </div>
+
+                <!-- Versión minimal -->
+                <div class="logo-variant">
+                    <span class="variant-label">Minimal</span>
+                    <div class="logo-display gradient">DIGA</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN: PALETA DE COLORES -->
+        <div class="section">
+            <h2 class="section-title">Paleta cromática</h2>
+            <p class="section-subtitle">Colores oficiales de la marca</p>
+            
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background: linear-gradient(135deg, #FF8C5A 0%, #00D4E8 100%);">
+                        <span style="color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">DIGA</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Gradiente Principal</div>
+                        <div class="color-codes">
+                            <div>Naranja → Cyan</div>
+                            <div>135deg</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #FF8C5A;">
+                        <span style="color: #fff;">A</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Naranja Cálido</div>
+                        <div class="color-codes">
+                            <div>HEX: #FF8C5A</div>
+                            <div>RGB: 255, 140, 90</div>
+                            <div>HSL: 17°, 100%, 68%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #00D4E8;">
+                        <span style="color: #fff;">A</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Cyan Eléctrico</div>
+                        <div class="color-codes">
+                            <div>HEX: #00D4E8</div>
+                            <div>RGB: 0, 212, 232</div>
+                            <div>HSL: 185°, 100%, 45%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #0a0a0a;">
+                        <span style="color: #fff;">A</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Negro Profundo</div>
+                        <div class="color-codes">
+                            <div>HEX: #0A0A0A</div>
+                            <div>RGB: 10, 10, 10</div>
+                            <div>Fondo principal</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #1a1a1a;">
+                        <span style="color: #fff;">A</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Gris Oscuro</div>
+                        <div class="color-codes">
+                            <div>HEX: #1A1A1A</div>
+                            <div>RGB: 26, 26, 26</div>
+                            <div>Fondo secundario</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #ffffff;">
+                        <span style="color: #000;">A</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Blanco Puro</div>
+                        <div class="color-codes">
+                            <div>HEX: #FFFFFF</div>
+                            <div>RGB: 255, 255, 255</div>
+                            <div>Texto principal</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN: TIPOGRAFÍA -->
+        <div class="section">
+            <h2 class="section-title">Tipografía</h2>
+            <p class="section-subtitle">Familia tipográfica oficial</p>
+            
+            <div class="type-sample">
+                <div class="type-name">Sans-Serif System Font Stack</div>
+                <div class="type-display">DIGA</div>
+                <div class="type-alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
+                <div class="type-alphabet">abcdefghijklmnopqrstuvwxyz</div>
+                <div class="type-alphabet">0123456789</div>
+                <div style="margin-top: 30px; color: #888; font-size: 16px;">
+                    -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif
+                </div>
+            </div>
+
+            <div style="margin-top: 40px;">
+                <h3 style="color: #FF8C5A; font-size: 24px; margin-bottom: 20px;">Jerarquía tipográfica</h3>
+                <div style="color: #aaa; font-size: 16px; line-height: 2;">
+                    <div><strong style="color: #fff;">Títulos principales:</strong> 48-120px, Bold (900)</div>
+                    <div><strong style="color: #fff;">Subtítulos:</strong> 24-32px, Bold (700)</div>
+                    <div><strong style="color: #fff;">Cuerpo de texto:</strong> 16-18px, Regular (400)</div>
+                    <div><strong style="color: #fff;">Letter-spacing logo:</strong> 15-30px</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN: CONSTRUCCIÓN -->
+        <div class="section">
+            <h2 class="section-title">Construcción del logotipo</h2>
+            <p class="section-subtitle">Proporciones y espaciado</p>
+            
+            <div class="construction-grid">
+                <div class="construction-card">
+                    <div class="construction-title">Área de seguridad</div>
+                    <div class="construction-visual">
+                        <div class="grid-overlay"></div>
+                        <div style="font-size: 64px; font-weight: 900; background: linear-gradient(135deg, #FF8C5A 0%, #00D4E8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">DIGA</div>
+                    </div>
+                    <div class="spacing-guide">
+                        Mínimo: altura de letra "D"<br>
+                        en todos los lados
+                    </div>
+                </div>
+
+                <div class="construction-card">
+                    <div class="construction-title">Tamaño mínimo</div>
+                    <div style="font-size: 32px; font-weight: 900; background: linear-gradient(135deg, #FF8C5A 0%, #00D4E8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin: 40px 0;">DIGA</div>
+                    <div class="spacing-guide">
+                        Digital: 32px altura<br>
+                        Impreso: 20mm altura
+                    </div>
+                </div>
+
+                <div class="construction-card">
+                    <div class="construction-title">Proporciones barras</div>
+                    <div class="mini-bars" style="transform: scale(2); margin: 60px 0;">
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                    </div>
+                    <div class="spacing-guide">
+                        Ancho: 4-8px<br>
+                        Gap: 6-12px<br>
+                        Proporción: 1:1.5:2:1.5:1
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN: USOS CORRECTOS E INCORRECTOS -->
+        <div class="section">
+            <h2 class="section-title">Usos correctos e incorrectos</h2>
+            <p class="section-subtitle">Mantén la integridad de la marca</p>
+            
+            <div class="usage-grid">
+                <div class="usage-card correct">
+                    <span class="usage-badge">✓ Correcto</span>
+                    <div class="usage-example" style="background: linear-gradient(135deg, #FF8C5A 0%, #00D4E8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">DIGA</div>
+                    <div class="usage-description">Usar el gradiente oficial</div>
+                </div>
+
+                <div class="usage-card">
+                    <span class="usage-badge">✗ Incorrecto</span>
+                    <div class="usage-example" style="color: #FF0000;">DIGA</div>
+                    <div class="usage-description">No cambiar los colores</div>
+                </div>
+
+                <div class="usage-card correct">
+                    <span class="usage-badge">✓ Correcto</span>
+                    <div class="usage-example" style="color: #fff; letter-spacing: 15px;">DIGA</div>
+                    <div class="usage-description">Respetar el espaciado</div>
+                </div>
+
+                <div class="usage-card">
+                    <span class="usage-badge">✗ Incorrecto</span>
+                    <div class="usage-example" style="color: #fff; letter-spacing: 0;">DIGA</div>
+                    <div class="usage-description">No comprimir el espaciado</div>
+                </div>
+
+                <div class="usage-card correct">
+                    <span class="usage-badge">✓ Correcto</span>
+                    <div class="usage-example" style="color: #fff; font-weight: 900;">DIGA</div>
+                    <div class="usage-description">Mantener peso bold</div>
+                </div>
+
+                <div class="usage-card">
+                    <span class="usage-badge">✗ Incorrecto</span>
+                    <div class="usage-example" style="color: #fff; font-style: italic;">DIGA</div>
+                    <div class="usage-description">No aplicar cursiva</div>
+                </div>
+
+                <div class="usage-card correct">
+                    <span class="usage-badge">✓ Correcto</span>
+                    <div class="usage-example" style="background: linear-gradient(135deg, #FF8C5A 0%, #00D4E8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">DIGA</div>
+                    <div class="mini-bars" style="margin-top: 20px;">
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                        <div class="mini-bar"></div>
+                    </div>
+                    <div class="usage-description">Usar con barras animadas</div>
+                </div>
+
+                <div class="usage-card">
+                    <span class="usage-badge">✗ Incorrecto</span>
+                    <div class="usage-example" style="color: #fff; text-shadow: 0 0 20px #FF0000;">DIGA</div>
+                    <div class="usage-description">No añadir efectos no oficiales</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN: APLICACIONES -->
+        <div class="section">
+            <h2 class="section-title">Aplicaciones</h2>
+            <p class="section-subtitle">Ejemplos de uso en diferentes contextos</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; margin-top: 50px;">
+                <!-- Tarjeta de visita -->
+                <div style="background: #000; padding: 40px; border-radius: 20px; border: 1px solid rgba(255, 140, 90, 0.2);">
+                    <div style="font-size: 14px; color: #FF8C5A; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px;">Tarjeta de visita</div>
+                    <div style="font-size: 48px; font-weight: 900; background: linear-gradient(135deg, #FF8C5A 0%, #00D4E8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 10px; margin-bottom: 40px;">DIGA</div>
+                    <div style="color: #888; font-size: 14px; line-height: 1.8;">
+                        Gabi Fernández<br>
+                        Co-fundador<br>
+                        gabi@diga.ai
+                    </div>
+                </div>
+
+                <!-- Firma de email -->
+                <div style="background: #fff; padding: 40px; border-radius: 20px; border: 1px solid rgba(255, 140, 90, 0.2);">
+                    <div style="font-size: 14px; color: #000; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">Firma de email</div>
+                    <div style="font-size: 32px; font-weight: 900; color: #000; letter-spacing: 8px; margin-bottom: 20px;">DIGA</div>
+                    <div style="color: #666; font-size: 13px; line-height: 1.8;">
+                        <strong style="color: #000;">Jesús López</strong><br>
+                        CTO · DIGA<br>
+                        jesus@diga.ai · +34 600 000 000
+                    </div>
+                </div>
+
+                <!-- App Icon -->
+                <div style="background: linear-gradient(135deg, #FF8C5A 0%, #00D4E8 100%); padding: 60px; border-radius: 30px; text-align: center;">
+                    <div style="font-size: 14px; color: rgba(255,255,255,0.8); margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px;">Icono de app</div>
+                    <div style="font-size: 72px; font-weight: 900; color: #fff; letter-spacing: 15px; text-shadow: 0 4px 20px rgba(0,0,0,0.3);">DIGA</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div style="text-align: center; padding: 80px 0; color: #666; font-size: 14px; border-top: 1px solid rgba(255, 140, 90, 0.1); margin-top: 100px;">
+            <div style="font-size: 18px; color: #FF8C5A; margin-bottom: 15px; font-weight: 700;">DIGA · Manual de Identidad de Marca</div>
+            <div>Sound Wave Minimal · Versión 1.0 · 2025</div>
+            <div style="margin-top: 20px;">Creado por <strong style="color: #FF8C5A;">Mili</strong> para Gabi, Jesús y Antonio</div>
+            <div style="margin-top: 10px;">Málaga, España</div>
+        </div>
+    </div>
+</body>
+</html>
