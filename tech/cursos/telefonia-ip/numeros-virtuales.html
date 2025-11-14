@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Virtuales: La Guía Completa | Mili Pérez</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --mp-black: #000000;
+            --mp-white: #ffffff;
+            --mp-blue: #008DCB;
+            --mp-gray-400: #6a6a6a;
+            --mp-gray-800: #1a1a1a;
+            --mp-red: #DC2626;
+            --mp-green: #10B981;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #f5f5f5;
+            color: var(--mp-black);
+            line-height: 1.6;
+        }
+        
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--mp-black);
+            padding: 20px 40px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+        
+        .logo-name {
+            color: var(--mp-white);
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+        }
+        
+        .logo-tagline {
+            color: var(--mp-blue);
+            font-size: 9px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+        }
+        
+        .nav-menu { display: flex; gap: 32px; }
+        
+        .nav-link {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover { color: var(--mp-blue); }
+        
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 120px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0,141,203,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-icon {
+            margin-bottom: 32px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .hero-title {
+            color: var(--mp-white);
+            font-size: 64px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+        
+        .hero-title .highlight {
+            color: var(--mp-blue);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .hero-subtitle {
+            color: rgba(255,255,255,0.8);
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 48px;
+        }
+        
+        .hero-tag {
+            display: inline-block;
+            background: var(--mp-blue);
+            color: var(--mp-white);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 14px 36px;
+        }
+        
+        .intro-context {
+            background: var(--mp-white);
+            padding: 60px 80px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .intro-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .intro-text {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+        
+        .intro-highlight {
+            background: #FAFAFA;
+            padding: 32px 40px;
+            border-left: 4px solid var(--mp-blue);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+        
+        .stat-label {
+            color: var(--mp-gray-400);
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        
+        .stat-value {
+            font-size: 28px;
+            font-weight: 900;
+            line-height: 1.3;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+        
+        .section { margin-bottom: 100px; }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-number {
+            color: var(--mp-blue);
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+        
+        .section-title {
+            font-size: 48px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+        
+        .section-subtitle {
+            color: var(--mp-gray-400);
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .concept-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 60px;
+        }
+        
+        .diagram-box {
+            flex: 1;
+            background: #FAFAFA;
+            padding: 48px 40px;
+            text-align: center;
+            border: 2px solid #d0d0d0;
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .diagram-box.highlight {
+            background: var(--mp-black);
+            border-color: var(--mp-blue);
+        }
+        
+        .diagram-label {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .diagram-box.highlight .diagram-label { color: var(--mp-white); }
+        
+        .diagram-value {
+            color: var(--mp-blue);
+            font-size: 24px;
+            font-weight: 900;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .arrow-icon {
+            font-size: 40px;
+            color: var(--mp-blue);
+        }
+        
+        .concept-explanation {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #FAFAFA;
+            padding: 40px 48px;
+            border-left: 4px solid var(--mp-blue);
+        }
+        
+        .concept-explanation h4 {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        
+        .concept-explanation p {
+            color: var(--mp-gray-400);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        
+        .barriers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .barrier-card {
+            background: #FAFAFA;
+            padding: 40px 36px;
+            border-left: 4px solid var(--mp-blue);
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .barrier-number {
+            color: var(--mp-blue);
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+        
+        .barrier-title {
+            font-size: 22px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 16px;
+        }
+        
+        .barrier-text {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .barrier-example {
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid #e5e5e5;
+            font-size: 14px;
+            font-weight: 600;
+            font-style: italic;
+        }
+        
+        .when-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .when-side {
+            background: #FAFAFA;
+            padding: 48px 40px;
+            border-left: 4px solid;
+        }
+        
+        .when-side.yes { border-color: var(--mp-green); }
+        .when-side.no { border-color: var(--mp-red); }
+        
+        .when-title {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+        
+        .when-side.yes .when-title { color: var(--mp-green); }
+        .when-side.no .when-title { color: var(--mp-red); }
+        
+        .when-subtitle {
+            color: var(--mp-gray-400);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 32px;
+        }
+        
+        .when-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .when-item { display: flex; gap: 16px; align-items: start; }
+        
+        .when-item-text {
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+        
+        .legal-note {
+            margin-top: 32px;
+            padding: 24px;
+            background: #FFF9E6;
+            border-left: 4px solid #FFB800;
+        }
+        
+        .legal-note-title {
+            color: #5A4A0F;
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        
+        .legal-note-text {
+            color: #5A4A0F;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .cases-container {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .case {
+            background: var(--mp-white);
+            border: 2px solid #f0f0f0;
+            overflow: hidden;
+        }
+        
+        .case-header {
+            background: var(--mp-black);
+            padding: 32px 40px;
+        }
+        
+        .case-badge {
+            display: inline-block;
+            background: var(--mp-blue);
+            color: var(--mp-white);
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 6px 14px;
+            margin-bottom: 16px;
+        }
+        
+        .case-title {
+            color: var(--mp-white);
+            font-size: 28px;
+            font-weight: 900;
+        }
+        
+        .case-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        .case-column {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .case-column.before {
+            background: #FEF2F2;
+            border-right: 2px solid #fee2e2;
+        }
+        
+        .case-column.after { background: #ECFDF5; }
+        
+        .case-column-title {
+            font-size: 16px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .case-column.before .case-column-title { color: var(--mp-red); }
+        .case-column.after .case-column-title { color: var(--mp-green); }
+        
+        .info-box {
+            background: var(--mp-white);
+            padding: 24px;
+            border-left: 4px solid;
+        }
+        
+        .case-column.before .info-box { border-color: var(--mp-red); }
+        .case-column.after .info-box { border-color: var(--mp-green); }
+        
+        .info-label {
+            color: #666;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        
+        .info-text {
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+        
+        .result-box {
+            background: var(--mp-black);
+            padding: 24px;
+            margin-top: auto;
+        }
+        
+        .result-label {
+            color: rgba(255,255,255,0.6);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        
+        .result-value {
+            color: var(--mp-blue);
+            font-size: 36px;
+            font-weight: 900;
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 12px;
+        }
+        
+        .result-detail {
+            color: rgba(255,255,255,0.8);
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        
+        .brutal-comparison {
+            background: var(--mp-black);
+            padding: 80px 60px;
+            margin: 100px 0;
+        }
+        
+        .brutal-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+        
+        .brutal-label {
+            color: var(--mp-blue);
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+        
+        .brutal-title {
+            color: var(--mp-white);
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+        
+        .brutal-subtitle {
+            color: rgba(255,255,255,0.7);
+            font-size: 18px;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .option {
+            text-align: center;
+            padding: 48px 40px;
+            background: linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 100%);
+            border: 2px solid #3a3a3a;
+        }
+        
+        .option.virtual {
+            background: linear-gradient(180deg, #000 0%, #1a1a1a 100%);
+            border-color: var(--mp-blue);
+        }
+        
+        .option-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 8px 16px;
+            margin-bottom: 24px;
+        }
+        
+        .option.traditional .option-badge {
+            background: var(--mp-red);
+            color: var(--mp-white);
+        }
+        
+        .option.virtual .option-badge {
+            background: var(--mp-blue);
+            color: var(--mp-white);
+        }
+        
+        .option-title {
+            color: var(--mp-white);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+        
+        .price-giant {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+        
+        .option.traditional .price-giant { color: var(--mp-red); }
+        .option.virtual .price-giant { color: var(--mp-blue); }
+        
+        .price-label {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 32px;
+        }
+        
+        .details-list {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        .savings-banner {
+            background: var(--mp-blue);
+            padding: 32px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .savings-text {
+            color: var(--mp-white);
+            font-size: 24px;
+            font-weight: 800;
+        }
+        
+        .savings-amount {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 36px;
+            font-weight: 900;
+        }
+        
+        .errors-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .error-card {
+            background: #FEF2F2;
+            padding: 40px 32px;
+            border-left: 4px solid var(--mp-red);
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .error-number {
+            color: var(--mp-red);
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+        
+        .error-title {
+            font-size: 20px;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        
+        .error-description {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            flex: 1;
+        }
+        
+        .solution-box {
+            background: var(--mp-white);
+            padding: 20px 24px;
+            border-left: 3px solid var(--mp-blue);
+        }
+        
+        .solution-label {
+            color: var(--mp-blue);
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        
+        .solution-text {
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--mp-black) 0%, var(--mp-gray-800) 100%);
+            padding: 100px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0,141,203,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            color: var(--mp-white);
+            font-size: 48px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 24px;
+        }
+        
+        .cta-subtitle {
+            color: rgba(255,255,255,0.8);
+            font-size: 20px;
+            font-weight: 300;
+            margin-bottom: 48px;
+            line-height: 1.6;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--mp-blue);
+            color: var(--mp-white);
+            font-size: 16px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 20px 48px;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 2px solid var(--mp-blue);
+        }
+        
+        .cta-button:hover {
+            background: transparent;
+            color: var(--mp-blue);
+        }
+        
+        .footer {
+            background: var(--mp-black);
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .footer-text {
+            color: rgba(255,255,255,0.6);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+        
+        .footer-highlight {
+            color: var(--mp-blue);
+            font-weight: 600;
+        }
+        
+        @media (max-width: 1024px) {
+            .hero-title { font-size: 42px; }
+            .barriers-grid, .errors-grid, .when-grid, .comparison-grid, .case-content { grid-template-columns: 1fr; }
+            .concept-diagram { flex-direction: column; }
+            .arrow-icon { transform: rotate(90deg); }
+            .intro-highlight { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div style="display: flex; align-items: center; gap: 16px;">
+            <svg width="40" height="40" viewBox="0 0 50 50" fill="none">
+                <rect x="10" y="10" width="30" height="30" stroke="#008DCB" stroke-width="2" fill="none"/>
+                <rect x="15" y="15" width="20" height="20" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
+                <circle cx="25" cy="25" r="4" fill="#008DCB"/>
+            </svg>
+            <div>
+                <div class="logo-name">MILI PÉREZ</div>
+                <div class="logo-tagline">TELEFONÍA IP</div>
+            </div>
+        </div>
+        <nav class="nav-menu">
+            <a href="#concepto" class="nav-link">Concepto</a>
+            <a href="#casos" class="nav-link">Casos</a>
+            <a href="#precios" class="nav-link">Precios</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <svg class="hero-icon" width="80" height="80" viewBox="0 0 80 80" fill="none">
+                <circle cx="40" cy="40" r="38" stroke="#008DCB" stroke-width="2"/>
+                <circle cx="40" cy="40" r="28" stroke="#008DCB" stroke-width="1.5" opacity="0.4"/>
+                <circle cx="40" cy="40" r="6" fill="#008DCB"/>
+                <path d="M40 12 L40 28" stroke="#008DCB" stroke-width="2" stroke-linecap="round"/>
+                <path d="M40 52 L40 68" stroke="#008DCB" stroke-width="2" stroke-linecap="round"/>
+                <path d="M12 40 L28 40" stroke="#008DCB" stroke-width="2" stroke-linecap="round"/>
+                <path d="M52 40 L68 40" stroke="#008DCB" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            
+            <h1 class="hero-title">La jugada de <span class="highlight">1,95€/mes</span><br>que te hace parecer multinacional</h1>
+            <p class="hero-subtitle">Presencia local sin alquilar ni una oficina</p>
+            <div class="hero-tag">Números virtuales + Portabilidad</div>
+        </div>
+    </section>
+
+    <section class="intro-context">
+        <div class="intro-content">
+            <p class="intro-text">
+                Hay empresas que venden en 12 ciudades sin pisar ninguna. Cuando un cliente de Bilbao llama al número de Bilbao, habla con alguien que puede estar en Málaga. El cliente no lo sabe. Y no necesita saberlo.
+            </p>
+            <div class="intro-highlight">
+                <div>
+                    <div class="stat-label">Hoy puedes tener</div>
+                    <div class="stat-value">Número profesional en cualquier ciudad por 1,95€/mes</div>
+                </div>
+                <div>
+                    <div class="stat-label">Y gestionarlo</div>
+                    <div class="stat-value">Desde tu centralita sin moverte de donde estás</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="concepto" class="section container">
+        <div class="section-header">
+            <div class="section-number">01 • Concepto</div>
+            <h2 class="section-title">Qué es un número virtual</h2>
+            <p class="section-subtitle">Un número de teléfono que no está atado a una línea física ni a una ubicación geográfica</p>
+        </div>
+        
+        <div class="concept-diagram">
+            <div class="diagram-box">
+                <div class="diagram-label">Cliente ve</div>
+                <div class="diagram-value">91 XXX XX XX</div>
+            </div>
+            <div class="arrow-icon">→</div>
+            <div class="diagram-box highlight">
+                <div class="diagram-label">Centralita virtual</div>
+                <div class="diagram-value">En la nube</div>
+            </div>
+            <div class="arrow-icon">→</div>
+            <div class="diagram-box">
+                <div class="diagram-label">Tu equipo atiende desde</div>
+                <div class="diagram-value">Donde sea</div>
+            </div>
+        </div>
+        
+        <div class="concept-explanation">
+            <h4>Ejemplo práctico:</h4>
+            <p>Una consultoría de Barcelona contrata un número 91 (Madrid). Lo configura en su centralita para que suene a su equipo comercial. Cliente en Madrid ve el 91, piensa "son de aquí", llama, cierra proyecto. Nunca supo que el equipo no estaba en Madrid. Tampoco importa.</p>
+        </div>
+    </section>
+
+    <section class="section container">
+        <div class="section-header">
+            <div class="section-number">02 • Psicología</div>
+            <h2 class="section-title">Por qué funciona</h2>
+            <p class="section-subtitle">Los números virtuales atacan tres barreras psicológicas que frenan a los compradores</p>
+        </div>
+        
+        <div class="barriers-grid">
+            <div class="barrier-card">
+                <div class="barrier-number">Barrera 01</div>
+                <h3 class="barrier-title">Desconfianza hacia lo "de fuera"</h3>
+                <p class="barrier-text">Aunque tu servicio sea 100% remoto, el cliente se siente más cómodo con alguien "local".</p>
+                <div class="barrier-example">"Si no son de aquí, no van a entender mi mercado"</div>
+            </div>
+            
+            <div class="barrier-card">
+                <div class="barrier-number">Barrera 02</div>
+                <h3 class="barrier-title">Fricción del coste</h3>
+                <p class="barrier-text">Aunque las tarifas móviles no cobren extra, la percepción sigue ahí. Un número "de fuera" genera fricción mental.</p>
+                <div class="barrier-example">"Si llamo a otra ciudad, me costará más"</div>
+            </div>
+            
+            <div class="barrier-card">
+                <div class="barrier-number">Barrera 03</div>
+                <h3 class="barrier-title">Percepción de tamaño</h3>
+                <p class="barrier-text">Si tienes presencia en Madrid, Barcelona y Valencia, pareces más grande. Y "más grande" = "más confiable".</p>
+                <div class="barrier-example">"Si tienen números en varias ciudades, son una empresa seria"</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section container">
+        <div class="section-header">
+            <div class="section-number">03 • Filtro</div>
+            <h2 class="section-title">Cuándo tiene sentido (y cuándo NO)</h2>
+            <p class="section-subtitle">Los números virtuales no son para todo el mundo. Aquí va la verdad sin filtros.</p>
+        </div>
+        
+        <div class="when-grid">
+            <div class="when-side yes">
+                <h3 class="when-title">✓ SÍ tiene sentido</h3>
+                <p class="when-subtitle">Cuándo contratar números virtuales</p>
+                <div class="when-list">
+                    <div class="when-item">
+                        <p class="when-item-text">Vendes en varias ciudades o países</p>
+                    </div>
+                    <div class="when-item">
+                        <p class="when-item-text">Eres freelance o equipo pequeño que compite con empresas grandes</p>
+                    </div>
+                    <div class="when-item">
+                        <p class="when-item-text">Tu equipo trabaja remoto pero tus clientes prefieren "locales"</p>
+                    </div>
+                    <div class="when-item">
+                        <p class="when-item-text">Haces campañas multi-canal y quieres medir resultados</p>
+                    </div>
+                </div>
+                <div class="legal-note">
+                    <div class="legal-note-title">¿Es legal?</div>
+                    <div class="legal-note-text">Sí. Un número virtual no implica domicilio fiscal. Tu empresa está registrada donde está. El número es solo un canal de comunicación.</div>
+                </div>
+            </div>
+            
+            <div class="when-side no">
+                <h3 class="when-title">✗ NO tiene sentido</h3>
+                <p class="when-subtitle">Cuándo evitar números virtuales</p>
+                <div class="when-list">
+                    <div class="when-item">
+                        <p class="when-item-text">Solo operas en una ciudad y ya tienes número local que funciona</p>
+                    </div>
+                    <div class="when-item">
+                        <p class="when-item-text">Tu negocio es 100% online sin llamadas</p>
+                    </div>
+                    <div class="when-item">
+                        <p class="when-item-text">No tienes centralita montada (primero sistema, luego números)</p>
+                    </div>
+                    <div class="when-item">
+                        <p class="when-item-text">No tienes estrategia clara</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="casos" class="section container">
+        <div class="section-header">
+            <div class="section-number">04 • Casos Reales</div>
+            <h2 class="section-title">Empresas que usan números virtuales</h2>
+            <p class="section-subtitle">Ejemplos reales de estrategias y resultados medibles</p>
+        </div>
+        
+        <div class="cases-container">
+            <div class="case">
+                <div class="case-header">
+                    <div class="case-badge">Caso Real 01</div>
+                    <h3 class="case-title">Startup B2B que expande sin oficinas</h3>
+                </div>
+                <div class="case-content">
+                    <div class="case-column before">
+                        <div class="case-column-title">Antes</div>
+                        <div class="info-box">
+                            <div class="info-label">Problema</div>
+                            <div class="info-text">Startup con sede en Barcelona. Cuando llamaban desde su número 93, muchos clientes no devolvían llamadas.</div>
+                        </div>
+                    </div>
+                    <div class="case-column after">
+                        <div class="case-column-title">Después</div>
+                        <div class="info-box">
+                            <div class="info-label">Solución</div>
+                            <div class="info-text">Números virtuales: 91 (Madrid), 96 (Valencia), 95 (Sevilla). Cada comercial asignado a su zona.</div>
+                        </div>
+                        <div class="result-box">
+                            <div class="result-label">Resultado</div>
+                            <div class="result-value">+40%</div>
+                            <div class="result-detail">Tasa de respuesta en llamadas salientes. Mismo equipo, sin costes adicionales.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case">
+                <div class="case-header">
+                    <div class="case-badge">Caso Real 02</div>
+                    <h3 class="case-title">Freelance que parece empresa</h3>
+                </div>
+                <div class="case-content">
+                    <div class="case-column before">
+                        <div class="case-column-title">Antes</div>
+                        <div class="info-box">
+                            <div class="info-label">Problema</div>
+                            <div class="info-text">Consultor trabajando desde casa. Daba su móvil personal. Perdía proyectos grandes porque buscaban "agencias".</div>
+                        </div>
+                    </div>
+                    <div class="case-column after">
+                        <div class="case-column-title">Después</div>
+                        <div class="info-box">
+                            <div class="info-label">Solución</div>
+                            <div class="info-text">Número virtual 91 + IVR simple. Ambas opciones llevaban a él, pero el cliente escuchaba estructura profesional.</div>
+                        </div>
+                        <div class="result-box">
+                            <div class="result-label">Resultado</div>
+                            <div class="result-detail">Empezó a cerrar proyectos más grandes. Dejó de recibir "¿cuántas personas sois?". Proyección profesional sin incremento de costes.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case">
+                <div class="case-header">
+                    <div class="case-badge">Caso Real 03</div>
+                    <h3 class="case-title">Agencia inmobiliaria multizona</h3>
+                </div>
+                <div class="case-content">
+                    <div class="case-column before">
+                        <div class="case-column-title">Antes</div>
+                        <div class="info-box">
+                            <div class="info-label">Problema</div>
+                            <div class="info-text">Oficina en Madrid. Gestionan 8 provincias. Clientes desconfiaban: "¿Cómo van a conocer el mercado de aquí?"</div>
+                        </div>
+                    </div>
+                    <div class="case-column after">
+                        <div class="case-column-title">Después</div>
+                        <div class="info-box">
+                            <div class="info-label">Solución</div>
+                            <div class="info-text">Número virtual local en cada provincia. En su web, cada sección mostraba "su" número local.</div>
+                        </div>
+                        <div class="result-box">
+                            <div class="result-label">Resultado</div>
+                            <div class="result-detail">Mayor confianza desde el primer contacto. 8 números virtuales. Sin alquilar ni una oficina adicional.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="precios" class="brutal-comparison">
+        <div class="brutal-header">
+            <div class="brutal-label">Los números (literalmente)</div>
+            <h2 class="brutal-title">¿Cuánto cuesta expandirse?</h2>
+            <p class="brutal-subtitle">Presencia en Madrid, Barcelona y Valencia</p>
+        </div>
+        
+        <div class="comparison-grid">
+            <div class="option traditional">
+                <div class="option-badge">Opción A</div>
+                <h3 class="option-title">Oficinas físicas</h3>
+                <div class="price-giant">38.400€</div>
+                <div class="price-label">Al año</div>
+                <div class="details-list">
+                    Madrid: ~1.100€/mes<br>
+                    Barcelona: ~1.200€/mes<br>
+                    Valencia: ~900€/mes<br><br>
+                    <strong>SIN CONTAR:</strong><br>
+                    Personal local + Viajes + Mobiliario
+                </div>
+            </div>
+            
+            <div class="option virtual">
+                <div class="option-badge">Opción B • Recomendado</div>
+                <h3 class="option-title">Números virtuales</h3>
+                <div class="price-giant">70€</div>
+                <div class="price-label">Al año</div>
+                <div class="details-list">
+                    Madrid: 1,95€/mes<br>
+                    Barcelona: 1,95€/mes<br>
+                    Valencia: 1,95€/mes<br><br>
+                    <strong>✓ Activación inmediata</strong><br>
+                    <strong>✓ Sin permanencia</strong><br>
+                    <strong>✓ Sin costes de instalación</strong>
+                </div>
+            </div>
+        </div>
+        
+        <div class="savings-banner">
+            <div class="savings-text">
+                Ahorro anual: <span class="savings-amount">38.329,80€</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section container">
+        <div class="section-header">
+            <div class="section-number">05 • Errores</div>
+            <h2 class="section-title">Qué mata tu estrategia</h2>
+            <p class="section-subtitle">Puedes tener los mejores números virtuales. Si cometes estos errores, no sirve de nada.</p>
+        </div>
+        
+        <div class="errors-grid">
+            <div class="error-card">
+                <div class="error-number">Error 01</div>
+                <h3 class="error-title">Números que nadie atiende</h3>
+                <p class="error-description">
+                    Contratas número Madrid. Lo pones en web. Suena. Nadie contesta.<br><br>
+                    Es PEOR que no tenerlo. Generas expectativa, el cliente llama, no le atendes. No volverá.<br><br>
+                    El daño reputacional supera cualquier beneficio.
+                </p>
+                <div class="solution-box">
+                    <div class="solution-label">✓ Solución</div>
+                    <div class="solution-text">
+                        Si das un número local, atiéndelo en horario local. Si no puedes, no lo des.<br><br>
+                        Dentro de horario: suena a tu equipo. Fuera de horario: mensaje claro explicando cuándo volverás.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="error-card">
+                <div class="error-number">Error 02</div>
+                <h3 class="error-title">Equipo no formado</h3>
+                <p class="error-description">
+                    Cliente: "Os llamo por el número de Madrid"<br>
+                    Comercial: "Ah no, nosotros estamos en Barcelona. El de Madrid es solo virtual."<br><br>
+                    Acabas de romper la ilusión. El cliente sintió que le montaste un teatro.
+                </p>
+                <div class="solution-box">
+                    <div class="solution-label">✓ Solución</div>
+                    <div class="solution-text">
+                        <strong>Guión correcto:</strong> "Buenos días, [Empresa]. ¿En qué puedo ayudarle?"<br><br>
+                        Si preguntan ubicación: "Trabajamos de forma remota pero damos servicio en toda España."<br><br>
+                        Forma a tu equipo en cómo redirigir hacia el valor (servicio), no la ubicación.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="error-card">
+                <div class="error-number">Error 03</div>
+                <h3 class="error-title">No medir resultados</h3>
+                <p class="error-description">
+                    Contratas números. Los configuras. Empiezan a sonar. Pero nunca mides:<br>
+                    • ¿Qué número recibe más llamadas?<br>
+                    • ¿Qué zonas convierten mejor?<br>
+                    • ¿Qué campañas funcionan?<br><br>
+                    Sin datos, estás volando a ciegas.
+                </p>
+                <div class="solution-box">
+                    <div class="solution-label">✓ Solución</div>
+                    <div class="solution-text">
+                        <strong>Mide cada 30 días:</strong><br>
+                        • Llamadas por número<br>
+                        • Conversión por zona<br>
+                        • ROI por canal<br>
+                        • Horarios pico<br><br>
+                        <strong>Ajusta:</strong> Muchas llamadas pero baja conversión → Revisa formación. Pocas llamadas → Aumenta visibilidad.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title">¿Listo para expandirte sin alquilar oficinas?</h2>
+            <p class="cta-subtitle">Números virtuales desde 1,95€/mes. Sin permanencia. Activación inmediata.<br>Presencia local profesional en las ciudades donde vendes.</p>
+            <a href="https://miliperez.com" class="cta-button">Consultar estrategia</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <strong class="footer-highlight">MILI PÉREZ</strong> • Chief Operating & AI Officer<br>
+            <span class="footer-highlight">+ de 14 años</span> en telecomunicaciones<br>
+            + de 500 empresas implementadas | España + LATAM<br><br>
+        </div>
+    </footer>
+</body>
+</html>
