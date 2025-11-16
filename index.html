@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Favicons Tech (por defecto) -->
+    <link rel="icon" type="image/x-icon" href="/images/favicons-tech/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/images/favicons-tech/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons-tech/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicons-tech/favicon-96x96.png">
+    <link rel="manifest" href="/images/favicons-tech/site.webmanifest">
+    
     <!-- SEO Meta Tags -->
-    <title>MILI PÉREZ | Expediciones sin Ataduras + Soluciones Tech</title>
-    <meta name="description" content="53 países recorridos. 14 años resolviendo sistemas tech. Dos mundos que transforman: expediciones extremas sin WiFi y tecnología sin drama. Solo resultados.">
-    <meta name="keywords" content="Mili Pérez, expediciones extremas, viajes aventura, consultoría tech, sistemas tecnológicos, transformación digital, viajes sin filtros">
+    <title>MILI PÉREZ | Tecnología sin Drama + Expediciones sin Filtros</title>
+    <meta name="description" content="14 años construyendo sistemas tech que funcionan 24/7. 53 países pisados, no visitados. Dos mundos que transforman: tecnología sin reuniones y expediciones sin WiFi.">
+    <meta name="keywords" content="Mili Pérez, automatización tech, consultoría tecnológica, expediciones extremas, viajes aventura, transformación digital, sistemas automatizados">
     <meta name="author" content="Mili Pérez">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://miliperez.com">
@@ -15,15 +22,21 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://miliperez.com">
-    <meta property="og:title" content="MILI PÉREZ | Expediciones + Tech">
-    <meta property="og:description" content="53 países recorridos. 14 años resolviendo tech. Dos mundos que transforman vidas y negocios.">
+    <meta property="og:title" content="MILI PÉREZ | Tech + Travel">
+    <meta property="og:description" content="14 años resolviendo lo imposible en tech. 53 países recorridos sin filtros. Construyo máquinas de hacer dinero y lidero expediciones que transforman.">
+    <meta property="og:site_name" content="Mili Pérez">
     <meta property="og:locale" content="es_ES">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://miliperez.com">
-    <meta name="twitter:title" content="MILI PÉREZ | Expediciones + Tech">
-    <meta name="twitter:description" content="53 países recorridos. 14 años resolviendo tech. Transformación garantizada.">
+    <meta name="twitter:title" content="MILI PÉREZ | Tech + Travel">
+    <meta name="twitter:description" content="Sistemas que funcionan mientras duermes. Expediciones que te despiertan. Sin drama. Sin filtros.">
+    
+    <!-- Theme Colors -->
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-navbutton-color" content="#000000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
@@ -33,11 +46,30 @@
       "name": "Mili Pérez",
       "url": "https://miliperez.com",
       "sameAs": [
-        "https://instagram.com/yosoymiliperez"
+        "https://instagram.com/yosoymiliperez",
+        "https://linkedin.com/in/miliperez"
       ],
-      "jobTitle": "Tech Consultant & Expedition Leader",
-      "description": "Arquitecta de sistemas tecnológicos y líder de expediciones extremas",
-      "knowsAbout": ["Tecnología", "Expediciones", "Transformación Digital", "Viajes Extremos"]
+      "jobTitle": "Tech Automation Architect & Expedition Leader",
+      "description": "14 años construyendo sistemas tecnológicos que multiplican resultados. Líder de expediciones extremas en 53 países.",
+      "knowsAbout": [
+        "Automatización tecnológica",
+        "Sistemas no-code",
+        "Transformación digital",
+        "Expediciones extremas",
+        "Viajes de transformación"
+      ],
+      "hasOccupation": [
+        {
+          "@type": "Occupation",
+          "name": "Tech Consultant",
+          "description": "Construyo máquinas de hacer dinero usando automatización, IA y sistemas no-code"
+        },
+        {
+          "@type": "Occupation",
+          "name": "Expedition Leader",
+          "description": "Lidero expediciones transformacionales en destinos extremos sin WiFi"
+        }
+      ]
     }
     </script>
     
@@ -70,6 +102,8 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--mp-white);
             color: var(--mp-black);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         
         /* PORTAL WEB */
@@ -145,6 +179,7 @@
             font-weight: 100;
             margin-bottom: 20px;
             letter-spacing: -0.02em;
+            line-height: 1;
         }
         
         .portal-subtitle {
@@ -153,6 +188,7 @@
             letter-spacing: 0.3em;
             opacity: 0.7;
             margin-bottom: 30px;
+            font-weight: 500;
         }
         
         .portal-description {
@@ -164,16 +200,15 @@
         }
         
         .portal-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 15px 40px;
+            display: inline-block;
+            padding: 18px 60px;
             font-size: 0.85rem;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
             text-decoration: none;
             transition: all 0.3s var(--ease-out);
             font-weight: 500;
+            cursor: pointer;
         }
         
         .portal-travel .portal-cta {
@@ -219,6 +254,7 @@
             letter-spacing: 0.2em;
             text-transform: uppercase;
             margin-bottom: 40px;
+            border: 1px solid transparent;
         }
         
         .portal-tech .construction-badge {
@@ -226,21 +262,7 @@
             border: 1px solid var(--mp-blue);
         }
         
-        /* FOOTER */
-        .footer {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            font-size: 0.75rem;
-            color: rgba(0, 0, 0, 0.4);
-            z-index: 101;
-            letter-spacing: 0.05em;
-            line-height: 1.4;
-        }
-        
-        /* RESPONSIVE EXACTO */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             .portal {
                 flex-direction: column;
@@ -249,6 +271,8 @@
             .portal-divider {
                 height: 1px;
                 width: 60%;
+                top: 50%;
+                left: 50%;
                 background: linear-gradient(to right, transparent, #666, transparent);
             }
             
@@ -258,6 +282,39 @@
             
             .portal-title {
                 font-size: 2rem;
+            }
+            
+            .portal-description {
+                font-size: 1rem;
+            }
+            
+            .portal-subtitle {
+                font-size: 0.8rem;
+            }
+            
+            .portal-icon svg {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .portal-cta {
+                padding: 16px 50px;
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .portal-title {
+                font-size: 1.8rem;
+            }
+            
+            .portal-content {
+                padding: 0 20px;
+            }
+            
+            .portal-cta {
+                padding: 15px 40px;
+                font-size: 0.75rem;
             }
         }
     </style>
@@ -270,52 +327,53 @@
                 <div class="construction-badge">Sitio web en construcción</div>
                 
                 <div class="portal-icon">
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                        <circle cx="40" cy="40" r="30" stroke="#000" stroke-width="1.5" fill="none"/>
-                        <path d="M40 20 L30 40 L50 40 Z" stroke="#000" stroke-width="2" fill="none"/>
-                        <circle cx="40" cy="43" r="4" fill="#008DCB"/>
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" aria-label="Travel icon">
+                        <path d="M40 20 L25 50 L55 50 Z" stroke="#008DCB" stroke-width="2" fill="none"/>
+                        <circle cx="40" cy="53" r="16" stroke="#000" stroke-width="1" fill="none" opacity="0.8"/>
+                        <circle cx="40" cy="53" r="4" fill="#008DCB"/>
+                        <path d="M25 40 Q40 30 55 40" stroke="#008DCB" stroke-width="1" fill="none" opacity="0.5"/>
                     </svg>
                 </div>
                 
-                <h2 class="portal-title">MUNDO TRAVEL</h2>
-                <p class="portal-subtitle">53 países recorridos</p>
+                <h1 class="portal-title">MUNDO TRAVEL</h1>
+                <p class="portal-subtitle">+ DE 53 PAÍSES RECORRIDOS</p>
                 <p class="portal-description">
-                    Expediciones sin WiFi.<br>
-                    Grupos reducidos.<br>
-                    Transformación garantizada.
+                    Donde los mapas se acaban.<br>
+                    Tu zona de confort no está invitada.<br>
+                    Historias que nadie más tiene.
                 </p>
-                <div class="portal-cta">
-                    <span>Próximamente</span>
-                </div>
+                
+                <!-- Ready for link - just change href="#" to your URL -->
+                <a href="#" class="portal-cta">PRÓXIMAMENTE</a>
             </div>
         </div>
         
         <!-- DIVIDER -->
         <div class="portal-divider"></div>
         
-        <!-- TECH SIDE CON LINK -->
-        <div class="portal-side portal-tech" onclick="window.location.href='tech.html'">
+        <!-- TECH SIDE -->
+        <div class="portal-side portal-tech">
             <div class="portal-content">
                 <div class="construction-badge">Sitio web en construcción</div>
                 
                 <div class="portal-icon">
-                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                        <rect x="20" y="20" width="40" height="40" stroke="#fff" stroke-width="2" fill="none"/>
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" aria-label="Tech icon">
+                        <rect x="20" y="20" width="40" height="40" stroke="#008DCB" stroke-width="2" fill="none"/>
                         <rect x="26" y="26" width="28" height="28" stroke="#fff" stroke-width="1" fill="none" opacity="0.5"/>
                         <circle cx="40" cy="40" r="5" fill="#008DCB"/>
                     </svg>
                 </div>
                 
                 <h2 class="portal-title">MUNDO TECH</h2>
-                <p class="portal-subtitle">14 años resolviendo</p>
+                <p class="portal-subtitle">14 AÑOS RESOLVIENDO</p>
                 <p class="portal-description">
                     Sistemas que no duermen.<br>
                     Sin reuniones. Sin drama.<br>
                     Solo resultados.
                 </p>
-                <a href="#" class="portal-cta">
-                    <span>Próximamente</span>
-                </a>
+                
+                <!-- Ready for link - just change href="#" to your URL -->
+                <a href="#" class="portal-cta">PRÓXIMAMENTE</a>
             </div>
         </div>
     </div>
