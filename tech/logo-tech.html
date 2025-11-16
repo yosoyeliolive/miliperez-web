@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MILI PÉREZ TECH - Logotipos e Isotipos</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: #fff;
+            padding: 40px;
+            line-height: 1.6;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 80px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 100;
+            letter-spacing: 0.2em;
+            margin-bottom: 20px;
+        }
+        
+        .header p {
+            color: #008DCB;
+            font-size: 12px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 200;
+            margin: 60px 0 30px 0;
+            color: #008DCB;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+        
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .logo-card {
+            background: #111;
+            border: 1px solid #1a1a1a;
+            padding: 40px;
+            transition: all 0.3s;
+        }
+        
+        .logo-card:hover {
+            border-color: #008DCB;
+            transform: translateY(-5px);
+        }
+        
+        .logo-label {
+            font-size: 10px;
+            color: #008DCB;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .logo-container {
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo-container.dark {
+            background: #000;
+            padding: 40px;
+        }
+        
+        .logo-container.light {
+            background: #fff;
+            padding: 40px;
+        }
+        
+        .logo-container.blue {
+            background: #008DCB;
+            padding: 40px;
+        }
+        
+        .logo-description {
+            font-size: 13px;
+            color: #888;
+            line-height: 1.8;
+        }
+        
+        .logo-specs {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #1a1a1a;
+            font-size: 11px;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .download-btn {
+            background: #008DCB;
+            color: #000;
+            border: none;
+            padding: 12px 24px;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .download-btn:hover {
+            background: #00a8ff;
+        }
+        
+        .notes {
+            background: #111;
+            border-left: 3px solid #008DCB;
+            padding: 40px;
+            margin: 60px 0;
+        }
+        
+        .notes h3 {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .notes p {
+            color: #888;
+            line-height: 1.8;
+        }
+        
+        .text-logo {
+            font-size: 24px;
+            font-weight: 100;
+            letter-spacing: 0.2em;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .logo-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>MILI PÉREZ TECH</h1>
+        <p>SISTEMA DE IDENTIDAD VISUAL • LOGOTIPOS E ISOTIPOS</p>
+    </div>
+
+    <!-- LOGO PRINCIPAL COMPLETO -->
+    <h2 class="section-title">Logo Principal</h2>
+    
+    <div class="logo-grid">
+        <div class="logo-card">
+            <div class="logo-label">VERSIÓN PRINCIPAL - FONDO OSCURO</div>
+            <div class="logo-container dark">
+                <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                    <rect x="20" y="20" width="60" height="60" stroke="#008DCB" stroke-width="2" fill="none"/>
+                    <rect x="27" y="27" width="46" height="46" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
+                    <circle cx="50" cy="50" r="8" fill="#008DCB"/>
+                </svg>
+                <div class="text-logo" style="color: white;">MILI PÉREZ</div>
+            </div>
+            <p class="logo-description">
+                Versión completa con símbolo + texto. Para uso general en web, documentos, presentaciones sobre fondos oscuros.
+            </p>
+            <div class="logo-specs">
+                <strong>Especificaciones:</strong><br>
+                • Colores: Azul #008DCB + Blanco #FFFFFF<br>
+                • Tipografía: Inter Weight 100<br>
+                • Letter-spacing: 0.2em<br>
+                • Uso: Web, documentos, presentaciones
+            </div>
+            <button class="download-btn" onclick="downloadSVG('logo-principal-dark')">DESCARGAR SVG</button>
+        </div>
+
+        <div class="logo-card">
+            <div class="logo-label">VERSIÓN PRINCIPAL - FONDO CLARO</div>
+            <div class="logo-container light">
+                <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+                    <rect x="20" y="20" width="60" height="60" stroke="#008DCB" stroke-width="2" fill="none"/>
+                    <rect x="27" y="27" width="46" height="46" stroke="#000000" stroke-width="1" fill="none" opacity="0.5"/>
+                    <circle cx="50" cy="50" r="8" fill="#008DCB"/>
+                </svg>
+                <div class="text-logo" style="color: black;">MILI PÉREZ</div>
+            </div>
+            <p class="logo-description">
+                Versión para fondos claros. El cuadrado interior en negro para mantener contraste.
+            </p>
+            <div class="logo-specs">
+                <strong>Especificaciones:</strong><br>
+                • Colores: Azul #008DCB + Negro #000000<br>
+                • Tipografía: Inter Weight 100<br>
+                • Letter-spacing: 0.2em<br>
+                • Uso: Documentos impresos, fondos blancos
+            </div>
+            <button class="download-btn" onclick="downloadSVG('logo-principal-light')">DESCARGAR SVG</button>
+        </div>
+    </div>
+
+    <!-- ISOTIPO SOLO -->
+    <h2 class="section-title">Isotipo (Solo Símbolo)</h2>
+    
+    <div class="logo-grid">
+        <div class="logo-card">
+            <div class="logo-label">ISOTIPO - VERSIÓN AZUL/BLANCO</div>
+            <div class="logo-container dark">
+                <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                    <rect x="20" y="20" width="80" height="80" stroke="#008DCB" stroke-width="2" fill="none"/>
+                    <rect x="30" y="30" width="60" height="60" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
+                    <circle cx="60" cy="60" r="10" fill="#008DCB"/>
+                </svg>
+            </div>
+            <p class="logo-description">
+                Solo símbolo. Para favicons, avatares, aplicaciones pequeñas donde el texto no es legible.
+            </p>
+            <div class="logo-specs">
+                <strong>Especificaciones:</strong><br>
+                • Tamaño mínimo: 40x40px<br>
+                • Colores: Azul #008DCB + Blanco<br>
+                • Uso: Favicon, avatar social, app icons
+            </div>
+            <button class="download-btn" onclick="downloadSVG('isotipo-blue-white')">DESCARGAR SVG</button>
+        </div>
+
+        <div class="logo-card">
+            <div class="logo-label">ISOTIPO - VERSIÓN TODO BLANCO</div>
+            <div class="logo-container dark">
+                <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                    <rect x="20" y="20" width="80" height="80" stroke="white" stroke-width="2" fill="none"/>
+                    <rect x="30" y="30" width="60" height="60" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
+                    <circle cx="60" cy="60" r="10" fill="white"/>
+                </svg>
+            </div>
+            <p class="logo-description">
+                Versión monocromática blanca. Para situaciones donde solo se puede usar un color.
+            </p>
+            <div class="logo-specs">
+                <strong>Especificaciones:</strong><br>
+                • Color único: Blanco #FFFFFF<br>
+                • Uso: Sobre fondos oscuros únicamente
+            </div>
+            <button class="download-btn" onclick="downloadSVG('isotipo-white')">DESCARGAR SVG</button>
+        </div>
+
+        <div class="logo-card">
+            <div class="logo-label">ISOTIPO - VERSIÓN TODO AZUL</div>
+            <div class="logo-container light">
+                <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                    <rect x="20" y="20" width="80" height="80" stroke="#008DCB" stroke-width="2" fill="none"/>
+                    <rect x="30" y="30" width="60" height="60" stroke="#008DCB" stroke-width="1" fill="none" opacity="0.5"/>
+                    <circle cx="60" cy="60" r="10" fill="#008DCB"/>
+                </svg>
+            </div>
+            <p class="logo-description">
+                Versión monocromática azul. Para fondos claros donde se necesita máximo impacto de marca.
+            </p>
+            <div class="logo-specs">
+                <strong>Especificaciones:</strong><br>
+                • Color único: Azul #008DCB<br>
+                • Uso: Fondos blancos/claros, merchandise
+            </div>
+            <button class="download-btn" onclick="downloadSVG('isotipo-blue')">DESCARGAR SVG</button>
+        </div>
+
+        <div class="logo-card">
+            <div class="logo-label">ISOTIPO - VERSIÓN TODO NEGRO</div>
+            <div class="logo-container light">
+                <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                    <rect x="20" y="20" width="80" height="80" stroke="#000000" stroke-width="2" fill="none"/>
+                    <rect x="30" y="30" width="60" height="60" stroke="#000000" stroke-width="1" fill="none" opacity="0.5"/>
+                    <circle cx="60" cy="60" r="10" fill="#000000"/>
+                </svg>
+            </div>
+            <p class="logo-description">
+                Versión para impresiones en blanco y negro o cuando no se pueden usar colores.
+            </p>
+            <div class="logo-specs">
+                <strong>Especificaciones:</strong><br>
+                • Color único: Negro #000000<br>
+                • Uso: Impresiones B/N, faxes, sellos
+            </div>
+            <button class="download-btn" onclick="downloadSVG('isotipo-black')">DESCARGAR SVG</button>
+        </div>
+    </div>
+
+    <!-- VARIANTES ESPECIALES -->
+    <h2 class="section-title">Variantes Especiales</h2>
+    
+    <div class="logo-grid">
+        <div class="logo-card">
+            <div class="logo-label">LOGO NAVEGACIÓN - COMPACTO</div>
+            <div class="logo-container dark">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                    <rect x="10" y="10" width="30" height="30" stroke="#008DCB" stroke-width="2" fill="none"/>
+                    <rect x="15" y="15" width="20" height="20" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
+                    <circle cx="25" cy="25" r="4" fill="#008DCB"/>
+                </svg>
+                <div class="text-logo" style="color: white; font-size: 18px;">MILI PÉREZ</div>
+                <div style="font-size: 10px; color: #888; letter-spacing: 0.3em; margin-top: 5px;">TECH</div>
+            </div>
+            <p class="logo-description">
+                Versión compacta para navegación web. Incluye subtítulo "TECH" para diferenciar del mundo Travel.
+            </p>
+            <div class="logo-specs">
+                <strong>Especificaciones:</strong><br>
+                • Tamaño símbolo: 50x50px<br>
+                • Altura total: ~80px con texto<br>
+                • Uso: Navegación web, headers mobile
+            </div>
+            <button class="download-btn" onclick="downloadSVG('logo-nav-compact')">DESCARGAR SVG</button>
+        </div>
+
+        <div class="logo-card">
+            <div class="logo-label">FAVICON - 32x32</div>
+            <div class="logo-container dark">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="image-rendering: pixelated;">
+                    <rect x="6" y="6" width="20" height="20" stroke="#008DCB" stroke-width="2" fill="none"/>
+                    <circle cx="16" cy="16" r="3" fill="#008DCB"/>
+                </svg>
+            </div>
+            <p class="logo-description">
+                Versión ultra simplificada para favicon. Mantiene elementos esenciales: cuadrado exterior + círculo central.
+            </p>
+            <div class="logo-specs">
+                <strong>Especificaciones:</strong><br>
+                • Tamaño: 32x32px (también crear 16x16)<br>
+                • Elementos mínimos para legibilidad<br>
+                • Uso: Favicon, marcadores browser
+            </div>
+            <button class="download-btn" onclick="downloadSVG('favicon-32')">DESCARGAR SVG</button>
+        </div>
+    </div>
+
+    <!-- VERSIÓN HORIZONTAL -->
+    <h2 class="section-title">Logo Horizontal</h2>
+    
+    <div class="logo-grid">
+        <div class="logo-card">
+            <div class="logo-label">LOGO HORIZONTAL - FONDO OSCURO</div>
+            <div class="logo-container dark" style="min-height: 200px;">
+                <div style="display: flex; align-items: center; gap: 30px;">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                        <rect x="16" y="16" width="48" height="48" stroke="#008DCB" stroke-width="2" fill="none"/>
+                        <rect x="22" y="22" width="36" height="36" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
+                        <circle cx="40" cy="40" r="6" fill="#008DCB"/>
+                    </svg>
+                    <div>
+                        <div style="font-size: 32px; font-weight: 100; letter-spacing: 0.2em; color: white;">MILI PÉREZ</div>
+                        <div style="font-size: 11px; color: #008DCB; letter-spacing: 0.3em; text-transform: uppercase; margin-top: 5px;">TECH AUTOMATION ARCHITECT</div>
+                    </div>
+                </div>
+            </div>
+            <p class="logo-description">
+                Logo horizontal con descriptor. Para firmas de email, pie de documentos, headers extendidos.
+            </p>
+            <div class="logo-specs">
+                <strong>Especificaciones:</strong><br>
+                • Altura mínima: 60px<br>
+                • Proporción: Símbolo 1:1, gap 30px, texto variable<br>
+                • Uso: Email signatures, footer web, letterhead
+            </div>
+            <button class="download-btn" onclick="downloadSVG('logo-horizontal-dark')">DESCARGAR SVG</button>
+        </div>
+
+        <div class="logo-card">
+            <div class="logo-label">LOGO HORIZONTAL - FONDO CLARO</div>
+            <div class="logo-container light" style="min-height: 200px;">
+                <div style="display: flex; align-items: center; gap: 30px;">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                        <rect x="16" y="16" width="48" height="48" stroke="#008DCB" stroke-width="2" fill="none"/>
+                        <rect x="22" y="22" width="36" height="36" stroke="#000000" stroke-width="1" fill="none" opacity="0.5"/>
+                        <circle cx="40" cy="40" r="6" fill="#008DCB"/>
+                    </svg>
+                    <div>
+                        <div style="font-size: 32px; font-weight: 100; letter-spacing: 0.2em; color: black;">MILI PÉREZ</div>
+                        <div style="font-size: 11px; color: #008DCB; letter-spacing: 0.3em; text-transform: uppercase; margin-top: 5px;">TECH AUTOMATION ARCHITECT</div>
+                    </div>
+                </div>
+            </div>
+            <p class="logo-description">
+                Versión para fondos claros. Misma estructura pero adaptada cromáticamente.
+            </p>
+            <div class="logo-specs">
+                <strong>Especificaciones:</strong><br>
+                • Altura mínima: 60px<br>
+                • Colores: Azul #008DCB + Negro #000000<br>
+                • Uso: Documentos PDF, presentaciones claras
+            </div>
+            <button class="download-btn" onclick="downloadSVG('logo-horizontal-light')">DESCARGAR SVG</button>
+        </div>
+    </div>
+
+    <!-- NOTAS IMPORTANTES -->
+    <div class="notes">
+        <h3>Reglas de Uso Obligatorias</h3>
+        <p>
+            <strong>Área de respeto:</strong> Mínimo 20% del alto del logo de espacio libre alrededor. Nunca deformar. Nunca rotar. Nunca cambiar colores fuera de las versiones aprobadas.<br><br>
+            
+            <strong>Tamaños mínimos:</strong><br>
+            • Logo completo: 120px de altura mínima<br>
+            • Logo horizontal: 60px de altura mínima<br>
+            • Isotipo: 40px de lado mínimo<br>
+            • Favicon: 32px y 16px<br><br>
+            
+            <strong>Colores permitidos:</strong><br>
+            • Azul #008DCB (color principal de marca)<br>
+            • Blanco #FFFFFF (sobre fondos oscuros)<br>
+            • Negro #000000 (sobre fondos claros o B/N)<br>
+            • NUNCA usar grises, degradados o efectos<br><br>
+            
+            <strong>Tipografía:</strong><br>
+            • Siempre Inter Weight 100 para "MILI PÉREZ"<br>
+            • Siempre en mayúsculas<br>
+            • Siempre con tilde en PÉREZ<br>
+            • Letter-spacing: 0.2em mínimo<br><br>
+            
+            <strong>Si el logo no cabe, usa el isotipo.</strong> Nunca comprimas el logo horizontal.
+        </p>
+    </div>
+
+    <div class="notes">
+        <h3>Archivos Descargables</h3>
+        <p>
+            Los botones "DESCARGAR SVG" están preparados para generar archivos vectoriales escalables.<br>
+            Para uso profesional, se recomienda:<br><br>
+            
+            • <strong>SVG:</strong> Para web, aplicaciones digitales (escalable infinitamente)<br>
+            • <strong>PNG:</strong> Para redes sociales, presentaciones (exportar en 300dpi)<br>
+            • <strong>PDF:</strong> Para imprenta, tarjetas de visita (vectorial para impresión)<br>
+            • <strong>ICO:</strong> Para favicons (generar desde versión 32x32 y 16x16)<br><br>
+            
+            Este documento HTML contiene todos los SVGs inline. Puedes copiar el código SVG directamente desde el inspector del navegador o usar los botones de descarga.
+        </p>
+    </div>
+
+    <div style="text-align: center; margin-top: 100px; padding-top: 60px; border-top: 1px solid #1a1a1a;">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+            <rect x="12" y="12" width="36" height="36" stroke="#008DCB" stroke-width="2" fill="none"/>
+            <rect x="16" y="16" width="28" height="28" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
+            <circle cx="30" cy="30" r="5" fill="#008DCB"/>
+        </svg>
+        <div style="margin-top: 20px; font-size: 18px; font-weight: 100; letter-spacing: 0.2em;">MILI PÉREZ TECH</div>
+        <div style="margin-top: 10px; font-size: 10px; color: #666; letter-spacing: 0.2em;">BRAND IDENTITY SYSTEM • V2.0 • 2025</div>
+    </div>
+
+    <script>
+        function downloadSVG(fileName) {
+            // Esta función se puede expandir para generar descargas reales
+            // Por ahora, muestra una alerta con instrucciones
+            alert('Para descargar:\n\n1. Haz clic derecho en el logo\n2. "Inspeccionar elemento"\n3. Copia el código SVG\n4. Pégalo en un archivo .svg\n\nO usa herramientas como Figma/Illustrator para convertir a otros formatos.');
+        }
+        
+        // Añadir funcionalidad de clic derecho personalizado en SVGs
+        document.querySelectorAll('svg').forEach(svg => {
+            svg.style.cursor = 'pointer';
+            svg.addEventListener('contextmenu', (e) => {
+                e.preventDefault();
+                const svgData = new XMLSerializer().serializeToString(svg);
+                console.log('SVG Code:', svgData);
+            });
+        });
+    </script>
+</body>
+</html>
