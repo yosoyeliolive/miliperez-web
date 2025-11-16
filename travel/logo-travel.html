@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mili Pérez Travel - Logo Animado</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 60px;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .logo-section {
+            padding: 40px;
+            border: 1px solid #e0e0e0;
+            background: #fafafa;
+        }
+        
+        .logo-title {
+            font-size: 12px;
+            color: #008DCB;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+            background: white;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .logo-dark {
+            background: #000;
+        }
+        
+        /* ANIMACIÓN SUTIL DEL LOGO */
+        @keyframes float-gentle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
+        
+        @keyframes rotate-compass {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(5deg); }
+        }
+        
+        .mp-logo-animated .mountain-path {
+            animation: float-gentle 4s ease-in-out infinite;
+            transform-origin: center bottom;
+        }
+        
+        .mp-logo-animated .compass-needle {
+            animation: rotate-compass 3s ease-in-out infinite;
+            transform-origin: center;
+        }
+        
+        /* Hover effect */
+        .mp-logo-animated:hover .mountain-path {
+            animation: none;
+            transform: translateY(-5px) scale(1.02);
+            transition: transform 0.3s ease;
+        }
+        
+        .mp-logo-animated:hover .compass-outer {
+            stroke-width: 1.5;
+            transition: stroke-width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- LOGO PRINCIPAL - 120px -->
+    <div class="logo-section">
+        <div class="logo-title">Logo Principal - 120x120px</div>
+        <div class="logo-container">
+            <svg class="mp-logo-animated" width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Montaña (triángulo) -->
+                <g class="mountain-path">
+                    <path d="M60 30 L40 70 L80 70 Z" stroke="#008DCB" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- Línea vertical interna de la montaña -->
+                    <line x1="60" y1="30" x2="60" y2="70" stroke="#008DCB" stroke-width="0.5" opacity="0.3"/>
+                </g>
+                
+                <!-- Brújula (círculo) -->
+                <g class="compass-outer">
+                    <circle cx="60" cy="75" r="25" stroke="#000000" stroke-width="1" fill="none" opacity="0.8"/>
+                    <circle cx="60" cy="75" r="20" stroke="#000000" stroke-width="0.5" fill="none" opacity="0.3"/>
+                </g>
+                
+                <!-- Aguja de la brújula (punto central) -->
+                <g class="compass-needle">
+                    <circle cx="60" cy="75" r="8" fill="#008DCB"/>
+                    <!-- Cruz de la brújula -->
+                    <line x1="60" y1="60" x2="60" y2="67" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="53" y1="75" x2="67" y2="75" stroke="#008DCB" stroke-width="0.5" opacity="0.5"/>
+                </g>
+            </svg>
+        </div>
+    </div>
+    
+    <!-- LOGO MEDIANO - 80px -->
+    <div class="logo-section">
+        <div class="logo-title">Logo Mediano - 80x80px</div>
+        <div class="logo-container">
+            <svg class="mp-logo-animated" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g class="mountain-path">
+                    <path d="M40 20 L24 48 L56 48 Z" stroke="#008DCB" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="40" y1="20" x2="40" y2="48" stroke="#008DCB" stroke-width="0.5" opacity="0.3"/>
+                </g>
+                <g class="compass-outer">
+                    <circle cx="40" cy="50" r="17" stroke="#000000" stroke-width="1" fill="none" opacity="0.8"/>
+                    <circle cx="40" cy="50" r="13" stroke="#000000" stroke-width="0.5" fill="none" opacity="0.3"/>
+                </g>
+                <g class="compass-needle">
+                    <circle cx="40" cy="50" r="5" fill="#008DCB"/>
+                    <line x1="40" y1="40" x2="40" y2="45" stroke="#ffffff" stroke-width="1" stroke-linecap="round"/>
+                </g>
+            </svg>
+        </div>
+    </div>
+    
+    <!-- LOGO PEQUEÑO - 40px (Favicon) -->
+    <div class="logo-section">
+        <div class="logo-title">Logo Pequeño - 40x40px (Favicon)</div>
+        <div class="logo-container">
+            <svg class="mp-logo-animated" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g class="mountain-path">
+                    <path d="M20 10 L12 26 L28 26 Z" stroke="#008DCB" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <g class="compass-outer">
+                    <circle cx="20" cy="27" r="9" stroke="#000000" stroke-width="1" fill="none" opacity="0.8"/>
+                </g>
+                <g class="compass-needle">
+                    <circle cx="20" cy="27" r="3" fill="#008DCB"/>
+                </g>
+            </svg>
+        </div>
+    </div>
+    
+    <!-- LOGO SOBRE FONDO OSCURO -->
+    <div class="logo-section">
+        <div class="logo-title">Logo sobre fondo oscuro</div>
+        <div class="logo-container logo-dark">
+            <svg class="mp-logo-animated" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g class="mountain-path">
+                    <path d="M40 20 L24 48 L56 48 Z" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="40" y1="20" x2="40" y2="48" stroke="#ffffff" stroke-width="0.5" opacity="0.3"/>
+                </g>
+                <g class="compass-outer">
+                    <circle cx="40" cy="50" r="17" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.8"/>
+                    <circle cx="40" cy="50" r="13" stroke="#ffffff" stroke-width="0.5" fill="none" opacity="0.3"/>
+                </g>
+                <g class="compass-needle">
+                    <circle cx="40" cy="50" r="5" fill="#008DCB"/>
+                    <line x1="40" y1="40" x2="40" y2="45" stroke="#000000" stroke-width="1" stroke-linecap="round"/>
+                </g>
+            </svg>
+        </div>
+    </div>
+    
+    <!-- ISOTIPO SOLO (Sin texto) -->
+    <div class="logo-section">
+        <div class="logo-title">Isotipo Solo - Para Avatares</div>
+        <div class="logo-container">
+            <svg class="mp-logo-animated" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g class="mountain-path">
+                    <path d="M50 20 L30 65 L70 65 Z" stroke="#008DCB" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="50" y1="20" x2="50" y2="65" stroke="#008DCB" stroke-width="0.5" opacity="0.3"/>
+                </g>
+                <g class="compass-outer">
+                    <circle cx="50" cy="68" r="22" stroke="#000000" stroke-width="1.5" fill="none" opacity="0.8"/>
+                    <circle cx="50" cy="68" r="17" stroke="#000000" stroke-width="0.5" fill="none" opacity="0.3"/>
+                </g>
+                <g class="compass-needle">
+                    <circle cx="50" cy="68" r="7" fill="#008DCB"/>
+                    <line x1="50" y1="54" x2="50" y2="61" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="43" y1="68" x2="57" y2="68" stroke="#008DCB" stroke-width="0.5" opacity="0.5"/>
+                </g>
+            </svg>
+        </div>
+    </div>
+    
+    <!-- INFORMACIÓN DE USO -->
+    <div class="logo-section">
+        <div class="logo-title">Instrucciones de uso</div>
+        <div style="padding: 30px; background: white; border: 1px solid #e0e0e0; font-size: 14px; line-height: 1.8; color: #333;">
+            <h3 style="margin-top: 0; color: #008DCB;">Componentes del logo:</h3>
+            <ul>
+                <li><strong>Montaña (triángulo)</strong>: Representa el desafío, la expedición, el objetivo</li>
+                <li><strong>Brújula (círculo + punto)</strong>: Representa la guía, la dirección, el propósito</li>
+                <li><strong>Aguja Norte</strong>: El punto azul que siempre señala hacia arriba</li>
+            </ul>
+            
+            <h3 style="color: #008DCB; margin-top: 30px;">Colores:</h3>
+            <ul>
+                <li><strong>Azul #008DCB</strong>: Montaña y aguja (identidad Mili Pérez)</li>
+                <li><strong>Negro #000000</strong>: Brújula (contraste y estructura)</li>
+                <li><strong>Blanco #FFFFFF</strong>: Detalle de la aguja sobre fondo oscuro</li>
+            </ul>
+            
+            <h3 style="color: #008DCB; margin-top: 30px;">Animación:</h3>
+            <ul>
+                <li><strong>Float</strong>: La montaña flota suavemente (3px arriba/abajo, 4 segundos)</li>
+                <li><strong>Compass</strong>: La aguja rota levemente (±5°, 3 segundos)</li>
+                <li><strong>Hover</strong>: Al pasar el ratón, la montaña sube 5px y escala 1.02x</li>
+            </ul>
+            
+            <h3 style="color: #008DCB; margin-top: 30px;">Área de respeto:</h3>
+            <p>Mínimo 25% del alto del logo de espacio libre alrededor. Nunca rotar, deformar o cambiar proporciones.</p>
+        </div>
+    </div>
+
+</body>
+</html>
