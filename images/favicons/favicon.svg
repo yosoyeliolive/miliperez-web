@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="120"><svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Montaña (triángulo) -->
+    <path d="M60 30 L40 70 L80 70 Z" stroke="#008DCB" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+    <!-- Línea vertical interna de la montaña -->
+    <line x1="60" y1="30" x2="60" y2="70" stroke="#008DCB" stroke-width="0.5" opacity="0.3"></line>
+    
+    <!-- Brújula (círculo exterior) -->
+    <circle cx="60" cy="75" r="25" stroke="#000000" stroke-width="1" fill="none" opacity="0.8"></circle>
+    <circle cx="60" cy="75" r="20" stroke="#000000" stroke-width="0.5" fill="none" opacity="0.3"></circle>
+    
+    <!-- Aguja de la brújula (punto central) -->
+    <circle cx="60" cy="75" r="8" fill="#008DCB"></circle>
+    <!-- Línea Norte -->
+    <line x1="60" y1="60" x2="60" y2="67" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></line>
+    <!-- Línea horizontal sutil -->
+    <line x1="53" y1="75" x2="67" y2="75" stroke="#008DCB" stroke-width="0.5" opacity="0.5"></line>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>
