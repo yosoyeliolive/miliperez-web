@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#000000">
+    
+    <title>404 - Te has perdido | Mili Pérez</title>
+    <meta name="robots" content="noindex, follow">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --mp-black: #000000;
+            --mp-white: #ffffff;
+            --mp-blue: #008DCB;
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        html {
+            height: 100%;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--mp-black);
+            color: var(--mp-white);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .error-container {
+            text-align: center;
+            padding: 0 40px;
+            max-width: 600px;
+        }
+        
+        .error-code {
+            font-size: clamp(6rem, 15vw, 10rem);
+            font-weight: 100;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+            opacity: 0.3;
+            line-height: 1;
+        }
+        
+        .error-title {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+        }
+        
+        .error-description {
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+            line-height: 1.6;
+            opacity: 0.7;
+            margin-bottom: 50px;
+            font-weight: 300;
+        }
+        
+        .error-icon {
+            margin-bottom: 40px;
+            opacity: 0.5;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .error-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .error-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s var(--ease-out);
+            font-weight: 500;
+            border-radius: 2px;
+        }
+        
+        .error-link-primary {
+            background: var(--mp-white);
+            color: var(--mp-black);
+        }
+        
+        .error-link-primary:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+        }
+        
+        .error-link-secondary {
+            border: 1px solid var(--mp-white);
+            color: var(--mp-white);
+        }
+        
+        .error-link-secondary:hover {
+            background: var(--mp-white);
+            color: var(--mp-black);
+            transform: translateY(-2px);
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .error-container {
+                padding: 0 30px;
+            }
+            
+            .error-code {
+                margin-bottom: 15px;
+            }
+            
+            .error-title {
+                margin-bottom: 15px;
+            }
+            
+            .error-description {
+                margin-bottom: 40px;
+            }
+            
+            .error-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .error-link {
+                width: 100%;
+                justify-content: center;
+                padding: 12px 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .error-container {
+                padding: 0 20px;
+            }
+            
+            .error-icon svg {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-icon">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                <circle cx="40" cy="40" r="30" stroke="#fff" stroke-width="1.5" fill="none" opacity="0.3"/>
+                <path d="M40 25 V45" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="40" cy="53" r="2" fill="#fff"/>
+            </svg>
+        </div>
+        
+        <h1 class="error-code">404</h1>
+        <h2 class="error-title">Parece que te has perdido</h2>
+        <p class="error-description">
+            Esta página no existe. Ni en el mapa ni en el servidor.<br>
+            Vuelve al principio antes de que sea tarde.
+        </p>
+        
+        <div class="error-links">
+            <a href="https://miliperez.com" class="error-link error-link-primary">
+                <span>Volver a casa</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
