@@ -1,0 +1,1869 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>No sabes qué dice tu equipo cuando descuelga | Grabación + Métricas + CRM | Mili Pérez</title>
+    <meta name="description" content="Grabación de llamadas, métricas y CRM integrado: las tres piezas que separan gestionar de adivinar. Guía práctica para empresas que quieren saber qué pasa realmente en sus llamadas comerciales.">
+    <meta name="keywords" content="grabación llamadas, métricas telefonía, CRM integrado, centralita virtual, telefonía IP, HubSpot, gestión comercial, ventas B2B">
+    <meta name="author" content="Mili Pérez">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://miliperez.com/newsletter/grabacion-metricas-crm">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="No sabes qué dice tu equipo cuando descuelga | Mili Pérez">
+    <meta property="og:description" content="Grabación + Métricas + CRM: lo que separa gestionar de adivinar. Guía práctica de telefonía IP.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://miliperez.com/newsletter/grabacion-metricas-crm">
+    <meta property="og:image" content="https://miliperez.com/images/og-grabacion-metricas-crm.jpg">
+    <meta property="og:locale" content="es_ES">
+    <meta property="article:author" content="Mili Pérez">
+    <meta property="article:published_time" content="2025-11-26">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="No sabes qué dice tu equipo cuando descuelga">
+    <meta name="twitter:description" content="Grabación + Métricas + CRM: lo que separa gestionar de adivinar.">
+    <meta name="twitter:image" content="https://miliperez.com/images/og-grabacion-metricas-crm.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='6' width='20' height='20' stroke='%23008DCB' stroke-width='2' fill='none'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23008DCB'/%3E%3C/svg%3E">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 80px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        
+        .header-date {
+            font-size: 12px;
+            color: #666;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        
+        .serie-badge {
+            display: inline-block;
+            background: #111;
+            border: 1px solid #008DCB;
+            color: #008DCB;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 10px 24px;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+        
+        .header h1 span {
+            color: #008DCB;
+        }
+        
+        .header-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 300;
+        }
+        
+        /* Bloque En 30 Segundos */
+        .resumen-rapido {
+            background: linear-gradient(135deg, #0a1520 0%, #000 100%);
+            border: 1px solid #0d3a5c;
+            padding: 50px;
+            margin: 60px 0;
+        }
+        
+        .resumen-rapido-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+        
+        .resumen-rapido-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .resumen-rapido-title {
+            font-size: 11px;
+            color: #008DCB;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        
+        .resumen-rapido-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .resumen-rapido-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .resumen-item {
+            text-align: center;
+            padding: 25px;
+            background: rgba(0, 141, 203, 0.05);
+            border: 1px solid #0d3a5c;
+        }
+        
+        .resumen-item-icon {
+            margin-bottom: 20px;
+        }
+        
+        .resumen-item-numero {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2rem;
+            color: #008DCB;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .resumen-item p {
+            color: #888;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        /* Gancho / Intro */
+        .gancho {
+            background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+            border-left: 3px solid #008DCB;
+            padding: 50px;
+            margin: 60px 0;
+            font-size: 1.15rem;
+            line-height: 2;
+        }
+        
+        .gancho p {
+            margin-bottom: 24px;
+        }
+        
+        .gancho p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .gancho strong {
+            color: #008DCB;
+            font-weight: 500;
+        }
+        
+        /* Auto-diagnóstico */
+        .autodiagnostico {
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            padding: 50px;
+            margin: 60px 0;
+        }
+        
+        .autodiagnostico-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+        
+        .autodiagnostico-title {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #fff;
+        }
+        
+        .autodiagnostico-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .autodiagnostico-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+            background: #111;
+            border: 1px solid #1a1a1a;
+            transition: all 0.3s;
+        }
+        
+        .check-item:hover {
+            border-color: #333;
+        }
+        
+        .check-box {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #333;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .check-item p {
+            color: #888;
+            font-size: 14px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .autodiagnostico-resultado {
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #1a0a0a 0%, #0a0a0a 100%);
+            border: 1px solid #331a1a;
+            text-align: center;
+        }
+        
+        .autodiagnostico-resultado p {
+            color: #ff6b6b;
+            font-size: 14px;
+            margin: 0;
+        }
+        
+        /* Secciones */
+        .section {
+            margin: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: #008DCB;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #1a1a1a;
+            letter-spacing: 0.02em;
+        }
+        
+        .section p {
+            margin-bottom: 24px;
+            color: #ccc;
+        }
+        
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Caso Real */
+        .caso-real {
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            padding: 50px;
+            margin: 50px 0;
+        }
+        
+        .caso-real-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .caso-real-badge {
+            background: #008DCB;
+            color: #000;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 6px 14px;
+        }
+        
+        .caso-real-title {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #fff;
+        }
+        
+        .caso-real p {
+            color: #999;
+            margin-bottom: 20px;
+        }
+        
+        .caso-real .dialogo {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            background: #111;
+            padding: 30px;
+            margin: 30px 0;
+            border-left: 2px solid #333;
+        }
+        
+        .caso-real .dialogo p {
+            margin-bottom: 12px;
+            color: #888;
+        }
+        
+        .caso-real .dialogo .pregunta {
+            color: #008DCB;
+        }
+        
+        .caso-real .dialogo .respuesta {
+            color: #666;
+        }
+        
+        .caso-real .resultado {
+            background: #111;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 3px solid #ff4444;
+        }
+        
+        .caso-real .resultado-positivo {
+            border-left-color: #00c853;
+        }
+        
+        .caso-real .resultado p {
+            color: #999;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        
+        .caso-real .resultado p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Formula Visual */
+        .formula {
+            background: linear-gradient(135deg, #0a1520 0%, #000 100%);
+            border: 1px solid #0d3a5c;
+            padding: 50px;
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        .formula-title {
+            font-size: 11px;
+            color: #008DCB;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+        
+        .formula-equation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .formula-item {
+            text-align: center;
+        }
+        
+        .formula-item-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 141, 203, 0.1);
+            border: 1px solid #0d3a5c;
+        }
+        
+        .formula-item-text {
+            font-size: 13px;
+            color: #888;
+            font-weight: 400;
+        }
+        
+        .formula-operator {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2rem;
+            color: #333;
+            font-weight: 300;
+        }
+        
+        .formula-result {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid #0d3a5c;
+        }
+        
+        .formula-result-text {
+            font-size: 1.3rem;
+            color: #fff;
+            font-weight: 300;
+        }
+        
+        .formula-result-text span {
+            color: #008DCB;
+        }
+        
+        /* Las tres piezas */
+        .pieza {
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            margin: 40px 0;
+            overflow: hidden;
+        }
+        
+        .pieza-header {
+            background: #111;
+            padding: 25px 35px;
+            border-bottom: 1px solid #1a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .pieza-numero {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2rem;
+            font-weight: 500;
+            color: #008DCB;
+        }
+        
+        .pieza-titulo {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #fff;
+        }
+        
+        .pieza-content {
+            padding: 40px;
+        }
+        
+        .pieza-content p {
+            color: #999;
+            margin-bottom: 24px;
+        }
+        
+        .pieza-content h4 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #fff;
+            margin: 35px 0 15px 0;
+        }
+        
+        .pieza-content h4:first-child {
+            margin-top: 0;
+        }
+        
+        /* Resumen de pieza */
+        .pieza-resumen {
+            background: linear-gradient(135deg, #0a1520 0%, #0a0a0a 100%);
+            border: 1px solid #0d3a5c;
+            padding: 30px;
+            margin: 30px 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        @media (max-width: 600px) {
+            .pieza-resumen {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .pieza-resumen-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .pieza-resumen-icon {
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .pieza-resumen-text {
+            font-size: 13px;
+            color: #888;
+            line-height: 1.6;
+        }
+        
+        .pieza-resumen-text strong {
+            color: #fff;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        /* Puntos destacados */
+        .punto-destacado {
+            background: #111;
+            border-left: 3px solid #008DCB;
+            padding: 20px 25px;
+            margin: 20px 0;
+        }
+        
+        .punto-destacado strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        
+        .punto-destacado p {
+            color: #888;
+            margin: 0;
+            font-size: 15px;
+        }
+        
+        /* Métricas Dashboard */
+        .metricas-dashboard {
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        
+        .metricas-dashboard-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        
+        .metricas-dashboard-title {
+            font-size: 11px;
+            color: #008DCB;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        
+        .metricas-lista {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .metrica-item {
+            background: #111;
+            padding: 25px;
+            border-left: 2px solid #333;
+            transition: border-color 0.3s;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .metrica-item:hover {
+            border-color: #008DCB;
+        }
+        
+        .metrica-icon {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 141, 203, 0.1);
+            border: 1px solid #1a1a1a;
+        }
+        
+        .metrica-content strong {
+            color: #fff;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .metrica-content p {
+            color: #777;
+            font-size: 14px;
+            margin: 0;
+        }
+        
+        /* CRM Section */
+        .crm-intro {
+            background: linear-gradient(135deg, #0a1520 0%, #000 100%);
+            border: 1px solid #0d3a5c;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .crm-intro-icon {
+            margin-bottom: 25px;
+        }
+        
+        .crm-intro p {
+            color: #888;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        
+        .crm-intro strong {
+            color: #008DCB;
+        }
+        
+        .crm-recomendacion {
+            background: #0a0a0a;
+            border: 2px solid #008DCB;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        
+        .crm-recomendacion-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .crm-recomendacion-badge {
+            background: #008DCB;
+            color: #000;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 5px 12px;
+        }
+        
+        .crm-recomendacion h4 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #008DCB;
+        }
+        
+        .crm-recomendacion p {
+            color: #888;
+            margin-bottom: 20px;
+        }
+        
+        .crm-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        @media (max-width: 600px) {
+            .crm-features {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .crm-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: #111;
+            font-size: 13px;
+            color: #888;
+        }
+        
+        .crm-feature-icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+        
+        .crm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .crm-card {
+            background: #111;
+            border: 1px solid #1a1a1a;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+        
+        .crm-card:hover {
+            border-color: #333;
+            transform: translateY(-3px);
+        }
+        
+        .crm-card h4 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        
+        .crm-card p {
+            color: #666;
+            font-size: 13px;
+            margin: 0;
+            line-height: 1.7;
+        }
+        
+        .crm-card .ideal {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #222;
+            font-size: 11px;
+            color: #008DCB;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        /* Vertical CRM */
+        .crm-vertical {
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        
+        .crm-vertical-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .crm-vertical-badge {
+            background: #008DCB;
+            color: #000;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 5px 12px;
+        }
+        
+        .crm-vertical h4 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #fff;
+        }
+        
+        .crm-vertical p {
+            color: #888;
+            margin-bottom: 20px;
+        }
+        
+        .crm-vertical .leccion {
+            background: #111;
+            padding: 25px;
+            margin-top: 25px;
+            border-left: 3px solid #008DCB;
+        }
+        
+        .crm-vertical .leccion p {
+            color: #ccc;
+            margin: 0;
+            font-style: italic;
+        }
+        
+        /* Antes/Después */
+        .antes-despues {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .antes-despues {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .antes, .despues {
+            padding: 40px;
+        }
+        
+        .antes {
+            background: linear-gradient(135deg, #1a0a0a 0%, #0a0a0a 100%);
+            border: 1px solid #331a1a;
+        }
+        
+        .despues {
+            background: linear-gradient(135deg, #0a1a0a 0%, #0a0a0a 100%);
+            border: 1px solid #1a331a;
+        }
+        
+        .antes-header, .despues-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        
+        .antes h4, .despues h4 {
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        
+        .antes h4 {
+            color: #ff6b6b;
+        }
+        
+        .despues h4 {
+            color: #69db7c;
+        }
+        
+        .antes p, .despues p {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .antes p::before, .despues p::before {
+            position: absolute;
+            left: 0;
+            font-size: 12px;
+        }
+        
+        .antes p::before {
+            content: "✗";
+            color: #ff6b6b;
+        }
+        
+        .despues p::before {
+            content: "✓";
+            color: #69db7c;
+        }
+        
+        /* Errores */
+        .errores {
+            margin: 50px 0;
+        }
+        
+        .error-item {
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            padding: 35px;
+            margin: 25px 0;
+            border-left: 3px solid #ff4444;
+            display: flex;
+            gap: 25px;
+        }
+        
+        .error-icon {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .error-content h4 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        
+        .error-content p {
+            color: #888;
+            margin: 0;
+            font-size: 15px;
+        }
+        
+        /* Cierre */
+        .cierre {
+            background: linear-gradient(135deg, #0a1520 0%, #000 100%);
+            border: 1px solid #1a3a4a;
+            padding: 60px;
+            margin: 80px 0;
+            text-align: center;
+        }
+        
+        .cierre-icon {
+            margin-bottom: 30px;
+        }
+        
+        .cierre p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+        
+        .cierre p:last-of-type {
+            margin-bottom: 40px;
+        }
+        
+        .cierre .destacado {
+            font-size: 1.4rem;
+            color: #fff;
+            font-weight: 400;
+            margin: 40px 0;
+            padding: 30px 0;
+            border-top: 1px solid #1a3a4a;
+            border-bottom: 1px solid #1a3a4a;
+        }
+        
+        .cierre .accion {
+            color: #008DCB;
+            font-size: 1.1rem;
+            margin-top: 30px;
+        }
+        
+        /* Resumen Final */
+        .resumen-final {
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            padding: 50px;
+            margin: 60px 0;
+        }
+        
+        .resumen-final-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        
+        .resumen-final-title {
+            font-size: 11px;
+            color: #008DCB;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        
+        .resumen-final-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        @media (max-width: 768px) {
+            .resumen-final-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .resumen-final-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: #111;
+            border: 1px solid #1a1a1a;
+        }
+        
+        .resumen-final-item-icon {
+            margin-bottom: 20px;
+        }
+        
+        .resumen-final-item h4 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        
+        .resumen-final-item p {
+            color: #666;
+            font-size: 13px;
+            margin: 0;
+        }
+        
+        /* Próxima semana */
+        .proxima-semana {
+            background: #111;
+            border: 1px solid #1a1a1a;
+            padding: 50px;
+            margin: 60px 0;
+        }
+        
+        .proxima-semana-badge {
+            display: inline-block;
+            background: #008DCB;
+            color: #000;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            margin-bottom: 25px;
+        }
+        
+        .proxima-semana h3 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        
+        .proxima-semana p {
+            color: #888;
+            margin-bottom: 15px;
+        }
+        
+        .proxima-semana .teaser {
+            color: #008DCB;
+            font-style: italic;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid #1a1a1a;
+            margin-top: 80px;
+        }
+        
+        .footer-logo {
+            margin-bottom: 25px;
+        }
+        
+        .brand-footer-text {
+            font-size: 18px;
+            font-weight: 100;
+            letter-spacing: 0.2em;
+            margin-bottom: 8px;
+        }
+        
+        .brand-footer-sub {
+            font-size: 11px;
+            color: #008DCB;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+        
+        .brand-footer-copyright {
+            font-size: 11px;
+            color: #444;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 25px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .gancho {
+                padding: 35px;
+            }
+            
+            .caso-real {
+                padding: 35px;
+            }
+            
+            .pieza-content {
+                padding: 30px;
+            }
+            
+            .cierre {
+                padding: 40px;
+            }
+            
+            .error-item {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <p class="header-date">26 de Noviembre de 2025</p>
+            
+            <div class="serie-badge">Serie Telefonía IP • Artículo 5 de 6</div>
+            
+            <h1>No sabes qué dice tu equipo cuando descuelga.<br><span>Y así es imposible vender.</span></h1>
+            
+            <p class="header-subtitle">Grabación + métricas + CRM: lo que separa gestionar de adivinar</p>
+        </header>
+        
+        <!-- Resumen Rápido -->
+        <div class="resumen-rapido">
+            <div class="resumen-rapido-header">
+                <div class="resumen-rapido-icon">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <rect x="8" y="8" width="24" height="24" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                        <line x1="14" y1="16" x2="26" y2="16" stroke="#008DCB" stroke-width="1.5"/>
+                        <line x1="14" y1="20" x2="26" y2="20" stroke="#008DCB" stroke-width="1.5"/>
+                        <line x1="14" y1="24" x2="22" y2="24" stroke="#008DCB" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <span class="resumen-rapido-title">Este artículo en 30 segundos</span>
+            </div>
+            
+            <div class="resumen-rapido-grid">
+                <div class="resumen-item">
+                    <div class="resumen-item-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="12" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                            <circle cx="20" cy="20" r="4" fill="#008DCB"/>
+                        </svg>
+                    </div>
+                    <span class="resumen-item-numero">01</span>
+                    <p>Graba para saber qué pasa realmente en cada llamada</p>
+                </div>
+                
+                <div class="resumen-item">
+                    <div class="resumen-item-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect x="10" y="22" width="4" height="10" fill="#008DCB"/>
+                            <rect x="18" y="16" width="4" height="16" fill="#008DCB"/>
+                            <rect x="26" y="10" width="4" height="22" fill="#008DCB"/>
+                        </svg>
+                    </div>
+                    <span class="resumen-item-numero">02</span>
+                    <p>Mide para detectar problemas antes de que te cuesten dinero</p>
+                </div>
+                
+                <div class="resumen-item">
+                    <div class="resumen-item-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect x="8" y="12" width="10" height="16" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                            <rect x="22" y="12" width="10" height="16" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                            <line x1="18" y1="18" x2="22" y2="18" stroke="#008DCB" stroke-width="1.5"/>
+                            <line x1="18" y1="22" x2="22" y2="22" stroke="#008DCB" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <span class="resumen-item-numero">03</span>
+                    <p>Integra con CRM para que la información no se pierda</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Gancho -->
+        <div class="gancho">
+            <p>Inviertes en marketing. Los leads llegan. El teléfono suena.</p>
+            <p>¿Y qué pasa después?</p>
+            <p><strong>No lo sabes. Nadie lo sabe.</strong></p>
+            <p>No sabes si tu comercial dio el precio correcto. No sabes si resolvió la objeción o la esquivó. No sabes si el cliente colgó convencido o con dudas.</p>
+            <p>Solo sabes que "la llamada fue bien" porque tu equipo te lo dijo.</p>
+            <p>Y cuando ventas no cierra, marketing dice que los leads son malos. Comercial dice que marketing no cualifica. Y tú en medio, sin una sola grabación que te diga quién tiene razón.</p>
+            <p><strong>Eso no es gestionar un equipo comercial. Es cruzar los dedos.</strong></p>
+        </div>
+        
+        <!-- Auto-diagnóstico -->
+        <div class="autodiagnostico">
+            <div class="autodiagnostico-header">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <rect x="6" y="6" width="20" height="20" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                    <path d="M11 16L14 19L21 12" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                </svg>
+                <span class="autodiagnostico-title">¿Tienes esto?</span>
+            </div>
+            
+            <div class="autodiagnostico-grid">
+                <div class="check-item">
+                    <div class="check-box"></div>
+                    <p>¿Grabas todas las llamadas entrantes y salientes?</p>
+                </div>
+                <div class="check-item">
+                    <div class="check-box"></div>
+                    <p>¿Sabes cuántas llamadas se pierden cada día?</p>
+                </div>
+                <div class="check-item">
+                    <div class="check-box"></div>
+                    <p>¿Conoces la tasa de conversión de cada comercial?</p>
+                </div>
+                <div class="check-item">
+                    <div class="check-box"></div>
+                    <p>¿Las llamadas se registran automáticamente en tu CRM?</p>
+                </div>
+                <div class="check-item">
+                    <div class="check-box"></div>
+                    <p>¿Sabes la duración media de llamada por tipo?</p>
+                </div>
+                <div class="check-item">
+                    <div class="check-box"></div>
+                    <p>¿Tienes contexto del cliente antes de descolgar?</p>
+                </div>
+            </div>
+            
+            <div class="autodiagnostico-resultado">
+                <p>Si has dejado más de 2 casillas en blanco, este artículo es para ti.</p>
+            </div>
+        </div>
+        
+        <!-- Caso Real -->
+        <div class="caso-real">
+            <div class="caso-real-header">
+                <span class="caso-real-badge">Caso Real</span>
+                <span class="caso-real-title">CEO de software B2B en Madrid</span>
+            </div>
+            
+            <p>25 personas en plantilla. Equipo comercial de 6. Invierten 8.000€ al mes en Google Ads y LinkedIn.</p>
+            
+            <p>Me dice: "El equipo comercial dice que los leads son malos. Marketing dice que el equipo no sabe vender. No sé quién tiene razón."</p>
+            
+            <div class="dialogo">
+                <p><span class="pregunta">— ¿Grabas las llamadas?</span></p>
+                <p><span class="respuesta">— No.</span></p>
+                <p><span class="pregunta">— ¿Tienes métricas de duración, tasa de respuesta, conversión por comercial?</span></p>
+                <p><span class="respuesta">— No.</span></p>
+                <p><span class="pregunta">— ¿El CRM registra cada llamada automáticamente?</span></p>
+                <p><span class="respuesta">— A veces lo actualizan manualmente... cuando se acuerdan.</span></p>
+            </div>
+            
+            <div class="resultado">
+                <p>No puede saber si los leads son buenos o malos porque nadie escucha las conversaciones reales.</p>
+                <p>No puede formar al equipo porque no tiene ejemplos concretos de qué se hace bien o mal.</p>
+                <p>Pierde información crítica porque las llamadas no quedan registradas.</p>
+                <p>Toma decisiones basándose en opiniones, no en datos.</p>
+                <p><strong style="color: #ff6b6b;">Está gestionando un equipo comercial sin saber qué está pasando en las llamadas.</strong></p>
+            </div>
+        </div>
+        
+        <!-- Fórmula Visual -->
+        <div class="formula">
+            <p class="formula-title">La fórmula</p>
+            
+            <div class="formula-equation">
+                <div class="formula-item">
+                    <div class="formula-item-icon">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                            <circle cx="15" cy="15" r="10" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                            <circle cx="15" cy="15" r="3" fill="#008DCB"/>
+                        </svg>
+                    </div>
+                    <span class="formula-item-text">Grabación</span>
+                </div>
+                
+                <span class="formula-operator">+</span>
+                
+                <div class="formula-item">
+                    <div class="formula-item-icon">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                            <rect x="6" y="16" width="4" height="8" fill="#008DCB"/>
+                            <rect x="13" y="11" width="4" height="13" fill="#008DCB"/>
+                            <rect x="20" y="6" width="4" height="18" fill="#008DCB"/>
+                        </svg>
+                    </div>
+                    <span class="formula-item-text">Métricas</span>
+                </div>
+                
+                <span class="formula-operator">+</span>
+                
+                <div class="formula-item">
+                    <div class="formula-item-icon">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                            <rect x="5" y="8" width="8" height="14" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                            <rect x="17" y="8" width="8" height="14" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                            <line x1="13" y1="13" x2="17" y2="13" stroke="#008DCB" stroke-width="1.5"/>
+                            <line x1="13" y1="17" x2="17" y2="17" stroke="#008DCB" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <span class="formula-item-text">CRM integrado</span>
+                </div>
+                
+                <span class="formula-operator">=</span>
+                
+                <div class="formula-item">
+                    <div class="formula-item-icon" style="background: rgba(0, 141, 203, 0.2);">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                            <circle cx="15" cy="15" r="10" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                            <path d="M10 15L13 18L20 11" stroke="#008DCB" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <span class="formula-item-text" style="color: #008DCB; font-weight: 500;">Visibilidad total</span>
+                </div>
+            </div>
+            
+            <div class="formula-result">
+                <p class="formula-result-text">Sin las tres piezas, <span>estás gestionando a ciegas</span></p>
+            </div>
+        </div>
+        
+        <!-- Las tres piezas -->
+        <section class="section">
+            <h2 class="section-title">Las tres piezas que necesitas</h2>
+            <p>No hace falta complicarlo. Son tres cosas. Las tres tienen que funcionar juntas.</p>
+            
+            <!-- Pieza 1: Grabación -->
+            <div class="pieza">
+                <div class="pieza-header">
+                    <span class="pieza-numero">01</span>
+                    <span class="pieza-titulo">Grabación de llamadas</span>
+                </div>
+                <div class="pieza-content">
+                    <p>Grabar no es espiar a tu equipo. Es tener la realidad sin filtros.</p>
+                    
+                    <div class="pieza-resumen">
+                        <div class="pieza-resumen-item">
+                            <div class="pieza-resumen-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="8" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                                    <line x1="12" y1="8" x2="12" y2="12" stroke="#008DCB" stroke-width="1.5"/>
+                                    <line x1="12" y1="12" x2="15" y2="14" stroke="#008DCB" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+                            <div class="pieza-resumen-text">
+                                <strong>Detectar errores</strong>
+                                Patrones invisibles sin grabaciones
+                            </div>
+                        </div>
+                        <div class="pieza-resumen-item">
+                            <div class="pieza-resumen-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <rect x="4" y="6" width="16" height="12" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                                    <path d="M4 10L12 14L20 10" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                                </svg>
+                            </div>
+                            <div class="pieza-resumen-text">
+                                <strong>Formar con casos reales</strong>
+                                La teoría no forma equipos
+                            </div>
+                        </div>
+                        <div class="pieza-resumen-item">
+                            <div class="pieza-resumen-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <rect x="5" y="4" width="14" height="16" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                                    <line x1="8" y1="9" x2="16" y2="9" stroke="#008DCB" stroke-width="1"/>
+                                    <line x1="8" y1="12" x2="16" y2="12" stroke="#008DCB" stroke-width="1"/>
+                                    <line x1="8" y1="15" x2="13" y2="15" stroke="#008DCB" stroke-width="1"/>
+                                </svg>
+                            </div>
+                            <div class="pieza-resumen-text">
+                                <strong>Resolver disputas</strong>
+                                Hechos, no versiones
+                            </div>
+                        </div>
+                        <div class="pieza-resumen-item">
+                            <div class="pieza-resumen-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M4 17L8 13L12 15L16 9L20 12" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                                    <circle cx="20" cy="12" r="2" fill="#008DCB"/>
+                                </svg>
+                            </div>
+                            <div class="pieza-resumen-text">
+                                <strong>Mejorar argumentarios</strong>
+                                Mejora continua real
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4>Detectar errores recurrentes</h4>
+                    <p>Si tres comerciales dan precios diferentes, tienes un problema de formación. Si uno tarda 8 minutos en explicar algo que debería llevar 2, tienes un problema de argumentario. Si varios clientes cuelgan en el mismo punto de la conversación, tienes un problema de proceso. Sin grabaciones, estos patrones son invisibles.</p>
+                    
+                    <h4>Formar con ejemplos reales</h4>
+                    <p>La teoría no forma equipos. Los casos reales sí. Cuando escuchas con tu equipo una llamada donde el comercial manejó perfectamente una objeción de precio, eso vale más que cualquier curso. Cuando escuchas una llamada donde se perdió la venta por no preguntar por el decisor, el aprendizaje es inmediato.</p>
+                    
+                    <h4>Resolver disputas con hechos</h4>
+                    <p>Cliente dice "me prometieron X". Tu comercial dice "yo nunca dije eso". Sin grabación, es tu palabra contra la suya. Con grabación, escuchas exactamente qué se dijo. Fin de la discusión. Esto también te protege legalmente cuando hay reclamaciones serias.</p>
+                    
+                    <h4>Mejorar argumentarios de forma continua</h4>
+                    <p>Después de escuchar 50 llamadas, identificas las 5 objeciones que aparecen siempre. Preparas respuestas específicas para cada una. Las pruebas. Escuchas cómo funcionan. Ajustas. Esto es mejora continua real, no teoría.</p>
+                    
+                    <div class="punto-destacado">
+                        <p><strong>Caso real:</strong> Una agencia de viajes escuchó 20 llamadas perdidas y descubrió que el 60% colgaba porque el IVR no ofrecía opción de "cancelaciones". Añadieron esa opción. Redujeron un 40% las llamadas perdidas. Sin grabaciones, nunca habrían detectado el problema.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pieza 2: Métricas -->
+            <div class="pieza">
+                <div class="pieza-header">
+                    <span class="pieza-numero">02</span>
+                    <span class="pieza-titulo">Métricas de llamadas</span>
+                </div>
+                <div class="pieza-content">
+                    <p>Lo que no mides no existe. Y en telefonía, la mayoría de empresas no mide nada.</p>
+                    
+                    <div class="metricas-dashboard">
+                        <div class="metricas-dashboard-header">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect x="3" y="3" width="18" height="18" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                                <rect x="6" y="12" width="3" height="6" fill="#008DCB"/>
+                                <rect x="10.5" y="9" width="3" height="9" fill="#008DCB"/>
+                                <rect x="15" y="6" width="3" height="12" fill="#008DCB"/>
+                            </svg>
+                            <span class="metricas-dashboard-title">Métricas que deberías revisar cada semana</span>
+                        </div>
+                        
+                        <div class="metricas-lista">
+                            <div class="metrica-item">
+                                <div class="metrica-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M4 4V20H20" stroke="#008DCB" stroke-width="1.5"/>
+                                        <circle cx="9" cy="14" r="2" fill="#008DCB"/>
+                                        <circle cx="14" cy="10" r="2" fill="#008DCB"/>
+                                    </svg>
+                                </div>
+                                <div class="metrica-content">
+                                    <strong>Llamadas recibidas vs atendidas</strong>
+                                    <p>¿Cuántas llamadas entran y cuántas se pierden? ¿A qué hora se pierden más? Si pierdes el 30% entre las 9:00 y las 10:00, tienes un problema de capacidad.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="metrica-item">
+                                <div class="metrica-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <circle cx="12" cy="12" r="8" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                                        <line x1="12" y1="7" x2="12" y2="12" stroke="#008DCB" stroke-width="1.5"/>
+                                        <line x1="12" y1="12" x2="16" y2="14" stroke="#008DCB" stroke-width="1.5"/>
+                                    </svg>
+                                </div>
+                                <div class="metrica-content">
+                                    <strong>Duración media de llamada</strong>
+                                    <p>¿Tu equipo resuelve en tiempos razonables o da vueltas? Si la media para una consulta simple es de 12 minutos cuando debería ser 4, algo falla.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="metrica-item">
+                                <div class="metrica-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <rect x="6" y="4" width="12" height="16" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                                        <line x1="6" y1="10" x2="18" y2="10" stroke="#008DCB" stroke-width="1"/>
+                                        <line x1="12" y1="10" x2="12" y2="20" stroke="#008DCB" stroke-width="1"/>
+                                    </svg>
+                                </div>
+                                <div class="metrica-content">
+                                    <strong>Tiempo de espera antes de atender</strong>
+                                    <p>Si supera los 30 segundos, estás perdiendo clientes. La gente cuelga. Y cuando cuelgan, llaman a tu competencia.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="metrica-item">
+                                <div class="metrica-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <circle cx="8" cy="12" r="4" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                                        <circle cx="16" cy="12" r="4" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                                    </svg>
+                                </div>
+                                <div class="metrica-content">
+                                    <strong>Distribución por agente</strong>
+                                    <p>¿Las llamadas se reparten equilibradamente o hay agentes saturados mientras otros están parados?</p>
+                                </div>
+                            </div>
+                            
+                            <div class="metrica-item">
+                                <div class="metrica-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M4 18L10 12L14 16L20 8" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                                        <circle cx="20" cy="8" r="2" fill="#008DCB"/>
+                                    </svg>
+                                </div>
+                                <div class="metrica-content">
+                                    <strong>Tasa de conversión por llamada</strong>
+                                    <p>De cada 100 llamadas, ¿cuántas acaban en venta? ¿Cuál es la conversión de cada comercial? Esto te dice quién funciona y quién necesita ayuda.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="punto-destacado">
+                        <p><strong>Caso real:</strong> Una clínica dental descubrió que entre las 14:00 y las 15:00 perdían el 70% de las llamadas. Todo el equipo comía a la vez. Solución: turnos escalonados. Resultado: cero llamadas perdidas en ese tramo. Un cambio de 5 minutos que nunca habrían detectado sin métricas.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pieza 3: CRM -->
+            <div class="pieza">
+                <div class="pieza-header">
+                    <span class="pieza-numero">03</span>
+                    <span class="pieza-titulo">Integración con CRM</span>
+                </div>
+                <div class="pieza-content">
+                    <p>Aquí es donde la mayoría de empresas falla. Tienen centralita. Tienen CRM. Pero no están conectados.</p>
+                    
+                    <p>Tu equipo ya tiene suficiente trabajo. No van a actualizar el CRM manualmente después de cada llamada. Y cuando lo hacen, lo hacen mal, incompleto o tres días después cuando ya no se acuerdan de los detalles.</p>
+                    
+                    <div class="pieza-resumen">
+                        <div class="pieza-resumen-item">
+                            <div class="pieza-resumen-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="8" stroke="#ff6b6b" stroke-width="1.5" fill="none"/>
+                                    <line x1="8" y1="8" x2="16" y2="16" stroke="#ff6b6b" stroke-width="1.5"/>
+                                    <line x1="16" y1="8" x2="8" y2="16" stroke="#ff6b6b" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+                            <div class="pieza-resumen-text">
+                                <strong style="color: #ff6b6b;">Sin integrar</strong>
+                                Llamadas sin registrar, contexto perdido
+                            </div>
+                        </div>
+                        <div class="pieza-resumen-item">
+                            <div class="pieza-resumen-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="8" stroke="#69db7c" stroke-width="1.5" fill="none"/>
+                                    <path d="M8 12L11 15L16 9" stroke="#69db7c" stroke-width="1.5" fill="none"/>
+                                </svg>
+                            </div>
+                            <div class="pieza-resumen-text">
+                                <strong style="color: #69db7c;">Integrado</strong>
+                                Registro automático, contexto instantáneo
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4>Lo que cambia cuando integras:</h4>
+                    
+                    <p><strong>Registro automático.</strong> Cada llamada entrante y saliente queda registrada en la ficha del cliente sin que nadie toque nada. Fecha, hora, duración, quién atendió. Todo automático.</p>
+                    
+                    <p><strong>Contexto instantáneo.</strong> Cuando llama un cliente, salta su ficha en pantalla antes de descolgar. Ves su historial, sus deals abiertos, su última interacción. Contestas sabiendo quién es y qué necesita.</p>
+                    
+                    <p><strong>Click to call.</strong> Llamas directamente desde el CRM. Un clic en el número y sale la llamada. No marcas números, no pierdes tiempo, no te equivocas.</p>
+                    
+                    <p><strong>Informes reales de actividad.</strong> Sabes exactamente cuántas llamadas hizo cada comercial, cuánto duraron, a qué clientes, qué resultado tuvieron. Datos reales, no opiniones.</p>
+                    
+                    <div class="punto-destacado">
+                        <p><strong>Caso real:</strong> Un despacho de abogados integró su centralita con HubSpot. Antes, los abogados actualizaban el CRM "cuando tenían tiempo". Traducción: nunca. Después: 100% de llamadas registradas automáticamente. 80% menos de tiempo administrativo. Visibilidad total del historial de cada cliente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CRM Section -->
+        <section class="section">
+            <h2 class="section-title">El CRM: elegir bien y dedicarle tiempo</h2>
+            
+            <div class="crm-intro">
+                <div class="crm-intro-icon">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                        <rect x="10" y="15" width="12" height="20" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                        <rect x="28" y="15" width="12" height="20" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                        <line x1="22" y1="22" x2="28" y2="22" stroke="#008DCB" stroke-width="1.5"/>
+                        <line x1="22" y1="28" x2="28" y2="28" stroke="#008DCB" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <p>Un CRM sin integración telefónica es como tener un coche con el salpicadero tapado.<br><strong>Funciona, pero no sabes a qué velocidad vas.</strong></p>
+            </div>
+            
+            <div class="crm-recomendacion">
+                <div class="crm-recomendacion-header">
+                    <span class="crm-recomendacion-badge">Mi recomendación</span>
+                    <h4>HubSpot</h4>
+                </div>
+                
+                <p>Si me preguntas qué CRM recomiendo para empresas B2B, la respuesta es HubSpot. No porque sea el único bueno, sino porque la integración con telefonía es la más completa que he visto.</p>
+                
+                <div class="crm-features">
+                    <div class="crm-feature">
+                        <svg class="crm-feature-icon" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="6" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                            <path d="M7 10L9 12L13 8" stroke="#008DCB" stroke-width="1.5"/>
+                        </svg>
+                        Registro automático de llamadas
+                    </div>
+                    <div class="crm-feature">
+                        <svg class="crm-feature-icon" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="6" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                            <path d="M7 10L9 12L13 8" stroke="#008DCB" stroke-width="1.5"/>
+                        </svg>
+                        Popup con ficha del contacto
+                    </div>
+                    <div class="crm-feature">
+                        <svg class="crm-feature-icon" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="6" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                            <path d="M7 10L9 12L13 8" stroke="#008DCB" stroke-width="1.5"/>
+                        </svg>
+                        Click to call desde cualquier contacto
+                    </div>
+                    <div class="crm-feature">
+                        <svg class="crm-feature-icon" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="6" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                            <path d="M7 10L9 12L13 8" stroke="#008DCB" stroke-width="1.5"/>
+                        </svg>
+                        Grabaciones en el timeline
+                    </div>
+                    <div class="crm-feature">
+                        <svg class="crm-feature-icon" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="6" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                            <path d="M7 10L9 12L13 8" stroke="#008DCB" stroke-width="1.5"/>
+                        </svg>
+                        Llamadas asociadas a deals
+                    </div>
+                    <div class="crm-feature">
+                        <svg class="crm-feature-icon" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="6" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                            <path d="M7 10L9 12L13 8" stroke="#008DCB" stroke-width="1.5"/>
+                        </svg>
+                        Informes de actividad por comercial
+                    </div>
+                </div>
+            </div>
+            
+            <p style="margin-top: 40px; color: #888;">Pero no es el único. Hay otros CRMs que funcionan muy bien dependiendo de tu caso:</p>
+            
+            <div class="crm-grid">
+                <div class="crm-card">
+                    <h4>Zoho CRM</h4>
+                    <p>Integración robusta, sincronización bidireccional, buen precio. Perfecto si ya estás en el ecosistema Zoho.</p>
+                    <p class="ideal">PYMEs que quieren centralizar</p>
+                </div>
+                
+                <div class="crm-card">
+                    <h4>Pipedrive</h4>
+                    <p>Diseñado para equipos comerciales que viven del pipeline. Visibilidad total del embudo.</p>
+                    <p class="ideal">Equipos de venta pura</p>
+                </div>
+                
+                <div class="crm-card">
+                    <h4>Salesforce</h4>
+                    <p>Para empresas grandes con procesos estructurados. Más complejo, pero potente.</p>
+                    <p class="ideal">Grandes empresas</p>
+                </div>
+                
+                <div class="crm-card">
+                    <h4>Zendesk</h4>
+                    <p>Crea tickets desde llamadas, vincula historial. Pensado para soporte.</p>
+                    <p class="ideal">Equipos de soporte técnico</p>
+                </div>
+            </div>
+            
+            <!-- CRM Vertical -->
+            <div class="crm-vertical">
+                <div class="crm-vertical-header">
+                    <span class="crm-vertical-badge">CRM Vertical</span>
+                    <h4>Gesfincas</h4>
+                </div>
+                
+                <p>Si eres administrador de fincas, un CRM generalista como HubSpot o Pipedrive no encaja con tu operativa. Necesitas un software pensado para tu día a día: comunidades, propietarios, incidencias, juntas, contabilidad.</p>
+                
+                <p>Gesfincas está diseñado específicamente para eso y se integra con telefonía IP. Cuando llama un propietario, sabes de qué comunidad es, qué incidencias tiene abiertas, si está al corriente de pago. Contexto instantáneo sin buscar en carpetas.</p>
+                
+                <div class="leccion">
+                    <p>Si tu sector tiene un CRM especializado que se integra con telefonía, probablemente sea mejor opción que un CRM generalista. Dedica tiempo a investigar qué existe para tu nicho antes de elegir.</p>
+                </div>
+            </div>
+            
+            <p style="margin-top: 40px;"><strong>Lo importante:</strong> cada CRM requiere dedicarle tiempo. No es instalar y olvidar. Tienes que configurar bien los campos, definir los flujos, formar al equipo. Un CRM mal configurado es peor que no tener CRM porque da falsa sensación de control.</p>
+        </section>
+        
+        <!-- Antes / Después -->
+        <section class="section">
+            <h2 class="section-title">Lo que cambia cuando tienes las tres piezas</h2>
+            
+            <div class="antes-despues">
+                <div class="antes">
+                    <div class="antes-header">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="8" stroke="#ff6b6b" stroke-width="1.5" fill="none"/>
+                            <line x1="8" y1="8" x2="16" y2="16" stroke="#ff6b6b" stroke-width="1.5"/>
+                            <line x1="16" y1="8" x2="8" y2="16" stroke="#ff6b6b" stroke-width="1.5"/>
+                        </svg>
+                        <h4>Antes</h4>
+                    </div>
+                    <p>No sabes qué está pasando en las llamadas</p>
+                    <p>Tu equipo comete los mismos errores una y otra vez</p>
+                    <p>Las reclamaciones son "él dijo, ella dijo"</p>
+                    <p>Pierdes contexto cada vez que un cliente llama</p>
+                    <p>Tomas decisiones basándote en intuición</p>
+                </div>
+                
+                <div class="despues">
+                    <div class="despues-header">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="8" stroke="#69db7c" stroke-width="1.5" fill="none"/>
+                            <path d="M8 12L11 15L16 9" stroke="#69db7c" stroke-width="1.5" fill="none"/>
+                        </svg>
+                        <h4>Después</h4>
+                    </div>
+                    <p>Visibilidad total de cada conversación</p>
+                    <p>Formación continua basada en casos reales</p>
+                    <p>Resolución de reclamaciones con pruebas</p>
+                    <p>Contexto instantáneo cuando llama un cliente</p>
+                    <p>Decisiones basadas en datos reales</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Errores comunes -->
+        <section class="section">
+            <h2 class="section-title">Tres errores que veo constantemente</h2>
+            
+            <div class="errores">
+                <div class="error-item">
+                    <div class="error-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="10" stroke="#ff4444" stroke-width="1.5" fill="none"/>
+                            <line x1="16" y1="10" x2="16" y2="17" stroke="#ff4444" stroke-width="1.5"/>
+                            <circle cx="16" cy="21" r="1.5" fill="#ff4444"/>
+                        </svg>
+                    </div>
+                    <div class="error-content">
+                        <h4>Grabar y no escuchar nunca</h4>
+                        <p>Grabar llamadas no sirve de nada si nadie las revisa. He visto empresas con 6 meses de grabaciones que nadie ha escuchado. Eso no es tener datos, es ocupar espacio en disco. Programa sesiones semanales con tu equipo. Escuchad llamadas juntos. Una hora a la semana transforma más que cualquier formación teórica.</p>
+                    </div>
+                </div>
+                
+                <div class="error-item">
+                    <div class="error-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="10" stroke="#ff4444" stroke-width="1.5" fill="none"/>
+                            <line x1="16" y1="10" x2="16" y2="17" stroke="#ff4444" stroke-width="1.5"/>
+                            <circle cx="16" cy="21" r="1.5" fill="#ff4444"/>
+                        </svg>
+                    </div>
+                    <div class="error-content">
+                        <h4>No avisar legalmente</h4>
+                        <p>En España es obligatorio avisar que la llamada se graba. No hacerlo te expone a problemas legales serios. Un mensaje automático al inicio es suficiente: "Esta llamada puede ser grabada con fines de calidad y formación." Configúralo una vez y olvídate. Todas las centralitas profesionales tienen esta opción.</p>
+                    </div>
+                </div>
+                
+                <div class="error-item">
+                    <div class="error-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="10" stroke="#ff4444" stroke-width="1.5" fill="none"/>
+                            <line x1="16" y1="10" x2="16" y2="17" stroke="#ff4444" stroke-width="1.5"/>
+                            <circle cx="16" cy="21" r="1.5" fill="#ff4444"/>
+                        </svg>
+                    </div>
+                    <div class="error-content">
+                        <h4>No integrar con el CRM</h4>
+                        <p>Si grabas pero no integras, estás perdiendo la mitad del valor. Las llamadas tienen que estar asociadas automáticamente a cada cliente. Si tu proveedor de centralita no se integra con tu CRM, tienes un problema. O cambias de proveedor o cambias de CRM. Las dos herramientas tienen que hablar entre ellas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Resumen Final -->
+        <div class="resumen-final">
+            <div class="resumen-final-header">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect x="4" y="4" width="16" height="16" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                    <path d="M8 12L11 15L16 9" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                </svg>
+                <span class="resumen-final-title">Resumen: Las tres piezas</span>
+            </div>
+            
+            <div class="resumen-final-grid">
+                <div class="resumen-final-item">
+                    <div class="resumen-final-item-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="12" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                            <circle cx="20" cy="20" r="4" fill="#008DCB"/>
+                        </svg>
+                    </div>
+                    <h4>Grabación</h4>
+                    <p>Saber qué pasa realmente en cada llamada</p>
+                </div>
+                
+                <div class="resumen-final-item">
+                    <div class="resumen-final-item-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect x="10" y="22" width="4" height="10" fill="#008DCB"/>
+                            <rect x="18" y="16" width="4" height="16" fill="#008DCB"/>
+                            <rect x="26" y="10" width="4" height="22" fill="#008DCB"/>
+                        </svg>
+                    </div>
+                    <h4>Métricas</h4>
+                    <p>Detectar problemas antes de que cuesten dinero</p>
+                </div>
+                
+                <div class="resumen-final-item">
+                    <div class="resumen-final-item-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <rect x="8" y="12" width="10" height="16" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                            <rect x="22" y="12" width="10" height="16" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                            <line x1="18" y1="18" x2="22" y2="18" stroke="#008DCB" stroke-width="1.5"/>
+                            <line x1="18" y1="22" x2="22" y2="22" stroke="#008DCB" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <h4>CRM integrado</h4>
+                    <p>Que la información no se pierda</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cierre -->
+        <div class="cierre">
+            <div class="cierre-icon">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                    <rect x="10" y="10" width="30" height="30" stroke="#008DCB" stroke-width="1.5" fill="none"/>
+                    <rect x="15" y="15" width="20" height="20" stroke="#008DCB" stroke-width="1" fill="none" opacity="0.5"/>
+                    <circle cx="25" cy="25" r="5" fill="#008DCB"/>
+                </svg>
+            </div>
+            
+            <p>No puedes mejorar lo que no escuchas.</p>
+            <p>No puedes formar sin ejemplos reales.</p>
+            <p>No puedes decidir sin datos.</p>
+            
+            <p class="destacado">Si ya tienes centralita pero no grabas, no mides y no integras con tu CRM, tienes infraestructura sin inteligencia.</p>
+            
+            <p>Cada llamada que no grabas es información que desaparece.</p>
+            <p>Cada métrica que no mides es una mejora que nunca harás.</p>
+            <p>Cada llamada que no se registra en el CRM es contexto que se pierde.</p>
+            
+            <p class="accion">Revisa tu setup actual. Activa grabación. Conecta tu CRM.<br>Empieza a saber qué pasa realmente cuando suena el teléfono.</p>
+        </div>
+        
+        <!-- Próxima semana -->
+        <div class="proxima-semana">
+            <span class="proxima-semana-badge">Próxima Semana • Artículo 6 de 6</span>
+            <h3>El último post de la serie</h3>
+            <p>Ya tienes centralita. Ya tienes datos. ¿Y ahora qué?</p>
+            <p>Ahora es cuando entra la IA. Pero con cabeza: primero la base, luego la automatización.</p>
+            <p class="teaser">Te cuento cómo y cuándo tiene sentido meter agentes de voz con IA en tu negocio. Y cuándo es tirar el dinero.</p>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-logo">
+                <svg viewBox="0 0 50 50" fill="none" width="45" height="45">
+                    <rect x="10" y="10" width="30" height="30" stroke="#008DCB" stroke-width="2" fill="none"/>
+                    <rect x="14" y="14" width="22" height="22" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
+                    <circle cx="25" cy="25" r="5" fill="#008DCB"/>
+                </svg>
+            </div>
+            <div class="brand-footer-text">MILI PÉREZ</div>
+            <div class="brand-footer-sub">Tech Automation Architect</div>
+            <div class="brand-footer-copyright">© Mili Pérez. Todos los derechos reservados.</div>
+        </footer>
+    </div>
+</body>
+</html>
