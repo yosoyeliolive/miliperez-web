@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tranferencias de llamadas en Retell AI + netelip - Mili Pérez</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000000;
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .cheatsheet-container {
+            width: 800px;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            border: 2px solid rgba(0, 141, 203, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #008DCB 0%, #006a9e 100%);
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 36px;
+            font-weight: 900;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .header-subtitle {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 1px;
+        }
+
+        /* Content */
+        .content {
+            padding: 40px;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+            color: #008DCB;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-number {
+            background: #008DCB;
+            color: #000000;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(0, 141, 203, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: #008DCB;
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 12px;
+        }
+
+        .card-content {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        .card-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .card-list li {
+            padding-left: 15px;
+            position: relative;
+            margin-bottom: 6px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .card-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #008DCB;
+        }
+
+        /* Transfer Types */
+        .transfer-box {
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(0, 141, 203, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .transfer-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 141, 203, 0.2);
+        }
+
+        .transfer-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 141, 203, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .transfer-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+
+        .transfer-subtitle {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: #008DCB;
+            letter-spacing: 0.5px;
+        }
+
+        .transfer-types {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .transfer-tag {
+            background: rgba(0, 141, 203, 0.1);
+            border: 1px solid rgba(0, 141, 203, 0.3);
+            border-radius: 4px;
+            padding: 6px 12px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: #008DCB;
+            letter-spacing: 0.5px;
+        }
+
+        /* Decision Framework */
+        .decision-item {
+            background: rgba(0, 0, 0, 0.4);
+            border-left: 3px solid #008DCB;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+        }
+
+        .decision-question {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+        }
+
+        .decision-answer {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+
+        .decision-answer span {
+            color: #008DCB;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(0, 141, 203, 0.05);
+            border-top: 2px solid rgba(0, 141, 203, 0.2);
+            padding: 30px 40px;
+            text-align: center;
+        }
+
+        .footer-key {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 900;
+            color: #008DCB;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-highlight {
+            color: #008DCB;
+            font-weight: 700;
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 141, 203, 0.3), transparent);
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="cheatsheet-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-pattern"></div>
+            <div class="header-content">
+                <div class="header-title">GUÍA RÁPIDA</div>
+                <div class="header-subtitle">IA + TELEFONÍA • DECISIONES CLARAS</div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Section 1: Scenarios -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-number">1</span>
+                    Los 2 escenarios
+                </div>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-header">❌ NO cambies de operador</div>
+                        <div class="card-content">
+                            <ul class="card-list">
+                                <li>Cliente contento con operador</li>
+                                <li>Compra número netelip (1,95€/mes)</li>
+                                <li>Desvío automático</li>
+                                <li>15 minutos de setup</li>
+                                <li>Cero riesgo</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">✅ Migra a netelip</div>
+                        <div class="card-content">
+                            <ul class="card-list">
+                                <li>Portabilidad 24 horas</li>
+                                <li>Control total del flujo</li>
+                                <li>Estadísticas completas</li>
+                                <li>Flujos híbridos IA+humanos</li>
+                                <li>Un solo proveedor</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Section 2: Transfers -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-number">2</span>
+                    Transferencias
+                </div>
+                
+                <div class="transfer-box">
+                    <div class="transfer-header">
+                        <div class="transfer-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 4C7 3.44772 7.44772 3 8 3H16C16.5523 3 17 3.44772 17 4V20C17 20.5523 16.5523 21 16 21H8C7.44772 21 7 20.5523 7 20V4Z" stroke="#008DCB" stroke-width="2"/>
+                                <rect x="9" y="6" width="6" height="10" rx="0.5" fill="rgba(0, 141, 203, 0.2)"/>
+                                <circle cx="12" cy="18" r="1" fill="#008DCB"/>
+                                <path d="M10 7L14 7M10 9L14 9M10 11L13 11" stroke="#008DCB" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="transfer-title">Desde Retell AI</div>
+                            <div class="transfer-subtitle">La IA controla</div>
+                        </div>
+                    </div>
+                    <div class="transfer-types">
+                        <span class="transfer-tag">Blind Transfer</span>
+                        <span class="transfer-tag">Warm Transfer</span>
+                        <span class="transfer-tag">Aviso WhatsApp</span>
+                        <span class="transfer-tag">Con música</span>
+                    </div>
+                </div>
+
+                <div class="transfer-box">
+                    <div class="transfer-header">
+                        <div class="transfer-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="3" stroke="#008DCB" stroke-width="2" fill="rgba(0, 141, 203, 0.2)"/>
+                                <circle cx="6" cy="6" r="2" stroke="#008DCB" stroke-width="1.5" fill="rgba(0, 141, 203, 0.1)"/>
+                                <circle cx="18" cy="6" r="2" stroke="#008DCB" stroke-width="1.5" fill="rgba(0, 141, 203, 0.1)"/>
+                                <circle cx="6" cy="18" r="2" stroke="#008DCB" stroke-width="1.5" fill="rgba(0, 141, 203, 0.1)"/>
+                                <circle cx="18" cy="18" r="2" stroke="#008DCB" stroke-width="1.5" fill="rgba(0, 141, 203, 0.1)"/>
+                                <line x1="9.5" y1="12" x2="7.5" y2="7.5" stroke="#008DCB" stroke-width="1.5"/>
+                                <line x1="14.5" y1="12" x2="16.5" y2="7.5" stroke="#008DCB" stroke-width="1.5"/>
+                                <line x1="9.5" y1="12" x2="7.5" y2="16.5" stroke="#008DCB" stroke-width="1.5"/>
+                                <line x1="14.5" y1="12" x2="16.5" y2="16.5" stroke="#008DCB" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="transfer-title">Desde Centralita netelip</div>
+                            <div class="transfer-subtitle">El humano controla</div>
+                        </div>
+                    </div>
+                    <div class="transfer-types">
+                        <span class="transfer-tag"># (directa)</span>
+                        <span class="transfer-tag">*2 (atendida)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Section 3: Decision Framework -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-number">3</span>
+                    Marco de decisión
+                </div>
+                
+                <div class="decision-item">
+                    <div class="decision-question">¿Tienes control sobre tu infraestructura?</div>
+                    <div class="decision-answer">
+                        <span>Sí:</span> Mantén operador • <span>No:</span> Migra
+                    </div>
+                </div>
+
+                <div class="decision-item">
+                    <div class="decision-question">¿Necesitas estadísticas detalladas?</div>
+                    <div class="decision-answer">
+                        <span>Sí:</span> Migra • <span>No:</span> Mantén operador
+                    </div>
+                </div>
+
+                <div class="decision-item">
+                    <div class="decision-question">¿Flujos complejos IA + humanos?</div>
+                    <div class="decision-answer">
+                        <span>Sí:</span> Migra • <span>No:</span> Mantén operador
+                    </div>
+                </div>
+
+                <div class="decision-item">
+                    <div class="decision-question">¿Tu operador te da problemas?</div>
+                    <div class="decision-answer">
+                        <span>Sí:</span> Aprovecha para migrar • <span>No:</span> No cambies solo por la IA
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-key">Conclusión clave</div>
+            <div class="footer-text">
+                <span class="footer-highlight">No siempre hay que cambiar de operador.</span><br>
+                Sí hay que tener claro quién controla cada parte del flujo.<br>
+                Las transferencias son el <span class="footer-highlight">80% del éxito.</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
