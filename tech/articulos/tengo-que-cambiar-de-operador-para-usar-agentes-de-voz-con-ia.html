@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>¿Tengo que cambiar de operador para usar agentes de voz con IA? | Mili Pérez</title>
+    <meta name="description" content="La respuesta definitiva sobre si necesitas migrar de operador para implementar IA conversacional. Escenarios reales, transferencias IA↔Humanos y marco de decisión.">
+    <meta name="keywords" content="agentes de voz IA, cambiar operador, Retell AI, netelip, SIP trunk, transferencias IA, centralita virtual, telefonía IP">
+    <meta name="author" content="Mili Pérez">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://miliperez.com/tech/articulos/tengo-que-cambiar-de-operador-para-usar-agentes-de-voz-con-ia.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://miliperez.com/tech/articulos/tengo-que-cambiar-de-operador-para-usar-agentes-de-voz-con-ia.html">
+    <meta property="og:title" content="¿Tengo que cambiar de operador para usar agentes de voz con IA?">
+    <meta property="og:description" content="La respuesta que nadie te da bien sobre transferencias, integración y arquitectura real en producción.">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="Mili Pérez Tech">
+    <meta property="article:author" content="Mili Pérez">
+    <meta property="article:published_time" content="2025-11-08">
+    <meta property="article:section" content="Guía Técnica">
+    <meta property="article:tag" content="Agentes de Voz">
+    <meta property="article:tag" content="Retell AI">
+    <meta property="article:tag" content="Telefonía IP">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="¿Tengo que cambiar de operador para usar agentes de voz con IA?">
+    <meta name="twitter:description" content="La respuesta que nadie te da bien sobre transferencias, integración y arquitectura real en producción.">
+    <meta name="twitter:image" content="https://miliperez.com/images/og-cambiar-operador-ia.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='6' width='20' height='20' stroke='%23008DCB' stroke-width='2' fill='none'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23008DCB'/%3E%3C/svg%3E">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "¿Tengo que cambiar de operador para usar agentes de voz con IA?",
+        "description": "La respuesta definitiva sobre si necesitas migrar de operador para implementar IA conversacional. Escenarios reales, transferencias y marco de decisión.",
+        "image": "https://miliperez.com/images/og-cambiar-operador-ia.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "Mili Pérez",
+            "url": "https://miliperez.com",
+            "jobTitle": "COO & AI Officer"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Mili Pérez Tech"
+        },
+        "datePublished": "2025-11-08",
+        "dateModified": "2025-11-08",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://miliperez.com/tech/articulos/tengo-que-cambiar-de-operador-para-usar-agentes-de-voz-con-ia.html"
+        }
+    }
+    </script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+        
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --color-black: #000000;
+            --color-dark: #0a0a0a;
+            --color-gray-900: #111111;
+            --color-gray-800: #1a1a1a;
+            --color-gray-700: #333333;
+            --color-gray-600: #666666;
+            --color-gray-500: #888888;
+            --color-gray-400: #999999;
+            --color-gray-300: #cccccc;
+            --color-white: #ffffff;
+            --color-blue: #008DCB;
+            --color-blue-dark: #0d3a5c;
+            --color-red: #ff4444;
+            --color-red-light: #ff6b6b;
+            --color-green: #10B981;
+            --color-green-light: #69db7c;
+            --color-green-dark: #1a331a;
+            --color-yellow: #FFB800;
+            --color-orange: #F59E0B;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--color-black);
+            color: var(--color-white);
+            line-height: 1.8;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 40px 60px;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 12px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .breadcrumb a {
+            color: var(--color-gray-600);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--color-blue);
+        }
+        
+        .breadcrumb span {
+            color: var(--color-gray-700);
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid var(--color-gray-800);
+        }
+        
+        .header-date {
+            font-size: 12px;
+            color: var(--color-gray-600);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        
+        .guia-badge {
+            display: inline-block;
+            background: var(--color-blue);
+            color: var(--color-white);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+        
+        .header h1 span {
+            color: var(--color-blue);
+        }
+        
+        .header-subtitle {
+            font-size: 1.1rem;
+            color: var(--color-gray-500);
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Resumen Rápido */
+        .resumen-rapido {
+            background: linear-gradient(135deg, #0a1520 0%, var(--color-black) 100%);
+            border: 1px solid var(--color-blue-dark);
+            padding: clamp(30px, 5vw, 50px);
+            margin: 60px 0;
+        }
+        
+        .resumen-rapido-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+        
+        .resumen-rapido-title {
+            font-size: 11px;
+            color: var(--color-blue);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        
+        .resumen-rapido-lista {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .resumen-rapido-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(0, 141, 203, 0.05);
+            border: 1px solid var(--color-blue-dark);
+        }
+        
+        .resumen-rapido-item-numero {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: var(--color-blue);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .resumen-rapido-item p {
+            color: var(--color-gray-400);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        /* Gancho */
+        .gancho {
+            background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-gray-900) 100%);
+            border-left: 3px solid var(--color-blue);
+            padding: clamp(30px, 5vw, 50px);
+            margin: 60px 0;
+            font-size: 1.15rem;
+            line-height: 2;
+        }
+        
+        .gancho p {
+            margin-bottom: 24px;
+        }
+        
+        .gancho p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .gancho strong {
+            color: var(--color-blue);
+            font-weight: 500;
+        }
+        
+        /* Secciones */
+        .section {
+            margin: 80px 0;
+        }
+        
+        .section-title {
+            font-size: clamp(1.3rem, 3vw, 1.6rem);
+            font-weight: 300;
+            color: var(--color-blue);
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--color-gray-800);
+            letter-spacing: 0.02em;
+        }
+        
+        .section p {
+            margin-bottom: 24px;
+            color: var(--color-gray-300);
+        }
+        
+        /* Escenario Box */
+        .escenario {
+            background: var(--color-dark);
+            border: 1px solid var(--color-gray-800);
+            margin: 50px 0;
+            overflow: hidden;
+        }
+        
+        .escenario-header {
+            padding: 30px 40px;
+            border-bottom: 1px solid var(--color-gray-800);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .escenario-numero {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--color-black);
+            background: var(--color-blue);
+            padding: 8px 16px;
+            letter-spacing: 0.1em;
+        }
+        
+        .escenario-titulo {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--color-white);
+        }
+        
+        .escenario-content {
+            padding: 40px;
+        }
+        
+        .escenario-cuando {
+            background: var(--color-gray-900);
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 3px solid var(--color-yellow);
+        }
+        
+        .escenario-cuando-titulo {
+            font-size: 11px;
+            color: var(--color-yellow);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 10px;
+        }
+        
+        .escenario-cuando p {
+            color: var(--color-gray-400);
+            font-size: 15px;
+            margin: 0;
+        }
+        
+        .escenario-solucion {
+            background: var(--color-gray-900);
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 3px solid var(--color-blue);
+        }
+        
+        .escenario-solucion-titulo {
+            font-size: 11px;
+            color: var(--color-blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 10px;
+        }
+        
+        .escenario-solucion p {
+            color: var(--color-gray-300);
+            font-size: 15px;
+            margin: 0;
+        }
+        
+        /* Flujo visual */
+        .flujo {
+            background: var(--color-black);
+            border: 1px solid var(--color-gray-800);
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .flujo-titulo {
+            font-size: 11px;
+            color: var(--color-blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 25px;
+        }
+        
+        .flujo-pasos {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .flujo-paso {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .flujo-paso-numero {
+            width: 28px;
+            height: 28px;
+            background: var(--color-blue);
+            color: var(--color-black);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .flujo-paso-texto {
+            color: var(--color-gray-400);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .flujo-paso-texto strong {
+            color: var(--color-white);
+        }
+        
+        .flujo-paso-texto .numero {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--color-blue);
+        }
+        
+        /* Ventajas / Desventajas */
+        .ventajas-desventajas {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .ventajas, .desventajas {
+            padding: 30px;
+            border-left: 3px solid;
+        }
+        
+        .ventajas {
+            background: linear-gradient(135deg, #0a1a0a 0%, var(--color-dark) 100%);
+            border-color: var(--color-green);
+        }
+        
+        .desventajas {
+            background: linear-gradient(135deg, #1a0a0a 0%, var(--color-dark) 100%);
+            border-color: var(--color-red);
+        }
+        
+        .ventajas-titulo, .desventajas-titulo {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 20px;
+        }
+        
+        .ventajas-titulo {
+            color: var(--color-green);
+        }
+        
+        .desventajas-titulo {
+            color: var(--color-red-light);
+        }
+        
+        .ventajas ul, .desventajas ul {
+            list-style: none;
+        }
+        
+        .ventajas li, .desventajas li {
+            font-size: 14px;
+            color: var(--color-gray-400);
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.5;
+        }
+        
+        .ventajas li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-green);
+            font-weight: 700;
+        }
+        
+        .desventajas li::before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: var(--color-red-light);
+            font-weight: 700;
+        }
+        
+        /* Cuándo mejor opción */
+        .mejor-opcion {
+            background: var(--color-gray-900);
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 3px solid var(--color-blue);
+        }
+        
+        .mejor-opcion-titulo {
+            font-size: 11px;
+            color: var(--color-blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 15px;
+        }
+        
+        .mejor-opcion ul {
+            list-style: none;
+        }
+        
+        .mejor-opcion li {
+            font-size: 14px;
+            color: var(--color-gray-400);
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .mejor-opcion li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--color-blue);
+        }
+        
+        /* Transferencias */
+        .transferencia-tipo {
+            background: var(--color-dark);
+            border: 1px solid var(--color-gray-800);
+            padding: 30px;
+            margin: 25px 0;
+        }
+        
+        .transferencia-tipo-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .transferencia-tipo-numero {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--color-blue);
+            background: rgba(0, 141, 203, 0.2);
+            padding: 6px 12px;
+        }
+        
+        .transferencia-tipo-titulo {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-white);
+        }
+        
+        .transferencia-tipo p {
+            color: var(--color-gray-400);
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .transferencia-ejemplo {
+            background: var(--color-black);
+            padding: 20px;
+            border-left: 2px solid var(--color-gray-700);
+            margin-top: 20px;
+        }
+        
+        .transferencia-ejemplo-titulo {
+            font-size: 11px;
+            color: var(--color-gray-500);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 15px;
+        }
+        
+        .transferencia-ejemplo p {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: var(--color-gray-400);
+            margin-bottom: 8px;
+        }
+        
+        .transferencia-ejemplo .speaker-cliente {
+            color: var(--color-gray-300);
+        }
+        
+        .transferencia-ejemplo .speaker-ia {
+            color: var(--color-blue);
+        }
+        
+        /* Código técnico */
+        .codigo-box {
+            background: var(--color-black);
+            border: 1px solid var(--color-gray-800);
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .codigo-titulo {
+            font-size: 11px;
+            color: var(--color-blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 15px;
+        }
+        
+        .codigo-content {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: var(--color-gray-300);
+            line-height: 1.8;
+        }
+        
+        .codigo-content .comando {
+            color: var(--color-blue);
+            font-weight: 600;
+        }
+        
+        .codigo-content .resultado {
+            color: var(--color-green-light);
+        }
+        
+        /* Flujos híbridos */
+        .flujo-hibrido {
+            background: var(--color-dark);
+            border: 1px solid var(--color-gray-800);
+            padding: 30px;
+            margin: 25px 0;
+        }
+        
+        .flujo-hibrido-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .flujo-hibrido-numero {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--color-black);
+            background: var(--color-blue);
+            padding: 6px 12px;
+        }
+        
+        .flujo-hibrido-titulo {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-white);
+        }
+        
+        .flujo-hibrido-pasos {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .flujo-hibrido-paso {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--color-gray-400);
+        }
+        
+        .flujo-hibrido-paso::before {
+            content: "→";
+            color: var(--color-blue);
+            font-weight: 700;
+        }
+        
+        /* Marco de decisión */
+        .marco-decision {
+            background: var(--color-black);
+            border: 2px solid var(--color-blue);
+            padding: 50px;
+            margin: 60px 0;
+        }
+        
+        .marco-decision-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--color-gray-800);
+        }
+        
+        .marco-decision-label {
+            font-size: 11px;
+            color: var(--color-blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 15px;
+        }
+        
+        .marco-decision-titulo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-white);
+        }
+        
+        .pregunta-decision {
+            background: var(--color-dark);
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 3px solid var(--color-blue);
+        }
+        
+        .pregunta-decision-numero {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--color-blue);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .pregunta-decision-texto {
+            font-size: 1rem;
+            color: var(--color-white);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .pregunta-decision-respuestas {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .respuesta {
+            padding: 15px;
+            font-size: 13px;
+        }
+        
+        .respuesta.si {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--color-green-light);
+        }
+        
+        .respuesta.no {
+            background: rgba(255, 68, 68, 0.1);
+            border: 1px solid rgba(255, 68, 68, 0.3);
+            color: var(--color-red-light);
+        }
+        
+        .respuesta strong {
+            display: block;
+            margin-bottom: 5px;
+            color: inherit;
+        }
+        
+        /* Opinión personal */
+        .opinion-personal {
+            background: linear-gradient(135deg, #0a1520 0%, var(--color-black) 100%);
+            border: 1px solid var(--color-blue-dark);
+            padding: 40px;
+            margin: 60px 0;
+        }
+        
+        .opinion-personal-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .opinion-personal-badge {
+            font-size: 10px;
+            color: var(--color-blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            background: rgba(0, 141, 203, 0.2);
+            padding: 6px 14px;
+        }
+        
+        .opinion-personal p {
+            color: var(--color-gray-300);
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .opinion-personal p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .opinion-personal strong {
+            color: var(--color-white);
+        }
+        
+        .opinion-recomendacion {
+            background: var(--color-black);
+            padding: 25px;
+            margin-top: 25px;
+            border-left: 3px solid var(--color-green);
+        }
+        
+        .opinion-recomendacion-titulo {
+            font-size: 11px;
+            color: var(--color-green);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 15px;
+        }
+        
+        .opinion-recomendacion ol {
+            list-style: none;
+            counter-reset: item;
+        }
+        
+        .opinion-recomendacion li {
+            font-size: 14px;
+            color: var(--color-gray-400);
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            counter-increment: item;
+        }
+        
+        .opinion-recomendacion li::before {
+            content: counter(item) ".";
+            position: absolute;
+            left: 0;
+            color: var(--color-green);
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+        }
+        
+        .advertencia {
+            background: rgba(255, 184, 0, 0.1);
+            border: 1px solid rgba(255, 184, 0, 0.3);
+            border-left: 3px solid var(--color-yellow);
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .advertencia p {
+            color: var(--color-gray-300);
+            font-size: 15px;
+            margin: 0;
+        }
+        
+        .advertencia strong {
+            color: var(--color-yellow);
+        }
+        
+        /* Placeholder para guías visuales */
+        .guia-visual-placeholder {
+            background: var(--color-gray-900);
+            border: 2px dashed var(--color-gray-700);
+            padding: 60px 40px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .guia-visual-placeholder p {
+            color: var(--color-gray-500);
+            font-size: 14px;
+            margin: 0;
+        }
+        
+        .guia-visual-placeholder .placeholder-titulo {
+            color: var(--color-gray-400);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        /* Destacado */
+        .destacado {
+            background: var(--color-gray-900);
+            border-left: 3px solid var(--color-blue);
+            padding: 30px;
+            margin: 40px 0;
+            font-size: 1.1rem;
+            color: var(--color-gray-300);
+            font-weight: 300;
+        }
+        
+        .destacado strong {
+            color: var(--color-white);
+        }
+        
+        /* Enlace externo */
+        .enlace-externo {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--color-blue);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+        
+        .enlace-externo:hover {
+            opacity: 0.8;
+        }
+        
+        /* Cierre */
+        .cierre {
+            background: linear-gradient(135deg, #0a1520 0%, var(--color-black) 100%);
+            border: 1px solid #1a3a4a;
+            padding: clamp(40px, 6vw, 60px);
+            margin: 80px 0;
+            text-align: center;
+        }
+        
+        .cierre-icon {
+            margin-bottom: 30px;
+        }
+        
+        .cierre p {
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            color: var(--color-gray-300);
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+        
+        .destacado-cierre {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            color: var(--color-white);
+            font-weight: 400;
+            margin: 40px 0;
+            padding: 30px 0;
+            border-top: 1px solid #1a3a4a;
+            border-bottom: 1px solid #1a3a4a;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid var(--color-gray-800);
+            margin-top: 80px;
+        }
+        
+        .footer-logo {
+            margin-bottom: 25px;
+        }
+        
+        .brand-footer-text {
+            font-size: 18px;
+            font-weight: 100;
+            letter-spacing: 0.2em;
+            margin-bottom: 8px;
+        }
+        
+        .brand-footer-sub {
+            font-size: 11px;
+            color: var(--color-blue);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+        
+        .brand-footer-copyright {
+            font-size: 11px;
+            color: var(--color-gray-700);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 25px 50px;
+            }
+            
+            .ventajas-desventajas {
+                grid-template-columns: 1fr;
+            }
+            
+            .pregunta-decision-respuestas {
+                grid-template-columns: 1fr;
+            }
+            
+            .escenario-content {
+                padding: 30px;
+            }
+            
+            .marco-decision {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 20px 40px;
+            }
+            
+            .escenario-header {
+                padding: 20px 25px;
+            }
+            
+            .escenario-content {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- Header -->
+        <header class="header">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="https://miliperez.com/">Inicio</a>
+                <span>›</span>
+                <a href="https://miliperez.com/tech/">Tech</a>
+                <span>›</span>
+                <a href="https://miliperez.com/tech/articulos/">Artículos</a>
+            </nav>
+            
+            <p class="header-date">8 de Noviembre de 2025</p>
+            <div class="guia-badge">Guía Técnica</div>
+            <h1>¿Tengo que cambiar de operador para usar agentes de voz con <span>IA</span>?</h1>
+            <p class="header-subtitle">La respuesta que nadie te da bien sobre transferencias, integración y arquitectura real en producción.</p>
+        </header>
+        
+        <!-- Resumen Rápido -->
+        <div class="resumen-rapido">
+            <div class="resumen-rapido-header">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="8" y="8" width="24" height="24" stroke="#008DCB" stroke-width="1.5" fill="none"/><line x1="14" y1="16" x2="26" y2="16" stroke="#008DCB" stroke-width="1.5"/><line x1="14" y1="20" x2="26" y2="20" stroke="#008DCB" stroke-width="1.5"/><line x1="14" y1="24" x2="22" y2="24" stroke="#008DCB" stroke-width="1.5"/></svg>
+                <span class="resumen-rapido-title">Lo que vas a aprender</span>
+            </div>
+            <div class="resumen-rapido-lista">
+                <div class="resumen-rapido-item">
+                    <span class="resumen-rapido-item-numero">01</span>
+                    <p>Cuándo mantener tu operador actual y solo añadir IA</p>
+                </div>
+                <div class="resumen-rapido-item">
+                    <span class="resumen-rapido-item-numero">02</span>
+                    <p>Cuándo migrar tiene sentido (y cuándo no)</p>
+                </div>
+                <div class="resumen-rapido-item">
+                    <span class="resumen-rapido-item-numero">03</span>
+                    <p>Cómo funcionan las transferencias IA ↔ Humanos (el punto que nadie aclara)</p>
+                </div>
+                <div class="resumen-rapido-item">
+                    <span class="resumen-rapido-item-numero">04</span>
+                    <p>El marco exacto que yo uso para decidir con mis clientes</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Gancho -->
+        <div class="gancho">
+            <p>La pregunta que todos hacen y casi nadie responde bien.</p>
+            <p>He visto empresas que se complican la vida migrando cuando no hace falta, y otras que se quedan a medias por no migrar cuando deberían.</p>
+            <p><strong>Este post es la respuesta definitiva. Sin rodeos. Solo la verdad técnica.</strong></p>
+        </div>
+        
+        <!-- ESCENARIO 1 -->
+        <section class="section">
+            <h2 class="section-title">Los dos escenarios posibles</h2>
+            
+            <div class="escenario">
+                <div class="escenario-header">
+                    <span class="escenario-numero">ESCENARIO 1</span>
+                    <span class="escenario-titulo">No cambies de operador</span>
+                </div>
+                <div class="escenario-content">
+                    <div class="escenario-cuando">
+                        <div class="escenario-cuando-titulo">Cuándo aplicar</div>
+                        <p>Tu cliente está contento con su operador actual. No quiere tocar nada. No quiere migraciones. No quiere riesgo.</p>
+                    </div>
+                    
+                    <div class="escenario-solucion">
+                        <div class="escenario-solucion-titulo">La solución</div>
+                        <p>Compras un número nuevo con netelip (desde 1,95 €/mes) y lo conectas a Retell AI vía SIP Trunk.</p>
+                    </div>
+                    
+                    <div class="flujo">
+                        <div class="flujo-titulo">Cómo funciona el flujo</div>
+                        <div class="flujo-pasos">
+                            <div class="flujo-paso">
+                                <span class="flujo-paso-numero">1</span>
+                                <span class="flujo-paso-texto">El cliente mantiene su número habitual <span class="numero">(923 456 789)</span> con su operador de siempre (Movistar, Vodafone, Orange...)</span>
+                            </div>
+                            <div class="flujo-paso">
+                                <span class="flujo-paso-numero">2</span>
+                                <span class="flujo-paso-texto">Compras un número nuevo con netelip <span class="numero">(923 111 222)</span> y lo conectas directamente a Retell AI</span>
+                            </div>
+                            <div class="flujo-paso">
+                                <span class="flujo-paso-numero">3</span>
+                                <span class="flujo-paso-texto">Configuras un <strong>desvío automático</strong> desde el número original hacia el número nuevo</span>
+                            </div>
+                            <div class="flujo-paso">
+                                <span class="flujo-paso-numero">4</span>
+                                <span class="flujo-paso-texto">Cuando alguien llama al <span class="numero">923 456 789</span> → El desvío lo manda al <span class="numero">923 111 222</span> → <strong>El agente de IA contesta</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ventajas-desventajas">
+                        <div class="ventajas">
+                            <div class="ventajas-titulo">Ventajas</div>
+                            <ul>
+                                <li>Conexión en 15 minutos</li>
+                                <li>Cero cambios en la infraestructura actual</li>
+                                <li>Cero riesgo (si algo falla, quitas el desvío)</li>
+                                <li>Económico (1,95 €/mes + consumo)</li>
+                                <li>El cliente ni se entera de que hay un número nuevo</li>
+                            </ul>
+                        </div>
+                        <div class="desventajas">
+                            <div class="desventajas-titulo">Desventajas</div>
+                            <ul>
+                                <li>No tienes control sobre estadísticas antes del desvío</li>
+                                <li>Estás pagando dos operadores</li>
+                                <li>Si el operador original tiene problemas, te afecta igual</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mejor-opcion">
+                        <div class="mejor-opcion-titulo">Cuándo es la mejor opción</div>
+                        <ul>
+                            <li>Empresas conservadoras que no quieren tocar nada</li>
+                            <li>Pruebas piloto antes de migrar</li>
+                            <li>Clientes con contratos de permanencia con su operador actual</li>
+                            <li>Cuando el número tiene mucha visibilidad pública (tarjetas, web, carteles)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ESCENARIO 2 -->
+            <div class="escenario">
+                <div class="escenario-header">
+                    <span class="escenario-numero">ESCENARIO 2</span>
+                    <span class="escenario-titulo">Migrar a netelip</span>
+                </div>
+                <div class="escenario-content">
+                    <div class="escenario-cuando">
+                        <div class="escenario-cuando-titulo">Cuándo aplicar</div>
+                        <p>El cliente quiere control total. Quiere unificar todo. Quiere entender qué pasa con cada llamada.</p>
+                    </div>
+                    
+                    <div class="escenario-solucion">
+                        <div class="escenario-solucion-titulo">La solución</div>
+                        <p>Portas el número existente a netelip. Todo (telefonía, centralita, IA) se gestiona desde un solo sitio.</p>
+                    </div>
+                    
+                    <div class="flujo">
+                        <div class="flujo-titulo">Cómo funciona el flujo</div>
+                        <div class="flujo-pasos">
+                            <div class="flujo-paso">
+                                <span class="flujo-paso-numero">1</span>
+                                <span class="flujo-paso-texto">Solicitas la <strong>portabilidad</strong> del número actual a netelip (24 horas para números fijos españoles)</span>
+                            </div>
+                            <div class="flujo-paso">
+                                <span class="flujo-paso-numero">2</span>
+                                <span class="flujo-paso-texto">Configuras la <strong>Centralita Virtual</strong> de netelip con extensiones, colas, IVR, horarios...</span>
+                            </div>
+                            <div class="flujo-paso">
+                                <span class="flujo-paso-numero">3</span>
+                                <span class="flujo-paso-texto">Conectas tu número virtual de netelip directamente a <strong>Retell AI vía SIP Trunk</strong></span>
+                            </div>
+                            <div class="flujo-paso">
+                                <span class="flujo-paso-numero">4</span>
+                                <span class="flujo-paso-texto">Defines las <strong>reglas de enrutamiento</strong> desde la Centralita Virtual:</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="codigo-box">
+                        <div class="codigo-titulo">Reglas de enrutamiento ejemplo</div>
+                        <div class="codigo-content">
+                            <span class="comando">Horario comercial</span> → Colas de agentes humanos<br>
+                            <span class="comando">Fuera de horario</span> → Número virtual conectado a Retell AI<br>
+                            <span class="comando">Todas las líneas ocupadas</span> → Número virtual conectado a Retell AI<br>
+                            <span class="comando">Llamada tipo X</span> → Directamente a IA<br>
+                            <span class="comando">Llamada tipo Y</span> → Directamente a humano
+                        </div>
+                    </div>
+                    
+                    <div class="ventajas-desventajas">
+                        <div class="ventajas">
+                            <div class="ventajas-titulo">Ventajas</div>
+                            <ul>
+                                <li>Control total sobre toda la experiencia de la llamada</li>
+                                <li>Estadísticas completas (origen, duración, transferencias)</li>
+                                <li>Grabaciones de todas las conversaciones (IA + humanos)</li>
+                                <li>Un solo proveedor para todo (más simple, más barato)</li>
+                                <li>Flujos híbridos complejos (IA + humanos trabajando juntos)</li>
+                                <li>Cambias reglas en tiempo real sin tocar código</li>
+                            </ul>
+                        </div>
+                        <div class="desventajas">
+                            <div class="desventajas-titulo">Desventajas</div>
+                            <ul>
+                                <li>Requiere portabilidad (24 horas para fijos españoles)</li>
+                                <li>Hay que configurar la centralita completa</li>
+                                <li>Migración de infraestructura (aunque sea sencilla)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mejor-opcion">
+                        <div class="mejor-opcion-titulo">Cuándo es la mejor opción</div>
+                        <ul>
+                            <li>Empresas que quieren escalar la IA en serio</li>
+                            <li>Cuando el operador actual no permite SIP o desvíos</li>
+                            <li>Si ya están hartos de su operador (excusa perfecta para cambiar)</li>
+                            <li>Cuando necesitas reportes detallados de performance</li>
+                            <li>Si quieres unificar costes y proveedores</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- TRANSFERENCIAS -->
+        <section class="section">
+            <h2 class="section-title">Transferencias: el punto que nadie explica bien</h2>
+            
+            <p>Aquí es donde todo se complica si no sabes qué estás haciendo.</p>
+            
+            <div class="destacado">
+                <strong>La clave es entender quién controla la llamada.</strong> Porque dependiendo de si la controla la IA (Retell AI) o la centralita (netelip), las transferencias funcionan de forma completamente diferente.
+            </div>
+            
+            <!-- Transferencias desde Retell AI -->
+            <h3 style="font-size: 1.2rem; color: var(--color-white); margin: 50px 0 30px; font-weight: 600;">A) Transferencias desde Retell AI (la IA controla)</h3>
+            
+            <p><strong style="color: var(--color-white);">Cuándo aplica:</strong> La llamada la gestiona Retell AI desde el principio. El agente de IA es quien atiende y decide si transferir.</p>
+            
+            <p><strong style="color: var(--color-white);">Cómo se configura:</strong> Todo se hace desde la interfaz de Retell AI. No tocas la centralita.</p>
+            
+            <div class="transferencia-tipo">
+                <div class="transferencia-tipo-header">
+                    <span class="transferencia-tipo-numero">TIPO 1</span>
+                    <span class="transferencia-tipo-titulo">Transferencia directa (Blind Transfer)</span>
+                </div>
+                <p>La IA detecta que necesita pasar la llamada a un humano y transfiere sin avisar al humano antes. El humano recibe la llamada directamente.</p>
+                <div class="transferencia-ejemplo">
+                    <div class="transferencia-ejemplo-titulo">Ejemplo</div>
+                    <p><span class="speaker-cliente">Cliente:</span> "Quiero hablar con un asesor"</p>
+                    <p><span class="speaker-ia">IA:</span> "Perfecto, te transfiero ahora mismo con un asesor comercial"</p>
+                    <p><span class="speaker-cliente">→ Ring en el teléfono del asesor</span></p>
+                </div>
+            </div>
+            
+            <div class="transferencia-tipo">
+                <div class="transferencia-tipo-header">
+                    <span class="transferencia-tipo-numero">TIPO 2</span>
+                    <span class="transferencia-tipo-titulo">Transferencia con aviso por llamada (Warm Transfer)</span>
+                </div>
+                <p>La IA llama primero al humano, le explica quién es el cliente y qué necesita. Si el humano acepta, conecta la llamada. Si no acepta, la IA vuelve a atender al cliente.</p>
+                <div class="transferencia-ejemplo">
+                    <div class="transferencia-ejemplo-titulo">Ejemplo</div>
+                    <p><span class="speaker-cliente">Cliente:</span> "Quiero hacer una reclamación compleja"</p>
+                    <p><span class="speaker-ia">IA (llama a Juan):</span> "Hola Juan, tengo a un cliente con una reclamación sobre el pedido 12345, ¿puedes atenderlo?"</p>
+                    <p><span class="speaker-cliente">Juan:</span> "Sí, pásalo"</p>
+                    <p><span class="speaker-ia">→ La IA conecta al cliente con Juan</span></p>
+                </div>
+            </div>
+            
+            <div class="transferencia-tipo">
+                <div class="transferencia-tipo-header">
+                    <span class="transferencia-tipo-numero">TIPO 3</span>
+                    <span class="transferencia-tipo-titulo">Transferencia con aviso por WhatsApp</span>
+                </div>
+                <p>La IA envía un mensaje a un humano por WhatsApp con el contexto: nombre del cliente, motivo, urgencia. El humano decide si devuelve la llamada o si la IA la gestiona.</p>
+                <div class="transferencia-ejemplo">
+                    <div class="transferencia-ejemplo-titulo">Ejemplo</div>
+                    <p><span class="speaker-cliente">Cliente:</span> "Necesito cambiar una fecha de reunión urgente"</p>
+                    <p><span class="speaker-ia">IA (envía WhatsApp):</span> "Cliente urgente: María López, quiere cambiar reunión del viernes. ¿La atiendes tú o le doy alternativa?"</p>
+                </div>
+            </div>
+            
+            <div class="transferencia-tipo">
+                <div class="transferencia-tipo-header">
+                    <span class="transferencia-tipo-numero">TIPO 4</span>
+                    <span class="transferencia-tipo-titulo">Transferencia con música en espera</span>
+                </div>
+                <p>La IA pone música de espera mientras busca un agente disponible. Si encuentra uno, transfiere. Si no, vuelve a atender y ofrece alternativa.</p>
+            </div>
+            
+            <!-- Transferencias desde Centralita -->
+            <h3 style="font-size: 1.2rem; color: var(--color-white); margin: 50px 0 30px; font-weight: 600;">B) Transferencias desde la Centralita Virtual (el humano controla)</h3>
+            
+            <p><strong style="color: var(--color-white);">Cuándo aplica:</strong> Un humano atiende la llamada y necesita transferirla a otra extensión, a un móvil, a un fijo o incluso al número virtual conectado a la IA.</p>
+            
+            <p><strong style="color: var(--color-white);">Cómo se configura:</strong> No se configura. Viene activado por defecto en todas las extensiones de netelip. Solo usas códigos cortos desde tu teléfono.</p>
+            
+            <div class="codigo-box">
+                <div class="codigo-titulo">Transferencia directa (ciega) - Código #</div>
+                <div class="codigo-content">
+                    Estás en llamada → pulsas <span class="comando">#</span> → marcas la extensión → pulsas <span class="comando">#</span> de nuevo<br><br>
+                    <strong>Ejemplo:</strong> Recibes llamada para tu compañero de la extensión 102<br>
+                    Pulsas: <span class="comando">#102#</span><br>
+                    <span class="resultado">→ La llamada pasa directamente a la extensión 102</span>
+                </div>
+            </div>
+            
+            <div class="codigo-box">
+                <div class="codigo-titulo">Transferencia atendida (con consulta) - Código *2</div>
+                <div class="codigo-content">
+                    Estás en llamada → pulsas <span class="comando">*2</span> → marcas extensión → pulsas <span class="comando">#</span> → hablas con tu compañero → si acepta, cuelgas tú<br><br>
+                    <strong>Ejemplo:</strong> Llamada técnica compleja, quieres confirmar antes<br>
+                    Pulsas: <span class="comando">*2103#</span><br>
+                    Hablas: "Oye, tengo aquí a un cliente con un problema raro, ¿puedes?"<br>
+                    Él: "Sí, pásalo"<br>
+                    <span class="resultado">→ Cuelgas tú y la llamada se transfiere automáticamente</span><br><br>
+                    <strong>¿Y si dice que no?</strong> Cuelgas tú y vuelves a la llamada original. No se ha transferido nada.
+                </div>
+            </div>
+            
+            <div class="destacado">
+                <strong>Explicación visual:</strong> He creado una guía donde ves exactamente las diferencias entre estas transferencias, paso a paso, en ambas plataformas.<br><br>
+                <a href="https://elio.live/netelip/transferencias-retell-ai-netelip-miliperez.html" class="enlace-externo" target="_blank" rel="noopener">→ Ver guía visual de transferencias Retell AI ↔ netelip</a>
+            </div>
+        </section>
+        
+        <!-- FLUJOS HÍBRIDOS -->
+        <section class="section">
+            <h2 class="section-title">Flujos híbridos: la magia real</h2>
+            
+            <p>El verdadero valor está en combinar ambos mundos. Ejemplos reales que funcionan:</p>
+            
+            <div class="flujo-hibrido">
+                <div class="flujo-hibrido-header">
+                    <span class="flujo-hibrido-numero">FLUJO 1</span>
+                    <span class="flujo-hibrido-titulo">IA de triaje + humanos especializados</span>
+                </div>
+                <div class="flujo-hibrido-pasos">
+                    <div class="flujo-hibrido-paso">La IA atiende todas las llamadas</div>
+                    <div class="flujo-hibrido-paso">Clasifica: comercial, soporte, facturación, urgente</div>
+                    <div class="flujo-hibrido-paso">Transfiere a la cola correcta</div>
+                    <div class="flujo-hibrido-paso">Los humanos solo atienden llamadas pre-cualificadas</div>
+                </div>
+            </div>
+            
+            <div class="flujo-hibrido">
+                <div class="flujo-hibrido-header">
+                    <span class="flujo-hibrido-numero">FLUJO 2</span>
+                    <span class="flujo-hibrido-titulo">Humanos en horario + IA fuera de horario</span>
+                </div>
+                <div class="flujo-hibrido-pasos">
+                    <div class="flujo-hibrido-paso">9:00-18:00 → atienden los humanos</div>
+                    <div class="flujo-hibrido-paso">18:00-9:00 + fines de semana → atiende la IA</div>
+                    <div class="flujo-hibrido-paso">Si la IA detecta urgencia real → avisa por WhatsApp al responsable de guardia</div>
+                </div>
+            </div>
+            
+            <div class="flujo-hibrido">
+                <div class="flujo-hibrido-header">
+                    <span class="flujo-hibrido-numero">FLUJO 3</span>
+                    <span class="flujo-hibrido-titulo">IA como backup cuando todo está colapsado</span>
+                </div>
+                <div class="flujo-hibrido-pasos">
+                    <div class="flujo-hibrido-paso">Si todas las líneas están ocupadas → la IA atiende</div>
+                    <div class="flujo-hibrido-paso">Resuelve consultas simples</div>
+                    <div class="flujo-hibrido-paso">Para las complejas, toma datos y agenda llamada para el siguiente hueco disponible</div>
+                </div>
+            </div>
+            
+            <div class="flujo-hibrido">
+                <div class="flujo-hibrido-header">
+                    <span class="flujo-hibrido-numero">FLUJO 4</span>
+                    <span class="flujo-hibrido-titulo">Humano atiende, pero deriva tareas repetitivas a IA</span>
+                </div>
+                <div class="flujo-hibrido-pasos">
+                    <div class="flujo-hibrido-paso">Cliente llama, habla con humano</div>
+                    <div class="flujo-hibrido-paso">Humano detecta: "Ah, esto es una consulta de horarios / precios / disponibilidad"</div>
+                    <div class="flujo-hibrido-paso">Transfiere al número virtual conectado a Retell AI que tiene esa info en tiempo real</div>
+                    <div class="flujo-hibrido-paso">El humano se libera para llamadas de mayor valor</div>
+                </div>
+            </div>
+            
+            <div class="destacado">
+                <strong>Guía de integración oficial:</strong> Todo el proceso técnico paso a paso para conectar Retell AI con netelip vía SIP Trunk.<br><br>
+                <a href="https://www.netelip.com/centro-de-ayuda/inicio-administradores/integraciones-retell-ai-con-el-servicio-de-sip-trunk-numeros-virtuales/" class="enlace-externo" target="_blank" rel="noopener">→ Ver guía de integración Retell AI + netelip</a>
+            </div>
+        </section>
+        
+        <!-- MARCO DE DECISIÓN -->
+        <div class="marco-decision">
+            <div class="marco-decision-header">
+                <div class="marco-decision-label">El marco de decisión</div>
+                <h2 class="marco-decision-titulo">Lo que yo uso con mis clientes</h2>
+            </div>
+            
+            <p style="text-align: center; color: var(--color-gray-400); margin-bottom: 30px;">Hazte estas 4 preguntas:</p>
+            
+            <div class="pregunta-decision">
+                <div class="pregunta-decision-numero">PREGUNTA 1</div>
+                <div class="pregunta-decision-texto">¿Tienes control sobre tu infraestructura actual?</div>
+                <div class="pregunta-decision-respuestas">
+                    <div class="respuesta si">
+                        <strong>SÍ →</strong> No cambies de operador, añade IA
+                    </div>
+                    <div class="respuesta no">
+                        <strong>NO (tu operador no permite SIP/desvíos) →</strong> Migra
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pregunta-decision">
+                <div class="pregunta-decision-numero">PREGUNTA 2</div>
+                <div class="pregunta-decision-texto">¿Necesitas estadísticas detalladas para mejorar la IA?</div>
+                <div class="pregunta-decision-respuestas">
+                    <div class="respuesta si">
+                        <strong>SÍ →</strong> Migra (necesitas trazabilidad completa)
+                    </div>
+                    <div class="respuesta no">
+                        <strong>NO →</strong> Mantén tu operador, añade IA
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pregunta-decision">
+                <div class="pregunta-decision-numero">PREGUNTA 3</div>
+                <div class="pregunta-decision-texto">¿Quieres diseñar flujos complejos IA + humanos?</div>
+                <div class="pregunta-decision-respuestas">
+                    <div class="respuesta si">
+                        <strong>SÍ →</strong> Migra (necesitas control sobre el enrutamiento)
+                    </div>
+                    <div class="respuesta no">
+                        <strong>NO →</strong> Mantén tu operador, añade IA
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pregunta-decision">
+                <div class="pregunta-decision-numero">PREGUNTA 4</div>
+                <div class="pregunta-decision-texto">¿Tu operador actual te da problemas / es caro / quieres cambiar?</div>
+                <div class="pregunta-decision-respuestas">
+                    <div class="respuesta si">
+                        <strong>SÍ →</strong> Aprovecha para migrar
+                    </div>
+                    <div class="respuesta no">
+                        <strong>NO →</strong> No cambies solo por la IA
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- OPINIÓN PERSONAL -->
+        <div class="opinion-personal">
+            <div class="opinion-personal-header">
+                <span class="opinion-personal-badge">Mi opinión personal</span>
+            </div>
+            
+            <p>Después de cientos de implementaciones: <strong>la mayoría de empresas no necesitan cambiar de operador para empezar</strong> si están contentas con su operador actual.</p>
+            
+            <p>Pero te lo digo muy claro: <strong>la mayoría de empresas están quemadas con su operador actual y quieren cambiar.</strong></p>
+            
+            <div class="opinion-recomendacion">
+                <div class="opinion-recomendacion-titulo">Lo mejor es:</div>
+                <ol>
+                    <li>Prueba con un número nuevo (1,95 €/mes)</li>
+                    <li>Configura desvío desde tu número actual</li>
+                    <li>Valida que la IA funciona bien en producción</li>
+                    <li>Si escala y quieres más control → entonces migra</li>
+                </ol>
+            </div>
+            
+            <div class="advertencia">
+                <p><strong>Migrar antes de validar es el error número uno que veo.</strong> No crees fricción innecesaria. La IA ya es suficiente cambio para tu operación.</p>
+            </div>
+        </div>
+        
+        <!-- Cierre -->
+        <div class="cierre">
+            <div class="cierre-icon">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" aria-hidden="true"><rect x="10" y="10" width="30" height="30" stroke="#008DCB" stroke-width="1.5" fill="none"/><rect x="15" y="15" width="20" height="20" stroke="#008DCB" stroke-width="1" fill="none" opacity="0.5"/><circle cx="25" cy="25" r="5" fill="#008DCB"/></svg>
+            </div>
+            <p>No siempre hay que cambiar de operador.</p>
+            <p>Sí hay que tener claro quién controla cada parte del flujo (IA o centralita).</p>
+            <p>Las transferencias son el 80% del éxito (y casi nadie las entiende bien).</p>
+            <div class="destacado-cierre">
+                Diseña pensando en el usuario, no en la tecnología.
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-logo">
+                <svg viewBox="0 0 50 50" fill="none" width="45" height="45" aria-hidden="true"><rect x="10" y="10" width="30" height="30" stroke="#008DCB" stroke-width="2" fill="none"/><rect x="14" y="14" width="22" height="22" stroke="white" stroke-width="1" fill="none" opacity="0.5"/><circle cx="25" cy="25" r="5" fill="#008DCB"/></svg>
+            </div>
+            <div class="brand-footer-text">MILI PÉREZ</div>
+            <div class="brand-footer-sub">Tech Automation Architect</div>
+            <div class="brand-footer-copyright">© Mili Pérez. Todos los derechos reservados.</div>
+        </footer>
+    </div>
+</body>
+</html>
