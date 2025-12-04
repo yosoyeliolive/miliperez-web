@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transferencias: Retell AI + netelip - Mili Pérez</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --mp-black: #000000;
+            --mp-white: #ffffff;
+            --mp-blue: #008DCB;
+            --mp-gray-900: #111111;
+            --mp-gray-800: #1a1a1a;
+            --mp-gray-700: #2a2a2a;
+            --mp-gray-400: #6a6a6a;
+            --mp-gray-300: #8a8a8a;
+            --mp-green: #10B981;
+            --mp-orange: #F59E0B;
+            --mp-red: #EF4444;
+            --mp-purple: #8B5CF6;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--mp-white);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+        
+        /* HEADER */
+        .header {
+            background: var(--mp-black);
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 141, 203, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header-emoji {
+            font-size: 56px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .header-title {
+            color: var(--mp-white);
+            font-size: 42px;
+            font-weight: 100;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        
+        .header-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        
+        /* CONTENT */
+        .content {
+            padding: 50px;
+        }
+        
+        /* OBJETIVO */
+        .objetivo-box {
+            background: var(--mp-blue);
+            color: var(--mp-white);
+            padding: 32px;
+            margin-bottom: 48px;
+        }
+        
+        .objetivo-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 16px;
+            opacity: 0.8;
+        }
+        
+        .objetivo-text {
+            font-size: 18px;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        /* SECTION */
+        .section {
+            margin-bottom: 56px;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 32px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--mp-black);
+        }
+        
+        .section-emoji {
+            font-size: 40px;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--mp-black);
+        }
+        
+        /* KEY QUESTION */
+        .key-question {
+            background: rgba(0, 141, 203, 0.05);
+            border-left: 4px solid var(--mp-blue);
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .key-label {
+            color: var(--mp-blue);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 12px;
+        }
+        
+        .key-text {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--mp-black);
+        }
+        
+        /* TABLE */
+        .comparison-table {
+            background: var(--mp-white);
+            border: 2px solid #e5e5e5;
+            overflow: hidden;
+            margin-bottom: 32px;
+        }
+        
+        .table-header {
+            background: var(--mp-gray-900);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2px;
+        }
+        
+        .table-header-cell {
+            background: var(--mp-gray-900);
+            color: var(--mp-white);
+            padding: 16px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .table-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2px;
+            background: #e5e5e5;
+        }
+        
+        .table-cell {
+            background: var(--mp-white);
+            padding: 20px;
+            font-size: 14px;
+            color: var(--mp-gray-700);
+            line-height: 1.6;
+        }
+        
+        .table-cell strong {
+            color: var(--mp-black);
+            font-weight: 600;
+        }
+        
+        /* TRANSFER TYPES */
+        .transfer-grid {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+        
+        .transfer-card {
+            background: var(--mp-white);
+            border: 2px solid #e5e5e5;
+            overflow: hidden;
+        }
+        
+        .transfer-header {
+            background: var(--mp-gray-900);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .transfer-type {
+            color: var(--mp-blue);
+            font-size: 16px;
+            font-weight: 700;
+        }
+        
+        .transfer-badge {
+            background: var(--mp-blue);
+            color: var(--mp-white);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .transfer-content {
+            padding: 20px;
+        }
+        
+        .transfer-description {
+            font-size: 14px;
+            color: var(--mp-gray-700);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        
+        .transfer-resource {
+            background: rgba(0, 141, 203, 0.05);
+            padding: 12px 16px;
+            border-left: 3px solid var(--mp-blue);
+        }
+        
+        .resource-label {
+            color: var(--mp-blue);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        
+        .resource-link {
+            color: var(--mp-black);
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        
+        /* CODE CARDS */
+        .code-grid {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+        
+        .code-card {
+            background: var(--mp-white);
+            border: 2px solid #e5e5e5;
+        }
+        
+        .code-header {
+            background: var(--mp-gray-900);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .code-symbol {
+            background: var(--mp-blue);
+            color: var(--mp-white);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .code-title {
+            color: var(--mp-white);
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .code-subtitle {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 12px;
+            margin-top: 4px;
+        }
+        
+        .code-steps {
+            padding: 24px;
+        }
+        
+        .code-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .code-step:last-child {
+            margin-bottom: 0;
+        }
+        
+        .step-number {
+            background: var(--mp-blue);
+            color: var(--mp-white);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .step-text {
+            font-size: 14px;
+            color: var(--mp-gray-700);
+            padding-top: 4px;
+            line-height: 1.6;
+        }
+        
+        .code-notes {
+            background: rgba(245, 158, 11, 0.05);
+            border-left: 3px solid var(--mp-orange);
+            padding: 16px;
+            margin-top: 20px;
+        }
+        
+        .notes-label {
+            color: var(--mp-orange);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        
+        .notes-text {
+            font-size: 13px;
+            color: var(--mp-gray-700);
+            line-height: 1.6;
+        }
+        
+        /* SCENARIO BOX */
+        .scenario-box {
+            background: var(--mp-gray-900);
+            color: var(--mp-white);
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+        
+        .scenario-label {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 16px;
+        }
+        
+        .scenario-text {
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        
+        /* RESULT BOX */
+        .result-box {
+            background: rgba(16, 185, 129, 0.05);
+            border-left: 4px solid var(--mp-green);
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .result-label {
+            color: var(--mp-green);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 12px;
+        }
+        
+        .result-text {
+            font-size: 15px;
+            color: var(--mp-gray-700);
+            line-height: 1.7;
+        }
+        
+        /* COMBINED CASES */
+        .combined-grid {
+            display: grid;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        
+        .combined-card {
+            background: var(--mp-white);
+            border: 2px solid var(--mp-blue);
+            padding: 24px;
+        }
+        
+        .combined-scenario {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--mp-black);
+            margin-bottom: 12px;
+        }
+        
+        .combined-recommendation {
+            font-size: 14px;
+            color: var(--mp-gray-700);
+            line-height: 1.7;
+        }
+        
+        /* SUMMARY */
+        .summary-section {
+            background: linear-gradient(135deg, var(--mp-black) 0%, var(--mp-gray-900) 100%);
+            padding: 40px;
+            margin-bottom: 32px;
+        }
+        
+        .summary-title {
+            color: var(--mp-white);
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 28px;
+        }
+        
+        .summary-grid {
+            display: grid;
+            gap: 16px;
+        }
+        
+        .summary-row {
+            display: grid;
+            grid-template-columns: 250px 150px 1fr;
+            gap: 20px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .summary-row:last-child {
+            border-bottom: none;
+        }
+        
+        .summary-situation {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+        
+        .summary-tool {
+            color: var(--mp-blue);
+            font-size: 14px;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .summary-action {
+            color: var(--mp-white);
+            font-size: 14px;
+        }
+        
+        /* CONCLUSION */
+        .conclusion-section {
+            background: rgba(0, 141, 203, 0.05);
+            border: 2px solid var(--mp-blue);
+            padding: 32px;
+        }
+        
+        .conclusion-title {
+            color: var(--mp-black);
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .conclusion-points {
+            list-style: none;
+            margin: 0;
+        }
+        
+        .conclusion-points li {
+            padding: 12px 0;
+            padding-left: 32px;
+            position: relative;
+            font-size: 15px;
+            color: var(--mp-gray-700);
+            line-height: 1.7;
+        }
+        
+        .conclusion-points li::before {
+            content: '✓';
+            position: absolute;
+            left: 8px;
+            color: var(--mp-blue);
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .conclusion-points li strong {
+            color: var(--mp-black);
+            font-weight: 600;
+        }
+        
+        /* FOOTER */
+        .footer {
+            background: var(--mp-gray-900);
+            padding: 32px 50px;
+            border-top: 1px solid var(--mp-gray-800);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .footer-text {
+            color: var(--mp-white);
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        
+        .footer-highlight {
+            color: var(--mp-blue);
+            font-weight: 600;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .footer-logo svg {
+            width: 32px;
+            height: 32px;
+        }
+        
+        .footer-logo-text {
+            color: var(--mp-white);
+            font-size: 12px;
+            font-weight: 200;
+            letter-spacing: 0.2em;
+        }
+        
+        .footer-logo-subtext {
+            color: var(--mp-blue);
+            font-size: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-content">
+                <span class="header-emoji">📞</span>
+                <h1 class="header-title">FLUJO DE TRABAJO:<br>TRANSFERENCIAS RETELL AI + NETELIP</h1>
+                <p class="header-subtitle">Cómo gestionar correctamente las transferencias de llamadas entre IA y agentes humanos</p>
+            </div>
+        </div>
+        
+        <!-- CONTENT -->
+        <div class="content">
+            <!-- OBJETIVO -->
+            <div class="objetivo-box">
+                <div class="objetivo-label">🎯 Objetivo general</div>
+                <p class="objetivo-text">Gestionar correctamente las transferencias de llamadas entre IA y agentes humanos, según la herramienta desde la que se ejecuta (Retell AI o Centralita Virtual de netelip).</p>
+            </div>
+            
+            <!-- SECTION 1 -->
+            <div class="section">
+                <div class="section-header">
+                    <span class="section-emoji">🧩</span>
+                    <h2 class="section-title">1. Identificar desde dónde se hará la transferencia</h2>
+                </div>
+                
+                <div class="key-question">
+                    <div class="key-label">Pregunta clave</div>
+                    <p class="key-text">¿Quién origina la transferencia?</p>
+                </div>
+                
+                <div class="comparison-table">
+                    <div class="table-header">
+                        <div class="table-header-cell">Origen de la llamada</div>
+                        <div class="table-header-cell">Herramienta</div>
+                        <div class="table-header-cell">Ruta recomendada</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell"><strong>Llamada atendida por la IA (Retell)</strong></div>
+                        <div class="table-cell">Retell AI</div>
+                        <div class="table-cell">Usa los flujos del Classroom de Sonia</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell"><strong>Llamada atendida por una extensión humana</strong></div>
+                        <div class="table-cell">Centralita Virtual de netelip</div>
+                        <div class="table-cell">Usa los códigos cortos de la centralita</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SECTION 2 -->
+            <div class="section">
+                <div class="section-header">
+                    <span class="section-emoji">🤖</span>
+                    <h2 class="section-title">2. Transferencias gestionadas desde Retell AI</h2>
+                </div>
+                
+                <div class="scenario-box">
+                    <div class="scenario-label">Escenario</div>
+                    <p class="scenario-text">La IA contesta la llamada y necesita transferir a un humano.</p>
+                </div>
+                
+                <div class="transfer-grid">
+                    <div class="transfer-card">
+                        <div class="transfer-header">
+                            <div class="transfer-type">IA → Agente (directa)</div>
+                            <div class="transfer-badge">Retell AI</div>
+                        </div>
+                        <div class="transfer-content">
+                            <p class="transfer-description">La IA transfiere la llamada a un número fijo o móvil (sin aviso previo).</p>
+                            <div class="transfer-resource">
+                                <div class="resource-label">📚 Recurso de referencia</div>
+                                <div class="resource-link">Transferencias entre teléfonos y agentes</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transfer-card">
+                        <div class="transfer-header">
+                            <div class="transfer-type">IA → Agente avisando por llamada</div>
+                            <div class="transfer-badge">Retell AI</div>
+                        </div>
+                        <div class="transfer-content">
+                            <p class="transfer-description">La IA llama primero al agente humano, le informa del contexto y luego transfiere la llamada.</p>
+                            <div class="transfer-resource">
+                                <div class="resource-label">📚 Recurso de referencia</div>
+                                <div class="resource-link">Transferencias IA-Humano avisando por llamada</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transfer-card">
+                        <div class="transfer-header">
+                            <div class="transfer-type">IA → Agente avisando por WhatsApp</div>
+                            <div class="transfer-badge">Retell AI</div>
+                        </div>
+                        <div class="transfer-content">
+                            <p class="transfer-description">La IA notifica al agente vía WhatsApp antes de transferir la llamada.</p>
+                            <div class="transfer-resource">
+                                <div class="resource-label">📚 Recurso de referencia</div>
+                                <div class="resource-link">Transferencias IA-Humano avisando por WhatsApp</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transfer-card">
+                        <div class="transfer-header">
+                            <div class="transfer-type">Warm Transfer (con música/espera)</div>
+                            <div class="transfer-badge">Retell AI</div>
+                        </div>
+                        <div class="transfer-content">
+                            <p class="transfer-description">La IA pone al cliente en espera con música mientras conecta con el agente humano.</p>
+                            <div class="transfer-resource">
+                                <div class="resource-label">📚 Recurso de referencia</div>
+                                <div class="resource-link">Actualización Warm Transfer</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="result-box">
+                    <div class="result-label">✓ Resultado</div>
+                    <p class="result-text">La IA mantiene el control de la llamada hasta que transfiere el canal al agente. No se necesita centralita para este tipo de flujo.</p>
+                </div>
+            </div>
+            
+            <!-- SECTION 3 -->
+            <div class="section">
+                <div class="section-header">
+                    <span class="section-emoji">☎️</span>
+                    <h2 class="section-title">3. Transferencias gestionadas desde la Centralita Virtual de netelip</h2>
+                </div>
+                
+                <div class="scenario-box">
+                    <div class="scenario-label">Escenario</div>
+                    <p class="scenario-text">La llamada entra a una extensión humana (por ejemplo, comercial, soporte, etc.) y el agente necesita transferirla a otro destino (otra extensión, número externo o IA).</p>
+                </div>
+                
+                <div class="code-grid">
+                    <div class="code-card">
+                        <div class="code-header">
+                            <div class="code-symbol">#</div>
+                            <div>
+                                <div class="code-title">Transferencia directa (ciega)</div>
+                                <div class="code-subtitle">Sin aviso previo</div>
+                            </div>
+                        </div>
+                        <div class="code-steps">
+                            <div class="code-step">
+                                <div class="step-number">1</div>
+                                <div class="step-text">Durante la llamada, pulsa <strong>#</strong></div>
+                            </div>
+                            <div class="code-step">
+                                <div class="step-number">2</div>
+                                <div class="step-text">Marca la extensión o número destino</div>
+                            </div>
+                            <div class="code-step">
+                                <div class="step-number">3</div>
+                                <div class="step-text">Pulsa <strong>#</strong> de nuevo para completar</div>
+                            </div>
+                            
+                            <div class="code-notes">
+                                <div class="notes-label">⚠️ Observaciones</div>
+                                <div class="notes-text">
+                                    • La llamada se transfiere sin aviso<br>
+                                    • Solo disponible para llamadas entrantes<br>
+                                    • Tarifica si el destino es fijo/móvil/internacional
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="code-card">
+                        <div class="code-header">
+                            <div class="code-symbol">*2</div>
+                            <div>
+                                <div class="code-title">Transferencia atendida (con consulta)</div>
+                                <div class="code-subtitle">Con aviso previo</div>
+                            </div>
+                        </div>
+                        <div class="code-steps">
+                            <div class="code-step">
+                                <div class="step-number">1</div>
+                                <div class="step-text">Pulsa <strong>*2</strong></div>
+                            </div>
+                            <div class="code-step">
+                                <div class="step-number">2</div>
+                                <div class="step-text">Marca extensión o número y <strong>#</strong></div>
+                            </div>
+                            <div class="code-step">
+                                <div class="step-number">3</div>
+                                <div class="step-text">Habla con el compañero</div>
+                            </div>
+                            <div class="code-step">
+                                <div class="step-number">4</div>
+                                <div class="step-text">Si confirma, cuelga para transferir</div>
+                            </div>
+                            
+                            <div class="code-notes">
+                                <div class="notes-label">⚠️ Observaciones</div>
+                                <div class="notes-text">
+                                    • Solo disponible para llamadas entrantes<br>
+                                    • Permite confirmar antes de pasar la llamada<br>
+                                    • Tarifica igual que una llamada saliente
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="result-box">
+                    <div class="result-label">✓ Resultado</div>
+                    <p class="result-text">La transferencia se hace manualmente desde la extensión del agente, sin configuración adicional. Todo el control está en la centralita.</p>
+                </div>
+            </div>
+            
+            <!-- SECTION 4 -->
+            <div class="section">
+                <div class="section-header">
+                    <span class="section-emoji">🌐</span>
+                    <h2 class="section-title">4. Casos combinados (Retell + netelip)</h2>
+                </div>
+                
+                <div class="combined-grid">
+                    <div class="combined-card">
+                        <div class="combined-scenario">Retell atiende → necesita transferir a un humano dentro de una empresa con netelip</div>
+                        <div class="combined-recommendation">Configurar el destino como número o extensión de netelip dentro del flujo de Retell.</div>
+                    </div>
+                    
+                    <div class="combined-card">
+                        <div class="combined-scenario">Agente humano atiende → necesita pasar la llamada a la IA</div>
+                        <div class="combined-recommendation">Crear una extensión o número dedicado a la IA dentro de la centralita y transferir con # o *2.</div>
+                    </div>
+                    
+                    <div class="combined-card">
+                        <div class="combined-scenario">IA y humanos comparten flujos híbridos (ej. atención fuera de horario)</div>
+                        <div class="combined-recommendation">Combinar desvíos automáticos + reglas horarias en netelip para transferir a la IA solo cuando el equipo no esté disponible.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SUMMARY -->
+            <div class="summary-section">
+                <h2 class="summary-title">✅ Resumen rápido</h2>
+                <div class="summary-grid">
+                    <div class="summary-row">
+                        <div class="summary-situation">IA transfiere a humano</div>
+                        <div class="summary-tool">Retell AI</div>
+                        <div class="summary-action">Usa las funciones nativas de transferencia (con aviso, por llamada o WhatsApp)</div>
+                    </div>
+                    <div class="summary-row">
+                        <div class="summary-situation">Agente humano transfiere a otro agente o a la IA</div>
+                        <div class="summary-tool">netelip</div>
+                        <div class="summary-action">Usa # (directa) o *2 (atendida)</div>
+                    </div>
+                    <div class="summary-row">
+                        <div class="summary-situation">Cliente llama fuera de horario</div>
+                        <div class="summary-tool">netelip → Retell AI</div>
+                        <div class="summary-action">Configura desvío automático a la IA</div>
+                    </div>
+                    <div class="summary-row">
+                        <div class="summary-situation">Llamada desde IA a un móvil/fijo</div>
+                        <div class="summary-tool">Retell AI</div>
+                        <div class="summary-action">Se gestiona desde el flujo de Retell</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CONCLUSION -->
+            <div class="conclusion-section">
+                <h2 class="conclusion-title">🧭 Conclusión</h2>
+                <ul class="conclusion-points">
+                    <li><strong>Retell AI</strong> gestiona las transferencias automatizadas entre IA y humanos con avisos, espera o notificaciones.</li>
+                    <li><strong>netelip</strong> gestiona las transferencias manuales entre extensiones o hacia otros números, sin configuración adicional.</li>
+                    <li>Ambos sistemas pueden <strong>coexistir perfectamente</strong> en el mismo flujo telefónico, combinando automatización e intervención humana según el caso.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-text">
+                Transferencias híbridas • <span class="footer-highlight">IA + Humanos</span> • Sin complicaciones
+            </div>
+            <div class="footer-logo">
+                <svg width="32" height="32" viewBox="0 0 50 50" fill="none">
+                    <rect x="10" y="10" width="30" height="30" stroke="#008DCB" stroke-width="2" fill="none"/>
+                    <rect x="15" y="15" width="20" height="20" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
+                    <circle cx="25" cy="25" r="4" fill="#008DCB"/>
+                </svg>
+                <div>
+                    <div class="footer-logo-text">MILI PÉREZ</div>
+                    <div class="footer-logo-subtext">TELEFONÍA IP</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
